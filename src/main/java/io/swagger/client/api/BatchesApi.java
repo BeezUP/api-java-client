@@ -27,6 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import io.swagger.client.model.BatchOrderOperationResponse;
 import io.swagger.client.model.BeezUPCommonErrorResponseMessage;
 import io.swagger.client.model.ChangeOrderListRequest;
 import io.swagger.client.model.ClearMerchantOrderInfoListRequest;
@@ -138,10 +139,12 @@ public class BatchesApi {
      * @param userName Sometimes the user in the e-commerce application is not the same than the subscription key you indicate in your settings. We recommand you to indicate the login of the user in your appplication. (required)
      * @param request  (required)
      * @param testMode If true, the operation will be be commited. But the validation will be taken in account. (optional, default to false)
+     * @return BatchOrderOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void changeOrderList(String changeOrderType, String userName, ChangeOrderListRequest request, Boolean testMode) throws ApiException {
-        changeOrderListWithHttpInfo(changeOrderType, userName, request, testMode);
+    public BatchOrderOperationResponse changeOrderList(String changeOrderType, String userName, ChangeOrderListRequest request, Boolean testMode) throws ApiException {
+        ApiResponse<BatchOrderOperationResponse> resp = changeOrderListWithHttpInfo(changeOrderType, userName, request, testMode);
+        return resp.getData();
     }
 
     /**
@@ -151,12 +154,13 @@ public class BatchesApi {
      * @param userName Sometimes the user in the e-commerce application is not the same than the subscription key you indicate in your settings. We recommand you to indicate the login of the user in your appplication. (required)
      * @param request  (required)
      * @param testMode If true, the operation will be be commited. But the validation will be taken in account. (optional, default to false)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;BatchOrderOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> changeOrderListWithHttpInfo(String changeOrderType, String userName, ChangeOrderListRequest request, Boolean testMode) throws ApiException {
+    public ApiResponse<BatchOrderOperationResponse> changeOrderListWithHttpInfo(String changeOrderType, String userName, ChangeOrderListRequest request, Boolean testMode) throws ApiException {
         com.squareup.okhttp.Call call = changeOrderListValidateBeforeCall(changeOrderType, userName, request, testMode, null, null);
-        return apiClient.execute(call);
+        Type localVarReturnType = new TypeToken<BatchOrderOperationResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
     }
 
     /**
@@ -170,7 +174,7 @@ public class BatchesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call changeOrderListAsync(String changeOrderType, String userName, ChangeOrderListRequest request, Boolean testMode, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call changeOrderListAsync(String changeOrderType, String userName, ChangeOrderListRequest request, Boolean testMode, final ApiCallback<BatchOrderOperationResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -192,7 +196,8 @@ public class BatchesApi {
         }
 
         com.squareup.okhttp.Call call = changeOrderListValidateBeforeCall(changeOrderType, userName, request, testMode, progressListener, progressRequestListener);
-        apiClient.executeAsync(call, callback);
+        Type localVarReturnType = new TypeToken<BatchOrderOperationResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /* Build call for clearMerchantOrderInfoList */
@@ -258,22 +263,25 @@ public class BatchesApi {
      * Batches the clear merchant order info operation.
      * The purpose of this  operation is to reduce the amount of request to the API.
      * @param request  (required)
+     * @return BatchOrderOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void clearMerchantOrderInfoList(ClearMerchantOrderInfoListRequest request) throws ApiException {
-        clearMerchantOrderInfoListWithHttpInfo(request);
+    public BatchOrderOperationResponse clearMerchantOrderInfoList(ClearMerchantOrderInfoListRequest request) throws ApiException {
+        ApiResponse<BatchOrderOperationResponse> resp = clearMerchantOrderInfoListWithHttpInfo(request);
+        return resp.getData();
     }
 
     /**
      * Batches the clear merchant order info operation.
      * The purpose of this  operation is to reduce the amount of request to the API.
      * @param request  (required)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;BatchOrderOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> clearMerchantOrderInfoListWithHttpInfo(ClearMerchantOrderInfoListRequest request) throws ApiException {
+    public ApiResponse<BatchOrderOperationResponse> clearMerchantOrderInfoListWithHttpInfo(ClearMerchantOrderInfoListRequest request) throws ApiException {
         com.squareup.okhttp.Call call = clearMerchantOrderInfoListValidateBeforeCall(request, null, null);
-        return apiClient.execute(call);
+        Type localVarReturnType = new TypeToken<BatchOrderOperationResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
     }
 
     /**
@@ -284,7 +292,7 @@ public class BatchesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call clearMerchantOrderInfoListAsync(ClearMerchantOrderInfoListRequest request, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call clearMerchantOrderInfoListAsync(ClearMerchantOrderInfoListRequest request, final ApiCallback<BatchOrderOperationResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -306,7 +314,8 @@ public class BatchesApi {
         }
 
         com.squareup.okhttp.Call call = clearMerchantOrderInfoListValidateBeforeCall(request, progressListener, progressRequestListener);
-        apiClient.executeAsync(call, callback);
+        Type localVarReturnType = new TypeToken<BatchOrderOperationResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /* Build call for setMerchantOrderInfoList */
@@ -372,22 +381,25 @@ public class BatchesApi {
      * Batches the set merchant order info operation.
      * The purpose of this  operation is to reduce the amount of request to the API.
      * @param request  (required)
+     * @return BatchOrderOperationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void setMerchantOrderInfoList(SetMerchantOrderInfoListRequest request) throws ApiException {
-        setMerchantOrderInfoListWithHttpInfo(request);
+    public BatchOrderOperationResponse setMerchantOrderInfoList(SetMerchantOrderInfoListRequest request) throws ApiException {
+        ApiResponse<BatchOrderOperationResponse> resp = setMerchantOrderInfoListWithHttpInfo(request);
+        return resp.getData();
     }
 
     /**
      * Batches the set merchant order info operation.
      * The purpose of this  operation is to reduce the amount of request to the API.
      * @param request  (required)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;BatchOrderOperationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> setMerchantOrderInfoListWithHttpInfo(SetMerchantOrderInfoListRequest request) throws ApiException {
+    public ApiResponse<BatchOrderOperationResponse> setMerchantOrderInfoListWithHttpInfo(SetMerchantOrderInfoListRequest request) throws ApiException {
         com.squareup.okhttp.Call call = setMerchantOrderInfoListValidateBeforeCall(request, null, null);
-        return apiClient.execute(call);
+        Type localVarReturnType = new TypeToken<BatchOrderOperationResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
     }
 
     /**
@@ -398,7 +410,7 @@ public class BatchesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call setMerchantOrderInfoListAsync(SetMerchantOrderInfoListRequest request, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call setMerchantOrderInfoListAsync(SetMerchantOrderInfoListRequest request, final ApiCallback<BatchOrderOperationResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -420,7 +432,8 @@ public class BatchesApi {
         }
 
         com.squareup.okhttp.Call call = setMerchantOrderInfoListValidateBeforeCall(request, progressListener, progressRequestListener);
-        apiClient.executeAsync(call, callback);
+        Type localVarReturnType = new TypeToken<BatchOrderOperationResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
 }

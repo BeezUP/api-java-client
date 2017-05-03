@@ -17,37 +17,37 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.BeezUPOrderId;
 import io.swagger.client.model.ChangeOrderRequest;
+import io.swagger.client.model.OrderIdentifierWithETag;
 
 /**
  * Contains the order identifier and the change order request
  */
 @ApiModel(description = "Contains the order identifier and the change order request")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T09:59:46.672Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T10:56:32.379Z")
 public class ChangeOrderListRequestItem {
-  @SerializedName("beezUPOrderId")
-  private BeezUPOrderId beezUPOrderId = null;
+  @SerializedName("order")
+  private OrderIdentifierWithETag order = null;
 
   @SerializedName("changeOrderRequest")
   private ChangeOrderRequest changeOrderRequest = null;
 
-  public ChangeOrderListRequestItem beezUPOrderId(BeezUPOrderId beezUPOrderId) {
-    this.beezUPOrderId = beezUPOrderId;
+  public ChangeOrderListRequestItem order(OrderIdentifierWithETag order) {
+    this.order = order;
     return this;
   }
 
    /**
-   * Get beezUPOrderId
-   * @return beezUPOrderId
+   * Get order
+   * @return order
   **/
   @ApiModelProperty(example = "null", required = true, value = "")
-  public BeezUPOrderId getBeezUPOrderId() {
-    return beezUPOrderId;
+  public OrderIdentifierWithETag getOrder() {
+    return order;
   }
 
-  public void setBeezUPOrderId(BeezUPOrderId beezUPOrderId) {
-    this.beezUPOrderId = beezUPOrderId;
+  public void setOrder(OrderIdentifierWithETag order) {
+    this.order = order;
   }
 
   public ChangeOrderListRequestItem changeOrderRequest(ChangeOrderRequest changeOrderRequest) {
@@ -78,13 +78,13 @@ public class ChangeOrderListRequestItem {
       return false;
     }
     ChangeOrderListRequestItem changeOrderListRequestItem = (ChangeOrderListRequestItem) o;
-    return Objects.equals(this.beezUPOrderId, changeOrderListRequestItem.beezUPOrderId) &&
+    return Objects.equals(this.order, changeOrderListRequestItem.order) &&
         Objects.equals(this.changeOrderRequest, changeOrderListRequestItem.changeOrderRequest);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(beezUPOrderId, changeOrderRequest);
+    return Objects.hash(order, changeOrderRequest);
   }
 
 
@@ -93,7 +93,7 @@ public class ChangeOrderListRequestItem {
     StringBuilder sb = new StringBuilder();
     sb.append("class ChangeOrderListRequestItem {\n");
     
-    sb.append("    beezUPOrderId: ").append(toIndentedString(beezUPOrderId)).append("\n");
+    sb.append("    order: ").append(toIndentedString(order)).append("\n");
     sb.append("    changeOrderRequest: ").append(toIndentedString(changeOrderRequest)).append("\n");
     sb.append("}");
     return sb.toString();

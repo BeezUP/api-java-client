@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**beezUPOrderId** | [**BeezUPOrderId**](BeezUPOrderId.md) |  | 
+**order** | [**OrderIdentifierWithETag**](OrderIdentifierWithETag.md) |  | 
 **changeOrderRequest** | [**ChangeOrderRequest**](ChangeOrderRequest.md) |  | 
 
 

@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **orderTotalPrice** | [**BigDecimal**](BigDecimal.md) | The total price of this order (corresponding to the amount paid by the customer) |  [optional]
 **orderCurrencyCode** | [**BeezUPCommonCurrencyCode**](BeezUPCommonCurrencyCode.md) |  |  [optional]
 **processing** | [**Processing**](Processing.md) |  | 
-**eTag** | **String** | ETag value to identify the order. For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | 
+**etag** | [**Etag**](Etag.md) |  | 
 **links** | [**List&lt;BeezUPCommonLink2&gt;**](BeezUPCommonLink2.md) |  | 
 
 

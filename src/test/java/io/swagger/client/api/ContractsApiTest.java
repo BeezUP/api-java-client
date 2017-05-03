@@ -16,9 +16,8 @@ package io.swagger.client.api;
 import io.swagger.client.ApiException;
 import io.swagger.client.model.BeezUPCommonErrorResponseMessage;
 import io.swagger.client.model.BeezUPCommonInfoSummaries;
-import io.swagger.client.model.BeezUPCommonLink2;
 import io.swagger.client.model.BillingPeriods;
-import io.swagger.client.model.ContractInfo;
+import io.swagger.client.model.Contracts;
 import io.swagger.client.model.CreateContract;
 import io.swagger.client.model.Offer;
 import io.swagger.client.model.OfferRequest;
@@ -88,7 +87,7 @@ public class ContractsApiTest {
     }
     
     /**
-     * Get contracts links
+     * Get contract list
      *
      * 
      *
@@ -96,38 +95,8 @@ public class ContractsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getContractsLinksTest() throws ApiException {
-        List<BeezUPCommonLink2> response = api.getContractsLinks();
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Get the conditions of your current contract
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getCurrentContractTest() throws ApiException {
-        ContractInfo response = api.getCurrentContract();
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Get the conditions of your next contract
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getNextContractTest() throws ApiException {
-        ContractInfo response = api.getNextContract();
+    public void getContractsTest() throws ApiException {
+        Contracts response = api.getContracts();
 
         // TODO: test validations
     }

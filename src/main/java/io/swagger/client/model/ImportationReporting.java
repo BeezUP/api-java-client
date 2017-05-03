@@ -29,7 +29,7 @@ import org.joda.time.DateTime;
  * The catalog importation reporting
  */
 @ApiModel(description = "The catalog importation reporting")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T09:59:46.672Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T10:56:32.379Z")
 public class ImportationReporting {
   @SerializedName("stepName")
   private String stepName = null;

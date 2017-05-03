@@ -23,6 +23,7 @@ import io.swagger.client.model.BeezUPCommonHttpUrl;
 import io.swagger.client.model.BeezUPCommonLink2;
 import io.swagger.client.model.BeezUPOrderId;
 import io.swagger.client.model.BeezUPOrderStatus;
+import io.swagger.client.model.Etag;
 import io.swagger.client.model.MarketplaceBusinessCode;
 import io.swagger.client.model.MarketplaceOrderId;
 import io.swagger.client.model.MarketplaceOrderStatus;
@@ -41,7 +42,7 @@ import org.joda.time.DateTime;
  * Describe the basic information related to an order. All properties with the prefix order_ are translated in the list of values /user/lov/OrderMetaInfoOrderDetails
  */
 @ApiModel(description = "Describe the basic information related to an order. All properties with the prefix order_ are translated in the list of values /user/lov/OrderMetaInfoOrderDetails")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T09:59:46.672Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T10:56:32.379Z")
 public class OrderHeader {
   @SerializedName("marketplaceTechnicalCode")
   private MarketplaceTechnicalCode marketplaceTechnicalCode = null;
@@ -97,8 +98,8 @@ public class OrderHeader {
   @SerializedName("processing")
   private Processing processing = null;
 
-  @SerializedName("eTag")
-  private String eTag = null;
+  @SerializedName("etag")
+  private Etag etag = null;
 
   @SerializedName("links")
   private List<BeezUPCommonLink2> links = new ArrayList<BeezUPCommonLink2>();
@@ -427,22 +428,22 @@ public class OrderHeader {
     this.processing = processing;
   }
 
-  public OrderHeader eTag(String eTag) {
-    this.eTag = eTag;
+  public OrderHeader etag(Etag etag) {
+    this.etag = etag;
     return this;
   }
 
    /**
-   * ETag value to identify the order. For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
-   * @return eTag
+   * Get etag
+   * @return etag
   **/
-  @ApiModelProperty(example = "&quot;ca071a4580129f932a03971968ffef69&quot;", required = true, value = "ETag value to identify the order. For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 ")
-  public String getETag() {
-    return eTag;
+  @ApiModelProperty(example = "null", required = true, value = "")
+  public Etag getEtag() {
+    return etag;
   }
 
-  public void setETag(String eTag) {
-    this.eTag = eTag;
+  public void setEtag(Etag etag) {
+    this.etag = etag;
   }
 
   public OrderHeader links(List<BeezUPCommonLink2> links) {
@@ -496,13 +497,13 @@ public class OrderHeader {
         Objects.equals(this.orderTotalPrice, orderHeader.orderTotalPrice) &&
         Objects.equals(this.orderCurrencyCode, orderHeader.orderCurrencyCode) &&
         Objects.equals(this.processing, orderHeader.processing) &&
-        Objects.equals(this.eTag, orderHeader.eTag) &&
+        Objects.equals(this.etag, orderHeader.etag) &&
         Objects.equals(this.links, orderHeader.links);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(marketplaceTechnicalCode, accountId, beezUPOrderId, beezUPOrderUrl, marketplaceBusinessCode, orderMarketplaceOrderId, orderStatusBeezUPOrderStatus, orderStatusMarketplaceOrderStatus, orderMerchantOrderId, orderMerchantECommerceSoftwareName, orderMerchantECommerceSoftwareVersion, orderPurchaseUtcDate, orderLastModificationUtcDate, orderMarketplaceLastModificationUtcDate, orderBuyerName, orderTotalPrice, orderCurrencyCode, processing, eTag, links);
+    return Objects.hash(marketplaceTechnicalCode, accountId, beezUPOrderId, beezUPOrderUrl, marketplaceBusinessCode, orderMarketplaceOrderId, orderStatusBeezUPOrderStatus, orderStatusMarketplaceOrderStatus, orderMerchantOrderId, orderMerchantECommerceSoftwareName, orderMerchantECommerceSoftwareVersion, orderPurchaseUtcDate, orderLastModificationUtcDate, orderMarketplaceLastModificationUtcDate, orderBuyerName, orderTotalPrice, orderCurrencyCode, processing, etag, links);
   }
 
 
@@ -529,7 +530,7 @@ public class OrderHeader {
     sb.append("    orderTotalPrice: ").append(toIndentedString(orderTotalPrice)).append("\n");
     sb.append("    orderCurrencyCode: ").append(toIndentedString(orderCurrencyCode)).append("\n");
     sb.append("    processing: ").append(toIndentedString(processing)).append("\n");
-    sb.append("    eTag: ").append(toIndentedString(eTag)).append("\n");
+    sb.append("    etag: ").append(toIndentedString(etag)).append("\n");
     sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -7,9 +7,7 @@ Method | HTTP request | Description
 [**createContract**](ContractsApi.md#createContract) | **POST** /v2/user/customer/contracts | Create a new contract
 [**deleteNextContract**](ContractsApi.md#deleteNextContract) | **DELETE** /v2/user/customer/contracts/next | Delete your next contract
 [**getBillingPeriods**](ContractsApi.md#getBillingPeriods) | **GET** /v2/user/customer/billingPeriods | Get billing periods conditions
-[**getContractsLinks**](ContractsApi.md#getContractsLinks) | **GET** /v2/user/customer/contracts | Get contracts links
-[**getCurrentContract**](ContractsApi.md#getCurrentContract) | **GET** /v2/user/customer/contracts/current | Get the conditions of your current contract
-[**getNextContract**](ContractsApi.md#getNextContract) | **GET** /v2/user/customer/contracts/next | Get the conditions of your next contract
+[**getContracts**](ContractsApi.md#getContracts) | **GET** /v2/user/customer/contracts | Get contract list
 [**getOffer**](ContractsApi.md#getOffer) | **POST** /v2/user/customer/offers | Get offer pricing
 [**getStandardOffers**](ContractsApi.md#getStandardOffers) | **GET** /v2/user/customer/offers | Get all standard offers
 [**reactivateCurrentContract**](ContractsApi.md#reactivateCurrentContract) | **POST** /v2/user/customer/contracts/current/reenableAutoRenewal | Reactivate your terminated contract.
@@ -168,60 +166,11 @@ This endpoint does not need any parameter.
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="getContractsLinks"></a>
-# **getContractsLinks**
-> List&lt;BeezUPCommonLink2&gt; getContractsLinks()
+<a name="getContracts"></a>
+# **getContracts**
+> Contracts getContracts()
 
-Get contracts links
-
-### Example
-```java
-// Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.ContractsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure API key authorization: api_key
-ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-api_key.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.setApiKeyPrefix("Token");
-
-ContractsApi apiInstance = new ContractsApi();
-try {
-    List<BeezUPCommonLink2> result = apiInstance.getContractsLinks();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ContractsApi#getContractsLinks");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**List&lt;BeezUPCommonLink2&gt;**](BeezUPCommonLink2.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="getCurrentContract"></a>
-# **getCurrentContract**
-> ContractInfo getCurrentContract()
-
-Get the conditions of your current contract
+Get contract list
 
 ### Example
 ```java
@@ -242,10 +191,10 @@ api_key.setApiKey("YOUR API KEY");
 
 ContractsApi apiInstance = new ContractsApi();
 try {
-    ContractInfo result = apiInstance.getCurrentContract();
+    Contracts result = apiInstance.getContracts();
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling ContractsApi#getCurrentContract");
+    System.err.println("Exception when calling ContractsApi#getContracts");
     e.printStackTrace();
 }
 ```
@@ -255,56 +204,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ContractInfo**](ContractInfo.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="getNextContract"></a>
-# **getNextContract**
-> ContractInfo getNextContract()
-
-Get the conditions of your next contract
-
-### Example
-```java
-// Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.ContractsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure API key authorization: api_key
-ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-api_key.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.setApiKeyPrefix("Token");
-
-ContractsApi apiInstance = new ContractsApi();
-try {
-    ContractInfo result = apiInstance.getNextContract();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ContractsApi#getNextContract");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**ContractInfo**](ContractInfo.md)
+[**Contracts**](Contracts.md)
 
 ### Authorization
 

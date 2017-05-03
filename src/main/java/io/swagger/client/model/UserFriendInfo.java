@@ -24,7 +24,7 @@ import io.swagger.client.model.FriendProfilePictureUrl;
 /**
  * UserFriendInfo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T09:59:46.672Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T10:56:32.379Z")
 public class UserFriendInfo {
   @SerializedName("userId")
   private String userId = null;

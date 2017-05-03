@@ -14,6 +14,7 @@
 package io.swagger.client.api;
 
 import io.swagger.client.ApiException;
+import io.swagger.client.model.BatchOrderOperationResponse;
 import io.swagger.client.model.BeezUPCommonErrorResponseMessage;
 import io.swagger.client.model.ChangeOrderListRequest;
 import io.swagger.client.model.ClearMerchantOrderInfoListRequest;
@@ -49,7 +50,7 @@ public class BatchesApiTest {
         String userName = null;
         ChangeOrderListRequest request = null;
         Boolean testMode = null;
-        api.changeOrderList(changeOrderType, userName, request, testMode);
+        BatchOrderOperationResponse response = api.changeOrderList(changeOrderType, userName, request, testMode);
 
         // TODO: test validations
     }
@@ -65,7 +66,7 @@ public class BatchesApiTest {
     @Test
     public void clearMerchantOrderInfoListTest() throws ApiException {
         ClearMerchantOrderInfoListRequest request = null;
-        api.clearMerchantOrderInfoList(request);
+        BatchOrderOperationResponse response = api.clearMerchantOrderInfoList(request);
 
         // TODO: test validations
     }
@@ -81,7 +82,7 @@ public class BatchesApiTest {
     @Test
     public void setMerchantOrderInfoListTest() throws ApiException {
         SetMerchantOrderInfoListRequest request = null;
-        api.setMerchantOrderInfoList(request);
+        BatchOrderOperationResponse response = api.setMerchantOrderInfoList(request);
 
         // TODO: test validations
     }

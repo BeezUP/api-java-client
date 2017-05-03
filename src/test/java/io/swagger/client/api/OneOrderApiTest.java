@@ -16,7 +16,6 @@ package io.swagger.client.api;
 import io.swagger.client.ApiException;
 import io.swagger.client.model.BeezUPCommonErrorResponseMessage;
 import io.swagger.client.model.ChangeOrderRequest;
-import io.swagger.client.model.ChangeOrderResponse;
 import io.swagger.client.model.Order;
 import io.swagger.client.model.OrderHistory;
 import io.swagger.client.model.SetMerchantOrderInfoRequest;
@@ -53,8 +52,9 @@ public class OneOrderApiTest {
         String changeOrderType = null;
         String userName = null;
         ChangeOrderRequest request = null;
+        String ifMatch = null;
         Boolean testMode = null;
-        ChangeOrderResponse response = api.changeOrder(marketplaceTechnicalCode, accountId, beezUPOrderId, changeOrderType, userName, request, testMode);
+        api.changeOrder(marketplaceTechnicalCode, accountId, beezUPOrderId, changeOrderType, userName, request, ifMatch, testMode);
 
         // TODO: test validations
     }
@@ -90,7 +90,8 @@ public class OneOrderApiTest {
         String marketplaceTechnicalCode = null;
         Integer accountId = null;
         String beezUPOrderId = null;
-        Order response = api.getOrder(marketplaceTechnicalCode, accountId, beezUPOrderId);
+        String ifNoneMatch = null;
+        Order response = api.getOrder(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch);
 
         // TODO: test validations
     }

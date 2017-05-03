@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a name="changeOrder"></a>
 # **changeOrder**
-> ChangeOrderResponse changeOrder(marketplaceTechnicalCode, accountId, beezUPOrderId, changeOrderType, userName, request, testMode)
+> changeOrder(marketplaceTechnicalCode, accountId, beezUPOrderId, changeOrderType, userName, request, ifMatch, testMode)
 
 Change order status
 
@@ -42,10 +42,10 @@ String beezUPOrderId = "00000000000000000000000000000000000000000000000"; // Str
 String changeOrderType = "changeOrderType_example"; // String | The order change type
 String userName = "userName_example"; // String | Sometimes the user in the e-commerce application is not the same than the subscription key you indicate in your settings. We recommand you to indicate the login of the user in your appplication.
 ChangeOrderRequest request = new ChangeOrderRequest(); // ChangeOrderRequest | 
+String ifMatch = "ifMatch_example"; // String | To ensure that you are making a change on the lastest version of the order. ETag value to identify the order given in the order information. \\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
 Boolean testMode = false; // Boolean | If true, the operation will be be commited. But the validation will be taken in account.
 try {
-    ChangeOrderResponse result = apiInstance.changeOrder(marketplaceTechnicalCode, accountId, beezUPOrderId, changeOrderType, userName, request, testMode);
-    System.out.println(result);
+    apiInstance.changeOrder(marketplaceTechnicalCode, accountId, beezUPOrderId, changeOrderType, userName, request, ifMatch, testMode);
 } catch (ApiException e) {
     System.err.println("Exception when calling OneOrderApi#changeOrder");
     e.printStackTrace();
@@ -62,11 +62,12 @@ Name | Type | Description  | Notes
  **changeOrderType** | **String**| The order change type |
  **userName** | **String**| Sometimes the user in the e-commerce application is not the same than the subscription key you indicate in your settings. We recommand you to indicate the login of the user in your appplication. |
  **request** | [**ChangeOrderRequest**](ChangeOrderRequest.md)|  |
+ **ifMatch** | **String**| To ensure that you are making a change on the lastest version of the order. ETag value to identify the order given in the order information. \\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  |
  **testMode** | **Boolean**| If true, the operation will be be commited. But the validation will be taken in account. | [optional] [default to false]
 
 ### Return type
 
-[**ChangeOrderResponse**](ChangeOrderResponse.md)
+null (empty response body)
 
 ### Authorization
 
@@ -135,7 +136,7 @@ null (empty response body)
 
 <a name="getOrder"></a>
 # **getOrder**
-> Order getOrder(marketplaceTechnicalCode, accountId, beezUPOrderId)
+> Order getOrder(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch)
 
 Get order details
 
@@ -160,8 +161,9 @@ OneOrderApi apiInstance = new OneOrderApi();
 String marketplaceTechnicalCode = "Amazon"; // String | The marketplace technical code
 Integer accountId = 1001; // Integer | The account identifier
 String beezUPOrderId = "00000000000000000000000000000000000000000000000"; // String | The order BeezUP identifier
+String ifNoneMatch = "ifNoneMatch_example"; // String | ETag value to identify the order given in the order information. \\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
 try {
-    Order result = apiInstance.getOrder(marketplaceTechnicalCode, accountId, beezUPOrderId);
+    Order result = apiInstance.getOrder(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OneOrderApi#getOrder");
@@ -176,6 +178,7 @@ Name | Type | Description  | Notes
  **marketplaceTechnicalCode** | **String**| The marketplace technical code |
  **accountId** | **Integer**| The account identifier |
  **beezUPOrderId** | **String**| The order BeezUP identifier |
+ **ifNoneMatch** | **String**| ETag value to identify the order given in the order information. \\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | [optional]
 
 ### Return type
 

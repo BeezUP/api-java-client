@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * AccountSynchronizations
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T09:59:46.672Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T10:56:32.379Z")
 public class AccountSynchronizations {
   @SerializedName("accountSynchronizations")
   private List<AccountSynchronization> accountSynchronizations = new ArrayList<AccountSynchronization>();

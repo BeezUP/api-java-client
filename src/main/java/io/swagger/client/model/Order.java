@@ -23,6 +23,7 @@ import io.swagger.client.model.BeezUPCommonHttpUrl;
 import io.swagger.client.model.BeezUPCommonLink2;
 import io.swagger.client.model.BeezUPOrderId;
 import io.swagger.client.model.BeezUPOrderStatus;
+import io.swagger.client.model.Etag;
 import io.swagger.client.model.MarketplaceBusinessCode;
 import io.swagger.client.model.MarketplaceOrderId;
 import io.swagger.client.model.MarketplaceOrderStatus;
@@ -42,7 +43,7 @@ import org.joda.time.DateTime;
 /**
  * Order
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T09:59:46.672Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T10:56:32.379Z")
 public class Order {
   @SerializedName("marketplaceTechnicalCode")
   private MarketplaceTechnicalCode marketplaceTechnicalCode = null;
@@ -98,8 +99,8 @@ public class Order {
   @SerializedName("processing")
   private Processing processing = null;
 
-  @SerializedName("eTag")
-  private String eTag = null;
+  @SerializedName("etag")
+  private Etag etag = null;
 
   @SerializedName("links")
   private List<BeezUPCommonLink2> links = new ArrayList<BeezUPCommonLink2>();
@@ -557,22 +558,22 @@ public class Order {
     this.processing = processing;
   }
 
-  public Order eTag(String eTag) {
-    this.eTag = eTag;
+  public Order etag(Etag etag) {
+    this.etag = etag;
     return this;
   }
 
    /**
-   * ETag value to identify the order. For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
-   * @return eTag
+   * Get etag
+   * @return etag
   **/
-  @ApiModelProperty(example = "&quot;ca071a4580129f932a03971968ffef69&quot;", required = true, value = "ETag value to identify the order. For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 ")
-  public String getETag() {
-    return eTag;
+  @ApiModelProperty(example = "null", required = true, value = "")
+  public Etag getEtag() {
+    return etag;
   }
 
-  public void setETag(String eTag) {
-    this.eTag = eTag;
+  public void setEtag(Etag etag) {
+    this.etag = etag;
   }
 
   public Order links(List<BeezUPCommonLink2> links) {
@@ -1410,7 +1411,7 @@ public class Order {
         Objects.equals(this.orderTotalPrice, order.orderTotalPrice) &&
         Objects.equals(this.orderCurrencyCode, order.orderCurrencyCode) &&
         Objects.equals(this.processing, order.processing) &&
-        Objects.equals(this.eTag, order.eTag) &&
+        Objects.equals(this.etag, order.etag) &&
         Objects.equals(this.links, order.links) &&
         Objects.equals(this.orderMarketPlaceChannel, order.orderMarketPlaceChannel) &&
         Objects.equals(this.orderTotalTax, order.orderTotalTax) &&
@@ -1459,7 +1460,7 @@ public class Order {
 
   @Override
   public int hashCode() {
-    return Objects.hash(marketplaceTechnicalCode, accountId, beezUPOrderId, beezUPOrderUrl, marketplaceBusinessCode, orderMarketplaceOrderId, orderStatusBeezUPOrderStatus, orderStatusMarketplaceOrderStatus, orderMerchantOrderId, orderMerchantECommerceSoftwareName, orderMerchantECommerceSoftwareVersion, orderPurchaseUtcDate, orderLastModificationUtcDate, orderMarketplaceLastModificationUtcDate, orderBuyerName, orderTotalPrice, orderCurrencyCode, processing, eTag, links, orderMarketPlaceChannel, orderTotalTax, orderTotalCommission, orderPaymentMethod, orderPayingUtcDate, orderComment, orderShippingCivility, orderShippingCompanyName, orderShippingAddressName, orderShippingEmail, orderShippingAddressLine1, orderShippingAddressLine2, orderShippingAddressLine3, orderShippingAddressPostalCode, orderShippingAddressCity, orderShippingAddressStateOrRegion, orderShippingAddressCountryName, orderShippingAddressCountryIsoCodeAlpha2, orderShippingPhone, orderShippingMobilePhone, orderShippingPrice, orderShippingMethod, orderShippingShippingTax, orderShippingEarliestShipUtcDate, orderShippingLatestShipUtcDate, orderBuyerIdentifier, orderBuyerCivility, orderBuyerCompanyName, orderBuyerEmail, orderBuyerAddressLine1, orderBuyerAddressLine2, orderBuyerAddressLine3, orderBuyerAddressPostalCode, orderBuyerAddressCity, orderBuyerAddressStateOrRegion, orderBuyerAddressCountryName, orderBuyerAddressCountryIsoCodeAlpha2, orderBuyerPhone, orderBuyerMobilePhone, orderOrderSourceUri, orderOrderItemsSourceUri, orderItems, transitionLinks);
+    return Objects.hash(marketplaceTechnicalCode, accountId, beezUPOrderId, beezUPOrderUrl, marketplaceBusinessCode, orderMarketplaceOrderId, orderStatusBeezUPOrderStatus, orderStatusMarketplaceOrderStatus, orderMerchantOrderId, orderMerchantECommerceSoftwareName, orderMerchantECommerceSoftwareVersion, orderPurchaseUtcDate, orderLastModificationUtcDate, orderMarketplaceLastModificationUtcDate, orderBuyerName, orderTotalPrice, orderCurrencyCode, processing, etag, links, orderMarketPlaceChannel, orderTotalTax, orderTotalCommission, orderPaymentMethod, orderPayingUtcDate, orderComment, orderShippingCivility, orderShippingCompanyName, orderShippingAddressName, orderShippingEmail, orderShippingAddressLine1, orderShippingAddressLine2, orderShippingAddressLine3, orderShippingAddressPostalCode, orderShippingAddressCity, orderShippingAddressStateOrRegion, orderShippingAddressCountryName, orderShippingAddressCountryIsoCodeAlpha2, orderShippingPhone, orderShippingMobilePhone, orderShippingPrice, orderShippingMethod, orderShippingShippingTax, orderShippingEarliestShipUtcDate, orderShippingLatestShipUtcDate, orderBuyerIdentifier, orderBuyerCivility, orderBuyerCompanyName, orderBuyerEmail, orderBuyerAddressLine1, orderBuyerAddressLine2, orderBuyerAddressLine3, orderBuyerAddressPostalCode, orderBuyerAddressCity, orderBuyerAddressStateOrRegion, orderBuyerAddressCountryName, orderBuyerAddressCountryIsoCodeAlpha2, orderBuyerPhone, orderBuyerMobilePhone, orderOrderSourceUri, orderOrderItemsSourceUri, orderItems, transitionLinks);
   }
 
 
@@ -1486,7 +1487,7 @@ public class Order {
     sb.append("    orderTotalPrice: ").append(toIndentedString(orderTotalPrice)).append("\n");
     sb.append("    orderCurrencyCode: ").append(toIndentedString(orderCurrencyCode)).append("\n");
     sb.append("    processing: ").append(toIndentedString(processing)).append("\n");
-    sb.append("    eTag: ").append(toIndentedString(eTag)).append("\n");
+    sb.append("    etag: ").append(toIndentedString(etag)).append("\n");
     sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("    orderMarketPlaceChannel: ").append(toIndentedString(orderMarketPlaceChannel)).append("\n");
     sb.append("    orderTotalTax: ").append(toIndentedString(orderTotalTax)).append("\n");

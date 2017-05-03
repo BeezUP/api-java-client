@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="changeOrderList"></a>
 # **changeOrderList**
-> changeOrderList(changeOrderType, userName, request, testMode)
+> BatchOrderOperationResponse changeOrderList(changeOrderType, userName, request, testMode)
 
 Batches the change order operation.
 
@@ -40,7 +40,8 @@ String userName = "userName_example"; // String | Sometimes the user in the e-co
 ChangeOrderListRequest request = new ChangeOrderListRequest(); // ChangeOrderListRequest | 
 Boolean testMode = false; // Boolean | If true, the operation will be be commited. But the validation will be taken in account.
 try {
-    apiInstance.changeOrderList(changeOrderType, userName, request, testMode);
+    BatchOrderOperationResponse result = apiInstance.changeOrderList(changeOrderType, userName, request, testMode);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BatchesApi#changeOrderList");
     e.printStackTrace();
@@ -58,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**BatchOrderOperationResponse**](BatchOrderOperationResponse.md)
 
 ### Authorization
 
@@ -71,7 +72,7 @@ null (empty response body)
 
 <a name="clearMerchantOrderInfoList"></a>
 # **clearMerchantOrderInfoList**
-> clearMerchantOrderInfoList(request)
+> BatchOrderOperationResponse clearMerchantOrderInfoList(request)
 
 Batches the clear merchant order info operation.
 
@@ -97,7 +98,8 @@ api_key.setApiKey("YOUR API KEY");
 BatchesApi apiInstance = new BatchesApi();
 ClearMerchantOrderInfoListRequest request = new ClearMerchantOrderInfoListRequest(); // ClearMerchantOrderInfoListRequest | 
 try {
-    apiInstance.clearMerchantOrderInfoList(request);
+    BatchOrderOperationResponse result = apiInstance.clearMerchantOrderInfoList(request);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BatchesApi#clearMerchantOrderInfoList");
     e.printStackTrace();
@@ -112,7 +114,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**BatchOrderOperationResponse**](BatchOrderOperationResponse.md)
 
 ### Authorization
 
@@ -125,7 +127,7 @@ null (empty response body)
 
 <a name="setMerchantOrderInfoList"></a>
 # **setMerchantOrderInfoList**
-> setMerchantOrderInfoList(request)
+> BatchOrderOperationResponse setMerchantOrderInfoList(request)
 
 Batches the set merchant order info operation.
 
@@ -151,7 +153,8 @@ api_key.setApiKey("YOUR API KEY");
 BatchesApi apiInstance = new BatchesApi();
 SetMerchantOrderInfoListRequest request = new SetMerchantOrderInfoListRequest(); // SetMerchantOrderInfoListRequest | 
 try {
-    apiInstance.setMerchantOrderInfoList(request);
+    BatchOrderOperationResponse result = apiInstance.setMerchantOrderInfoList(request);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BatchesApi#setMerchantOrderInfoList");
     e.printStackTrace();
@@ -166,7 +169,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**BatchOrderOperationResponse**](BatchOrderOperationResponse.md)
 
 ### Authorization
 

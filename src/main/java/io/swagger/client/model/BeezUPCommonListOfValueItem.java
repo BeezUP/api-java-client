@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiModelProperty;
  * This object is used by LOV apis
  */
 @ApiModel(description = "This object is used by LOV apis")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T09:59:46.672Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T10:56:32.379Z")
 public class BeezUPCommonListOfValueItem {
   @SerializedName("position")
   private Integer position = null;

@@ -24,7 +24,7 @@ import io.swagger.client.model.ColumnCustomConfiguration;
  * Indicates the configuration applied on the column (catalog or custom) during the importation process. You have to define the BeezUP Column Name property OR the custom configuration property.
  */
 @ApiModel(description = "Indicates the configuration applied on the column (catalog or custom) during the importation process. You have to define the BeezUP Column Name property OR the custom configuration property.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T09:59:46.672Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T10:56:32.379Z")
 public class ColumnConfiguration {
   @SerializedName("beezUPColumnName")
   private BeezUPCommonBeezUPColumnName beezUPColumnName = null;

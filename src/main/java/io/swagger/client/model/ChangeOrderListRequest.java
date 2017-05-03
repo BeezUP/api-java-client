@@ -25,7 +25,7 @@ import java.util.List;
  * Contains all change order operations you want to make
  */
 @ApiModel(description = "Contains all change order operations you want to make")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T09:59:46.672Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T10:56:32.379Z")
 public class ChangeOrderListRequest {
   @SerializedName("changeOrders")
   private List<ChangeOrderListRequestItem> changeOrders = new ArrayList<ChangeOrderListRequestItem>();
@@ -44,7 +44,7 @@ public class ChangeOrderListRequest {
    * The change order operations
    * @return changeOrders
   **/
-  @ApiModelProperty(example = "[{&quot;beezUPOrderId&quot;:&quot;00000000000000000000000000000000000000000000000&quot;,&quot;changeOrderRequest&quot;:{&quot;order_Shipping_ShipperTrackingNumber&quot;:&quot;1H01845163783&quot;,&quot;order_Shipping_ShippingUrl&quot;:&quot;https://trackingpackage.com?number&#x3D;1H01845163783&quot;,&quot;order_Shipping_CarrierName&quot;:&quot;La poste&quot;,&quot;order_Shipping_FulfillmentDate&quot;:&quot;2014-09-23T09:58:00Z&quot;,&quot;order_Shipping_EstimatedDeliveryDate&quot;:&quot;2014-09-24T09:58:00Z&quot;}}]", required = true, value = "The change order operations")
+  @ApiModelProperty(example = "null", required = true, value = "The change order operations")
   public List<ChangeOrderListRequestItem> getChangeOrders() {
     return changeOrders;
   }

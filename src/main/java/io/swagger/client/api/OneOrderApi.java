@@ -29,7 +29,6 @@ import java.io.IOException;
 
 import io.swagger.client.model.BeezUPCommonErrorResponseMessage;
 import io.swagger.client.model.ChangeOrderRequest;
-import io.swagger.client.model.ChangeOrderResponse;
 import io.swagger.client.model.Order;
 import io.swagger.client.model.OrderHistory;
 import io.swagger.client.model.SetMerchantOrderInfoRequest;
@@ -60,7 +59,7 @@ public class OneOrderApi {
     }
 
     /* Build call for changeOrder */
-    private com.squareup.okhttp.Call changeOrderCall(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, String changeOrderType, String userName, ChangeOrderRequest request, Boolean testMode, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call changeOrderCall(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, String changeOrderType, String userName, ChangeOrderRequest request, String ifMatch, Boolean testMode, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = request;
         
         // create path and map variables
@@ -77,6 +76,8 @@ public class OneOrderApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "testMode", testMode));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (ifMatch != null)
+        localVarHeaderParams.put("If-Match", apiClient.parameterToString(ifMatch));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -109,7 +110,7 @@ public class OneOrderApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call changeOrderValidateBeforeCall(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, String changeOrderType, String userName, ChangeOrderRequest request, Boolean testMode, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call changeOrderValidateBeforeCall(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, String changeOrderType, String userName, ChangeOrderRequest request, String ifMatch, Boolean testMode, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'marketplaceTechnicalCode' is set
         if (marketplaceTechnicalCode == null) {
@@ -141,8 +142,13 @@ public class OneOrderApi {
             throw new ApiException("Missing the required parameter 'request' when calling changeOrder(Async)");
         }
         
+        // verify the required parameter 'ifMatch' is set
+        if (ifMatch == null) {
+            throw new ApiException("Missing the required parameter 'ifMatch' when calling changeOrder(Async)");
+        }
         
-        com.squareup.okhttp.Call call = changeOrderCall(marketplaceTechnicalCode, accountId, beezUPOrderId, changeOrderType, userName, request, testMode, progressListener, progressRequestListener);
+        
+        com.squareup.okhttp.Call call = changeOrderCall(marketplaceTechnicalCode, accountId, beezUPOrderId, changeOrderType, userName, request, ifMatch, testMode, progressListener, progressRequestListener);
         return call;
 
         
@@ -160,13 +166,12 @@ public class OneOrderApi {
      * @param changeOrderType The order change type (required)
      * @param userName Sometimes the user in the e-commerce application is not the same than the subscription key you indicate in your settings. We recommand you to indicate the login of the user in your appplication. (required)
      * @param request  (required)
+     * @param ifMatch To ensure that you are making a change on the lastest version of the order. ETag value to identify the order given in the order information. \\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (required)
      * @param testMode If true, the operation will be be commited. But the validation will be taken in account. (optional, default to false)
-     * @return ChangeOrderResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ChangeOrderResponse changeOrder(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, String changeOrderType, String userName, ChangeOrderRequest request, Boolean testMode) throws ApiException {
-        ApiResponse<ChangeOrderResponse> resp = changeOrderWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId, changeOrderType, userName, request, testMode);
-        return resp.getData();
+    public void changeOrder(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, String changeOrderType, String userName, ChangeOrderRequest request, String ifMatch, Boolean testMode) throws ApiException {
+        changeOrderWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId, changeOrderType, userName, request, ifMatch, testMode);
     }
 
     /**
@@ -178,14 +183,14 @@ public class OneOrderApi {
      * @param changeOrderType The order change type (required)
      * @param userName Sometimes the user in the e-commerce application is not the same than the subscription key you indicate in your settings. We recommand you to indicate the login of the user in your appplication. (required)
      * @param request  (required)
+     * @param ifMatch To ensure that you are making a change on the lastest version of the order. ETag value to identify the order given in the order information. \\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (required)
      * @param testMode If true, the operation will be be commited. But the validation will be taken in account. (optional, default to false)
-     * @return ApiResponse&lt;ChangeOrderResponse&gt;
+     * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ChangeOrderResponse> changeOrderWithHttpInfo(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, String changeOrderType, String userName, ChangeOrderRequest request, Boolean testMode) throws ApiException {
-        com.squareup.okhttp.Call call = changeOrderValidateBeforeCall(marketplaceTechnicalCode, accountId, beezUPOrderId, changeOrderType, userName, request, testMode, null, null);
-        Type localVarReturnType = new TypeToken<ChangeOrderResponse>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
+    public ApiResponse<Void> changeOrderWithHttpInfo(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, String changeOrderType, String userName, ChangeOrderRequest request, String ifMatch, Boolean testMode) throws ApiException {
+        com.squareup.okhttp.Call call = changeOrderValidateBeforeCall(marketplaceTechnicalCode, accountId, beezUPOrderId, changeOrderType, userName, request, ifMatch, testMode, null, null);
+        return apiClient.execute(call);
     }
 
     /**
@@ -197,12 +202,13 @@ public class OneOrderApi {
      * @param changeOrderType The order change type (required)
      * @param userName Sometimes the user in the e-commerce application is not the same than the subscription key you indicate in your settings. We recommand you to indicate the login of the user in your appplication. (required)
      * @param request  (required)
+     * @param ifMatch To ensure that you are making a change on the lastest version of the order. ETag value to identify the order given in the order information. \\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (required)
      * @param testMode If true, the operation will be be commited. But the validation will be taken in account. (optional, default to false)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call changeOrderAsync(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, String changeOrderType, String userName, ChangeOrderRequest request, Boolean testMode, final ApiCallback<ChangeOrderResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call changeOrderAsync(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, String changeOrderType, String userName, ChangeOrderRequest request, String ifMatch, Boolean testMode, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -223,9 +229,8 @@ public class OneOrderApi {
             };
         }
 
-        com.squareup.okhttp.Call call = changeOrderValidateBeforeCall(marketplaceTechnicalCode, accountId, beezUPOrderId, changeOrderType, userName, request, testMode, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ChangeOrderResponse>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
+        com.squareup.okhttp.Call call = changeOrderValidateBeforeCall(marketplaceTechnicalCode, accountId, beezUPOrderId, changeOrderType, userName, request, ifMatch, testMode, progressListener, progressRequestListener);
+        apiClient.executeAsync(call, callback);
         return call;
     }
     /* Build call for clearMerchantOrderInfo */
@@ -362,7 +367,7 @@ public class OneOrderApi {
         return call;
     }
     /* Build call for getOrder */
-    private com.squareup.okhttp.Call getOrderCall(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getOrderCall(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, String ifNoneMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -374,6 +379,8 @@ public class OneOrderApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (ifNoneMatch != null)
+        localVarHeaderParams.put("If-None-Match", apiClient.parameterToString(ifNoneMatch));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -406,7 +413,7 @@ public class OneOrderApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getOrderValidateBeforeCall(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getOrderValidateBeforeCall(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, String ifNoneMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'marketplaceTechnicalCode' is set
         if (marketplaceTechnicalCode == null) {
@@ -424,7 +431,7 @@ public class OneOrderApi {
         }
         
         
-        com.squareup.okhttp.Call call = getOrderCall(marketplaceTechnicalCode, accountId, beezUPOrderId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getOrderCall(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch, progressListener, progressRequestListener);
         return call;
 
         
@@ -439,11 +446,12 @@ public class OneOrderApi {
      * @param marketplaceTechnicalCode The marketplace technical code (required)
      * @param accountId The account identifier (required)
      * @param beezUPOrderId The order BeezUP identifier (required)
+     * @param ifNoneMatch ETag value to identify the order given in the order information. \\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
      * @return Order
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Order getOrder(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId) throws ApiException {
-        ApiResponse<Order> resp = getOrderWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId);
+    public Order getOrder(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, String ifNoneMatch) throws ApiException {
+        ApiResponse<Order> resp = getOrderWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch);
         return resp.getData();
     }
 
@@ -453,11 +461,12 @@ public class OneOrderApi {
      * @param marketplaceTechnicalCode The marketplace technical code (required)
      * @param accountId The account identifier (required)
      * @param beezUPOrderId The order BeezUP identifier (required)
+     * @param ifNoneMatch ETag value to identify the order given in the order information. \\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
      * @return ApiResponse&lt;Order&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Order> getOrderWithHttpInfo(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId) throws ApiException {
-        com.squareup.okhttp.Call call = getOrderValidateBeforeCall(marketplaceTechnicalCode, accountId, beezUPOrderId, null, null);
+    public ApiResponse<Order> getOrderWithHttpInfo(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, String ifNoneMatch) throws ApiException {
+        com.squareup.okhttp.Call call = getOrderValidateBeforeCall(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch, null, null);
         Type localVarReturnType = new TypeToken<Order>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -468,11 +477,12 @@ public class OneOrderApi {
      * @param marketplaceTechnicalCode The marketplace technical code (required)
      * @param accountId The account identifier (required)
      * @param beezUPOrderId The order BeezUP identifier (required)
+     * @param ifNoneMatch ETag value to identify the order given in the order information. \\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getOrderAsync(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, final ApiCallback<Order> callback) throws ApiException {
+    public com.squareup.okhttp.Call getOrderAsync(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, String ifNoneMatch, final ApiCallback<Order> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -493,7 +503,7 @@ public class OneOrderApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getOrderValidateBeforeCall(marketplaceTechnicalCode, accountId, beezUPOrderId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getOrderValidateBeforeCall(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Order>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
