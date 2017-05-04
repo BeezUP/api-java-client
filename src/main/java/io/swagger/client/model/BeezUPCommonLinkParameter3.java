@@ -22,7 +22,7 @@ import io.swagger.client.model.BeezUPCommonLOVLink2;
 /**
  * BeezUPCommonLinkParameter3
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:01:44.220Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:13:58.502Z")
 public class BeezUPCommonLinkParameter3 {
   @SerializedName("value")
   private Object value = null;
@@ -251,7 +251,7 @@ public class BeezUPCommonLinkParameter3 {
    * schema of the parameter
    * @return schema
   **/
-  @ApiModelProperty(example = "null", value = "schema of the parameter")
+  @ApiModelProperty(example = "orderListRequest", value = "schema of the parameter")
   public String getSchema() {
     return schema;
   }

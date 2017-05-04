@@ -30,7 +30,7 @@ import org.joda.time.DateTime;
  * Describe the reporting of the catalog importation
  */
 @ApiModel(description = "Describe the reporting of the catalog importation")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:01:44.220Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:13:58.502Z")
 public class ImportationMonitoring {
   @SerializedName("userId")
   private BeezUPCommonUserId userId = null;

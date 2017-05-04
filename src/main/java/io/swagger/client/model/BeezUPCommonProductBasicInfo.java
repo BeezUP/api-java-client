@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiModelProperty;
  * The basic information related to a product
  */
 @ApiModel(description = "The basic information related to a product")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:01:44.220Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:13:58.502Z")
 public class BeezUPCommonProductBasicInfo {
   @SerializedName("productId")
   private String productId = null;

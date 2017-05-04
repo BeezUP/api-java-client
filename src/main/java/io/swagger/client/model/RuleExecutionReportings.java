@@ -25,7 +25,7 @@ import java.util.List;
 /**
  * RuleExecutionReportings
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:01:44.220Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:13:58.502Z")
 public class RuleExecutionReportings {
   @SerializedName("executions")
   private List<RuleExecutionReporting> executions = new ArrayList<RuleExecutionReporting>();

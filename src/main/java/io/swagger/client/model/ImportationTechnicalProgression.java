@@ -24,7 +24,7 @@ import java.util.Map;
 /**
  * ImportationTechnicalProgression
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:01:44.220Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:13:58.502Z")
 public class ImportationTechnicalProgression {
   @SerializedName("stepsProgression")
   private Map<String, List<String>> stepsProgression = new HashMap<String, List<String>>();

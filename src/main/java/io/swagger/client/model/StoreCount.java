@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * The store count you want to have in your contract.
  */
 @ApiModel(description = "The store count you want to have in your contract.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:01:44.220Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:13:58.502Z")
 public class StoreCount {
 
   @Override
