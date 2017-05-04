@@ -28,8 +28,8 @@ import java.io.IOException;
 
 
 import io.swagger.client.model.ApiCredentials;
+import io.swagger.client.model.BeezUPCommonEmail;
 import io.swagger.client.model.BeezUPCommonErrorResponseMessage;
-import io.swagger.client.model.Email;
 import io.swagger.client.model.LoginRequest;
 import io.swagger.client.model.RegisterRequest;
 
@@ -102,6 +102,11 @@ public class SecurityApi {
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call loginValidateBeforeCall(LoginRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
+        // verify the required parameter 'request' is set
+        if (request == null) {
+            throw new ApiException("Missing the required parameter 'request' when calling login(Async)");
+        }
+        
         
         com.squareup.okhttp.Call call = loginCall(request, progressListener, progressRequestListener);
         return call;
@@ -115,7 +120,7 @@ public class SecurityApi {
     /**
      * Login
      * User Login - The login will give your tokens
-     * @param request  (optional)
+     * @param request  (required)
      * @return ApiCredentials
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -127,7 +132,7 @@ public class SecurityApi {
     /**
      * Login
      * User Login - The login will give your tokens
-     * @param request  (optional)
+     * @param request  (required)
      * @return ApiResponse&lt;ApiCredentials&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -140,7 +145,7 @@ public class SecurityApi {
     /**
      * Login (asynchronously)
      * User Login - The login will give your tokens
-     * @param request  (optional)
+     * @param request  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -172,7 +177,7 @@ public class SecurityApi {
         return call;
     }
     /* Build call for lostPassword */
-    private com.squareup.okhttp.Call lostPasswordCall(Email email, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call lostPasswordCall(BeezUPCommonEmail email, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = email;
         
         // create path and map variables
@@ -213,7 +218,12 @@ public class SecurityApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call lostPasswordValidateBeforeCall(Email email, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call lostPasswordValidateBeforeCall(BeezUPCommonEmail email, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'email' is set
+        if (email == null) {
+            throw new ApiException("Missing the required parameter 'email' when calling lostPassword(Async)");
+        }
         
         
         com.squareup.okhttp.Call call = lostPasswordCall(email, progressListener, progressRequestListener);
@@ -228,21 +238,21 @@ public class SecurityApi {
     /**
      * Lost password
      * Lost password - Your password will be regenerated and sent to your email
-     * @param email Your email (optional)
+     * @param email Your email (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void lostPassword(Email email) throws ApiException {
+    public void lostPassword(BeezUPCommonEmail email) throws ApiException {
         lostPasswordWithHttpInfo(email);
     }
 
     /**
      * Lost password
      * Lost password - Your password will be regenerated and sent to your email
-     * @param email Your email (optional)
+     * @param email Your email (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> lostPasswordWithHttpInfo(Email email) throws ApiException {
+    public ApiResponse<Void> lostPasswordWithHttpInfo(BeezUPCommonEmail email) throws ApiException {
         com.squareup.okhttp.Call call = lostPasswordValidateBeforeCall(email, null, null);
         return apiClient.execute(call);
     }
@@ -250,12 +260,12 @@ public class SecurityApi {
     /**
      * Lost password (asynchronously)
      * Lost password - Your password will be regenerated and sent to your email
-     * @param email Your email (optional)
+     * @param email Your email (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call lostPasswordAsync(Email email, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call lostPasswordAsync(BeezUPCommonEmail email, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -324,6 +334,11 @@ public class SecurityApi {
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call registerValidateBeforeCall(RegisterRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
+        // verify the required parameter 'request' is set
+        if (request == null) {
+            throw new ApiException("Missing the required parameter 'request' when calling register(Async)");
+        }
+        
         
         com.squareup.okhttp.Call call = registerCall(request, progressListener, progressRequestListener);
         return call;
@@ -337,7 +352,7 @@ public class SecurityApi {
     /**
      * User Registration
      * User Registration - Create a new user on BeezUP
-     * @param request  (optional)
+     * @param request  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void register(RegisterRequest request) throws ApiException {
@@ -347,7 +362,7 @@ public class SecurityApi {
     /**
      * User Registration
      * User Registration - Create a new user on BeezUP
-     * @param request  (optional)
+     * @param request  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -359,7 +374,7 @@ public class SecurityApi {
     /**
      * User Registration (asynchronously)
      * User Registration - Create a new user on BeezUP
-     * @param request  (optional)
+     * @param request  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

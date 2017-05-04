@@ -15,8 +15,8 @@ package io.swagger.client.api;
 
 import io.swagger.client.ApiException;
 import io.swagger.client.model.ApiCredentials;
+import io.swagger.client.model.BeezUPCommonEmail;
 import io.swagger.client.model.BeezUPCommonErrorResponseMessage;
-import io.swagger.client.model.Email;
 import io.swagger.client.model.LoginRequest;
 import io.swagger.client.model.RegisterRequest;
 import org.junit.Test;
@@ -62,7 +62,7 @@ public class SecurityApiTest {
      */
     @Test
     public void lostPasswordTest() throws ApiException {
-        Email email = null;
+        BeezUPCommonEmail email = null;
         api.lostPassword(email);
 
         // TODO: test validations

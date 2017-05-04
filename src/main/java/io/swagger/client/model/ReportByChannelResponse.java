@@ -18,16 +18,16 @@ import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.BeezUPCommonCurrencyCode;
-import io.swagger.client.model.BeezUPCommonLink2;
 import io.swagger.client.model.BeezUPCommonPaginationResult;
 import io.swagger.client.model.ReportByChannel;
+import io.swagger.client.model.ReportByChannelResponseLinks;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * ReportByChannelResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:13:58.502Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:46:40.225Z")
 public class ReportByChannelResponse {
   @SerializedName("paginationResult")
   private BeezUPCommonPaginationResult paginationResult = null;
@@ -39,7 +39,7 @@ public class ReportByChannelResponse {
   private List<ReportByChannel> channels = new ArrayList<ReportByChannel>();
 
   @SerializedName("links")
-  private List<BeezUPCommonLink2> links = new ArrayList<BeezUPCommonLink2>();
+  private ReportByChannelResponseLinks links = null;
 
   public ReportByChannelResponse paginationResult(BeezUPCommonPaginationResult paginationResult) {
     this.paginationResult = paginationResult;
@@ -100,13 +100,8 @@ public class ReportByChannelResponse {
     this.channels = channels;
   }
 
-  public ReportByChannelResponse links(List<BeezUPCommonLink2> links) {
+  public ReportByChannelResponse links(ReportByChannelResponseLinks links) {
     this.links = links;
-    return this;
-  }
-
-  public ReportByChannelResponse addLinksItem(BeezUPCommonLink2 linksItem) {
-    this.links.add(linksItem);
     return this;
   }
 
@@ -114,12 +109,12 @@ public class ReportByChannelResponse {
    * Get links
    * @return links
   **/
-  @ApiModelProperty(example = "[{&quot;href&quot;:&quot;/v2/user/analytics/{storeId}/optimisations/{actionName}&quot;,&quot;operationId&quot;:&quot;Optimise&quot;,&quot;rel&quot;:&quot;EnableAllProducts&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;storeId&quot;,&quot;in&quot;:&quot;path&quot;,&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;8f95eb1a-3691-4750-950d-a13c4a8a9bcc&quot;},{&quot;name&quot;:&quot;storeId&quot;,&quot;in&quot;:&quot;path&quot;,&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;reenable&quot;},{&quot;name&quot;:&quot;request&quot;,&quot;in&quot;:&quot;body&quot;,&quot;type&quot;:&quot;object&quot;,&quot;value&quot;:&quot;$request.body&quot;}]},{&quot;href&quot;:&quot;/v2/user/analytics/{storeId}/optimisations/{actionName}&quot;,&quot;operationId&quot;:&quot;Optimise&quot;,&quot;rel&quot;:&quot;DisableAllProducts&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;storeId&quot;,&quot;in&quot;:&quot;path&quot;,&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;8f95eb1a-3691-4750-950d-a13c4a8a9bcc&quot;},{&quot;name&quot;:&quot;storeId&quot;,&quot;in&quot;:&quot;path&quot;,&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;disable&quot;},{&quot;name&quot;:&quot;request&quot;,&quot;in&quot;:&quot;body&quot;,&quot;type&quot;:&quot;object&quot;,&quot;value&quot;:&quot;$request.body&quot;}]}]", required = true, value = "")
-  public List<BeezUPCommonLink2> getLinks() {
+  @ApiModelProperty(example = "null", required = true, value = "")
+  public ReportByChannelResponseLinks getLinks() {
     return links;
   }
 
-  public void setLinks(List<BeezUPCommonLink2> links) {
+  public void setLinks(ReportByChannelResponseLinks links) {
     this.links = links;
   }
 

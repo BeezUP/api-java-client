@@ -18,6 +18,9 @@ import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.BeezUPCommonChannelId;
+import io.swagger.client.model.PageNumber;
+import io.swagger.client.model.PageSize;
+import io.swagger.client.model.PaginationRequestParameters;
 import io.swagger.client.model.ProductFilters;
 import io.swagger.client.model.ProductStateFilter;
 import io.swagger.client.model.ReportAdvancedFilters;
@@ -31,7 +34,7 @@ import org.joda.time.DateTime;
 /**
  * OptimiseRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:13:58.502Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:46:40.225Z")
 public class OptimiseRequest {
   @SerializedName("channelId")
   private BeezUPCommonChannelId channelId = null;
@@ -50,6 +53,12 @@ public class OptimiseRequest {
 
   @SerializedName("advancedFilters")
   private ReportAdvancedFilters advancedFilters = null;
+
+  @SerializedName("pageSize")
+  private PageSize pageSize = null;
+
+  @SerializedName("pageNumber")
+  private PageNumber pageNumber = null;
 
   @SerializedName("productState")
   private ProductStateFilter productState = null;
@@ -170,6 +179,42 @@ public class OptimiseRequest {
     this.advancedFilters = advancedFilters;
   }
 
+  public OptimiseRequest pageSize(PageSize pageSize) {
+    this.pageSize = pageSize;
+    return this;
+  }
+
+   /**
+   * Get pageSize
+   * @return pageSize
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public PageSize getPageSize() {
+    return pageSize;
+  }
+
+  public void setPageSize(PageSize pageSize) {
+    this.pageSize = pageSize;
+  }
+
+  public OptimiseRequest pageNumber(PageNumber pageNumber) {
+    this.pageNumber = pageNumber;
+    return this;
+  }
+
+   /**
+   * Get pageNumber
+   * @return pageNumber
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public PageNumber getPageNumber() {
+    return pageNumber;
+  }
+
+  public void setPageNumber(PageNumber pageNumber) {
+    this.pageNumber = pageNumber;
+  }
+
   public OptimiseRequest productState(ProductStateFilter productState) {
     this.productState = productState;
     return this;
@@ -222,13 +267,15 @@ public class OptimiseRequest {
         Objects.equals(this.categoryFilter, optimiseRequest.categoryFilter) &&
         Objects.equals(this.indicatorFilters, optimiseRequest.indicatorFilters) &&
         Objects.equals(this.advancedFilters, optimiseRequest.advancedFilters) &&
+        Objects.equals(this.pageSize, optimiseRequest.pageSize) &&
+        Objects.equals(this.pageNumber, optimiseRequest.pageNumber) &&
         Objects.equals(this.productState, optimiseRequest.productState) &&
         Objects.equals(this.productFilters, optimiseRequest.productFilters);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(channelId, beginPeriodUtcDate, endPeriodUtcDate, categoryFilter, indicatorFilters, advancedFilters, productState, productFilters);
+    return Objects.hash(channelId, beginPeriodUtcDate, endPeriodUtcDate, categoryFilter, indicatorFilters, advancedFilters, pageSize, pageNumber, productState, productFilters);
   }
 
 
@@ -243,6 +290,8 @@ public class OptimiseRequest {
     sb.append("    categoryFilter: ").append(toIndentedString(categoryFilter)).append("\n");
     sb.append("    indicatorFilters: ").append(toIndentedString(indicatorFilters)).append("\n");
     sb.append("    advancedFilters: ").append(toIndentedString(advancedFilters)).append("\n");
+    sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
+    sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    productState: ").append(toIndentedString(productState)).append("\n");
     sb.append("    productFilters: ").append(toIndentedString(productFilters)).append("\n");
     sb.append("}");

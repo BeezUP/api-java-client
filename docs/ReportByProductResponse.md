@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **paginationResult** | [**BeezUPCommonPaginationResult**](BeezUPCommonPaginationResult.md) |  | 
 **products** | [**List&lt;ReportByProduct&gt;**](ReportByProduct.md) |  | 
-**links** | [**List&lt;BeezUPCommonLink2&gt;**](BeezUPCommonLink2.md) |  | 
+**links** | [**ReportByProductResponseLinks**](ReportByProductResponseLinks.md) |  | 
 
 
 

@@ -17,20 +17,20 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.Email;
+import io.swagger.client.model.BeezUPCommonEmail;
 
 /**
  * LoginRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:13:58.502Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:46:40.225Z")
 public class LoginRequest {
   @SerializedName("login")
-  private Email login = null;
+  private BeezUPCommonEmail login = null;
 
   @SerializedName("password")
   private String password = null;
 
-  public LoginRequest login(Email login) {
+  public LoginRequest login(BeezUPCommonEmail login) {
     this.login = login;
     return this;
   }
@@ -40,11 +40,11 @@ public class LoginRequest {
    * @return login
   **/
   @ApiModelProperty(example = "null", required = true, value = "")
-  public Email getLogin() {
+  public BeezUPCommonEmail getLogin() {
     return login;
   }
 
-  public void setLogin(Email login) {
+  public void setLogin(BeezUPCommonEmail login) {
     this.login = login;
   }
 

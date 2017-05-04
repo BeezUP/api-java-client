@@ -39,7 +39,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**LoginRequest**](LoginRequest.md)|  | [optional]
+ **request** | [**LoginRequest**](LoginRequest.md)|  |
 
 ### Return type
 
@@ -70,7 +70,7 @@ Lost password - Your password will be regenerated and sent to your email
 
 
 SecurityApi apiInstance = new SecurityApi();
-Email email = new Email(); // Email | Your email
+BeezUPCommonEmail email = new BeezUPCommonEmail(); // BeezUPCommonEmail | Your email
 try {
     apiInstance.lostPassword(email);
 } catch (ApiException e) {
@@ -83,7 +83,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **email** | [**Email**](Email.md)| Your email | [optional]
+ **email** | [**BeezUPCommonEmail**](BeezUPCommonEmail.md)| Your email |
 
 ### Return type
 
@@ -127,7 +127,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**RegisterRequest**](RegisterRequest.md)|  | [optional]
+ **request** | [**RegisterRequest**](RegisterRequest.md)|  |
 
 ### Return type
 
