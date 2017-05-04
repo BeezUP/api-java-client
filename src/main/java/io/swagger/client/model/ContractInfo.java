@@ -29,7 +29,7 @@ import org.joda.time.DateTime;
  * Describe the conditions of a contract
  */
 @ApiModel(description = "Describe the conditions of a contract")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T19:24:57.307Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T19:25:59.922Z")
 public class ContractInfo {
   @SerializedName("trialPeriodInMonth")
   private Integer trialPeriodInMonth = null;

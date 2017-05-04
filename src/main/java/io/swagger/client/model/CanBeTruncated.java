@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * If the size of the value is greater than the limit we can truncate the value instead of failing...
  */
 @ApiModel(description = "If the size of the value is greater than the limit we can truncate the value instead of failing...")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T19:24:57.307Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T19:25:59.922Z")
 public class CanBeTruncated {
 
   @Override

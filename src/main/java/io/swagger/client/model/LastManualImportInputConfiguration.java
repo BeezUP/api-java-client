@@ -23,7 +23,7 @@ import io.swagger.client.model.InputConfiguration;
  * Last manual import input configuration
  */
 @ApiModel(description = "Last manual import input configuration")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T19:24:57.307Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T19:25:59.922Z")
 public class LastManualImportInputConfiguration {
   @SerializedName("input")
   private InputConfiguration input = null;

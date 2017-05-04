@@ -28,7 +28,7 @@ import io.swagger.client.model.LinksSaveProfilePictureInfoLink;
  * The different actions you can make on this account
  */
 @ApiModel(description = "The different actions you can make on this account")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T19:24:57.307Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T19:25:59.922Z")
 public class AccountInfoLinks {
   @SerializedName("savePersonalInfo")
   private LinksSavePersonalInfoLink savePersonalInfo = null;

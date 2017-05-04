@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * The catalog category identifier
  */
 @ApiModel(description = "The catalog category identifier")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T19:24:57.307Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T19:25:59.922Z")
 public class BeezUPCommonCatalogCategoryId {
 
   @Override

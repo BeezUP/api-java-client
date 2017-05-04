@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiModelProperty;
  * Describe the way you have to follow to get access to the LOV
  */
 @ApiModel(description = "Describe the way you have to follow to get access to the LOV")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T19:24:57.307Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T19:25:59.922Z")
 public class BeezUPCommonLOVLink3 {
   @SerializedName("href")
   private String href = null;

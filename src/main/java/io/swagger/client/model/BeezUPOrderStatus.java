@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * BeezUP order status. Unified for all marketplaces.
  */
 @ApiModel(description = "BeezUP order status. Unified for all marketplaces.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T19:24:57.307Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T19:25:59.922Z")
 public class BeezUPOrderStatus {
 
   @Override
