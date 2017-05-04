@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * If non null, culture used to parse the value to the storage type of this column\\r\\n will be used for parsing and for consolidation proces
  */
 @ApiModel(description = "If non null, culture used to parse the value to the storage type of this column\\r\\n will be used for parsing and for consolidation proces")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:14:54.205Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:15:46.573Z")
 public class ColumnCultureName {
 
   @Override

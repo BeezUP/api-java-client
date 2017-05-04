@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * Indicate the relative uri for this link
  */
 @ApiModel(description = "Indicate the relative uri for this link")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:14:54.205Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:15:46.573Z")
 public class BeezUPCommonHref {
 
   @Override
