@@ -18,28 +18,28 @@ import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.ApiSettingStatus;
-import io.swagger.client.model.CategoryMappingStatus;
+import io.swagger.client.model.CategoryMappingState;
 import io.swagger.client.model.ColumnMappingStatus;
 
 /**
- * Channel Catalog Status
+ * Channel Catalog State
  */
-@ApiModel(description = "Channel Catalog Status")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:15:46.573Z")
-public class ChannelCatalogStatus {
+@ApiModel(description = "Channel Catalog State")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:27:39.504Z")
+public class ChannelCatalogState {
   @SerializedName("exportedProductCount")
   private Integer exportedProductCount = null;
 
   @SerializedName("columnMappingStatus")
   private ColumnMappingStatus columnMappingStatus = null;
 
-  @SerializedName("categoryMappingStatus")
-  private CategoryMappingStatus categoryMappingStatus = null;
+  @SerializedName("categoryMappingState")
+  private CategoryMappingState categoryMappingState = null;
 
   @SerializedName("apiSettingStatus")
   private ApiSettingStatus apiSettingStatus = null;
 
-  public ChannelCatalogStatus exportedProductCount(Integer exportedProductCount) {
+  public ChannelCatalogState exportedProductCount(Integer exportedProductCount) {
     this.exportedProductCount = exportedProductCount;
     return this;
   }
@@ -57,7 +57,7 @@ public class ChannelCatalogStatus {
     this.exportedProductCount = exportedProductCount;
   }
 
-  public ChannelCatalogStatus columnMappingStatus(ColumnMappingStatus columnMappingStatus) {
+  public ChannelCatalogState columnMappingStatus(ColumnMappingStatus columnMappingStatus) {
     this.columnMappingStatus = columnMappingStatus;
     return this;
   }
@@ -75,25 +75,25 @@ public class ChannelCatalogStatus {
     this.columnMappingStatus = columnMappingStatus;
   }
 
-  public ChannelCatalogStatus categoryMappingStatus(CategoryMappingStatus categoryMappingStatus) {
-    this.categoryMappingStatus = categoryMappingStatus;
+  public ChannelCatalogState categoryMappingState(CategoryMappingState categoryMappingState) {
+    this.categoryMappingState = categoryMappingState;
     return this;
   }
 
    /**
-   * Get categoryMappingStatus
-   * @return categoryMappingStatus
+   * Get categoryMappingState
+   * @return categoryMappingState
   **/
   @ApiModelProperty(example = "null", required = true, value = "")
-  public CategoryMappingStatus getCategoryMappingStatus() {
-    return categoryMappingStatus;
+  public CategoryMappingState getCategoryMappingState() {
+    return categoryMappingState;
   }
 
-  public void setCategoryMappingStatus(CategoryMappingStatus categoryMappingStatus) {
-    this.categoryMappingStatus = categoryMappingStatus;
+  public void setCategoryMappingState(CategoryMappingState categoryMappingState) {
+    this.categoryMappingState = categoryMappingState;
   }
 
-  public ChannelCatalogStatus apiSettingStatus(ApiSettingStatus apiSettingStatus) {
+  public ChannelCatalogState apiSettingStatus(ApiSettingStatus apiSettingStatus) {
     this.apiSettingStatus = apiSettingStatus;
     return this;
   }
@@ -120,27 +120,27 @@ public class ChannelCatalogStatus {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ChannelCatalogStatus channelCatalogStatus = (ChannelCatalogStatus) o;
-    return Objects.equals(this.exportedProductCount, channelCatalogStatus.exportedProductCount) &&
-        Objects.equals(this.columnMappingStatus, channelCatalogStatus.columnMappingStatus) &&
-        Objects.equals(this.categoryMappingStatus, channelCatalogStatus.categoryMappingStatus) &&
-        Objects.equals(this.apiSettingStatus, channelCatalogStatus.apiSettingStatus);
+    ChannelCatalogState channelCatalogState = (ChannelCatalogState) o;
+    return Objects.equals(this.exportedProductCount, channelCatalogState.exportedProductCount) &&
+        Objects.equals(this.columnMappingStatus, channelCatalogState.columnMappingStatus) &&
+        Objects.equals(this.categoryMappingState, channelCatalogState.categoryMappingState) &&
+        Objects.equals(this.apiSettingStatus, channelCatalogState.apiSettingStatus);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(exportedProductCount, columnMappingStatus, categoryMappingStatus, apiSettingStatus);
+    return Objects.hash(exportedProductCount, columnMappingStatus, categoryMappingState, apiSettingStatus);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ChannelCatalogStatus {\n");
+    sb.append("class ChannelCatalogState {\n");
     
     sb.append("    exportedProductCount: ").append(toIndentedString(exportedProductCount)).append("\n");
     sb.append("    columnMappingStatus: ").append(toIndentedString(columnMappingStatus)).append("\n");
-    sb.append("    categoryMappingStatus: ").append(toIndentedString(categoryMappingStatus)).append("\n");
+    sb.append("    categoryMappingState: ").append(toIndentedString(categoryMappingState)).append("\n");
     sb.append("    apiSettingStatus: ").append(toIndentedString(apiSettingStatus)).append("\n");
     sb.append("}");
     return sb.toString();

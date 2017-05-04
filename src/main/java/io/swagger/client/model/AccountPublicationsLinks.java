@@ -22,7 +22,7 @@ import io.swagger.client.model.LinksGetPublicationsLink;
 /**
  * AccountPublicationsLinks
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:27:23.109Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:27:39.504Z")
 public class AccountPublicationsLinks {
   @SerializedName("self")
   private LinksGetPublicationsLink self = null;

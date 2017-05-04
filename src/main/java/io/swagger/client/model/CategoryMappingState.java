@@ -23,7 +23,7 @@ import io.swagger.client.model.CategoryMappingStatus;
  * The category mapping state of the channel catalog
  */
 @ApiModel(description = "The category mapping state of the channel catalog")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:27:23.109Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:27:39.504Z")
 public class CategoryMappingState {
   @SerializedName("status")
   private CategoryMappingStatus status = null;

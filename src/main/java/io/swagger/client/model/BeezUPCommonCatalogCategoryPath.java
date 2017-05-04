@@ -22,7 +22,7 @@ import java.util.List;
  * The catalog category path
  */
 @ApiModel(description = "The catalog category path")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:27:23.109Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:27:39.504Z")
 public class BeezUPCommonCatalogCategoryPath extends ArrayList<String> {
 
   @Override

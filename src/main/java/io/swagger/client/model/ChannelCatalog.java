@@ -24,7 +24,7 @@ import io.swagger.client.model.BeezUPCommonChannelName;
 import io.swagger.client.model.BeezUPCommonHttpUrl;
 import io.swagger.client.model.BeezUPCommonLink2;
 import io.swagger.client.model.BeezUPCommonStoreId;
-import io.swagger.client.model.ChannelCatalogStatus;
+import io.swagger.client.model.ChannelCatalogState;
 import io.swagger.client.model.ColumnMappingWithNameList;
 import io.swagger.client.model.CostSettings;
 import io.swagger.client.model.ExclusionFilters;
@@ -35,7 +35,7 @@ import java.util.List;
 /**
  * ChannelCatalog
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:27:23.109Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:27:39.504Z")
 public class ChannelCatalog {
   @SerializedName("channelId")
   private BeezUPCommonChannelId channelId = null;
@@ -76,8 +76,8 @@ public class ChannelCatalog {
   @SerializedName("exportUrl")
   private BeezUPCommonHttpUrl exportUrl = null;
 
-  @SerializedName("status")
-  private ChannelCatalogStatus status = null;
+  @SerializedName("state")
+  private ChannelCatalogState state = null;
 
   @SerializedName("links")
   private List<BeezUPCommonLink2> links = new ArrayList<BeezUPCommonLink2>();
@@ -316,22 +316,22 @@ public class ChannelCatalog {
     this.exportUrl = exportUrl;
   }
 
-  public ChannelCatalog status(ChannelCatalogStatus status) {
-    this.status = status;
+  public ChannelCatalog state(ChannelCatalogState state) {
+    this.state = state;
     return this;
   }
 
    /**
-   * Get status
-   * @return status
+   * Get state
+   * @return state
   **/
   @ApiModelProperty(example = "null", required = true, value = "")
-  public ChannelCatalogStatus getStatus() {
-    return status;
+  public ChannelCatalogState getState() {
+    return state;
   }
 
-  public void setStatus(ChannelCatalogStatus status) {
-    this.status = status;
+  public void setState(ChannelCatalogState state) {
+    this.state = state;
   }
 
   public ChannelCatalog links(List<BeezUPCommonLink2> links) {
@@ -380,13 +380,13 @@ public class ChannelCatalog {
         Objects.equals(this.columnMappings, channelCatalog.columnMappings) &&
         Objects.equals(this.exclusionFilters, channelCatalog.exclusionFilters) &&
         Objects.equals(this.exportUrl, channelCatalog.exportUrl) &&
-        Objects.equals(this.status, channelCatalog.status) &&
+        Objects.equals(this.state, channelCatalog.state) &&
         Objects.equals(this.links, channelCatalog.links);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(channelId, channelName, channelImageUrl, productCount, enabled, isMarketplace, channelCatalogId, storeId, generalSettings, costSettings, columnMappings, exclusionFilters, exportUrl, status, links);
+    return Objects.hash(channelId, channelName, channelImageUrl, productCount, enabled, isMarketplace, channelCatalogId, storeId, generalSettings, costSettings, columnMappings, exclusionFilters, exportUrl, state, links);
   }
 
 
@@ -408,7 +408,7 @@ public class ChannelCatalog {
     sb.append("    columnMappings: ").append(toIndentedString(columnMappings)).append("\n");
     sb.append("    exclusionFilters: ").append(toIndentedString(exclusionFilters)).append("\n");
     sb.append("    exportUrl: ").append(toIndentedString(exportUrl)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("}");
     return sb.toString();

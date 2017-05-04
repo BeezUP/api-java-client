@@ -383,7 +383,7 @@ Class | Method | HTTP request | Description
  - [ChannelCatalogProductInfoLinks](docs/ChannelCatalogProductInfoLinks.md)
  - [ChannelCatalogProductInfoList](docs/ChannelCatalogProductInfoList.md)
  - [ChannelCatalogProductInfoListLinks](docs/ChannelCatalogProductInfoListLinks.md)
- - [ChannelCatalogStatus](docs/ChannelCatalogStatus.md)
+ - [ChannelCatalogState](docs/ChannelCatalogState.md)
  - [ChannelCategory](docs/ChannelCategory.md)
  - [ChannelCategoryChannelCode](docs/ChannelCategoryChannelCode.md)
  - [ChannelCategoryColumnOverride](docs/ChannelCategoryColumnOverride.md)

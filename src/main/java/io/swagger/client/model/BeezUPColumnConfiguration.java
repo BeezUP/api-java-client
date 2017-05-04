@@ -27,7 +27,7 @@ import io.swagger.client.model.DisplayGroupName;
  * Describe a BeezUP column
  */
 @ApiModel(description = "Describe a BeezUP column")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:27:23.109Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:27:39.504Z")
 public class BeezUPColumnConfiguration {
   @SerializedName("beezUPColumnName")
   private BeezUPCommonBeezUPColumnName beezUPColumnName = null;
