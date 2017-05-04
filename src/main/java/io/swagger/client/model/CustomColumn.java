@@ -25,7 +25,7 @@ import io.swagger.client.model.UserColumName;
  * The custom column configuration
  */
 @ApiModel(description = "The custom column configuration")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:15:46.573Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:19:12.808Z")
 public class CustomColumn {
   @SerializedName("id")
   private ColumnId id = null;

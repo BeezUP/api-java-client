@@ -35,7 +35,7 @@ import java.util.List;
 /**
  * ChannelCatalog
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:15:46.573Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:19:12.808Z")
 public class ChannelCatalog {
   @SerializedName("channelId")
   private BeezUPCommonChannelId channelId = null;
@@ -45,6 +45,9 @@ public class ChannelCatalog {
 
   @SerializedName("channelImageUrl")
   private BeezUPCommonHttpUrl channelImageUrl = null;
+
+  @SerializedName("productCount")
+  private Integer productCount = null;
 
   @SerializedName("enabled")
   private Boolean enabled = null;
@@ -133,6 +136,24 @@ public class ChannelCatalog {
     this.channelImageUrl = channelImageUrl;
   }
 
+  public ChannelCatalog productCount(Integer productCount) {
+    this.productCount = productCount;
+    return this;
+  }
+
+   /**
+   * The product count exported considering category mapping. Not all filters have been applied.
+   * @return productCount
+  **/
+  @ApiModelProperty(example = "null", value = "The product count exported considering category mapping. Not all filters have been applied.")
+  public Integer getProductCount() {
+    return productCount;
+  }
+
+  public void setProductCount(Integer productCount) {
+    this.productCount = productCount;
+  }
+
   public ChannelCatalog enabled(Boolean enabled) {
     this.enabled = enabled;
     return this;
@@ -142,7 +163,7 @@ public class ChannelCatalog {
    * Indicates if the channel catalog is active
    * @return enabled
   **/
-  @ApiModelProperty(example = "true", value = "Indicates if the channel catalog is active")
+  @ApiModelProperty(example = "true", required = true, value = "Indicates if the channel catalog is active")
   public Boolean getEnabled() {
     return enabled;
   }
@@ -160,7 +181,7 @@ public class ChannelCatalog {
    * Indicates if this channel catalog is related to a marketplace
    * @return isMarketplace
   **/
-  @ApiModelProperty(example = "true", value = "Indicates if this channel catalog is related to a marketplace")
+  @ApiModelProperty(example = "true", required = true, value = "Indicates if this channel catalog is related to a marketplace")
   public Boolean getIsMarketplace() {
     return isMarketplace;
   }
@@ -214,7 +235,7 @@ public class ChannelCatalog {
    * Get generalSettings
    * @return generalSettings
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public GeneralSettings getGeneralSettings() {
     return generalSettings;
   }
@@ -232,7 +253,7 @@ public class ChannelCatalog {
    * Get costSettings
    * @return costSettings
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public CostSettings getCostSettings() {
     return costSettings;
   }
@@ -304,7 +325,7 @@ public class ChannelCatalog {
    * Get status
    * @return status
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public ChannelCatalogStatus getStatus() {
     return status;
   }
@@ -327,7 +348,7 @@ public class ChannelCatalog {
    * Indicates the actions you can do on a channel catalog
    * @return links
   **/
-  @ApiModelProperty(example = "[{&quot;rel&quot;:&quot;categoryMappings&quot;,&quot;operationId&quot;:&quot;GetChannelCatalogCategoyMappings&quot;,&quot;href&quot;:&quot;/v2/user/channelCatalogs/{channelCatalogId}/categoryMappings&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;channelCatalogId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;required&quot;:true,&quot;in&quot;:&quot;path&quot;,&quot;value&quot;:&quot;6d6b04de-406b-4539-8e7e-bf3e8da5dfb0&quot;}]},{&quot;rel&quot;:&quot;delete&quot;,&quot;operationId&quot;:&quot;DeleteChannelCatalog&quot;,&quot;href&quot;:&quot;/v2/user/channelCatalogs/{channelCatalogId}&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;channelCatalogId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;required&quot;:true,&quot;in&quot;:&quot;path&quot;,&quot;value&quot;:&quot;6d6b04de-406b-4539-8e7e-bf3e8da5dfb0&quot;}]},{&quot;rel&quot;:&quot;disable&quot;,&quot;operationId&quot;:&quot;DisableChannelCatalog&quot;,&quot;href&quot;:&quot;/v2/user/channelCatalogs/{channelCatalogId}/disable&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;channelCatalogId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;required&quot;:true,&quot;in&quot;:&quot;path&quot;,&quot;value&quot;:&quot;6d6b04de-406b-4539-8e7e-bf3e8da5dfb0&quot;}]}]", value = "Indicates the actions you can do on a channel catalog")
+  @ApiModelProperty(example = "[{&quot;rel&quot;:&quot;categoryMappings&quot;,&quot;operationId&quot;:&quot;GetChannelCatalogCategoyMappings&quot;,&quot;href&quot;:&quot;/v2/user/channelCatalogs/{channelCatalogId}/categoryMappings&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;channelCatalogId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;required&quot;:true,&quot;in&quot;:&quot;path&quot;,&quot;value&quot;:&quot;6d6b04de-406b-4539-8e7e-bf3e8da5dfb0&quot;}]},{&quot;rel&quot;:&quot;delete&quot;,&quot;operationId&quot;:&quot;DeleteChannelCatalog&quot;,&quot;href&quot;:&quot;/v2/user/channelCatalogs/{channelCatalogId}&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;channelCatalogId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;required&quot;:true,&quot;in&quot;:&quot;path&quot;,&quot;value&quot;:&quot;6d6b04de-406b-4539-8e7e-bf3e8da5dfb0&quot;}]},{&quot;rel&quot;:&quot;disable&quot;,&quot;operationId&quot;:&quot;DisableChannelCatalog&quot;,&quot;href&quot;:&quot;/v2/user/channelCatalogs/{channelCatalogId}/disable&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;channelCatalogId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;required&quot;:true,&quot;in&quot;:&quot;path&quot;,&quot;value&quot;:&quot;6d6b04de-406b-4539-8e7e-bf3e8da5dfb0&quot;}]}]", required = true, value = "Indicates the actions you can do on a channel catalog")
   public List<BeezUPCommonLink2> getLinks() {
     return links;
   }
@@ -349,6 +370,7 @@ public class ChannelCatalog {
     return Objects.equals(this.channelId, channelCatalog.channelId) &&
         Objects.equals(this.channelName, channelCatalog.channelName) &&
         Objects.equals(this.channelImageUrl, channelCatalog.channelImageUrl) &&
+        Objects.equals(this.productCount, channelCatalog.productCount) &&
         Objects.equals(this.enabled, channelCatalog.enabled) &&
         Objects.equals(this.isMarketplace, channelCatalog.isMarketplace) &&
         Objects.equals(this.channelCatalogId, channelCatalog.channelCatalogId) &&
@@ -364,7 +386,7 @@ public class ChannelCatalog {
 
   @Override
   public int hashCode() {
-    return Objects.hash(channelId, channelName, channelImageUrl, enabled, isMarketplace, channelCatalogId, storeId, generalSettings, costSettings, columnMappings, exclusionFilters, exportUrl, status, links);
+    return Objects.hash(channelId, channelName, channelImageUrl, productCount, enabled, isMarketplace, channelCatalogId, storeId, generalSettings, costSettings, columnMappings, exclusionFilters, exportUrl, status, links);
   }
 
 
@@ -376,6 +398,7 @@ public class ChannelCatalog {
     sb.append("    channelId: ").append(toIndentedString(channelId)).append("\n");
     sb.append("    channelName: ").append(toIndentedString(channelName)).append("\n");
     sb.append("    channelImageUrl: ").append(toIndentedString(channelImageUrl)).append("\n");
+    sb.append("    productCount: ").append(toIndentedString(productCount)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    isMarketplace: ").append(toIndentedString(isMarketplace)).append("\n");
     sb.append("    channelCatalogId: ").append(toIndentedString(channelCatalogId)).append("\n");

@@ -28,7 +28,7 @@ import io.swagger.client.model.VatNumber;
 /**
  * CompanyInfo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:15:46.573Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:19:12.808Z")
 public class CompanyInfo {
   @SerializedName("address")
   private Address address = null;

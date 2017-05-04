@@ -26,7 +26,7 @@ import io.swagger.client.model.LinksUpdateStoreLink;
  * The action links for this store
  */
 @ApiModel(description = "The action links for this store")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:15:46.573Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:19:12.808Z")
 public class StoreHeaderLinks {
   @SerializedName("self")
   private LinksGetStoreLink self = null;

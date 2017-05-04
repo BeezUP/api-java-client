@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * The channel category level starting from 1
  */
 @ApiModel(description = "The channel category level starting from 1")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:15:46.573Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:19:12.808Z")
 public class ChannelCategoryLevel {
 
   @Override

@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * CustomColumns
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:15:46.573Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:19:12.808Z")
 public class CustomColumns {
   @SerializedName("customColumns")
   private List<CustomColumn> customColumns = new ArrayList<CustomColumn>();
