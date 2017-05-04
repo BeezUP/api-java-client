@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * ChannelCatalogCategoryMappingInfo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T10:56:32.379Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T10:49:46.695Z")
 public class ChannelCatalogCategoryMappingInfo {
   @SerializedName("catalogCategoryPath")
   private BeezUPCommonCatalogCategoryPath catalogCategoryPath = null;
@@ -110,7 +110,7 @@ public class ChannelCatalogCategoryMappingInfo {
    * Get links
    * @return links
   **/
-  @ApiModelProperty(example = "[{&quot;rel&quot;:&quot;unmapCategory&quot;,&quot;operationId&quot;:&quot;MapChannelCatalogCategory&quot;,&quot;href&quot;:&quot;/v2/user/channelCatalogs/{channelCatalogId}/categoryMappings/unmap&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;channelCatalogId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;required&quot;:true,&quot;in&quot;:&quot;path&quot;,&quot;value&quot;:&quot;6d6b04de-406b-4539-8e7e-bf3e8da5dfb0&quot;},{&quot;name&quot;:&quot;request&quot;,&quot;in&quot;:&quot;path&quot;,&quot;type&quot;:&quot;object&quot;,&quot;required&quot;:true,&quot;value&quot;:{&quot;catalogCategoryPath&quot;:[&quot;VÃƒÂªtements&quot;,&quot;Femmes&quot;,&quot;Chaussures&quot;]}}]}]", required = true, value = "")
+  @ApiModelProperty(example = "[{&quot;rel&quot;:&quot;unmapCategory&quot;,&quot;operationId&quot;:&quot;MapChannelCatalogCategory&quot;,&quot;href&quot;:&quot;/v2/user/channelCatalogs/{channelCatalogId}/categoryMappings/unmap&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;channelCatalogId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;required&quot;:true,&quot;in&quot;:&quot;path&quot;,&quot;value&quot;:&quot;6d6b04de-406b-4539-8e7e-bf3e8da5dfb0&quot;},{&quot;name&quot;:&quot;request&quot;,&quot;in&quot;:&quot;path&quot;,&quot;type&quot;:&quot;object&quot;,&quot;required&quot;:true,&quot;value&quot;:{&quot;catalogCategoryPath&quot;:[&quot;VÃªtements&quot;,&quot;Femmes&quot;,&quot;Chaussures&quot;]}}]}]", required = true, value = "")
   public List<BeezUPCommonLink2> getLinks() {
     return links;
   }

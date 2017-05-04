@@ -20,14 +20,14 @@ import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.BeezUPCommonProductBasicInfo;
 import io.swagger.client.model.ChannelCatalogProductInfoLinks;
 import io.swagger.client.model.ExclusionFilterName;
-import io.swagger.client.model.ProductOverrides;
+import io.swagger.client.model.ProductOverridesWithCatalogValues;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * ChannelCatalogProductInfo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T10:56:32.379Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T10:49:46.695Z")
 public class ChannelCatalogProductInfo {
   @SerializedName("productId")
   private String productId = null;
@@ -45,7 +45,7 @@ public class ChannelCatalogProductInfo {
   private Boolean productActive = null;
 
   @SerializedName("overrides")
-  private ProductOverrides overrides = null;
+  private ProductOverridesWithCatalogValues overrides = null;
 
   @SerializedName("disabled")
   private Boolean disabled = false;
@@ -143,7 +143,7 @@ public class ChannelCatalogProductInfo {
    * Indicates if the product still exists in your catalog
    * @return productActive
   **/
-  @ApiModelProperty(example = "true", required = true, value = "Indicates if the product still exists in your catalog")
+  @ApiModelProperty(example = "true", value = "Indicates if the product still exists in your catalog")
   public Boolean getProductActive() {
     return productActive;
   }
@@ -152,7 +152,7 @@ public class ChannelCatalogProductInfo {
     this.productActive = productActive;
   }
 
-  public ChannelCatalogProductInfo overrides(ProductOverrides overrides) {
+  public ChannelCatalogProductInfo overrides(ProductOverridesWithCatalogValues overrides) {
     this.overrides = overrides;
     return this;
   }
@@ -162,11 +162,11 @@ public class ChannelCatalogProductInfo {
    * @return overrides
   **/
   @ApiModelProperty(example = "null", required = true, value = "")
-  public ProductOverrides getOverrides() {
+  public ProductOverridesWithCatalogValues getOverrides() {
     return overrides;
   }
 
-  public void setOverrides(ProductOverrides overrides) {
+  public void setOverrides(ProductOverridesWithCatalogValues overrides) {
     this.overrides = overrides;
   }
 

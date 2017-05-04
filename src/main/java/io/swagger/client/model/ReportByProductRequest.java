@@ -19,6 +19,9 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.BeezUPCommonCatalogColumnId;
 import io.swagger.client.model.BeezUPCommonChannelId;
+import io.swagger.client.model.PageNumber;
+import io.swagger.client.model.PageSize;
+import io.swagger.client.model.PaginationRequestParameters;
 import io.swagger.client.model.ProductFilters;
 import io.swagger.client.model.ProductStateFilter;
 import io.swagger.client.model.ReportAdvancedFilters;
@@ -32,7 +35,7 @@ import org.joda.time.DateTime;
 /**
  * ReportByProductRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T10:56:32.379Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T10:49:46.695Z")
 public class ReportByProductRequest {
   @SerializedName("channelId")
   private BeezUPCommonChannelId channelId = null;
@@ -51,6 +54,12 @@ public class ReportByProductRequest {
 
   @SerializedName("advancedFilters")
   private ReportAdvancedFilters advancedFilters = null;
+
+  @SerializedName("pageSize")
+  private PageSize pageSize = null;
+
+  @SerializedName("pageNumber")
+  private PageNumber pageNumber = null;
 
   @SerializedName("productColumnsToDisplay")
   private List<BeezUPCommonCatalogColumnId> productColumnsToDisplay = new ArrayList<BeezUPCommonCatalogColumnId>();
@@ -174,6 +183,42 @@ public class ReportByProductRequest {
     this.advancedFilters = advancedFilters;
   }
 
+  public ReportByProductRequest pageSize(PageSize pageSize) {
+    this.pageSize = pageSize;
+    return this;
+  }
+
+   /**
+   * Get pageSize
+   * @return pageSize
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public PageSize getPageSize() {
+    return pageSize;
+  }
+
+  public void setPageSize(PageSize pageSize) {
+    this.pageSize = pageSize;
+  }
+
+  public ReportByProductRequest pageNumber(PageNumber pageNumber) {
+    this.pageNumber = pageNumber;
+    return this;
+  }
+
+   /**
+   * Get pageNumber
+   * @return pageNumber
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public PageNumber getPageNumber() {
+    return pageNumber;
+  }
+
+  public void setPageNumber(PageNumber pageNumber) {
+    this.pageNumber = pageNumber;
+  }
+
   public ReportByProductRequest productColumnsToDisplay(List<BeezUPCommonCatalogColumnId> productColumnsToDisplay) {
     this.productColumnsToDisplay = productColumnsToDisplay;
     return this;
@@ -249,6 +294,8 @@ public class ReportByProductRequest {
         Objects.equals(this.categoryFilter, reportByProductRequest.categoryFilter) &&
         Objects.equals(this.indicatorFilters, reportByProductRequest.indicatorFilters) &&
         Objects.equals(this.advancedFilters, reportByProductRequest.advancedFilters) &&
+        Objects.equals(this.pageSize, reportByProductRequest.pageSize) &&
+        Objects.equals(this.pageNumber, reportByProductRequest.pageNumber) &&
         Objects.equals(this.productColumnsToDisplay, reportByProductRequest.productColumnsToDisplay) &&
         Objects.equals(this.productState, reportByProductRequest.productState) &&
         Objects.equals(this.productFilters, reportByProductRequest.productFilters);
@@ -256,7 +303,7 @@ public class ReportByProductRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(channelId, beginPeriodUtcDate, endPeriodUtcDate, categoryFilter, indicatorFilters, advancedFilters, productColumnsToDisplay, productState, productFilters);
+    return Objects.hash(channelId, beginPeriodUtcDate, endPeriodUtcDate, categoryFilter, indicatorFilters, advancedFilters, pageSize, pageNumber, productColumnsToDisplay, productState, productFilters);
   }
 
 
@@ -271,6 +318,8 @@ public class ReportByProductRequest {
     sb.append("    categoryFilter: ").append(toIndentedString(categoryFilter)).append("\n");
     sb.append("    indicatorFilters: ").append(toIndentedString(indicatorFilters)).append("\n");
     sb.append("    advancedFilters: ").append(toIndentedString(advancedFilters)).append("\n");
+    sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
+    sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    productColumnsToDisplay: ").append(toIndentedString(productColumnsToDisplay)).append("\n");
     sb.append("    productState: ").append(toIndentedString(productState)).append("\n");
     sb.append("    productFilters: ").append(toIndentedString(productFilters)).append("\n");

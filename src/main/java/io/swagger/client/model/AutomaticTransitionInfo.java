@@ -27,7 +27,7 @@ import io.swagger.client.model.MarketplaceTechnicalCode;
 /**
  * AutomaticTransitionInfo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T10:56:32.379Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T10:49:46.695Z")
 public class AutomaticTransitionInfo {
   @SerializedName("marketplaceTechnicalCode")
   private MarketplaceTechnicalCode marketplaceTechnicalCode = null;

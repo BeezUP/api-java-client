@@ -24,8 +24,11 @@ import java.util.List;
 /**
  * BeezUPCommonUserErrorMessage
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T10:56:32.379Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T10:49:46.695Z")
 public class BeezUPCommonUserErrorMessage {
+  @SerializedName("docUrl")
+  private String docUrl = null;
+
   @SerializedName("code")
   private String code = null;
 
@@ -37,6 +40,24 @@ public class BeezUPCommonUserErrorMessage {
 
   @SerializedName("arguments")
   private List<BeezUPCommonUserErrorMessageArguments> arguments = new ArrayList<BeezUPCommonUserErrorMessageArguments>();
+
+  public BeezUPCommonUserErrorMessage docUrl(String docUrl) {
+    this.docUrl = docUrl;
+    return this;
+  }
+
+   /**
+   * The documentation related to this operation.
+   * @return docUrl
+  **/
+  @ApiModelProperty(example = "https://beezup.github.io/api-docs/#operation/EnableChannelCatalog", value = "The documentation related to this operation.")
+  public String getDocUrl() {
+    return docUrl;
+  }
+
+  public void setDocUrl(String docUrl) {
+    this.docUrl = docUrl;
+  }
 
   public BeezUPCommonUserErrorMessage code(String code) {
     this.code = code;
@@ -126,7 +147,8 @@ public class BeezUPCommonUserErrorMessage {
       return false;
     }
     BeezUPCommonUserErrorMessage beezUPCommonUserErrorMessage = (BeezUPCommonUserErrorMessage) o;
-    return Objects.equals(this.code, beezUPCommonUserErrorMessage.code) &&
+    return Objects.equals(this.docUrl, beezUPCommonUserErrorMessage.docUrl) &&
+        Objects.equals(this.code, beezUPCommonUserErrorMessage.code) &&
         Objects.equals(this.message, beezUPCommonUserErrorMessage.message) &&
         Objects.equals(this.cultureName, beezUPCommonUserErrorMessage.cultureName) &&
         Objects.equals(this.arguments, beezUPCommonUserErrorMessage.arguments);
@@ -134,7 +156,7 @@ public class BeezUPCommonUserErrorMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, message, cultureName, arguments);
+    return Objects.hash(docUrl, code, message, cultureName, arguments);
   }
 
 
@@ -143,6 +165,7 @@ public class BeezUPCommonUserErrorMessage {
     StringBuilder sb = new StringBuilder();
     sb.append("class BeezUPCommonUserErrorMessage {\n");
     
+    sb.append("    docUrl: ").append(toIndentedString(docUrl)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    cultureName: ").append(toIndentedString(cultureName)).append("\n");

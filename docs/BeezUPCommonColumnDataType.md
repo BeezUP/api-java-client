@@ -22,5 +22,7 @@
 
 * `UNKNOWN` (value: `"Unknown"`)
 
+* `IMAGEURL` (value: `"ImageUrl"`)
+
 
 

@@ -16,8 +16,8 @@ Name | Type | Description | Notes
 **orderMerchantECommerceSoftwareName** | [**OrderMerchantECommerceSoftwareName**](OrderMerchantECommerceSoftwareName.md) |  |  [optional]
 **orderMerchantECommerceSoftwareVersion** | [**OrderMerchantECommerceSoftwareVersion**](OrderMerchantECommerceSoftwareVersion.md) |  |  [optional]
 **orderPurchaseUtcDate** | [**DateTime**](DateTime.md) | The purchase date of this order | 
-**orderLastModificationUtcDate** | [**DateTime**](DateTime.md) | The last modification UTC date done by BeezUP of this order. | 
-**orderMarketplaceLastModificationUtcDate** | [**DateTime**](DateTime.md) | The last modification UTC date done by the marketplace on this order. | 
+**orderLastModificationUtcDate** | [**DateTime**](DateTime.md) | The last modification UTC date done by BeezUP of this order | 
+**orderMarketplaceLastModificationUtcDate** | [**DateTime**](DateTime.md) | The last modification UTC date done by the marketplace on this order | 
 **orderBuyerName** | [**OrderBuyerName**](OrderBuyerName.md) |  |  [optional]
 **orderTotalPrice** | [**BigDecimal**](BigDecimal.md) | The total price of this order (corresponding to the amount paid by the customer) |  [optional]
 **orderCurrencyCode** | [**BeezUPCommonCurrencyCode**](BeezUPCommonCurrencyCode.md) |  |  [optional]

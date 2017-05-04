@@ -23,10 +23,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The list of orders exportation
+ * The list of Order report exportations
  */
-@ApiModel(description = "The list of orders exportation")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T10:56:32.379Z")
+@ApiModel(description = "The list of Order report exportations")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T10:49:46.695Z")
 public class OrderExportations {
   @SerializedName("paginationResult")
   private BeezUPCommonPaginationResult paginationResult = null;

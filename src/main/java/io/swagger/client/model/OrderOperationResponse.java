@@ -26,7 +26,7 @@ import java.util.List;
  * The response given by the batch operation for an order
  */
 @ApiModel(description = "The response given by the batch operation for an order")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T10:56:32.379Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T10:49:46.695Z")
 public class OrderOperationResponse {
   @SerializedName("order")
   private OrderIdentifier order = null;

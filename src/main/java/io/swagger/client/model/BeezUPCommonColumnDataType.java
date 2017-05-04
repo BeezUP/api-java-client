@@ -48,7 +48,10 @@ public enum BeezUPCommonColumnDataType {
   INSTOCK("InStock"),
   
   @SerializedName("Unknown")
-  UNKNOWN("Unknown");
+  UNKNOWN("Unknown"),
+  
+  @SerializedName("ImageUrl")
+  IMAGEURL("ImageUrl");
 
   private String value;
 

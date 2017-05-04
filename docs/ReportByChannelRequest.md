@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **categoryFilter** | [**ReportCategoryFilter**](ReportCategoryFilter.md) |  |  [optional]
 **indicatorFilters** | [**List&lt;ReportIndicatorFilter&gt;**](ReportIndicatorFilter.md) |  |  [optional]
 **advancedFilters** | [**ReportAdvancedFilters**](ReportAdvancedFilters.md) |  | 
+**pageSize** | [**PageSize**](PageSize.md) |  |  [optional]
+**pageNumber** | [**PageNumber**](PageNumber.md) |  |  [optional]
 
 
 

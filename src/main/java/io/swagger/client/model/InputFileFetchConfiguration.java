@@ -25,7 +25,7 @@ import io.swagger.client.model.DownloadCatalogStrategy;
  * Describe the way to download the file
  */
 @ApiModel(description = "Describe the way to download the file")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T10:56:32.379Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T10:49:46.695Z")
 public class InputFileFetchConfiguration {
   @SerializedName("uri")
   private String uri = null;
@@ -126,7 +126,7 @@ public class InputFileFetchConfiguration {
    * Indicate the relative path in the compressed file
    * @return compressedRelativePath
   **/
-  @ApiModelProperty(example = "MyFolder/MyCatalog.zip", value = "Indicate the relative path in the compressed file")
+  @ApiModelProperty(example = "null", value = "Indicate the relative path in the compressed file")
   public String getCompressedRelativePath() {
     return compressedRelativePath;
   }

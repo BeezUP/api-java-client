@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * The encrypted excel expression of the column
  */
 @ApiModel(description = "The encrypted excel expression of the column")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T10:56:32.379Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T10:49:46.695Z")
 public class EncryptedExpression {
 
   @Override

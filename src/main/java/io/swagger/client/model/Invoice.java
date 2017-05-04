@@ -26,7 +26,7 @@ import org.joda.time.LocalDate;
 /**
  * Invoice
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T10:56:32.379Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T10:49:46.695Z")
 public class Invoice {
   @SerializedName("invoiceDate")
   private LocalDate invoiceDate = null;

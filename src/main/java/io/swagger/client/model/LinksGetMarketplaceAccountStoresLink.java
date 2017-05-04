@@ -17,6 +17,7 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.client.model.BeezUPCommonDocUrl;
 import io.swagger.client.model.BeezUPCommonHref;
 import io.swagger.client.model.BeezUPCommonHttpMethod;
 import io.swagger.client.model.BeezUPCommonInfoSummaries;
@@ -30,8 +31,11 @@ import java.util.Map;
 /**
  * LinksGetMarketplaceAccountStoresLink
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T10:56:32.379Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T10:49:46.695Z")
 public class LinksGetMarketplaceAccountStoresLink {
+  @SerializedName("docUrl")
+  private BeezUPCommonDocUrl docUrl = null;
+
   @SerializedName("description")
   private String description = null;
 
@@ -53,6 +57,24 @@ public class LinksGetMarketplaceAccountStoresLink {
   @SerializedName("info")
   private BeezUPCommonInfoSummaries info = null;
 
+  public LinksGetMarketplaceAccountStoresLink docUrl(BeezUPCommonDocUrl docUrl) {
+    this.docUrl = docUrl;
+    return this;
+  }
+
+   /**
+   * Get docUrl
+   * @return docUrl
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public BeezUPCommonDocUrl getDocUrl() {
+    return docUrl;
+  }
+
+  public void setDocUrl(BeezUPCommonDocUrl docUrl) {
+    this.docUrl = docUrl;
+  }
+
   public LinksGetMarketplaceAccountStoresLink description(String description) {
     this.description = description;
     return this;
@@ -62,7 +84,7 @@ public class LinksGetMarketplaceAccountStoresLink {
    * The description of the link
    * @return description
   **/
-  @ApiModelProperty(example = "null", value = "The description of the link")
+  @ApiModelProperty(example = "This is a description link", value = "The description of the link")
   public String getDescription() {
     return description;
   }
@@ -194,7 +216,8 @@ public class LinksGetMarketplaceAccountStoresLink {
       return false;
     }
     LinksGetMarketplaceAccountStoresLink linksGetMarketplaceAccountStoresLink = (LinksGetMarketplaceAccountStoresLink) o;
-    return Objects.equals(this.description, linksGetMarketplaceAccountStoresLink.description) &&
+    return Objects.equals(this.docUrl, linksGetMarketplaceAccountStoresLink.docUrl) &&
+        Objects.equals(this.description, linksGetMarketplaceAccountStoresLink.description) &&
         Objects.equals(this.href, linksGetMarketplaceAccountStoresLink.href) &&
         Objects.equals(this.operationId, linksGetMarketplaceAccountStoresLink.operationId) &&
         Objects.equals(this.method, linksGetMarketplaceAccountStoresLink.method) &&
@@ -205,7 +228,7 @@ public class LinksGetMarketplaceAccountStoresLink {
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, href, operationId, method, parameters, templated, info);
+    return Objects.hash(docUrl, description, href, operationId, method, parameters, templated, info);
   }
 
 
@@ -214,6 +237,7 @@ public class LinksGetMarketplaceAccountStoresLink {
     StringBuilder sb = new StringBuilder();
     sb.append("class LinksGetMarketplaceAccountStoresLink {\n");
     
+    sb.append("    docUrl: ").append(toIndentedString(docUrl)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    href: ").append(toIndentedString(href)).append("\n");
     sb.append("    operationId: ").append(toIndentedString(operationId)).append("\n");

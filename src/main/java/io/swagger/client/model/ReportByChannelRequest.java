@@ -18,6 +18,9 @@ import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.BeezUPCommonChannelId;
+import io.swagger.client.model.PageNumber;
+import io.swagger.client.model.PageSize;
+import io.swagger.client.model.PaginationRequestParameters;
 import io.swagger.client.model.ReportAdvancedFilters;
 import io.swagger.client.model.ReportCategoryFilter;
 import io.swagger.client.model.ReportFilterCommonParameters;
@@ -29,7 +32,7 @@ import org.joda.time.DateTime;
 /**
  * ReportByChannelRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T10:56:32.379Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T10:49:46.695Z")
 public class ReportByChannelRequest {
   @SerializedName("channelId")
   private BeezUPCommonChannelId channelId = null;
@@ -48,6 +51,12 @@ public class ReportByChannelRequest {
 
   @SerializedName("advancedFilters")
   private ReportAdvancedFilters advancedFilters = null;
+
+  @SerializedName("pageSize")
+  private PageSize pageSize = null;
+
+  @SerializedName("pageNumber")
+  private PageNumber pageNumber = null;
 
   public ReportByChannelRequest channelId(BeezUPCommonChannelId channelId) {
     this.channelId = channelId;
@@ -162,6 +171,42 @@ public class ReportByChannelRequest {
     this.advancedFilters = advancedFilters;
   }
 
+  public ReportByChannelRequest pageSize(PageSize pageSize) {
+    this.pageSize = pageSize;
+    return this;
+  }
+
+   /**
+   * Get pageSize
+   * @return pageSize
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public PageSize getPageSize() {
+    return pageSize;
+  }
+
+  public void setPageSize(PageSize pageSize) {
+    this.pageSize = pageSize;
+  }
+
+  public ReportByChannelRequest pageNumber(PageNumber pageNumber) {
+    this.pageNumber = pageNumber;
+    return this;
+  }
+
+   /**
+   * Get pageNumber
+   * @return pageNumber
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public PageNumber getPageNumber() {
+    return pageNumber;
+  }
+
+  public void setPageNumber(PageNumber pageNumber) {
+    this.pageNumber = pageNumber;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -177,12 +222,14 @@ public class ReportByChannelRequest {
         Objects.equals(this.endPeriodUtcDate, reportByChannelRequest.endPeriodUtcDate) &&
         Objects.equals(this.categoryFilter, reportByChannelRequest.categoryFilter) &&
         Objects.equals(this.indicatorFilters, reportByChannelRequest.indicatorFilters) &&
-        Objects.equals(this.advancedFilters, reportByChannelRequest.advancedFilters);
+        Objects.equals(this.advancedFilters, reportByChannelRequest.advancedFilters) &&
+        Objects.equals(this.pageSize, reportByChannelRequest.pageSize) &&
+        Objects.equals(this.pageNumber, reportByChannelRequest.pageNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(channelId, beginPeriodUtcDate, endPeriodUtcDate, categoryFilter, indicatorFilters, advancedFilters);
+    return Objects.hash(channelId, beginPeriodUtcDate, endPeriodUtcDate, categoryFilter, indicatorFilters, advancedFilters, pageSize, pageNumber);
   }
 
 
@@ -197,6 +244,8 @@ public class ReportByChannelRequest {
     sb.append("    categoryFilter: ").append(toIndentedString(categoryFilter)).append("\n");
     sb.append("    indicatorFilters: ").append(toIndentedString(indicatorFilters)).append("\n");
     sb.append("    advancedFilters: ").append(toIndentedString(advancedFilters)).append("\n");
+    sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
+    sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }

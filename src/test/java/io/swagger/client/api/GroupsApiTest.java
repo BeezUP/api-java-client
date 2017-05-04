@@ -63,35 +63,4 @@ public class GroupsApiTest {
         // TODO: test validations
     }
     
-    /**
-     * Get list of values related to this group name
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getUserListGroupTest() throws ApiException {
-        String listGroupName = null;
-        List<BeezUPCommonLOVLink2> response = api.getUserListGroup(listGroupName);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Get list of group of list name
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getUserListGroupNamesTest() throws ApiException {
-        List<BeezUPCommonLOVLink2> response = api.getUserListGroupNames();
-
-        // TODO: test validations
-    }
-    
 }

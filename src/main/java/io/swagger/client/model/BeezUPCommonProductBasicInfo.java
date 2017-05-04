@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiModelProperty;
  * The basic information related to a product
  */
 @ApiModel(description = "The basic information related to a product")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T10:56:32.379Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T10:49:46.695Z")
 public class BeezUPCommonProductBasicInfo {
   @SerializedName("productId")
   private String productId = null;
@@ -120,7 +120,7 @@ public class BeezUPCommonProductBasicInfo {
    * Indicates if the product still exists in your catalog
    * @return productActive
   **/
-  @ApiModelProperty(example = "true", required = true, value = "Indicates if the product still exists in your catalog")
+  @ApiModelProperty(example = "true", value = "Indicates if the product still exists in your catalog")
   public Boolean getProductActive() {
     return productActive;
   }

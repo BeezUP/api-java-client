@@ -65,36 +65,4 @@ public class LOVApiTest {
         // TODO: test validations
     }
     
-    /**
-     * Get all list names
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getUserListNamesTest() throws ApiException {
-        List<BeezUPCommonLOVLink2> response = api.getUserListNames();
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Get the list of values related to this list name
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getUserListOfValuesTest() throws ApiException {
-        String listName = null;
-        List<String> acceptLanguage = null;
-        List<BeezUPCommonListOfValueItem> response = api.getUserListOfValues(listName, acceptLanguage);
-
-        // TODO: test validations
-    }
-    
 }

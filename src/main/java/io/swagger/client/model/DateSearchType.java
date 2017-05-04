@@ -19,7 +19,7 @@ import com.google.gson.annotations.SerializedName;
 
 
 /**
- * Indicates on which date you want to make the filter.
+ * Indicates on which date you want to make the filter
  */
 public enum DateSearchType {
   

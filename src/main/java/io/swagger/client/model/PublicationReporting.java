@@ -26,7 +26,7 @@ import java.util.List;
  * Model for a publication reporting, can have multiple feeds
  */
 @ApiModel(description = "Model for a publication reporting, can have multiple feeds")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T10:56:32.379Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T10:49:46.695Z")
 public class PublicationReporting {
   @SerializedName("publicationType")
   private PublicationType publicationType = null;

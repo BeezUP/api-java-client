@@ -43,7 +43,7 @@ import org.joda.time.DateTime;
 /**
  * Order
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T10:56:32.379Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T10:49:46.695Z")
 public class Order {
   @SerializedName("marketplaceTechnicalCode")
   private MarketplaceTechnicalCode marketplaceTechnicalCode = null;
@@ -456,10 +456,10 @@ public class Order {
   }
 
    /**
-   * The last modification UTC date done by BeezUP of this order.
+   * The last modification UTC date done by BeezUP of this order
    * @return orderLastModificationUtcDate
   **/
-  @ApiModelProperty(example = "2017-04-16T10:30:23Z", required = true, value = "The last modification UTC date done by BeezUP of this order.")
+  @ApiModelProperty(example = "2017-04-16T10:30:23Z", required = true, value = "The last modification UTC date done by BeezUP of this order")
   public DateTime getOrderLastModificationUtcDate() {
     return orderLastModificationUtcDate;
   }
@@ -474,10 +474,10 @@ public class Order {
   }
 
    /**
-   * The last modification UTC date done by the marketplace on this order.
+   * The last modification UTC date done by the marketplace on this order
    * @return orderMarketplaceLastModificationUtcDate
   **/
-  @ApiModelProperty(example = "2017-04-16T10:25:23Z", required = true, value = "The last modification UTC date done by the marketplace on this order.")
+  @ApiModelProperty(example = "2017-04-16T10:25:23Z", required = true, value = "The last modification UTC date done by the marketplace on this order")
   public DateTime getOrderMarketplaceLastModificationUtcDate() {
     return orderMarketplaceLastModificationUtcDate;
   }
@@ -788,7 +788,7 @@ public class Order {
    * The shipping address line 1 of this order
    * @return orderShippingAddressLine1
   **/
-  @ApiModelProperty(example = "5 rue amÃƒÂ©lie", value = "The shipping address line 1 of this order")
+  @ApiModelProperty(example = "5 rue amÃ©lie", value = "The shipping address line 1 of this order")
   public String getOrderShippingAddressLine1() {
     return orderShippingAddressLine1;
   }
@@ -1130,7 +1130,7 @@ public class Order {
    * The Buyer address line 1 of this order
    * @return orderBuyerAddressLine1
   **/
-  @ApiModelProperty(example = "5 rue amÃƒÂ©lie", value = "The Buyer address line 1 of this order")
+  @ApiModelProperty(example = "5 rue amÃ©lie", value = "The Buyer address line 1 of this order")
   public String getOrderBuyerAddressLine1() {
     return orderBuyerAddressLine1;
   }

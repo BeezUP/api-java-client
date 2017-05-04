@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | **String** | The value of the parameter |  [optional]
+**value** | **Object** | The value of the parameter. It can be an integer a string or an object. |  [optional]
 **required** | **Boolean** |  |  [optional]
 **in** | [**InEnum**](#InEnum) | * path: if the parameter must be pass in the path uri * header: if the parameter must be passed in http header * query: if the parameter must be passed in querystring * body: if the paramter must be passed in the body  |  [optional]
 **type** | [**TypeEnum**](#TypeEnum) | The value type of the parameter |  [optional]

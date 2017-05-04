@@ -17,20 +17,18 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.BeezUPCommonLink2;
-import java.util.ArrayList;
-import java.util.List;
+import io.swagger.client.model.BeezUPCommonPaginationResultLinks;
 
 /**
  * BeezUPCommonPaginationResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T10:56:32.379Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T10:49:46.695Z")
 public class BeezUPCommonPaginationResult {
   @SerializedName("entryCount")
   private Integer entryCount = null;
 
   @SerializedName("links")
-  private List<BeezUPCommonLink2> links = new ArrayList<BeezUPCommonLink2>();
+  private BeezUPCommonPaginationResultLinks links = null;
 
   @SerializedName("pageCount")
   private Integer pageCount = null;
@@ -57,26 +55,21 @@ public class BeezUPCommonPaginationResult {
     this.entryCount = entryCount;
   }
 
-  public BeezUPCommonPaginationResult links(List<BeezUPCommonLink2> links) {
+  public BeezUPCommonPaginationResult links(BeezUPCommonPaginationResultLinks links) {
     this.links = links;
     return this;
   }
 
-  public BeezUPCommonPaginationResult addLinksItem(BeezUPCommonLink2 linksItem) {
-    this.links.add(linksItem);
-    return this;
-  }
-
    /**
-   * The navigation links 'first', 'last', 'next', 'previous'
+   * Get links
    * @return links
   **/
-  @ApiModelProperty(example = "null", value = "The navigation links 'first', 'last', 'next', 'previous'")
-  public List<BeezUPCommonLink2> getLinks() {
+  @ApiModelProperty(example = "null", value = "")
+  public BeezUPCommonPaginationResultLinks getLinks() {
     return links;
   }
 
-  public void setLinks(List<BeezUPCommonLink2> links) {
+  public void setLinks(BeezUPCommonPaginationResultLinks links) {
     this.links = links;
   }
 

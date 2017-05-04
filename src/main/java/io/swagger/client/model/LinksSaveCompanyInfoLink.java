@@ -17,6 +17,7 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.client.model.BeezUPCommonDocUrl;
 import io.swagger.client.model.BeezUPCommonHref;
 import io.swagger.client.model.BeezUPCommonHttpMethod;
 import io.swagger.client.model.BeezUPCommonInfoSummaries;
@@ -30,8 +31,11 @@ import java.util.Map;
 /**
  * LinksSaveCompanyInfoLink
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T10:56:32.379Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T10:49:46.695Z")
 public class LinksSaveCompanyInfoLink {
+  @SerializedName("docUrl")
+  private BeezUPCommonDocUrl docUrl = null;
+
   @SerializedName("description")
   private String description = null;
 
@@ -53,6 +57,24 @@ public class LinksSaveCompanyInfoLink {
   @SerializedName("info")
   private BeezUPCommonInfoSummaries info = null;
 
+  public LinksSaveCompanyInfoLink docUrl(BeezUPCommonDocUrl docUrl) {
+    this.docUrl = docUrl;
+    return this;
+  }
+
+   /**
+   * Get docUrl
+   * @return docUrl
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public BeezUPCommonDocUrl getDocUrl() {
+    return docUrl;
+  }
+
+  public void setDocUrl(BeezUPCommonDocUrl docUrl) {
+    this.docUrl = docUrl;
+  }
+
   public LinksSaveCompanyInfoLink description(String description) {
     this.description = description;
     return this;
@@ -62,7 +84,7 @@ public class LinksSaveCompanyInfoLink {
    * The description of the link
    * @return description
   **/
-  @ApiModelProperty(example = "null", value = "The description of the link")
+  @ApiModelProperty(example = "This is a description link", value = "The description of the link")
   public String getDescription() {
     return description;
   }
@@ -194,7 +216,8 @@ public class LinksSaveCompanyInfoLink {
       return false;
     }
     LinksSaveCompanyInfoLink linksSaveCompanyInfoLink = (LinksSaveCompanyInfoLink) o;
-    return Objects.equals(this.description, linksSaveCompanyInfoLink.description) &&
+    return Objects.equals(this.docUrl, linksSaveCompanyInfoLink.docUrl) &&
+        Objects.equals(this.description, linksSaveCompanyInfoLink.description) &&
         Objects.equals(this.href, linksSaveCompanyInfoLink.href) &&
         Objects.equals(this.operationId, linksSaveCompanyInfoLink.operationId) &&
         Objects.equals(this.method, linksSaveCompanyInfoLink.method) &&
@@ -205,7 +228,7 @@ public class LinksSaveCompanyInfoLink {
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, href, operationId, method, parameters, templated, info);
+    return Objects.hash(docUrl, description, href, operationId, method, parameters, templated, info);
   }
 
 
@@ -214,6 +237,7 @@ public class LinksSaveCompanyInfoLink {
     StringBuilder sb = new StringBuilder();
     sb.append("class LinksSaveCompanyInfoLink {\n");
     
+    sb.append("    docUrl: ").append(toIndentedString(docUrl)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    href: ").append(toIndentedString(href)).append("\n");
     sb.append("    operationId: ").append(toIndentedString(operationId)).append("\n");

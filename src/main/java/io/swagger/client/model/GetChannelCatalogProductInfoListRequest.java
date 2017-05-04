@@ -21,7 +21,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * GetChannelCatalogProductInfoListRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T10:56:32.379Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T10:49:46.695Z")
 public class GetChannelCatalogProductInfoListRequest {
   @SerializedName("sku")
   private String sku = null;
@@ -29,16 +29,31 @@ public class GetChannelCatalogProductInfoListRequest {
   @SerializedName("title")
   private String title = null;
 
+  @SerializedName("overrided")
+  private Boolean overrided = null;
+
+  @SerializedName("disabled")
+  private Boolean disabled = null;
+
+  @SerializedName("categoryMapped")
+  private Boolean categoryMapped = null;
+
+  @SerializedName("excluded")
+  private Boolean excluded = null;
+
+  @SerializedName("active")
+  private Boolean active = null;
+
   public GetChannelCatalogProductInfoListRequest sku(String sku) {
     this.sku = sku;
     return this;
   }
 
    /**
-   * The product sku to search
+   * Search by product sku. If null the filter will not be taken in account.
    * @return sku
   **/
-  @ApiModelProperty(example = "null", value = "The product sku to search")
+  @ApiModelProperty(example = "M123", value = "Search by product sku. If null the filter will not be taken in account.")
   public String getSku() {
     return sku;
   }
@@ -53,16 +68,106 @@ public class GetChannelCatalogProductInfoListRequest {
   }
 
    /**
-   * The  product title to search
+   * Search by product title. If null the filter will not be taken in account.
    * @return title
   **/
-  @ApiModelProperty(example = "null", value = "The  product title to search")
+  @ApiModelProperty(example = "RÃ©frigÃ©rateur", value = "Search by product title. If null the filter will not be taken in account.")
   public String getTitle() {
     return title;
   }
 
   public void setTitle(String title) {
     this.title = title;
+  }
+
+  public GetChannelCatalogProductInfoListRequest overrided(Boolean overrided) {
+    this.overrided = overrided;
+    return this;
+  }
+
+   /**
+   * Search overrided products. If null the filter will not be taken in account.
+   * @return overrided
+  **/
+  @ApiModelProperty(example = "true", value = "Search overrided products. If null the filter will not be taken in account.")
+  public Boolean getOverrided() {
+    return overrided;
+  }
+
+  public void setOverrided(Boolean overrided) {
+    this.overrided = overrided;
+  }
+
+  public GetChannelCatalogProductInfoListRequest disabled(Boolean disabled) {
+    this.disabled = disabled;
+    return this;
+  }
+
+   /**
+   * Search disabled products. If null the filter will not be taken in account.
+   * @return disabled
+  **/
+  @ApiModelProperty(example = "false", value = "Search disabled products. If null the filter will not be taken in account.")
+  public Boolean getDisabled() {
+    return disabled;
+  }
+
+  public void setDisabled(Boolean disabled) {
+    this.disabled = disabled;
+  }
+
+  public GetChannelCatalogProductInfoListRequest categoryMapped(Boolean categoryMapped) {
+    this.categoryMapped = categoryMapped;
+    return this;
+  }
+
+   /**
+   * Search product with category mapped with the channel. If null the filter will not be taken in account.
+   * @return categoryMapped
+  **/
+  @ApiModelProperty(example = "false", value = "Search product with category mapped with the channel. If null the filter will not be taken in account.")
+  public Boolean getCategoryMapped() {
+    return categoryMapped;
+  }
+
+  public void setCategoryMapped(Boolean categoryMapped) {
+    this.categoryMapped = categoryMapped;
+  }
+
+  public GetChannelCatalogProductInfoListRequest excluded(Boolean excluded) {
+    this.excluded = excluded;
+    return this;
+  }
+
+   /**
+   * Search excluded products by at least an exclusion filter. If null the filter will not be taken in account.
+   * @return excluded
+  **/
+  @ApiModelProperty(example = "false", value = "Search excluded products by at least an exclusion filter. If null the filter will not be taken in account.")
+  public Boolean getExcluded() {
+    return excluded;
+  }
+
+  public void setExcluded(Boolean excluded) {
+    this.excluded = excluded;
+  }
+
+  public GetChannelCatalogProductInfoListRequest active(Boolean active) {
+    this.active = active;
+    return this;
+  }
+
+   /**
+   * If false, search for product absent from the current catalog. If null the filter will not be taken in account.
+   * @return active
+  **/
+  @ApiModelProperty(example = "true", value = "If false, search for product absent from the current catalog. If null the filter will not be taken in account.")
+  public Boolean getActive() {
+    return active;
+  }
+
+  public void setActive(Boolean active) {
+    this.active = active;
   }
 
 
@@ -76,12 +181,17 @@ public class GetChannelCatalogProductInfoListRequest {
     }
     GetChannelCatalogProductInfoListRequest getChannelCatalogProductInfoListRequest = (GetChannelCatalogProductInfoListRequest) o;
     return Objects.equals(this.sku, getChannelCatalogProductInfoListRequest.sku) &&
-        Objects.equals(this.title, getChannelCatalogProductInfoListRequest.title);
+        Objects.equals(this.title, getChannelCatalogProductInfoListRequest.title) &&
+        Objects.equals(this.overrided, getChannelCatalogProductInfoListRequest.overrided) &&
+        Objects.equals(this.disabled, getChannelCatalogProductInfoListRequest.disabled) &&
+        Objects.equals(this.categoryMapped, getChannelCatalogProductInfoListRequest.categoryMapped) &&
+        Objects.equals(this.excluded, getChannelCatalogProductInfoListRequest.excluded) &&
+        Objects.equals(this.active, getChannelCatalogProductInfoListRequest.active);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sku, title);
+    return Objects.hash(sku, title, overrided, disabled, categoryMapped, excluded, active);
   }
 
 
@@ -92,6 +202,11 @@ public class GetChannelCatalogProductInfoListRequest {
     
     sb.append("    sku: ").append(toIndentedString(sku)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
+    sb.append("    overrided: ").append(toIndentedString(overrided)).append("\n");
+    sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
+    sb.append("    categoryMapped: ").append(toIndentedString(categoryMapped)).append("\n");
+    sb.append("    excluded: ").append(toIndentedString(excluded)).append("\n");
+    sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("}");
     return sb.toString();
   }

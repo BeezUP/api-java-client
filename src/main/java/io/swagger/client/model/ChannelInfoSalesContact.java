@@ -21,7 +21,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ChannelInfoSalesContact
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T10:56:32.379Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T10:49:46.695Z")
 public class ChannelInfoSalesContact {
   @SerializedName("name")
   private String name = null;
@@ -41,7 +41,7 @@ public class ChannelInfoSalesContact {
    * Indicate the BeezUP offer
    * @return name
   **/
-  @ApiModelProperty(example = "StÃƒÂ©phanie Gregis", value = "Indicate the BeezUP offer")
+  @ApiModelProperty(example = "StÃ©phanie Gregis", value = "Indicate the BeezUP offer")
   public String getName() {
     return name;
   }

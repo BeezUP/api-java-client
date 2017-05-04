@@ -17,10 +17,10 @@ import java.util.Objects;
 import io.swagger.annotations.ApiModel;
 
 /**
- * The technical code of the marketplace.
+ * The technical code of the marketplace
  */
-@ApiModel(description = "The technical code of the marketplace.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T10:56:32.379Z")
+@ApiModel(description = "The technical code of the marketplace")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T10:49:46.695Z")
 public class MarketplaceTechnicalCode {
 
   @Override

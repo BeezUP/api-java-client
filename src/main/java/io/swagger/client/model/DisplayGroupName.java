@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * Indicate the display group name where the column must be putted
  */
 @ApiModel(description = "Indicate the display group name where the column must be putted")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T10:56:32.379Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T10:49:46.695Z")
 public class DisplayGroupName {
 
   @Override

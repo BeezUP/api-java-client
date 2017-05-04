@@ -53,21 +53,6 @@ public class SecurityApiTest {
     }
     
     /**
-     * Log out the current user from go2
-     *
-     * Log out the current user from go2
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void logoutTest() throws ApiException {
-        api.logout();
-
-        // TODO: test validations
-    }
-    
-    /**
      * Lost password
      *
      * Lost password - Your password will be regenerated and sent to your email

@@ -17,10 +17,10 @@ import java.util.Objects;
 import io.swagger.annotations.ApiModel;
 
 /**
- * ETag value to identify the order. \\ This information is required for the operation GetOrder and ChangeOrder. \\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+ * ETag value to identify the order.\\ This information is required for the operation GetOrder and ChangeOrder.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
  */
-@ApiModel(description = "ETag value to identify the order. \\ This information is required for the operation GetOrder and ChangeOrder. \\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 ")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-03T10:56:32.379Z")
+@ApiModel(description = "ETag value to identify the order.\\ This information is required for the operation GetOrder and ChangeOrder.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 ")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T10:49:46.695Z")
 public class Etag {
 
   @Override
