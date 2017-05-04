@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * Can be null if you choose to use gravatar picture profil, if not you must indicate the url of your picture profil.
  */
 @ApiModel(description = "Can be null if you choose to use gravatar picture profil, if not you must indicate the url of your picture profil.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T10:49:46.695Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:01:44.220Z")
 public class ProfilePictureUrl {
 
   @Override

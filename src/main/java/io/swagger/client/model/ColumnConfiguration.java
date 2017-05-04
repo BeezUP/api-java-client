@@ -29,7 +29,7 @@ import io.swagger.client.model.DisplayGroupName;
  * Indicates the configuration applied on the column (catalog or custom) during the importation process.
  */
 @ApiModel(description = "Indicates the configuration applied on the column (catalog or custom) during the importation process.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T10:49:46.695Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:01:44.220Z")
 public class ColumnConfiguration {
   @SerializedName("beezUPColumnName")
   private BeezUPCommonBeezUPColumnName beezUPColumnName = null;

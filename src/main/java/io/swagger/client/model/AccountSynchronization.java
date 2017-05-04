@@ -25,7 +25,7 @@ import org.joda.time.DateTime;
 /**
  * AccountSynchronization
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T10:49:46.695Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:01:44.220Z")
 public class AccountSynchronization {
   @SerializedName("accountId")
   private AccountId accountId = null;

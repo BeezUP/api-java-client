@@ -17,6 +17,7 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.client.model.BeezUPCommonDocUrl;
 import io.swagger.client.model.BeezUPCommonUserErrorMessageArguments;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,10 +25,10 @@ import java.util.List;
 /**
  * BeezUPCommonUserErrorMessage
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T10:49:46.695Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:01:44.220Z")
 public class BeezUPCommonUserErrorMessage {
   @SerializedName("docUrl")
-  private String docUrl = null;
+  private BeezUPCommonDocUrl docUrl = null;
 
   @SerializedName("code")
   private String code = null;
@@ -41,21 +42,21 @@ public class BeezUPCommonUserErrorMessage {
   @SerializedName("arguments")
   private List<BeezUPCommonUserErrorMessageArguments> arguments = new ArrayList<BeezUPCommonUserErrorMessageArguments>();
 
-  public BeezUPCommonUserErrorMessage docUrl(String docUrl) {
+  public BeezUPCommonUserErrorMessage docUrl(BeezUPCommonDocUrl docUrl) {
     this.docUrl = docUrl;
     return this;
   }
 
    /**
-   * The documentation related to this operation.
+   * Get docUrl
    * @return docUrl
   **/
-  @ApiModelProperty(example = "https://beezup.github.io/api-docs/#operation/EnableChannelCatalog", value = "The documentation related to this operation.")
-  public String getDocUrl() {
+  @ApiModelProperty(example = "null", value = "")
+  public BeezUPCommonDocUrl getDocUrl() {
     return docUrl;
   }
 
-  public void setDocUrl(String docUrl) {
+  public void setDocUrl(BeezUPCommonDocUrl docUrl) {
     this.docUrl = docUrl;
   }
 

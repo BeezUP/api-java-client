@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * The store&#39;s sector based on the list of values /user/lov/ParamSector
  */
 @ApiModel(description = "The store's sector based on the list of values /user/lov/ParamSector")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T10:49:46.695Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:01:44.220Z")
 public class StoreSector {
 
   @Override

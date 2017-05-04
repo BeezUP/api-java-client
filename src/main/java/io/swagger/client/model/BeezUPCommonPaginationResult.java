@@ -22,19 +22,19 @@ import io.swagger.client.model.BeezUPCommonPaginationResultLinks;
 /**
  * BeezUPCommonPaginationResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T10:49:46.695Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:01:44.220Z")
 public class BeezUPCommonPaginationResult {
   @SerializedName("entryCount")
   private Integer entryCount = null;
-
-  @SerializedName("links")
-  private BeezUPCommonPaginationResultLinks links = null;
 
   @SerializedName("pageCount")
   private Integer pageCount = null;
 
   @SerializedName("totalEntryCount")
   private Integer totalEntryCount = null;
+
+  @SerializedName("links")
+  private BeezUPCommonPaginationResultLinks links = null;
 
   public BeezUPCommonPaginationResult entryCount(Integer entryCount) {
     this.entryCount = entryCount;
@@ -53,24 +53,6 @@ public class BeezUPCommonPaginationResult {
 
   public void setEntryCount(Integer entryCount) {
     this.entryCount = entryCount;
-  }
-
-  public BeezUPCommonPaginationResult links(BeezUPCommonPaginationResultLinks links) {
-    this.links = links;
-    return this;
-  }
-
-   /**
-   * Get links
-   * @return links
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public BeezUPCommonPaginationResultLinks getLinks() {
-    return links;
-  }
-
-  public void setLinks(BeezUPCommonPaginationResultLinks links) {
-    this.links = links;
   }
 
   public BeezUPCommonPaginationResult pageCount(Integer pageCount) {
@@ -111,6 +93,24 @@ public class BeezUPCommonPaginationResult {
     this.totalEntryCount = totalEntryCount;
   }
 
+  public BeezUPCommonPaginationResult links(BeezUPCommonPaginationResultLinks links) {
+    this.links = links;
+    return this;
+  }
+
+   /**
+   * Get links
+   * @return links
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public BeezUPCommonPaginationResultLinks getLinks() {
+    return links;
+  }
+
+  public void setLinks(BeezUPCommonPaginationResultLinks links) {
+    this.links = links;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -122,14 +122,14 @@ public class BeezUPCommonPaginationResult {
     }
     BeezUPCommonPaginationResult beezUPCommonPaginationResult = (BeezUPCommonPaginationResult) o;
     return Objects.equals(this.entryCount, beezUPCommonPaginationResult.entryCount) &&
-        Objects.equals(this.links, beezUPCommonPaginationResult.links) &&
         Objects.equals(this.pageCount, beezUPCommonPaginationResult.pageCount) &&
-        Objects.equals(this.totalEntryCount, beezUPCommonPaginationResult.totalEntryCount);
+        Objects.equals(this.totalEntryCount, beezUPCommonPaginationResult.totalEntryCount) &&
+        Objects.equals(this.links, beezUPCommonPaginationResult.links);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entryCount, links, pageCount, totalEntryCount);
+    return Objects.hash(entryCount, pageCount, totalEntryCount, links);
   }
 
 
@@ -139,9 +139,9 @@ public class BeezUPCommonPaginationResult {
     sb.append("class BeezUPCommonPaginationResult {\n");
     
     sb.append("    entryCount: ").append(toIndentedString(entryCount)).append("\n");
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("    totalEntryCount: ").append(toIndentedString(totalEntryCount)).append("\n");
+    sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("}");
     return sb.toString();
   }

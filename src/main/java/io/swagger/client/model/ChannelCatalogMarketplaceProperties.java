@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * ChannelCatalogMarketplaceProperties
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T10:49:46.695Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:01:44.220Z")
 public class ChannelCatalogMarketplaceProperties {
   @SerializedName("info")
   private BeezUPCommonInfoSummaries info = null;

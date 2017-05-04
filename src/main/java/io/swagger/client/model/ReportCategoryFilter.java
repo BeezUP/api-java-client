@@ -23,7 +23,7 @@ import java.util.List;
 /**
  * ReportCategoryFilter
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T10:49:46.695Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:01:44.220Z")
 public class ReportCategoryFilter {
   @SerializedName("categoryPath")
   private List<String> categoryPath = new ArrayList<String>();
