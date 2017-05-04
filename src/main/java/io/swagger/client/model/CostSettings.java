@@ -24,7 +24,7 @@ import java.math.BigDecimal;
  * Depending to the cost type you will have to define a cost value.
  */
 @ApiModel(description = "Depending to the cost type you will have to define a cost value.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:19:12.808Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:19:57.195Z")
 public class CostSettings {
   @SerializedName("costType")
   private CostType costType = null;

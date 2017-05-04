@@ -30,7 +30,7 @@ import org.joda.time.DateTime;
 /**
  * NextContractInfo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:19:12.808Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:19:57.195Z")
 public class NextContractInfo {
   @SerializedName("trialPeriodInMonth")
   private Integer trialPeriodInMonth = null;

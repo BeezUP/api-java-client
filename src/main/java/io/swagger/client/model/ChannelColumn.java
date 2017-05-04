@@ -28,7 +28,7 @@ import io.swagger.client.model.ChannelColumnShowInMapping;
  * The channel column
  */
 @ApiModel(description = "The channel column")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:19:12.808Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:19:57.195Z")
 public class ChannelColumn {
   @SerializedName("channelColumnId")
   private BeezUPCommonChannelColumnId channelColumnId = null;

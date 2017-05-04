@@ -26,7 +26,7 @@ import io.swagger.client.model.UserColumName;
  * The request message to create a custom column
  */
 @ApiModel(description = "The request message to create a custom column")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:19:12.808Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:19:57.195Z")
 public class CreateCustomColumnRequest {
   @SerializedName("userColumnName")
   private UserColumName userColumnName = null;

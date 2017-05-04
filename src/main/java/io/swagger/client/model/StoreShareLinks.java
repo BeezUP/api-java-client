@@ -23,7 +23,7 @@ import io.swagger.client.model.LinksDeleteShareLink;
  * The different actions you can make on this share
  */
 @ApiModel(description = "The different actions you can make on this share")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:19:12.808Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:19:57.195Z")
 public class StoreShareLinks {
   @SerializedName("deleteShare")
   private LinksDeleteShareLink deleteShare = null;

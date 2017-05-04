@@ -22,7 +22,7 @@ import java.util.Map;
  * All properties with the prefix order_ are translated in the list of values /user/lov#OrderMetaInfoPosted
  */
 @ApiModel(description = "All properties with the prefix order_ are translated in the list of values /user/lov#OrderMetaInfoPosted")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:19:12.808Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:19:57.195Z")
 public class ChangeOrderRequest extends HashMap<String, String> {
 
   @Override

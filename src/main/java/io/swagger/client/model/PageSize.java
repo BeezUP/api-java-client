@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * Indicate the item count per page
  */
 @ApiModel(description = "Indicate the item count per page")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:19:12.808Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:19:57.195Z")
 public class PageSize {
 
   @Override
