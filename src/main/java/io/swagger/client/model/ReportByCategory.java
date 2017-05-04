@@ -19,15 +19,13 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.BeezUPCommonCatalogCategoryId;
 import io.swagger.client.model.BeezUPCommonCatalogCategoryPath;
-import io.swagger.client.model.BeezUPCommonLink2;
+import io.swagger.client.model.ReportByCategoryLinks;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * ReportByCategory
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:05:37.723Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:20:31.147Z")
 public class ReportByCategory {
   @SerializedName("catalogCategoryId")
   private BeezUPCommonCatalogCategoryId catalogCategoryId = null;
@@ -60,7 +58,7 @@ public class ReportByCategory {
   private BigDecimal performanceIndicator = null;
 
   @SerializedName("links")
-  private List<BeezUPCommonLink2> links = new ArrayList<BeezUPCommonLink2>();
+  private ReportByCategoryLinks links = null;
 
   public ReportByCategory catalogCategoryId(BeezUPCommonCatalogCategoryId catalogCategoryId) {
     this.catalogCategoryId = catalogCategoryId;
@@ -242,26 +240,21 @@ public class ReportByCategory {
     this.performanceIndicator = performanceIndicator;
   }
 
-  public ReportByCategory links(List<BeezUPCommonLink2> links) {
+  public ReportByCategory links(ReportByCategoryLinks links) {
     this.links = links;
     return this;
   }
 
-  public ReportByCategory addLinksItem(BeezUPCommonLink2 linksItem) {
-    this.links.add(linksItem);
-    return this;
-  }
-
    /**
-   * The action list on this catagory
+   * Get links
    * @return links
   **/
-  @ApiModelProperty(example = "[{&quot;href&quot;:&quot;/v2/user/analytics/{storeId}/optimisations/bycategory/{catalogCategoryId}/{actionName}&quot;,&quot;operationId&quot;:&quot;OptimiseByCategory&quot;,&quot;rel&quot;:&quot;EnableProducts&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;storeId&quot;,&quot;in&quot;:&quot;path&quot;,&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;8f95eb1a-3691-4750-950d-a13c4a8a9bcc&quot;},{&quot;name&quot;:&quot;catalogCategoryId&quot;,&quot;in&quot;:&quot;path&quot;,&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;4c376178-25b4-4656-a86e-e3bd3a25b139&quot;},{&quot;name&quot;:&quot;actionName&quot;,&quot;in&quot;:&quot;path&quot;,&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;reenable&quot;},{&quot;name&quot;:&quot;request&quot;,&quot;in&quot;:&quot;body&quot;,&quot;type&quot;:&quot;array&quot;,&quot;value&quot;:[&quot;a2d38563-50f0-43f1-be2b-b16e7ec4f007&quot;]}]},{&quot;href&quot;:&quot;/v2/user/analytics/{storeId}/optimisations/bycategory/{catalogCategoryId}/{actionName}&quot;,&quot;operationId&quot;:&quot;OptimiseByCategory&quot;,&quot;rel&quot;:&quot;DisableProducts&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;storeId&quot;,&quot;in&quot;:&quot;path&quot;,&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;8f95eb1a-3691-4750-950d-a13c4a8a9bcc&quot;},{&quot;name&quot;:&quot;catalogCategoryId&quot;,&quot;in&quot;:&quot;path&quot;,&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;4c376178-25b4-4656-a86e-e3bd3a25b139&quot;},{&quot;name&quot;:&quot;actionName&quot;,&quot;in&quot;:&quot;path&quot;,&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;disable&quot;},{&quot;name&quot;:&quot;request&quot;,&quot;in&quot;:&quot;body&quot;,&quot;type&quot;:&quot;array&quot;,&quot;value&quot;:[&quot;a2d38563-50f0-43f1-be2b-b16e7ec4f007&quot;]}]}]", value = "The action list on this catagory")
-  public List<BeezUPCommonLink2> getLinks() {
+  @ApiModelProperty(example = "null", value = "")
+  public ReportByCategoryLinks getLinks() {
     return links;
   }
 
-  public void setLinks(List<BeezUPCommonLink2> links) {
+  public void setLinks(ReportByCategoryLinks links) {
     this.links = links;
   }
 

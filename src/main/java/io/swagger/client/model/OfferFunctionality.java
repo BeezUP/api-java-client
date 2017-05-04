@@ -21,7 +21,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * OfferFunctionality
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:05:37.723Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:20:31.147Z")
 public class OfferFunctionality {
   @SerializedName("functionalityCode")
   private String functionalityCode = null;

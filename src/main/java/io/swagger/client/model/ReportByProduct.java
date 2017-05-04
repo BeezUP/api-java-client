@@ -17,16 +17,14 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.BeezUPCommonLink2;
 import io.swagger.client.model.BeezUPCommonProductBasicInfo;
+import io.swagger.client.model.ReportByProductLinks;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * ReportByProduct
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:05:37.723Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:20:31.147Z")
 public class ReportByProduct {
   @SerializedName("product")
   private BeezUPCommonProductBasicInfo product = null;
@@ -56,7 +54,7 @@ public class ReportByProduct {
   private BigDecimal performanceIndicator = null;
 
   @SerializedName("links")
-  private List<BeezUPCommonLink2> links = new ArrayList<BeezUPCommonLink2>();
+  private ReportByProductLinks links = null;
 
   public ReportByProduct product(BeezUPCommonProductBasicInfo product) {
     this.product = product;
@@ -220,26 +218,21 @@ public class ReportByProduct {
     this.performanceIndicator = performanceIndicator;
   }
 
-  public ReportByProduct links(List<BeezUPCommonLink2> links) {
+  public ReportByProduct links(ReportByProductLinks links) {
     this.links = links;
     return this;
   }
 
-  public ReportByProduct addLinksItem(BeezUPCommonLink2 linksItem) {
-    this.links.add(linksItem);
-    return this;
-  }
-
    /**
-   * The action list on this product
+   * Get links
    * @return links
   **/
-  @ApiModelProperty(example = "[{&quot;href&quot;:&quot;/{channelCatalogId}/products/{productId}/overrides&quot;,&quot;operationId&quot;:&quot;OptimiseByProduct&quot;,&quot;rel&quot;:&quot;EditProduct&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;channelCatalogId&quot;,&quot;in&quot;:&quot;path&quot;,&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;8f95eb1a-3691-4750-950d-a13c4a8a9bcc&quot;},{&quot;name&quot;:&quot;productId&quot;,&quot;in&quot;:&quot;path&quot;,&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;6d469a54-8426-4855-abc2-9e062e2056b9&quot;}]},{&quot;href&quot;:&quot;/v2/user/analytics/{storeId}/optimisations/byproduct/{productId}/{actionName}&quot;,&quot;operationId&quot;:&quot;OptimiseByProduct&quot;,&quot;rel&quot;:&quot;EnableProduct&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;storeId&quot;,&quot;in&quot;:&quot;path&quot;,&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;8f95eb1a-3691-4750-950d-a13c4a8a9bcc&quot;},{&quot;name&quot;:&quot;productId&quot;,&quot;in&quot;:&quot;path&quot;,&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;6d469a54-8426-4855-abc2-9e062e2056b9&quot;},{&quot;name&quot;:&quot;actionName&quot;,&quot;in&quot;:&quot;path&quot;,&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;reenable&quot;},{&quot;name&quot;:&quot;request&quot;,&quot;in&quot;:&quot;body&quot;,&quot;type&quot;:&quot;array&quot;,&quot;value&quot;:[&quot;a2d38563-50f0-43f1-be2b-b16e7ec4f007&quot;]}]},{&quot;href&quot;:&quot;/v2/user/analytics/{storeId}/optimisations/byproduct/{productId}/{actionName}&quot;,&quot;operationId&quot;:&quot;OptimiseByProduct&quot;,&quot;rel&quot;:&quot;DisableProduct&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;storeId&quot;,&quot;in&quot;:&quot;path&quot;,&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;8f95eb1a-3691-4750-950d-a13c4a8a9bcc&quot;},{&quot;name&quot;:&quot;productId&quot;,&quot;in&quot;:&quot;path&quot;,&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;6d469a54-8426-4855-abc2-9e062e2056b9&quot;},{&quot;name&quot;:&quot;actionName&quot;,&quot;in&quot;:&quot;path&quot;,&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;disable&quot;},{&quot;name&quot;:&quot;request&quot;,&quot;in&quot;:&quot;body&quot;,&quot;type&quot;:&quot;array&quot;,&quot;value&quot;:[&quot;a2d38563-50f0-43f1-be2b-b16e7ec4f007&quot;]}]}]", required = true, value = "The action list on this product")
-  public List<BeezUPCommonLink2> getLinks() {
+  @ApiModelProperty(example = "null", required = true, value = "")
+  public ReportByProductLinks getLinks() {
     return links;
   }
 
-  public void setLinks(List<BeezUPCommonLink2> links) {
+  public void setLinks(ReportByProductLinks links) {
     this.links = links;
   }
 

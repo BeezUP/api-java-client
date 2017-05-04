@@ -25,7 +25,7 @@ import io.swagger.client.model.BeezUPCommonColumnImportance;
  * The channel column configuration. The BeezUP Column Name is optional. If the BeezUP column is mapped we will indicate the data type and column importance of the BeezUP column.
  */
 @ApiModel(description = "The channel column configuration. The BeezUP Column Name is optional. If the BeezUP column is mapped we will indicate the data type and column importance of the BeezUP column.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:05:37.723Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:20:31.147Z")
 public class ChannelColumnConfiguration {
   @SerializedName("columnImportance")
   private BeezUPCommonColumnImportance columnImportance = null;

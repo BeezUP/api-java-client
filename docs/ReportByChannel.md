@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **turnOver** | [**BigDecimal**](BigDecimal.md) | The Turnover for this channel | 
 **margin** | [**BigDecimal**](BigDecimal.md) | The margin for this channel | 
 **performanceIndicator** | [**BigDecimal**](BigDecimal.md) | The performance indicator based on the performance indicator formula indicated in the request for this channel | 
-**links** | [**List&lt;BeezUPCommonLink2&gt;**](BeezUPCommonLink2.md) | The action list on this channel |  [optional]
+**links** | [**ReportByChannelLinks**](ReportByChannelLinks.md) |  |  [optional]
 
 
 

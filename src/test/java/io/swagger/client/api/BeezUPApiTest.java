@@ -26,6 +26,7 @@ import io.swagger.client.model.BeezUPCommonErrorResponseMessage;
 import io.swagger.client.model.BeezUPCommonInfoSummaries;
 import io.swagger.client.model.BeezUPCommonLOVLink2;
 import io.swagger.client.model.BeezUPCommonLink2;
+import io.swagger.client.model.BeezUPCommonLink3;
 import io.swagger.client.model.BeezUPCommonListOfValueItem;
 import io.swagger.client.model.BillingPeriods;
 import io.swagger.client.model.CatalogColumns;
@@ -1680,7 +1681,7 @@ public class BeezUPApiTest {
         String storeId = null;
         String format = null;
         ReportByDayRequest request = null;
-        List<BeezUPCommonLink2> response = api.getStoreReportByDayExport(storeId, format, request);
+        BeezUPCommonLink3 response = api.getStoreReportByDayExport(storeId, format, request);
 
         // TODO: test validations
     }

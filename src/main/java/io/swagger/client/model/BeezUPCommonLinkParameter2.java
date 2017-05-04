@@ -22,7 +22,7 @@ import io.swagger.client.model.BeezUPCommonLOVLink2;
 /**
  * BeezUPCommonLinkParameter2
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:05:37.723Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:20:31.147Z")
 public class BeezUPCommonLinkParameter2 {
   @SerializedName("name")
   private String name = null;

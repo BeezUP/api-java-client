@@ -18,15 +18,13 @@ import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.BeezUPCommonChannelBasicInfo;
-import io.swagger.client.model.BeezUPCommonLink2;
+import io.swagger.client.model.ReportByChannelLinks;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * ReportByChannel
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:05:37.723Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:20:31.147Z")
 public class ReportByChannel {
   @SerializedName("channel")
   private BeezUPCommonChannelBasicInfo channel = null;
@@ -56,7 +54,7 @@ public class ReportByChannel {
   private BigDecimal performanceIndicator = null;
 
   @SerializedName("links")
-  private List<BeezUPCommonLink2> links = new ArrayList<BeezUPCommonLink2>();
+  private ReportByChannelLinks links = null;
 
   public ReportByChannel channel(BeezUPCommonChannelBasicInfo channel) {
     this.channel = channel;
@@ -220,26 +218,21 @@ public class ReportByChannel {
     this.performanceIndicator = performanceIndicator;
   }
 
-  public ReportByChannel links(List<BeezUPCommonLink2> links) {
+  public ReportByChannel links(ReportByChannelLinks links) {
     this.links = links;
     return this;
   }
 
-  public ReportByChannel addLinksItem(BeezUPCommonLink2 linksItem) {
-    this.links.add(linksItem);
-    return this;
-  }
-
    /**
-   * The action list on this channel
+   * Get links
    * @return links
   **/
-  @ApiModelProperty(example = "[{&quot;href&quot;:&quot;/v2/user/analytics/{storeId}/optimisations/bychannel/{channelId}/{actionName}&quot;,&quot;operationId&quot;:&quot;OptimiseByChannel&quot;,&quot;rel&quot;:&quot;EnableProducts&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;storeId&quot;,&quot;in&quot;:&quot;path&quot;,&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;8f95eb1a-3691-4750-950d-a13c4a8a9bcc&quot;},{&quot;name&quot;:&quot;channelId&quot;,&quot;in&quot;:&quot;path&quot;,&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;a2d38563-50f0-43f1-be2b-b16e7ec4f007&quot;},{&quot;name&quot;:&quot;actionName&quot;,&quot;in&quot;:&quot;path&quot;,&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;reenable&quot;}]},{&quot;href&quot;:&quot;/v2/user/analytics/{storeId}/optimisations/bychannel/{channelId}/{actionName}&quot;,&quot;operationId&quot;:&quot;OptimiseByChannel&quot;,&quot;rel&quot;:&quot;DisableProducts&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;storeId&quot;,&quot;in&quot;:&quot;path&quot;,&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;8f95eb1a-3691-4750-950d-a13c4a8a9bcc&quot;},{&quot;name&quot;:&quot;channelId&quot;,&quot;in&quot;:&quot;path&quot;,&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;a2d38563-50f0-43f1-be2b-b16e7ec4f007&quot;},{&quot;name&quot;:&quot;actionName&quot;,&quot;in&quot;:&quot;path&quot;,&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;disable&quot;}]}]", value = "The action list on this channel")
-  public List<BeezUPCommonLink2> getLinks() {
+  @ApiModelProperty(example = "null", value = "")
+  public ReportByChannelLinks getLinks() {
     return links;
   }
 
-  public void setLinks(List<BeezUPCommonLink2> links) {
+  public void setLinks(ReportByChannelLinks links) {
     this.links = links;
   }
 

@@ -39,6 +39,7 @@ import io.swagger.client.model.BeezUPCommonErrorResponseMessage;
 import io.swagger.client.model.BeezUPCommonInfoSummaries;
 import io.swagger.client.model.BeezUPCommonLOVLink2;
 import io.swagger.client.model.BeezUPCommonLink2;
+import io.swagger.client.model.BeezUPCommonLink3;
 import io.swagger.client.model.BeezUPCommonListOfValueItem;
 import io.swagger.client.model.BillingPeriods;
 import io.swagger.client.model.CatalogColumns;
@@ -11417,11 +11418,11 @@ public class BeezUPApi {
      * @param storeId Your store identifier (required)
      * @param format  (required)
      * @param request  (required)
-     * @return List&lt;BeezUPCommonLink2&gt;
+     * @return BeezUPCommonLink3
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<BeezUPCommonLink2> getStoreReportByDayExport(String storeId, String format, ReportByDayRequest request) throws ApiException {
-        ApiResponse<List<BeezUPCommonLink2>> resp = getStoreReportByDayExportWithHttpInfo(storeId, format, request);
+    public BeezUPCommonLink3 getStoreReportByDayExport(String storeId, String format, ReportByDayRequest request) throws ApiException {
+        ApiResponse<BeezUPCommonLink3> resp = getStoreReportByDayExportWithHttpInfo(storeId, format, request);
         return resp.getData();
     }
 
@@ -11431,12 +11432,12 @@ public class BeezUPApi {
      * @param storeId Your store identifier (required)
      * @param format  (required)
      * @param request  (required)
-     * @return ApiResponse&lt;List&lt;BeezUPCommonLink2&gt;&gt;
+     * @return ApiResponse&lt;BeezUPCommonLink3&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<BeezUPCommonLink2>> getStoreReportByDayExportWithHttpInfo(String storeId, String format, ReportByDayRequest request) throws ApiException {
+    public ApiResponse<BeezUPCommonLink3> getStoreReportByDayExportWithHttpInfo(String storeId, String format, ReportByDayRequest request) throws ApiException {
         com.squareup.okhttp.Call call = getStoreReportByDayExportValidateBeforeCall(storeId, format, request, null, null);
-        Type localVarReturnType = new TypeToken<List<BeezUPCommonLink2>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BeezUPCommonLink3>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -11450,7 +11451,7 @@ public class BeezUPApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getStoreReportByDayExportAsync(String storeId, String format, ReportByDayRequest request, final ApiCallback<List<BeezUPCommonLink2>> callback) throws ApiException {
+    public com.squareup.okhttp.Call getStoreReportByDayExportAsync(String storeId, String format, ReportByDayRequest request, final ApiCallback<BeezUPCommonLink3> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -11472,7 +11473,7 @@ public class BeezUPApi {
         }
 
         com.squareup.okhttp.Call call = getStoreReportByDayExportValidateBeforeCall(storeId, format, request, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<BeezUPCommonLink2>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BeezUPCommonLink3>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

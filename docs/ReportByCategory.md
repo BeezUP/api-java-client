@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **turnOver** | [**BigDecimal**](BigDecimal.md) | The Turnover for this category | 
 **margin** | [**BigDecimal**](BigDecimal.md) | The margin for this category | 
 **performanceIndicator** | [**BigDecimal**](BigDecimal.md) | The performance indicator based on the performance indicator formula indicated in the request for this category | 
-**links** | [**List&lt;BeezUPCommonLink2&gt;**](BeezUPCommonLink2.md) | The action list on this catagory |  [optional]
+**links** | [**ReportByCategoryLinks**](ReportByCategoryLinks.md) |  |  [optional]
 
 
 

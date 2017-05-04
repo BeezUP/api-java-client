@@ -28,7 +28,7 @@ import io.swagger.client.model.ChannelInfoTechnicalContact;
 /**
  * ChannelInfo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:05:37.723Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:20:31.147Z")
 public class ChannelInfo {
   @SerializedName("channelId")
   private BeezUPCommonChannelId channelId = null;

@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * The default cost on this channel category
  */
 @ApiModel(description = "The default cost on this channel category")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:05:37.723Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:20:31.147Z")
 public class ChannelCategoryDefaultCost {
 
   @Override

@@ -5082,7 +5082,7 @@ Name | Type | Description  | Notes
 
 <a name="getStoreReportByDayExport"></a>
 # **getStoreReportByDayExport**
-> List&lt;BeezUPCommonLink2&gt; getStoreReportByDayExport(storeId, format, request)
+> BeezUPCommonLink3 getStoreReportByDayExport(storeId, format, request)
 
 Get the report by day
 
@@ -5110,7 +5110,7 @@ String storeId = "storeId_example"; // String | Your store identifier
 String format = "format_example"; // String | 
 ReportByDayRequest request = new ReportByDayRequest(); // ReportByDayRequest | 
 try {
-    List<BeezUPCommonLink2> result = apiInstance.getStoreReportByDayExport(storeId, format, request);
+    BeezUPCommonLink3 result = apiInstance.getStoreReportByDayExport(storeId, format, request);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BeezUPApi#getStoreReportByDayExport");
@@ -5128,7 +5128,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;BeezUPCommonLink2&gt;**](BeezUPCommonLink2.md)
+[**BeezUPCommonLink3**](BeezUPCommonLink3.md)
 
 ### Authorization
 
