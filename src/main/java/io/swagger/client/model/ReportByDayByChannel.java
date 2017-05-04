@@ -23,7 +23,7 @@ import java.math.BigDecimal;
 /**
  * ReportByDayByChannel
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:27:39.504Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:29:42.718Z")
 public class ReportByDayByChannel {
   @SerializedName("channel")
   private BeezUPCommonChannelBasicInfo channel = null;

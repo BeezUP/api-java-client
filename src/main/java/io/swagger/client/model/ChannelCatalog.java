@@ -35,7 +35,7 @@ import java.util.List;
 /**
  * ChannelCatalog
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:27:39.504Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:29:42.718Z")
 public class ChannelCatalog {
   @SerializedName("channelId")
   private BeezUPCommonChannelId channelId = null;
@@ -145,7 +145,7 @@ public class ChannelCatalog {
    * The product count exported considering category mapping. Not all filters have been applied.
    * @return productCount
   **/
-  @ApiModelProperty(example = "null", value = "The product count exported considering category mapping. Not all filters have been applied.")
+  @ApiModelProperty(example = "null", required = true, value = "The product count exported considering category mapping. Not all filters have been applied.")
   public Integer getProductCount() {
     return productCount;
   }
