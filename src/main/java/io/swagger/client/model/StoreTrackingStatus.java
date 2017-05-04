@@ -22,7 +22,7 @@ import org.joda.time.DateTime;
 /**
  * StoreTrackingStatus
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:29:42.718Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T17:44:01.940Z")
 public class StoreTrackingStatus {
   @SerializedName("clickSynchronizationUtcDate")
   private DateTime clickSynchronizationUtcDate = null;

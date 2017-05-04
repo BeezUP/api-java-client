@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * Indicates if this column must shown in the mapping page or not
  */
 @ApiModel(description = "Indicates if this column must shown in the mapping page or not")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:29:42.718Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T17:44:01.940Z")
 public class ChannelColumnShowInMapping {
 
   @Override

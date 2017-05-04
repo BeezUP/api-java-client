@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * The catalog column named by the user (catalog or custom column)
  */
 @ApiModel(description = "The catalog column named by the user (catalog or custom column)")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:29:42.718Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T17:44:01.940Z")
 public class BeezUPCommonCatalogColumnUserName {
 
   @Override
