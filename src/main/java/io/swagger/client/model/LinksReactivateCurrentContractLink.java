@@ -31,7 +31,7 @@ import java.util.Map;
 /**
  * LinksReactivateCurrentContractLink
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T17:49:32.058Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T19:24:57.307Z")
 public class LinksReactivateCurrentContractLink {
   @SerializedName("docUrl")
   private BeezUPCommonDocUrl docUrl = null;

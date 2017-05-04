@@ -17,19 +17,17 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.BeezUPCommonLink2;
+import io.swagger.client.model.DefinitionsruleExecutionReportingLinks;
 import io.swagger.client.model.OptimisationActionName;
 import io.swagger.client.model.RuleExecutionReportingErrorType;
 import io.swagger.client.model.RuleExecutionReportingExecutionSource;
 import io.swagger.client.model.RuleExecutionReportingStatus;
-import java.util.ArrayList;
-import java.util.List;
 import org.joda.time.DateTime;
 
 /**
  * RuleExecutionReporting
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T17:49:32.058Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T19:24:57.307Z")
 public class RuleExecutionReporting {
   @SerializedName("ruleId")
   private String ruleId = null;
@@ -71,7 +69,7 @@ public class RuleExecutionReporting {
   private String reportUrl = null;
 
   @SerializedName("links")
-  private List<BeezUPCommonLink2> links = new ArrayList<BeezUPCommonLink2>();
+  private DefinitionsruleExecutionReportingLinks links = null;
 
   public RuleExecutionReporting ruleId(String ruleId) {
     this.ruleId = ruleId;
@@ -307,26 +305,21 @@ public class RuleExecutionReporting {
     this.reportUrl = reportUrl;
   }
 
-  public RuleExecutionReporting links(List<BeezUPCommonLink2> links) {
+  public RuleExecutionReporting links(DefinitionsruleExecutionReportingLinks links) {
     this.links = links;
     return this;
   }
 
-  public RuleExecutionReporting addLinksItem(BeezUPCommonLink2 linksItem) {
-    this.links.add(linksItem);
-    return this;
-  }
-
    /**
-   * Links to retrieve/action on this rule execution
+   * Get links
    * @return links
   **/
-  @ApiModelProperty(example = "[{&quot;href&quot;:&quot;/v2/user/analytics/{storeId}/rules/{ruleId}&quot;,&quot;rel&quot;:&quot;GetRule&quot;,&quot;operationId&quot;:&quot;GetRule&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;storeId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;value&quot;:&quot;10af9486-e28e-47ab-b045-e13e4acd55c3&quot;},{&quot;name&quot;:&quot;ruleId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;value&quot;:&quot;fd9a23a1-569b-40af-af91-f7275a57bf89&quot;}]}]", value = "Links to retrieve/action on this rule execution")
-  public List<BeezUPCommonLink2> getLinks() {
+  @ApiModelProperty(example = "null", value = "")
+  public DefinitionsruleExecutionReportingLinks getLinks() {
     return links;
   }
 
-  public void setLinks(List<BeezUPCommonLink2> links) {
+  public void setLinks(DefinitionsruleExecutionReportingLinks links) {
     this.links = links;
   }
 

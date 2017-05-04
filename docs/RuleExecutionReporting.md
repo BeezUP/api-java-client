@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **userId** | **String** | The userId that executed the rule if any |  [optional]
 **executionSource** | [**RuleExecutionReportingExecutionSource**](RuleExecutionReportingExecutionSource.md) |  | 
 **reportUrl** | **String** | The url for the excel report for this execution |  [optional]
-**links** | [**List&lt;BeezUPCommonLink2&gt;**](BeezUPCommonLink2.md) | Links to retrieve/action on this rule execution |  [optional]
+**links** | [**DefinitionsruleExecutionReportingLinks**](DefinitionsruleExecutionReportingLinks.md) |  |  [optional]
 
 
 

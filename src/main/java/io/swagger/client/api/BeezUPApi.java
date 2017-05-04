@@ -123,7 +123,7 @@ import io.swagger.client.model.ReportFilter;
 import io.swagger.client.model.ReportFilters;
 import io.swagger.client.model.Rule;
 import io.swagger.client.model.RuleExecutionReportings;
-import io.swagger.client.model.Rules;
+import io.swagger.client.model.RuleList;
 import io.swagger.client.model.SaveAutomaticTransitionRequest;
 import io.swagger.client.model.SaveReportFilterRequest;
 import io.swagger.client.model.SaveStoreAlertRequest;
@@ -6153,11 +6153,11 @@ public class BeezUPApi {
      * @param storeId Your store identifier (required)
      * @param format  (required)
      * @param request  (required)
-     * @return List&lt;BeezUPCommonLink2&gt;
+     * @return BeezUPCommonLink3
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<BeezUPCommonLink2> exportStoreReportByCategory(String storeId, String format, ReportByCategoryRequest request) throws ApiException {
-        ApiResponse<List<BeezUPCommonLink2>> resp = exportStoreReportByCategoryWithHttpInfo(storeId, format, request);
+    public BeezUPCommonLink3 exportStoreReportByCategory(String storeId, String format, ReportByCategoryRequest request) throws ApiException {
+        ApiResponse<BeezUPCommonLink3> resp = exportStoreReportByCategoryWithHttpInfo(storeId, format, request);
         return resp.getData();
     }
 
@@ -6167,12 +6167,12 @@ public class BeezUPApi {
      * @param storeId Your store identifier (required)
      * @param format  (required)
      * @param request  (required)
-     * @return ApiResponse&lt;List&lt;BeezUPCommonLink2&gt;&gt;
+     * @return ApiResponse&lt;BeezUPCommonLink3&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<BeezUPCommonLink2>> exportStoreReportByCategoryWithHttpInfo(String storeId, String format, ReportByCategoryRequest request) throws ApiException {
+    public ApiResponse<BeezUPCommonLink3> exportStoreReportByCategoryWithHttpInfo(String storeId, String format, ReportByCategoryRequest request) throws ApiException {
         com.squareup.okhttp.Call call = exportStoreReportByCategoryValidateBeforeCall(storeId, format, request, null, null);
-        Type localVarReturnType = new TypeToken<List<BeezUPCommonLink2>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BeezUPCommonLink3>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -6186,7 +6186,7 @@ public class BeezUPApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call exportStoreReportByCategoryAsync(String storeId, String format, ReportByCategoryRequest request, final ApiCallback<List<BeezUPCommonLink2>> callback) throws ApiException {
+    public com.squareup.okhttp.Call exportStoreReportByCategoryAsync(String storeId, String format, ReportByCategoryRequest request, final ApiCallback<BeezUPCommonLink3> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -6208,7 +6208,7 @@ public class BeezUPApi {
         }
 
         com.squareup.okhttp.Call call = exportStoreReportByCategoryValidateBeforeCall(storeId, format, request, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<BeezUPCommonLink2>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BeezUPCommonLink3>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -6290,11 +6290,11 @@ public class BeezUPApi {
      * @param storeId Your store identifier (required)
      * @param format  (required)
      * @param request  (required)
-     * @return List&lt;BeezUPCommonLink2&gt;
+     * @return BeezUPCommonLink3
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<BeezUPCommonLink2> exportStoreReportByChannel(String storeId, String format, ReportByChannelRequest request) throws ApiException {
-        ApiResponse<List<BeezUPCommonLink2>> resp = exportStoreReportByChannelWithHttpInfo(storeId, format, request);
+    public BeezUPCommonLink3 exportStoreReportByChannel(String storeId, String format, ReportByChannelRequest request) throws ApiException {
+        ApiResponse<BeezUPCommonLink3> resp = exportStoreReportByChannelWithHttpInfo(storeId, format, request);
         return resp.getData();
     }
 
@@ -6304,12 +6304,12 @@ public class BeezUPApi {
      * @param storeId Your store identifier (required)
      * @param format  (required)
      * @param request  (required)
-     * @return ApiResponse&lt;List&lt;BeezUPCommonLink2&gt;&gt;
+     * @return ApiResponse&lt;BeezUPCommonLink3&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<BeezUPCommonLink2>> exportStoreReportByChannelWithHttpInfo(String storeId, String format, ReportByChannelRequest request) throws ApiException {
+    public ApiResponse<BeezUPCommonLink3> exportStoreReportByChannelWithHttpInfo(String storeId, String format, ReportByChannelRequest request) throws ApiException {
         com.squareup.okhttp.Call call = exportStoreReportByChannelValidateBeforeCall(storeId, format, request, null, null);
-        Type localVarReturnType = new TypeToken<List<BeezUPCommonLink2>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BeezUPCommonLink3>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -6323,7 +6323,7 @@ public class BeezUPApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call exportStoreReportByChannelAsync(String storeId, String format, ReportByChannelRequest request, final ApiCallback<List<BeezUPCommonLink2>> callback) throws ApiException {
+    public com.squareup.okhttp.Call exportStoreReportByChannelAsync(String storeId, String format, ReportByChannelRequest request, final ApiCallback<BeezUPCommonLink3> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -6345,7 +6345,7 @@ public class BeezUPApi {
         }
 
         com.squareup.okhttp.Call call = exportStoreReportByChannelValidateBeforeCall(storeId, format, request, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<BeezUPCommonLink2>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BeezUPCommonLink3>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -6427,11 +6427,11 @@ public class BeezUPApi {
      * @param storeId Your store identifier (required)
      * @param format  (required)
      * @param request  (required)
-     * @return List&lt;BeezUPCommonLink2&gt;
+     * @return BeezUPCommonLink3
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<BeezUPCommonLink2> exportStoreReportByProduct(String storeId, String format, ReportByProductRequest request) throws ApiException {
-        ApiResponse<List<BeezUPCommonLink2>> resp = exportStoreReportByProductWithHttpInfo(storeId, format, request);
+    public BeezUPCommonLink3 exportStoreReportByProduct(String storeId, String format, ReportByProductRequest request) throws ApiException {
+        ApiResponse<BeezUPCommonLink3> resp = exportStoreReportByProductWithHttpInfo(storeId, format, request);
         return resp.getData();
     }
 
@@ -6441,12 +6441,12 @@ public class BeezUPApi {
      * @param storeId Your store identifier (required)
      * @param format  (required)
      * @param request  (required)
-     * @return ApiResponse&lt;List&lt;BeezUPCommonLink2&gt;&gt;
+     * @return ApiResponse&lt;BeezUPCommonLink3&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<BeezUPCommonLink2>> exportStoreReportByProductWithHttpInfo(String storeId, String format, ReportByProductRequest request) throws ApiException {
+    public ApiResponse<BeezUPCommonLink3> exportStoreReportByProductWithHttpInfo(String storeId, String format, ReportByProductRequest request) throws ApiException {
         com.squareup.okhttp.Call call = exportStoreReportByProductValidateBeforeCall(storeId, format, request, null, null);
-        Type localVarReturnType = new TypeToken<List<BeezUPCommonLink2>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BeezUPCommonLink3>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -6460,7 +6460,7 @@ public class BeezUPApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call exportStoreReportByProductAsync(String storeId, String format, ReportByProductRequest request, final ApiCallback<List<BeezUPCommonLink2>> callback) throws ApiException {
+    public com.squareup.okhttp.Call exportStoreReportByProductAsync(String storeId, String format, ReportByProductRequest request, final ApiCallback<BeezUPCommonLink3> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -6482,7 +6482,7 @@ public class BeezUPApi {
         }
 
         com.squareup.okhttp.Call call = exportStoreReportByProductValidateBeforeCall(storeId, format, request, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<BeezUPCommonLink2>>(){}.getType();
+        Type localVarReturnType = new TypeToken<BeezUPCommonLink3>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -10298,11 +10298,11 @@ public class BeezUPApi {
      * Gets the list of rules for a given store
      * 
      * @param storeId Your store identifier (required)
-     * @return Rules
+     * @return RuleList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Rules getRules(String storeId) throws ApiException {
-        ApiResponse<Rules> resp = getRulesWithHttpInfo(storeId);
+    public RuleList getRules(String storeId) throws ApiException {
+        ApiResponse<RuleList> resp = getRulesWithHttpInfo(storeId);
         return resp.getData();
     }
 
@@ -10310,12 +10310,12 @@ public class BeezUPApi {
      * Gets the list of rules for a given store
      * 
      * @param storeId Your store identifier (required)
-     * @return ApiResponse&lt;Rules&gt;
+     * @return ApiResponse&lt;RuleList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Rules> getRulesWithHttpInfo(String storeId) throws ApiException {
+    public ApiResponse<RuleList> getRulesWithHttpInfo(String storeId) throws ApiException {
         com.squareup.okhttp.Call call = getRulesValidateBeforeCall(storeId, null, null);
-        Type localVarReturnType = new TypeToken<Rules>(){}.getType();
+        Type localVarReturnType = new TypeToken<RuleList>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -10327,7 +10327,7 @@ public class BeezUPApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getRulesAsync(String storeId, final ApiCallback<Rules> callback) throws ApiException {
+    public com.squareup.okhttp.Call getRulesAsync(String storeId, final ApiCallback<RuleList> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -10349,7 +10349,7 @@ public class BeezUPApi {
         }
 
         com.squareup.okhttp.Call call = getRulesValidateBeforeCall(storeId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Rules>(){}.getType();
+        Type localVarReturnType = new TypeToken<RuleList>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

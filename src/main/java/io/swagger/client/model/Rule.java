@@ -17,17 +17,15 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.BeezUPCommonLink2;
+import io.swagger.client.model.DefinitionsruleLinks;
 import io.swagger.client.model.OptimisationActionName;
 import io.swagger.client.model.RuleLastExecutionStatus;
-import java.util.ArrayList;
-import java.util.List;
 import org.joda.time.DateTime;
 
 /**
  * Rule
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T17:49:32.058Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T19:24:57.307Z")
 public class Rule {
   @SerializedName("ruleId")
   private String ruleId = null;
@@ -60,7 +58,7 @@ public class Rule {
   private DateTime validityEndUtcDate = null;
 
   @SerializedName("links")
-  private List<BeezUPCommonLink2> links = new ArrayList<BeezUPCommonLink2>();
+  private DefinitionsruleLinks links = null;
 
   public Rule ruleId(String ruleId) {
     this.ruleId = ruleId;
@@ -242,26 +240,21 @@ public class Rule {
     this.validityEndUtcDate = validityEndUtcDate;
   }
 
-  public Rule links(List<BeezUPCommonLink2> links) {
+  public Rule links(DefinitionsruleLinks links) {
     this.links = links;
     return this;
   }
 
-  public Rule addLinksItem(BeezUPCommonLink2 linksItem) {
-    this.links.add(linksItem);
-    return this;
-  }
-
    /**
-   * Links to retrieve/action on other entities
+   * Get links
    * @return links
   **/
-  @ApiModelProperty(example = "[{&quot;href&quot;:&quot;/v2/user/analytics/{storeId}/rules/{ruleId}&quot;,&quot;rel&quot;:&quot;self&quot;,&quot;operationId&quot;:&quot;GetRule&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;storeId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;value&quot;:&quot;10af9486-e28e-47ab-b045-e13e4acd55c3&quot;},{&quot;name&quot;:&quot;ruleId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;value&quot;:&quot;c38006b4-29d0-4b8a-978b-701a0b12d5a8&quot;}]},{&quot;href&quot;:&quot;/v2/user/analytics/{storeId}/rules/{ruleId}&quot;,&quot;rel&quot;:&quot;UpdateRule&quot;,&quot;operationId&quot;:&quot;UpdateRule&quot;,&quot;method&quot;:&quot;PATCH&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;storeId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;value&quot;:&quot;10af9486-e28e-47ab-b045-e13e4acd55c3&quot;},{&quot;name&quot;:&quot;ruleId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;value&quot;:&quot;c38006b4-29d0-4b8a-978b-701a0b12d5a8&quot;}]},{&quot;href&quot;:&quot;/v2/user/analytics/{storeId}/rules/{ruleId}&quot;,&quot;rel&quot;:&quot;DeleteRule&quot;,&quot;operationId&quot;:&quot;DeleteRule&quot;,&quot;method&quot;:&quot;DELETE&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;storeId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;value&quot;:&quot;10af9486-e28e-47ab-b045-e13e4acd55c3&quot;},{&quot;name&quot;:&quot;ruleId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;value&quot;:&quot;c38006b4-29d0-4b8a-978b-701a0b12d5a8&quot;}]},{&quot;href&quot;:&quot;/v2/user/analytics/{storeId}/rules/{ruleId}/run&quot;,&quot;rel&quot;:&quot;RunRule&quot;,&quot;operationId&quot;:&quot;RunRule&quot;,&quot;method&quot;:&quot;POST&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;storeId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;value&quot;:&quot;10af9486-e28e-47ab-b045-e13e4acd55c3&quot;},{&quot;name&quot;:&quot;ruleId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;value&quot;:&quot;c38006b4-29d0-4b8a-978b-701a0b12d5a8&quot;}]},{&quot;href&quot;:&quot;/v2/user/analytics/{storeId}/rules/{ruleId}/moveup&quot;,&quot;rel&quot;:&quot;MoveUpRule&quot;,&quot;operationId&quot;:&quot;MoveUpRule&quot;,&quot;method&quot;:&quot;POST&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;storeId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;value&quot;:&quot;10af9486-e28e-47ab-b045-e13e4acd55c3&quot;},{&quot;name&quot;:&quot;ruleId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;value&quot;:&quot;c38006b4-29d0-4b8a-978b-701a0b12d5a8&quot;}]},{&quot;href&quot;:&quot;/v2/user/analytics/{storeId}/rules/{ruleId}/movedown&quot;,&quot;rel&quot;:&quot;MoveDownRule&quot;,&quot;operationId&quot;:&quot;MoveDownRule&quot;,&quot;method&quot;:&quot;POST&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;storeId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;value&quot;:&quot;10af9486-e28e-47ab-b045-e13e4acd55c3&quot;},{&quot;name&quot;:&quot;ruleId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;value&quot;:&quot;c38006b4-29d0-4b8a-978b-701a0b12d5a8&quot;}]},{&quot;href&quot;:&quot;/v2/user/analytics/{storeId}/rules/{ruleId}/enable&quot;,&quot;rel&quot;:&quot;EnableRule&quot;,&quot;operationId&quot;:&quot;EnableRule&quot;,&quot;method&quot;:&quot;POST&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;storeId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;value&quot;:&quot;10af9486-e28e-47ab-b045-e13e4acd55c3&quot;},{&quot;name&quot;:&quot;ruleId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;value&quot;:&quot;c38006b4-29d0-4b8a-978b-701a0b12d5a8&quot;}]},{&quot;href&quot;:&quot;/v2/user/analytics/{storeId}/rules/{ruleId}/disable&quot;,&quot;rel&quot;:&quot;DisableRule&quot;,&quot;operationId&quot;:&quot;DisableRule&quot;,&quot;method&quot;:&quot;POST&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;storeId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;value&quot;:&quot;10af9486-e28e-47ab-b045-e13e4acd55c3&quot;},{&quot;name&quot;:&quot;ruleId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;value&quot;:&quot;c38006b4-29d0-4b8a-978b-701a0b12d5a8&quot;}]},{&quot;href&quot;:&quot;/v2/user/analytics/{storeId}/reports/filters/{reportFilterId}&quot;,&quot;rel&quot;:&quot;GetReportFilter&quot;,&quot;operationId&quot;:&quot;GetReportFilter&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;storeId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;value&quot;:&quot;10af9486-e28e-47ab-b045-e13e4acd55c3&quot;},{&quot;name&quot;:&quot;reportFilterId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;value&quot;:&quot;fb19c53c-2f63-4262-9d94-2d7faa500acd&quot;}]}]", required = true, value = "Links to retrieve/action on other entities")
-  public List<BeezUPCommonLink2> getLinks() {
+  @ApiModelProperty(example = "null", required = true, value = "")
+  public DefinitionsruleLinks getLinks() {
     return links;
   }
 
-  public void setLinks(List<BeezUPCommonLink2> links) {
+  public void setLinks(DefinitionsruleLinks links) {
     this.links = links;
   }
 

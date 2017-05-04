@@ -2763,7 +2763,7 @@ null (empty response body)
 
 <a name="exportStoreReportByCategory"></a>
 # **exportStoreReportByCategory**
-> List&lt;BeezUPCommonLink2&gt; exportStoreReportByCategory(storeId, format, request)
+> BeezUPCommonLink3 exportStoreReportByCategory(storeId, format, request)
 
 Export the report by category
 
@@ -2791,7 +2791,7 @@ String storeId = "storeId_example"; // String | Your store identifier
 String format = "format_example"; // String | 
 ReportByCategoryRequest request = new ReportByCategoryRequest(); // ReportByCategoryRequest | 
 try {
-    List<BeezUPCommonLink2> result = apiInstance.exportStoreReportByCategory(storeId, format, request);
+    BeezUPCommonLink3 result = apiInstance.exportStoreReportByCategory(storeId, format, request);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BeezUPApi#exportStoreReportByCategory");
@@ -2809,7 +2809,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;BeezUPCommonLink2&gt;**](BeezUPCommonLink2.md)
+[**BeezUPCommonLink3**](BeezUPCommonLink3.md)
 
 ### Authorization
 
@@ -2822,7 +2822,7 @@ Name | Type | Description  | Notes
 
 <a name="exportStoreReportByChannel"></a>
 # **exportStoreReportByChannel**
-> List&lt;BeezUPCommonLink2&gt; exportStoreReportByChannel(storeId, format, request)
+> BeezUPCommonLink3 exportStoreReportByChannel(storeId, format, request)
 
 Export the report by channel
 
@@ -2850,7 +2850,7 @@ String storeId = "storeId_example"; // String | Your store identifier
 String format = "format_example"; // String | 
 ReportByChannelRequest request = new ReportByChannelRequest(); // ReportByChannelRequest | 
 try {
-    List<BeezUPCommonLink2> result = apiInstance.exportStoreReportByChannel(storeId, format, request);
+    BeezUPCommonLink3 result = apiInstance.exportStoreReportByChannel(storeId, format, request);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BeezUPApi#exportStoreReportByChannel");
@@ -2868,7 +2868,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;BeezUPCommonLink2&gt;**](BeezUPCommonLink2.md)
+[**BeezUPCommonLink3**](BeezUPCommonLink3.md)
 
 ### Authorization
 
@@ -2881,7 +2881,7 @@ Name | Type | Description  | Notes
 
 <a name="exportStoreReportByProduct"></a>
 # **exportStoreReportByProduct**
-> List&lt;BeezUPCommonLink2&gt; exportStoreReportByProduct(storeId, format, request)
+> BeezUPCommonLink3 exportStoreReportByProduct(storeId, format, request)
 
 Export the report by product
 
@@ -2909,7 +2909,7 @@ String storeId = "storeId_example"; // String | Your store identifier
 String format = "format_example"; // String | 
 ReportByProductRequest request = new ReportByProductRequest(); // ReportByProductRequest | 
 try {
-    List<BeezUPCommonLink2> result = apiInstance.exportStoreReportByProduct(storeId, format, request);
+    BeezUPCommonLink3 result = apiInstance.exportStoreReportByProduct(storeId, format, request);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BeezUPApi#exportStoreReportByProduct");
@@ -2927,7 +2927,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;BeezUPCommonLink2&gt;**](BeezUPCommonLink2.md)
+[**BeezUPCommonLink3**](BeezUPCommonLink3.md)
 
 ### Authorization
 
@@ -4593,7 +4593,7 @@ Name | Type | Description  | Notes
 
 <a name="getRules"></a>
 # **getRules**
-> Rules getRules(storeId)
+> RuleList getRules(storeId)
 
 Gets the list of rules for a given store
 
@@ -4617,7 +4617,7 @@ api_key.setApiKey("YOUR API KEY");
 BeezUPApi apiInstance = new BeezUPApi();
 String storeId = "storeId_example"; // String | Your store identifier
 try {
-    Rules result = apiInstance.getRules(storeId);
+    RuleList result = apiInstance.getRules(storeId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BeezUPApi#getRules");
@@ -4633,7 +4633,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Rules**](Rules.md)
+[**RuleList**](RuleList.md)
 
 ### Authorization
 

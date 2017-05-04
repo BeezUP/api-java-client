@@ -110,7 +110,7 @@ import io.swagger.client.model.ReportFilter;
 import io.swagger.client.model.ReportFilters;
 import io.swagger.client.model.Rule;
 import io.swagger.client.model.RuleExecutionReportings;
-import io.swagger.client.model.Rules;
+import io.swagger.client.model.RuleList;
 import io.swagger.client.model.SaveAutomaticTransitionRequest;
 import io.swagger.client.model.SaveReportFilterRequest;
 import io.swagger.client.model.SaveStoreAlertRequest;
@@ -972,7 +972,7 @@ public class BeezUPApiTest {
         String storeId = null;
         String format = null;
         ReportByCategoryRequest request = null;
-        List<BeezUPCommonLink2> response = api.exportStoreReportByCategory(storeId, format, request);
+        BeezUPCommonLink3 response = api.exportStoreReportByCategory(storeId, format, request);
 
         // TODO: test validations
     }
@@ -990,7 +990,7 @@ public class BeezUPApiTest {
         String storeId = null;
         String format = null;
         ReportByChannelRequest request = null;
-        List<BeezUPCommonLink2> response = api.exportStoreReportByChannel(storeId, format, request);
+        BeezUPCommonLink3 response = api.exportStoreReportByChannel(storeId, format, request);
 
         // TODO: test validations
     }
@@ -1008,7 +1008,7 @@ public class BeezUPApiTest {
         String storeId = null;
         String format = null;
         ReportByProductRequest request = null;
-        List<BeezUPCommonLink2> response = api.exportStoreReportByProduct(storeId, format, request);
+        BeezUPCommonLink3 response = api.exportStoreReportByProduct(storeId, format, request);
 
         // TODO: test validations
     }
@@ -1531,7 +1531,7 @@ public class BeezUPApiTest {
     @Test
     public void getRulesTest() throws ApiException {
         String storeId = null;
-        Rules response = api.getRules(storeId);
+        RuleList response = api.getRules(storeId);
 
         // TODO: test validations
     }

@@ -17,14 +17,12 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.BeezUPCommonLink2;
-import java.util.ArrayList;
-import java.util.List;
+import io.swagger.client.model.ReportFilterHeaderLinks;
 
 /**
  * ReportFilterHeader
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T17:49:32.058Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T19:24:57.307Z")
 public class ReportFilterHeader {
   @SerializedName("reportFilterId")
   private String reportFilterId = null;
@@ -33,7 +31,7 @@ public class ReportFilterHeader {
   private String reportFilterName = null;
 
   @SerializedName("links")
-  private List<BeezUPCommonLink2> links = new ArrayList<BeezUPCommonLink2>();
+  private ReportFilterHeaderLinks links = null;
 
   public ReportFilterHeader reportFilterId(String reportFilterId) {
     this.reportFilterId = reportFilterId;
@@ -71,26 +69,21 @@ public class ReportFilterHeader {
     this.reportFilterName = reportFilterName;
   }
 
-  public ReportFilterHeader links(List<BeezUPCommonLink2> links) {
+  public ReportFilterHeader links(ReportFilterHeaderLinks links) {
     this.links = links;
     return this;
   }
 
-  public ReportFilterHeader addLinksItem(BeezUPCommonLink2 linksItem) {
-    this.links.add(linksItem);
-    return this;
-  }
-
    /**
-   * The list of action you can do on the filter subject
+   * Get links
    * @return links
   **/
-  @ApiModelProperty(example = "[{&quot;href&quot;:&quot;/v2/user/analytics/{storeId}/reports/filters/{reportFilterId}&quot;,&quot;rel&quot;:&quot;self&quot;,&quot;operationId&quot;:&quot;GetReportFilter&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;storeId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;value&quot;:&quot;10af9486-e28e-47ab-b045-e13e4acd55c3&quot;},{&quot;name&quot;:&quot;reportFilterId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;value&quot;:&quot;fb19c53c-2f63-4262-9d94-2d7faa500acd&quot;}]}]", required = true, value = "The list of action you can do on the filter subject")
-  public List<BeezUPCommonLink2> getLinks() {
+  @ApiModelProperty(example = "null", required = true, value = "")
+  public ReportFilterHeaderLinks getLinks() {
     return links;
   }
 
-  public void setLinks(List<BeezUPCommonLink2> links) {
+  public void setLinks(ReportFilterHeaderLinks links) {
     this.links = links;
   }
 
