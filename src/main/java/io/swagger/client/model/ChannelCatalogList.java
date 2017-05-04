@@ -18,20 +18,20 @@ import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.BeezUPCommonLink2;
-import io.swagger.client.model.ChannelCatalogHeader;
+import io.swagger.client.model.ChannelCatalog;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * ChannelCatalogList
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:07:10.326Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:10:30.245Z")
 public class ChannelCatalogList {
   @SerializedName("links")
   private List<BeezUPCommonLink2> links = new ArrayList<BeezUPCommonLink2>();
 
   @SerializedName("channelCatalogs")
-  private List<ChannelCatalogHeader> channelCatalogs = new ArrayList<ChannelCatalogHeader>();
+  private List<ChannelCatalog> channelCatalogs = new ArrayList<ChannelCatalog>();
 
   public ChannelCatalogList links(List<BeezUPCommonLink2> links) {
     this.links = links;
@@ -56,12 +56,12 @@ public class ChannelCatalogList {
     this.links = links;
   }
 
-  public ChannelCatalogList channelCatalogs(List<ChannelCatalogHeader> channelCatalogs) {
+  public ChannelCatalogList channelCatalogs(List<ChannelCatalog> channelCatalogs) {
     this.channelCatalogs = channelCatalogs;
     return this;
   }
 
-  public ChannelCatalogList addChannelCatalogsItem(ChannelCatalogHeader channelCatalogsItem) {
+  public ChannelCatalogList addChannelCatalogsItem(ChannelCatalog channelCatalogsItem) {
     this.channelCatalogs.add(channelCatalogsItem);
     return this;
   }
@@ -71,11 +71,11 @@ public class ChannelCatalogList {
    * @return channelCatalogs
   **/
   @ApiModelProperty(example = "null", value = "")
-  public List<ChannelCatalogHeader> getChannelCatalogs() {
+  public List<ChannelCatalog> getChannelCatalogs() {
     return channelCatalogs;
   }
 
-  public void setChannelCatalogs(List<ChannelCatalogHeader> channelCatalogs) {
+  public void setChannelCatalogs(List<ChannelCatalog> channelCatalogs) {
     this.channelCatalogs = channelCatalogs;
   }
 

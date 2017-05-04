@@ -24,7 +24,7 @@ import java.math.BigDecimal;
 /**
  * ReportByProduct
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:07:10.326Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:10:30.245Z")
 public class ReportByProduct {
   @SerializedName("product")
   private BeezUPCommonProductBasicInfo product = null;

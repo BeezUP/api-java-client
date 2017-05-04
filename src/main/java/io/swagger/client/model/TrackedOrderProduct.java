@@ -23,7 +23,7 @@ import java.math.BigDecimal;
 /**
  * TrackedOrderProduct
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:07:10.326Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:10:30.245Z")
 public class TrackedOrderProduct {
   @SerializedName("productId")
   private String productId = null;

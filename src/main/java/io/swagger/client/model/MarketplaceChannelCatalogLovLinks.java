@@ -23,7 +23,7 @@ import io.swagger.client.model.BeezUPCommonLOVLink3;
  * Indicates the List Of Values related to the marketplace
  */
 @ApiModel(description = "Indicates the List Of Values related to the marketplace")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:07:10.326Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:10:30.245Z")
 public class MarketplaceChannelCatalogLovLinks {
   @SerializedName("shippingMethodLOV")
   private BeezUPCommonLOVLink3 shippingMethodLOV = null;

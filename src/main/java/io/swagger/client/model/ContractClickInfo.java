@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiModelProperty;
  * Describe the click information related to the offer.
  */
 @ApiModel(description = "Describe the click information related to the offer.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:07:10.326Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:10:30.245Z")
 public class ContractClickInfo {
   @SerializedName("additionalClickPrice")
   private Double additionalClickPrice = null;

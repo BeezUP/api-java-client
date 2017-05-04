@@ -24,7 +24,7 @@ import io.swagger.client.model.EncryptedExpression;
  * The request message to change the custom column expression
  */
 @ApiModel(description = "The request message to change the custom column expression")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:07:10.326Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:10:30.245Z")
 public class ChangeCustomColumnExpressionRequest {
   @SerializedName("encryptedExpression")
   private EncryptedExpression encryptedExpression = null;

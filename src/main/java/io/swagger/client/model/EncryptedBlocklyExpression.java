@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * The encrypted XML Blockly representation of the expression
  */
 @ApiModel(description = "The encrypted XML Blockly representation of the expression")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:07:10.326Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:10:30.245Z")
 public class EncryptedBlocklyExpression {
 
   @Override

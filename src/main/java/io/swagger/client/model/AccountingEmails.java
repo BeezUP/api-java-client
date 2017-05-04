@@ -23,7 +23,7 @@ import java.util.List;
  * Your company accounting emails
  */
 @ApiModel(description = "Your company accounting emails")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:07:10.326Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:10:30.245Z")
 public class AccountingEmails extends ArrayList<BeezUPCommonEmail> {
 
   @Override
