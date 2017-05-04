@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * ApiCredentials
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T13:44:04.202Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T13:54:25.397Z")
 public class ApiCredentials {
   @SerializedName("credentials")
   private List<ApiCredential> credentials = new ArrayList<ApiCredential>();
@@ -43,7 +43,7 @@ public class ApiCredentials {
    * Your API credential list
    * @return credentials
   **/
-  @ApiModelProperty(example = "[{&quot;productName&quot;:&quot;BeezUP API&quot;,&quot;primaryToken&quot;:&quot;3b22980d8d1143c6ba7adf4e55b9a153&quot;,&quot;secondaryToken&quot;:&quot;162ae17fd52044c38cce3388ea5b0c91&quot;}]", value = "Your API credential list")
+  @ApiModelProperty(example = "[{&quot;productName&quot;:&quot;UserApi&quot;,&quot;primaryToken&quot;:&quot;3b22980d8d1143c6ba7adf4e55b9a153&quot;,&quot;secondaryToken&quot;:&quot;162ae17fd52044c38cce3388ea5b0c91&quot;}]", value = "Your API credential list")
   public List<ApiCredential> getCredentials() {
     return credentials;
   }

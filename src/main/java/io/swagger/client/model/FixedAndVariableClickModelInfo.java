@@ -25,7 +25,7 @@ import java.util.List;
  * Internal usage: Old offer type. Describe the fix and variable model information
  */
 @ApiModel(description = "Internal usage: Old offer type. Describe the fix and variable model information")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T13:44:04.202Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T13:54:25.397Z")
 public class FixedAndVariableClickModelInfo {
   @SerializedName("clickIncludedAndAdditionalClickPrices")
   private List<ClickIncludedAndAdditionalClickPrice> clickIncludedAndAdditionalClickPrices = new ArrayList<ClickIncludedAndAdditionalClickPrice>();

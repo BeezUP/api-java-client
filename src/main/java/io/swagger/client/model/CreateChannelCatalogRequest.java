@@ -23,7 +23,7 @@ import io.swagger.client.model.BeezUPCommonStoreId;
 /**
  * CreateChannelCatalogRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T13:44:04.202Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T13:54:25.397Z")
 public class CreateChannelCatalogRequest {
   @SerializedName("channelId")
   private BeezUPCommonChannelId channelId = null;
