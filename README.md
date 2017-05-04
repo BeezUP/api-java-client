@@ -534,6 +534,7 @@ Class | Method | HTTP request | Description
  - [LinksSaveCreditCardInfoLink](docs/LinksSaveCreditCardInfoLink.md)
  - [LinksSavePersonalInfoLink](docs/LinksSavePersonalInfoLink.md)
  - [LinksSaveProfilePictureInfoLink](docs/LinksSaveProfilePictureInfoLink.md)
+ - [LinksSaveReportFilterLink](docs/LinksSaveReportFilterLink.md)
  - [LinksSaveStoreAlertLink](docs/LinksSaveStoreAlertLink.md)
  - [LinksSetChannelCatalogMarketplaceSettingsLink](docs/LinksSetChannelCatalogMarketplaceSettingsLink.md)
  - [LinksShareLink](docs/LinksShareLink.md)

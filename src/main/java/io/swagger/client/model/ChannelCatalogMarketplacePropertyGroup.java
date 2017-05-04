@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * ChannelCatalogMarketplacePropertyGroup
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T17:44:01.940Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T17:49:32.058Z")
 public class ChannelCatalogMarketplacePropertyGroup {
   @SerializedName("displayGroupCode")
   private String displayGroupCode = null;

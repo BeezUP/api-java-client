@@ -17,21 +17,21 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.BeezUPCommonLink2;
 import io.swagger.client.model.ReportFilterHeader;
+import io.swagger.client.model.ReportFiltersLinks;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * ReportFilters
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T17:44:01.940Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T17:49:32.058Z")
 public class ReportFilters {
   @SerializedName("reportFilters")
   private List<ReportFilterHeader> reportFilters = new ArrayList<ReportFilterHeader>();
 
   @SerializedName("links")
-  private List<BeezUPCommonLink2> links = new ArrayList<BeezUPCommonLink2>();
+  private ReportFiltersLinks links = null;
 
   public ReportFilters reportFilters(List<ReportFilterHeader> reportFilters) {
     this.reportFilters = reportFilters;
@@ -56,13 +56,8 @@ public class ReportFilters {
     this.reportFilters = reportFilters;
   }
 
-  public ReportFilters links(List<BeezUPCommonLink2> links) {
+  public ReportFilters links(ReportFiltersLinks links) {
     this.links = links;
-    return this;
-  }
-
-  public ReportFilters addLinksItem(BeezUPCommonLink2 linksItem) {
-    this.links.add(linksItem);
     return this;
   }
 
@@ -70,12 +65,12 @@ public class ReportFilters {
    * Get links
    * @return links
   **/
-  @ApiModelProperty(example = "[{&quot;href&quot;:&quot;/v2/user/analytics/{storeId}/reports/filters&quot;,&quot;rel&quot;:&quot;self&quot;,&quot;operationId&quot;:&quot;GetReportFilters&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;storeId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;value&quot;:&quot;10af9486-e28e-47ab-b045-e13e4acd55c3&quot;},{&quot;name&quot;:&quot;reportFilterId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;}]},{&quot;href&quot;:&quot;/v2/user/analytics/{storeId}/reports/filters/{reportFilterId}&quot;,&quot;rel&quot;:&quot;SaveReportFilter&quot;,&quot;operationId&quot;:&quot;SaveReportFilter&quot;,&quot;method&quot;:&quot;PUT&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;storeId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;value&quot;:&quot;10af9486-e28e-47ab-b045-e13e4acd55c3&quot;},{&quot;name&quot;:&quot;reportFilterId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;}]}]", value = "")
-  public List<BeezUPCommonLink2> getLinks() {
+  @ApiModelProperty(example = "null", value = "")
+  public ReportFiltersLinks getLinks() {
     return links;
   }
 
-  public void setLinks(List<BeezUPCommonLink2> links) {
+  public void setLinks(ReportFiltersLinks links) {
     this.links = links;
   }
 

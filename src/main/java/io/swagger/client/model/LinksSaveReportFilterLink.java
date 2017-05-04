@@ -29,10 +29,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * LinksGetChannelCatalogProductInfoLink
+ * LinksSaveReportFilterLink
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T17:49:32.058Z")
-public class LinksGetChannelCatalogProductInfoLink {
+public class LinksSaveReportFilterLink {
   @SerializedName("docUrl")
   private BeezUPCommonDocUrl docUrl = null;
 
@@ -57,7 +57,7 @@ public class LinksGetChannelCatalogProductInfoLink {
   @SerializedName("info")
   private BeezUPCommonInfoSummaries info = null;
 
-  public LinksGetChannelCatalogProductInfoLink docUrl(BeezUPCommonDocUrl docUrl) {
+  public LinksSaveReportFilterLink docUrl(BeezUPCommonDocUrl docUrl) {
     this.docUrl = docUrl;
     return this;
   }
@@ -75,7 +75,7 @@ public class LinksGetChannelCatalogProductInfoLink {
     this.docUrl = docUrl;
   }
 
-  public LinksGetChannelCatalogProductInfoLink description(String description) {
+  public LinksSaveReportFilterLink description(String description) {
     this.description = description;
     return this;
   }
@@ -93,7 +93,7 @@ public class LinksGetChannelCatalogProductInfoLink {
     this.description = description;
   }
 
-  public LinksGetChannelCatalogProductInfoLink href(BeezUPCommonHref href) {
+  public LinksSaveReportFilterLink href(BeezUPCommonHref href) {
     this.href = href;
     return this;
   }
@@ -111,7 +111,7 @@ public class LinksGetChannelCatalogProductInfoLink {
     this.href = href;
   }
 
-  public LinksGetChannelCatalogProductInfoLink operationId(BeezUPCommonOperationId operationId) {
+  public LinksSaveReportFilterLink operationId(BeezUPCommonOperationId operationId) {
     this.operationId = operationId;
     return this;
   }
@@ -129,7 +129,7 @@ public class LinksGetChannelCatalogProductInfoLink {
     this.operationId = operationId;
   }
 
-  public LinksGetChannelCatalogProductInfoLink method(BeezUPCommonHttpMethod method) {
+  public LinksSaveReportFilterLink method(BeezUPCommonHttpMethod method) {
     this.method = method;
     return this;
   }
@@ -147,12 +147,12 @@ public class LinksGetChannelCatalogProductInfoLink {
     this.method = method;
   }
 
-  public LinksGetChannelCatalogProductInfoLink parameters(Map<String, BeezUPCommonLinkParameter3> parameters) {
+  public LinksSaveReportFilterLink parameters(Map<String, BeezUPCommonLinkParameter3> parameters) {
     this.parameters = parameters;
     return this;
   }
 
-  public LinksGetChannelCatalogProductInfoLink putParametersItem(String key, BeezUPCommonLinkParameter3 parametersItem) {
+  public LinksSaveReportFilterLink putParametersItem(String key, BeezUPCommonLinkParameter3 parametersItem) {
     this.parameters.put(key, parametersItem);
     return this;
   }
@@ -170,7 +170,7 @@ public class LinksGetChannelCatalogProductInfoLink {
     this.parameters = parameters;
   }
 
-  public LinksGetChannelCatalogProductInfoLink templated(Boolean templated) {
+  public LinksSaveReportFilterLink templated(Boolean templated) {
     this.templated = templated;
     return this;
   }
@@ -188,7 +188,7 @@ public class LinksGetChannelCatalogProductInfoLink {
     this.templated = templated;
   }
 
-  public LinksGetChannelCatalogProductInfoLink info(BeezUPCommonInfoSummaries info) {
+  public LinksSaveReportFilterLink info(BeezUPCommonInfoSummaries info) {
     this.info = info;
     return this;
   }
@@ -215,15 +215,15 @@ public class LinksGetChannelCatalogProductInfoLink {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    LinksGetChannelCatalogProductInfoLink linksGetChannelCatalogProductInfoLink = (LinksGetChannelCatalogProductInfoLink) o;
-    return Objects.equals(this.docUrl, linksGetChannelCatalogProductInfoLink.docUrl) &&
-        Objects.equals(this.description, linksGetChannelCatalogProductInfoLink.description) &&
-        Objects.equals(this.href, linksGetChannelCatalogProductInfoLink.href) &&
-        Objects.equals(this.operationId, linksGetChannelCatalogProductInfoLink.operationId) &&
-        Objects.equals(this.method, linksGetChannelCatalogProductInfoLink.method) &&
-        Objects.equals(this.parameters, linksGetChannelCatalogProductInfoLink.parameters) &&
-        Objects.equals(this.templated, linksGetChannelCatalogProductInfoLink.templated) &&
-        Objects.equals(this.info, linksGetChannelCatalogProductInfoLink.info);
+    LinksSaveReportFilterLink linksSaveReportFilterLink = (LinksSaveReportFilterLink) o;
+    return Objects.equals(this.docUrl, linksSaveReportFilterLink.docUrl) &&
+        Objects.equals(this.description, linksSaveReportFilterLink.description) &&
+        Objects.equals(this.href, linksSaveReportFilterLink.href) &&
+        Objects.equals(this.operationId, linksSaveReportFilterLink.operationId) &&
+        Objects.equals(this.method, linksSaveReportFilterLink.method) &&
+        Objects.equals(this.parameters, linksSaveReportFilterLink.parameters) &&
+        Objects.equals(this.templated, linksSaveReportFilterLink.templated) &&
+        Objects.equals(this.info, linksSaveReportFilterLink.info);
   }
 
   @Override
@@ -235,7 +235,7 @@ public class LinksGetChannelCatalogProductInfoLink {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class LinksGetChannelCatalogProductInfoLink {\n");
+    sb.append("class LinksSaveReportFilterLink {\n");
     
     sb.append("    docUrl: ").append(toIndentedString(docUrl)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");

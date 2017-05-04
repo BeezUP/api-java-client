@@ -18,14 +18,18 @@ import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.LinksGetReportFiltersLink;
+import io.swagger.client.model.LinksSaveReportFilterLink;
 
 /**
  * ReportFiltersLinks
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T17:44:01.940Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T17:49:32.058Z")
 public class ReportFiltersLinks {
   @SerializedName("self")
   private LinksGetReportFiltersLink self = null;
+
+  @SerializedName("save")
+  private LinksSaveReportFilterLink save = null;
 
   public ReportFiltersLinks self(LinksGetReportFiltersLink self) {
     this.self = self;
@@ -45,6 +49,24 @@ public class ReportFiltersLinks {
     this.self = self;
   }
 
+  public ReportFiltersLinks save(LinksSaveReportFilterLink save) {
+    this.save = save;
+    return this;
+  }
+
+   /**
+   * Get save
+   * @return save
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public LinksSaveReportFilterLink getSave() {
+    return save;
+  }
+
+  public void setSave(LinksSaveReportFilterLink save) {
+    this.save = save;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -55,12 +77,13 @@ public class ReportFiltersLinks {
       return false;
     }
     ReportFiltersLinks reportFiltersLinks = (ReportFiltersLinks) o;
-    return Objects.equals(this.self, reportFiltersLinks.self);
+    return Objects.equals(this.self, reportFiltersLinks.self) &&
+        Objects.equals(this.save, reportFiltersLinks.save);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(self);
+    return Objects.hash(self, save);
   }
 
 
@@ -70,6 +93,7 @@ public class ReportFiltersLinks {
     sb.append("class ReportFiltersLinks {\n");
     
     sb.append("    self: ").append(toIndentedString(self)).append("\n");
+    sb.append("    save: ").append(toIndentedString(save)).append("\n");
     sb.append("}");
     return sb.toString();
   }
