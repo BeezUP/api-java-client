@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiModelProperty;
  * Provides the credentials
  */
 @ApiModel(description = "Provides the credentials")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:55:43.788Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:03:05.460Z")
 public class Credential {
   @SerializedName("userName")
   private String userName = null;

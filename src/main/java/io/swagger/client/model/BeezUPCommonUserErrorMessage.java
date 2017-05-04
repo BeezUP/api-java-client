@@ -25,7 +25,7 @@ import java.util.List;
 /**
  * BeezUPCommonUserErrorMessage
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:55:43.788Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:03:05.460Z")
 public class BeezUPCommonUserErrorMessage {
   @SerializedName("docUrl")
   private BeezUPCommonDocUrl docUrl = null;

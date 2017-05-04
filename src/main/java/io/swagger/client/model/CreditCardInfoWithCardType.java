@@ -26,7 +26,7 @@ import io.swagger.client.model.ExpirationYear;
 /**
  * CreditCardInfoWithCardType
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:55:43.788Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:03:05.460Z")
 public class CreditCardInfoWithCardType {
   @SerializedName("cardNumber")
   private CardNumber cardNumber = null;
@@ -70,7 +70,7 @@ public class CreditCardInfoWithCardType {
    * Get cardVerificationCode
    * @return cardVerificationCode
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public CardVerificationCode getCardVerificationCode() {
     return cardVerificationCode;
   }

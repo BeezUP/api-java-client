@@ -23,7 +23,7 @@ import io.swagger.client.model.BillingPeriodInMonth;
  * Describe the billing period information related to the offer.
  */
 @ApiModel(description = "Describe the billing period information related to the offer.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:55:43.788Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:03:05.460Z")
 public class ContractBillingPeriodInfo {
   @SerializedName("amountBillingPeriodDiscount")
   private Double amountBillingPeriodDiscount = null;
