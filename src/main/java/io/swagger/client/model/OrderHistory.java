@@ -28,7 +28,7 @@ import org.joda.time.DateTime;
  * Describe the history related to an order
  */
 @ApiModel(description = "Describe the history related to an order")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:03:05.460Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:05:37.723Z")
 public class OrderHistory {
   @SerializedName("changeOrderReportings")
   private List<ChangeOrderReporting> changeOrderReportings = new ArrayList<ChangeOrderReporting>();

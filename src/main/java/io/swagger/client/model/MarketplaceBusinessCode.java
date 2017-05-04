@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * In an marketplace technical code like CDiscount you can have several marketplaces like GO SPORT, etc. We identify them by a business code.
  */
 @ApiModel(description = "In an marketplace technical code like CDiscount you can have several marketplaces like GO SPORT, etc. We identify them by a business code.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:03:05.460Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:05:37.723Z")
 public class MarketplaceBusinessCode {
 
   @Override

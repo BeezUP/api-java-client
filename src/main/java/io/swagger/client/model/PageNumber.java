@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * Indicates the page number
  */
 @ApiModel(description = "Indicates the page number")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:03:05.460Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:05:37.723Z")
 public class PageNumber {
 
   @Override

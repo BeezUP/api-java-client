@@ -21,7 +21,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ProductOverrideWithCatalogValue
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:03:05.460Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:05:37.723Z")
 public class ProductOverrideWithCatalogValue {
   @SerializedName("override")
   private String override = null;

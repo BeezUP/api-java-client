@@ -25,7 +25,7 @@ import java.util.List;
  * Get channel first level category list
  */
 @ApiModel(description = "Get channel first level category list")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:03:05.460Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:05:37.723Z")
 public class ChannelRootCategory {
   @SerializedName("firstLevelCategories")
   private List<ChannelFirstLevelCategory> firstLevelCategories = new ArrayList<ChannelFirstLevelCategory>();

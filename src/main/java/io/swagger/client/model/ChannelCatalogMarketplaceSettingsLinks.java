@@ -23,7 +23,7 @@ import io.swagger.client.model.LinksSetChannelCatalogMarketplaceSettingsLink;
 /**
  * ChannelCatalogMarketplaceSettingsLinks
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:03:05.460Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:05:37.723Z")
 public class ChannelCatalogMarketplaceSettingsLinks {
   @SerializedName("self")
   private LinksGetChannelCatalogMarketplaceSettingsLink self = null;

@@ -18,21 +18,16 @@ import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.CardNumber;
-import io.swagger.client.model.CardVerificationCode;
-import io.swagger.client.model.CreditCardInfo;
 import io.swagger.client.model.ExpirationMonth;
 import io.swagger.client.model.ExpirationYear;
 
 /**
  * CreditCardInfoWithCardType
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:03:05.460Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:05:37.723Z")
 public class CreditCardInfoWithCardType {
   @SerializedName("cardNumber")
   private CardNumber cardNumber = null;
-
-  @SerializedName("cardVerificationCode")
-  private CardVerificationCode cardVerificationCode = null;
 
   @SerializedName("expirationMonth")
   private ExpirationMonth expirationMonth = null;
@@ -59,24 +54,6 @@ public class CreditCardInfoWithCardType {
 
   public void setCardNumber(CardNumber cardNumber) {
     this.cardNumber = cardNumber;
-  }
-
-  public CreditCardInfoWithCardType cardVerificationCode(CardVerificationCode cardVerificationCode) {
-    this.cardVerificationCode = cardVerificationCode;
-    return this;
-  }
-
-   /**
-   * Get cardVerificationCode
-   * @return cardVerificationCode
-  **/
-  @ApiModelProperty(example = "null", required = true, value = "")
-  public CardVerificationCode getCardVerificationCode() {
-    return cardVerificationCode;
-  }
-
-  public void setCardVerificationCode(CardVerificationCode cardVerificationCode) {
-    this.cardVerificationCode = cardVerificationCode;
   }
 
   public CreditCardInfoWithCardType expirationMonth(ExpirationMonth expirationMonth) {
@@ -144,7 +121,6 @@ public class CreditCardInfoWithCardType {
     }
     CreditCardInfoWithCardType creditCardInfoWithCardType = (CreditCardInfoWithCardType) o;
     return Objects.equals(this.cardNumber, creditCardInfoWithCardType.cardNumber) &&
-        Objects.equals(this.cardVerificationCode, creditCardInfoWithCardType.cardVerificationCode) &&
         Objects.equals(this.expirationMonth, creditCardInfoWithCardType.expirationMonth) &&
         Objects.equals(this.expirationYear, creditCardInfoWithCardType.expirationYear) &&
         Objects.equals(this.cardType, creditCardInfoWithCardType.cardType);
@@ -152,7 +128,7 @@ public class CreditCardInfoWithCardType {
 
   @Override
   public int hashCode() {
-    return Objects.hash(cardNumber, cardVerificationCode, expirationMonth, expirationYear, cardType);
+    return Objects.hash(cardNumber, expirationMonth, expirationYear, cardType);
   }
 
 
@@ -162,7 +138,6 @@ public class CreditCardInfoWithCardType {
     sb.append("class CreditCardInfoWithCardType {\n");
     
     sb.append("    cardNumber: ").append(toIndentedString(cardNumber)).append("\n");
-    sb.append("    cardVerificationCode: ").append(toIndentedString(cardVerificationCode)).append("\n");
     sb.append("    expirationMonth: ").append(toIndentedString(expirationMonth)).append("\n");
     sb.append("    expirationYear: ").append(toIndentedString(expirationYear)).append("\n");
     sb.append("    cardType: ").append(toIndentedString(cardType)).append("\n");
