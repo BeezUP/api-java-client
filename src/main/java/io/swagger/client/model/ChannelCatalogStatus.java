@@ -18,14 +18,14 @@ import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.ApiSettingStatus;
-import io.swagger.client.model.CategoryMappingStatus;
+import io.swagger.client.model.CategoryMappingState;
 import io.swagger.client.model.ColumnMappingStatus;
 
 /**
  * Channel Catalog Status
  */
 @ApiModel(description = "Channel Catalog Status")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:19:57.195Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:27:23.109Z")
 public class ChannelCatalogStatus {
   @SerializedName("exportedProductCount")
   private Integer exportedProductCount = null;
@@ -33,8 +33,8 @@ public class ChannelCatalogStatus {
   @SerializedName("columnMappingStatus")
   private ColumnMappingStatus columnMappingStatus = null;
 
-  @SerializedName("categoryMappingStatus")
-  private CategoryMappingStatus categoryMappingStatus = null;
+  @SerializedName("categoryMappingState")
+  private CategoryMappingState categoryMappingState = null;
 
   @SerializedName("apiSettingStatus")
   private ApiSettingStatus apiSettingStatus = null;
@@ -75,22 +75,22 @@ public class ChannelCatalogStatus {
     this.columnMappingStatus = columnMappingStatus;
   }
 
-  public ChannelCatalogStatus categoryMappingStatus(CategoryMappingStatus categoryMappingStatus) {
-    this.categoryMappingStatus = categoryMappingStatus;
+  public ChannelCatalogStatus categoryMappingState(CategoryMappingState categoryMappingState) {
+    this.categoryMappingState = categoryMappingState;
     return this;
   }
 
    /**
-   * Get categoryMappingStatus
-   * @return categoryMappingStatus
+   * Get categoryMappingState
+   * @return categoryMappingState
   **/
-  @ApiModelProperty(example = "null", required = true, value = "")
-  public CategoryMappingStatus getCategoryMappingStatus() {
-    return categoryMappingStatus;
+  @ApiModelProperty(example = "null", value = "")
+  public CategoryMappingState getCategoryMappingState() {
+    return categoryMappingState;
   }
 
-  public void setCategoryMappingStatus(CategoryMappingStatus categoryMappingStatus) {
-    this.categoryMappingStatus = categoryMappingStatus;
+  public void setCategoryMappingState(CategoryMappingState categoryMappingState) {
+    this.categoryMappingState = categoryMappingState;
   }
 
   public ChannelCatalogStatus apiSettingStatus(ApiSettingStatus apiSettingStatus) {
@@ -123,13 +123,13 @@ public class ChannelCatalogStatus {
     ChannelCatalogStatus channelCatalogStatus = (ChannelCatalogStatus) o;
     return Objects.equals(this.exportedProductCount, channelCatalogStatus.exportedProductCount) &&
         Objects.equals(this.columnMappingStatus, channelCatalogStatus.columnMappingStatus) &&
-        Objects.equals(this.categoryMappingStatus, channelCatalogStatus.categoryMappingStatus) &&
+        Objects.equals(this.categoryMappingState, channelCatalogStatus.categoryMappingState) &&
         Objects.equals(this.apiSettingStatus, channelCatalogStatus.apiSettingStatus);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(exportedProductCount, columnMappingStatus, categoryMappingStatus, apiSettingStatus);
+    return Objects.hash(exportedProductCount, columnMappingStatus, categoryMappingState, apiSettingStatus);
   }
 
 
@@ -140,7 +140,7 @@ public class ChannelCatalogStatus {
     
     sb.append("    exportedProductCount: ").append(toIndentedString(exportedProductCount)).append("\n");
     sb.append("    columnMappingStatus: ").append(toIndentedString(columnMappingStatus)).append("\n");
-    sb.append("    categoryMappingStatus: ").append(toIndentedString(categoryMappingStatus)).append("\n");
+    sb.append("    categoryMappingState: ").append(toIndentedString(categoryMappingState)).append("\n");
     sb.append("    apiSettingStatus: ").append(toIndentedString(apiSettingStatus)).append("\n");
     sb.append("}");
     return sb.toString();

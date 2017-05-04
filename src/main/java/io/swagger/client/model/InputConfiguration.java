@@ -25,7 +25,7 @@ import java.util.List;
  * Describe the input configuration
  */
 @ApiModel(description = "Describe the input configuration")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:19:57.195Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:27:23.109Z")
 public class InputConfiguration {
   @SerializedName("transformFileUrl")
   private String transformFileUrl = null;

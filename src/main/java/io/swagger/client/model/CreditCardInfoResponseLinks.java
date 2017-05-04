@@ -24,7 +24,7 @@ import io.swagger.client.model.LinksSaveCreditCardInfoLink;
  * The different actions you can make on this offer
  */
 @ApiModel(description = "The different actions you can make on this offer")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:19:57.195Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:27:23.109Z")
 public class CreditCardInfoResponseLinks {
   @SerializedName("self")
   private LinksGetCreditCardInfoLink self = null;
