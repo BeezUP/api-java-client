@@ -32,7 +32,7 @@ import org.joda.time.DateTime;
 /**
  * ReportFilterParameters
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:20:31.147Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T12:43:33.063Z")
 public class ReportFilterParameters {
   @SerializedName("channelId")
   private BeezUPCommonChannelId channelId = null;
