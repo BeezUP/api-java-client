@@ -17,6 +17,7 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.client.model.BeezUPCommonChannelBasicInfo;
 import io.swagger.client.model.BeezUPCommonChannelCatalogId;
 import io.swagger.client.model.BeezUPCommonChannelId;
 import io.swagger.client.model.BeezUPCommonChannelName;
@@ -32,11 +33,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The channel catalog
+ * ChannelCatalog
  */
-@ApiModel(description = "The channel catalog")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:10:30.245Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:14:01.974Z")
 public class ChannelCatalog {
+  @SerializedName("channelId")
+  private BeezUPCommonChannelId channelId = null;
+
+  @SerializedName("channelName")
+  private BeezUPCommonChannelName channelName = null;
+
+  @SerializedName("channelImageUrl")
+  private BeezUPCommonHttpUrl channelImageUrl = null;
+
   @SerializedName("enabled")
   private Boolean enabled = null;
 
@@ -45,12 +54,6 @@ public class ChannelCatalog {
 
   @SerializedName("channelCatalogId")
   private BeezUPCommonChannelCatalogId channelCatalogId = null;
-
-  @SerializedName("channelId")
-  private BeezUPCommonChannelId channelId = null;
-
-  @SerializedName("channelName")
-  private BeezUPCommonChannelName channelName = null;
 
   @SerializedName("storeId")
   private BeezUPCommonStoreId storeId = null;
@@ -75,6 +78,60 @@ public class ChannelCatalog {
 
   @SerializedName("links")
   private List<BeezUPCommonLink2> links = new ArrayList<BeezUPCommonLink2>();
+
+  public ChannelCatalog channelId(BeezUPCommonChannelId channelId) {
+    this.channelId = channelId;
+    return this;
+  }
+
+   /**
+   * Get channelId
+   * @return channelId
+  **/
+  @ApiModelProperty(example = "null", required = true, value = "")
+  public BeezUPCommonChannelId getChannelId() {
+    return channelId;
+  }
+
+  public void setChannelId(BeezUPCommonChannelId channelId) {
+    this.channelId = channelId;
+  }
+
+  public ChannelCatalog channelName(BeezUPCommonChannelName channelName) {
+    this.channelName = channelName;
+    return this;
+  }
+
+   /**
+   * Get channelName
+   * @return channelName
+  **/
+  @ApiModelProperty(example = "null", required = true, value = "")
+  public BeezUPCommonChannelName getChannelName() {
+    return channelName;
+  }
+
+  public void setChannelName(BeezUPCommonChannelName channelName) {
+    this.channelName = channelName;
+  }
+
+  public ChannelCatalog channelImageUrl(BeezUPCommonHttpUrl channelImageUrl) {
+    this.channelImageUrl = channelImageUrl;
+    return this;
+  }
+
+   /**
+   * Get channelImageUrl
+   * @return channelImageUrl
+  **/
+  @ApiModelProperty(example = "null", required = true, value = "")
+  public BeezUPCommonHttpUrl getChannelImageUrl() {
+    return channelImageUrl;
+  }
+
+  public void setChannelImageUrl(BeezUPCommonHttpUrl channelImageUrl) {
+    this.channelImageUrl = channelImageUrl;
+  }
 
   public ChannelCatalog enabled(Boolean enabled) {
     this.enabled = enabled;
@@ -128,42 +185,6 @@ public class ChannelCatalog {
 
   public void setChannelCatalogId(BeezUPCommonChannelCatalogId channelCatalogId) {
     this.channelCatalogId = channelCatalogId;
-  }
-
-  public ChannelCatalog channelId(BeezUPCommonChannelId channelId) {
-    this.channelId = channelId;
-    return this;
-  }
-
-   /**
-   * Get channelId
-   * @return channelId
-  **/
-  @ApiModelProperty(example = "null", required = true, value = "")
-  public BeezUPCommonChannelId getChannelId() {
-    return channelId;
-  }
-
-  public void setChannelId(BeezUPCommonChannelId channelId) {
-    this.channelId = channelId;
-  }
-
-  public ChannelCatalog channelName(BeezUPCommonChannelName channelName) {
-    this.channelName = channelName;
-    return this;
-  }
-
-   /**
-   * Get channelName
-   * @return channelName
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public BeezUPCommonChannelName getChannelName() {
-    return channelName;
-  }
-
-  public void setChannelName(BeezUPCommonChannelName channelName) {
-    this.channelName = channelName;
   }
 
   public ChannelCatalog storeId(BeezUPCommonStoreId storeId) {
@@ -325,11 +346,12 @@ public class ChannelCatalog {
       return false;
     }
     ChannelCatalog channelCatalog = (ChannelCatalog) o;
-    return Objects.equals(this.enabled, channelCatalog.enabled) &&
+    return Objects.equals(this.channelId, channelCatalog.channelId) &&
+        Objects.equals(this.channelName, channelCatalog.channelName) &&
+        Objects.equals(this.channelImageUrl, channelCatalog.channelImageUrl) &&
+        Objects.equals(this.enabled, channelCatalog.enabled) &&
         Objects.equals(this.isMarketplace, channelCatalog.isMarketplace) &&
         Objects.equals(this.channelCatalogId, channelCatalog.channelCatalogId) &&
-        Objects.equals(this.channelId, channelCatalog.channelId) &&
-        Objects.equals(this.channelName, channelCatalog.channelName) &&
         Objects.equals(this.storeId, channelCatalog.storeId) &&
         Objects.equals(this.generalSettings, channelCatalog.generalSettings) &&
         Objects.equals(this.costSettings, channelCatalog.costSettings) &&
@@ -342,7 +364,7 @@ public class ChannelCatalog {
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, isMarketplace, channelCatalogId, channelId, channelName, storeId, generalSettings, costSettings, columnMappings, exclusionFilters, exportUrl, status, links);
+    return Objects.hash(channelId, channelName, channelImageUrl, enabled, isMarketplace, channelCatalogId, storeId, generalSettings, costSettings, columnMappings, exclusionFilters, exportUrl, status, links);
   }
 
 
@@ -351,11 +373,12 @@ public class ChannelCatalog {
     StringBuilder sb = new StringBuilder();
     sb.append("class ChannelCatalog {\n");
     
+    sb.append("    channelId: ").append(toIndentedString(channelId)).append("\n");
+    sb.append("    channelName: ").append(toIndentedString(channelName)).append("\n");
+    sb.append("    channelImageUrl: ").append(toIndentedString(channelImageUrl)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    isMarketplace: ").append(toIndentedString(isMarketplace)).append("\n");
     sb.append("    channelCatalogId: ").append(toIndentedString(channelCatalogId)).append("\n");
-    sb.append("    channelId: ").append(toIndentedString(channelId)).append("\n");
-    sb.append("    channelName: ").append(toIndentedString(channelName)).append("\n");
     sb.append("    storeId: ").append(toIndentedString(storeId)).append("\n");
     sb.append("    generalSettings: ").append(toIndentedString(generalSettings)).append("\n");
     sb.append("    costSettings: ").append(toIndentedString(costSettings)).append("\n");

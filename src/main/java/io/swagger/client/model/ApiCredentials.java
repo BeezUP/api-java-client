@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * ApiCredentials
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:10:30.245Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:14:01.974Z")
 public class ApiCredentials {
   @SerializedName("credentials")
   private List<ApiCredential> credentials = new ArrayList<ApiCredential>();

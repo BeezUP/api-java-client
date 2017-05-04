@@ -25,7 +25,7 @@ import java.util.List;
 /**
  * ReportFilter
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:10:30.245Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:14:01.974Z")
 public class ReportFilter {
   @SerializedName("reportFilterId")
   private String reportFilterId = null;

@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * Your friend&#39;s user email
  */
 @ApiModel(description = "Your friend's user email")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:10:30.245Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:14:01.974Z")
 public class FriendEmail {
 
   @Override

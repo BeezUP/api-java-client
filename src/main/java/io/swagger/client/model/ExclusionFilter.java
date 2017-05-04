@@ -25,7 +25,7 @@ import io.swagger.client.model.ExclusionFilterOperatorName;
  * The exclusion filter
  */
 @ApiModel(description = "The exclusion filter")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:10:30.245Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:14:01.974Z")
 public class ExclusionFilter {
   @SerializedName("name")
   private ExclusionFilterName name = null;

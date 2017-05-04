@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * TrackedOrders
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:10:30.245Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:14:01.974Z")
 public class TrackedOrders {
   @SerializedName("orders")
   private List<TrackedOrder> orders = new ArrayList<TrackedOrder>();

@@ -4,11 +4,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**channelId** | [**BeezUPCommonChannelId**](BeezUPCommonChannelId.md) |  | 
+**channelName** | [**BeezUPCommonChannelName**](BeezUPCommonChannelName.md) |  | 
+**channelImageUrl** | [**BeezUPCommonHttpUrl**](BeezUPCommonHttpUrl.md) |  | 
 **enabled** | **Boolean** | Indicates if the channel catalog is active |  [optional]
 **isMarketplace** | **Boolean** | Indicates if this channel catalog is related to a marketplace |  [optional]
 **channelCatalogId** | [**BeezUPCommonChannelCatalogId**](BeezUPCommonChannelCatalogId.md) |  | 
-**channelId** | [**BeezUPCommonChannelId**](BeezUPCommonChannelId.md) |  | 
-**channelName** | [**BeezUPCommonChannelName**](BeezUPCommonChannelName.md) |  |  [optional]
 **storeId** | [**BeezUPCommonStoreId**](BeezUPCommonStoreId.md) |  | 
 **generalSettings** | [**GeneralSettings**](GeneralSettings.md) |  |  [optional]
 **costSettings** | [**CostSettings**](CostSettings.md) |  |  [optional]
