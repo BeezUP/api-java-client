@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * Your friend&#39;s user country iso code alpha 3
  */
 @ApiModel(description = "Your friend's user country iso code alpha 3")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T13:54:25.397Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:07:10.326Z")
 public class FriendCountryIsoCodeAlpha3 {
 
   @Override

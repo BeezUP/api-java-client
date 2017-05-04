@@ -25,7 +25,7 @@ import org.joda.time.DateTime;
  * The reporting related to a harvest order operation
  */
 @ApiModel(description = "The reporting related to a harvest order operation")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T13:54:25.397Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:07:10.326Z")
 public class HarvestOrderReporting {
   @SerializedName("executionUUID")
   private ExecutionUUID executionUUID = null;

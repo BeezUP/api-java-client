@@ -10,5 +10,7 @@
 
 * `USERBLOCKED` (value: `"UserBlocked"`)
 
+* `NOTACTIVATED` (value: `"NotActivated"`)
+
 
 

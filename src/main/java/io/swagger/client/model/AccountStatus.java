@@ -19,7 +19,7 @@ import com.google.gson.annotations.SerializedName;
 
 
 /**
- * The account status * Active:  When the account is active * SystemBlocked:  When all stores on the account are blocked by the system * UserBlocked: When all stores on the account are blocked on GO not on the system 
+ * The account status * Active:  When the account is active * SystemBlocked:  When all stores on the account are blocked by the system * UserBlocked: When all stores on the account are blocked on GO not on the system * NotActivated: When the email is not verified 
  */
 public enum AccountStatus {
   
@@ -30,7 +30,10 @@ public enum AccountStatus {
   SYSTEMBLOCKED("SystemBlocked"),
   
   @SerializedName("UserBlocked")
-  USERBLOCKED("UserBlocked");
+  USERBLOCKED("UserBlocked"),
+  
+  @SerializedName("NotActivated")
+  NOTACTIVATED("NotActivated");
 
   private String value;
 

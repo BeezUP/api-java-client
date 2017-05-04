@@ -23,7 +23,7 @@ import io.swagger.client.model.AlertPropertyValue;
 /**
  * StoreAlertProperty
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T13:54:25.397Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:07:10.326Z")
 public class StoreAlertProperty {
   @SerializedName("propertyId")
   private AlertPropertyId propertyId = null;

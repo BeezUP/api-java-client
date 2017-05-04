@@ -25,7 +25,7 @@ import java.util.List;
  * Describe a filter on a product&#39;s column
  */
 @ApiModel(description = "Describe a filter on a product's column")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T13:54:25.397Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:07:10.326Z")
 public class ReportProductFilter {
   @SerializedName("columnId")
   private String columnId = null;
