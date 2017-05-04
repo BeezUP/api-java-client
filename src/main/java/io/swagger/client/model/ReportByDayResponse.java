@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * ReportByDayResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:14:01.974Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:14:54.205Z")
 public class ReportByDayResponse {
   @SerializedName("currencyCode")
   private BeezUPCommonCurrencyCode currencyCode = null;

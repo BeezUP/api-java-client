@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * The catalog column name
  */
 @ApiModel(description = "The catalog column name")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:14:01.974Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:14:54.205Z")
 public class CatalogColumnName {
 
   @Override

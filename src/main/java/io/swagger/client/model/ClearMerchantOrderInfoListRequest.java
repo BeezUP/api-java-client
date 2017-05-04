@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * ClearMerchantOrderInfoListRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:14:01.974Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:14:54.205Z")
 public class ClearMerchantOrderInfoListRequest {
   @SerializedName("orders")
   private List<OrderIdentifier> orders = new ArrayList<OrderIdentifier>();
