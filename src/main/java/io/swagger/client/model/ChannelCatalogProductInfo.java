@@ -27,7 +27,7 @@ import java.util.List;
 /**
  * ChannelCatalogProductInfo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:46:40.225Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:55:43.788Z")
 public class ChannelCatalogProductInfo {
   @SerializedName("productId")
   private String productId = null;

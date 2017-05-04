@@ -35,7 +35,7 @@ import java.util.List;
  * The channel catalog
  */
 @ApiModel(description = "The channel catalog")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:46:40.225Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:55:43.788Z")
 public class ChannelCatalog {
   @SerializedName("enabled")
   private Boolean enabled = null;

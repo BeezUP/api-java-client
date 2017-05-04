@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiModelProperty;
  * Represents the general settings of your channel catalog
  */
 @ApiModel(description = "Represents the general settings of your channel catalog")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:46:40.225Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:55:43.788Z")
 public class GeneralSettings {
   @SerializedName("acceptToPublishInfo")
   private Boolean acceptToPublishInfo = null;

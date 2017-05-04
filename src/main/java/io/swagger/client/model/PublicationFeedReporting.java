@@ -24,7 +24,7 @@ import org.joda.time.DateTime;
  * Publication feed reporting
  */
 @ApiModel(description = "Publication feed reporting")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:46:40.225Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:55:43.788Z")
 public class PublicationFeedReporting {
   @SerializedName("feedType")
   private FeedType feedType = null;

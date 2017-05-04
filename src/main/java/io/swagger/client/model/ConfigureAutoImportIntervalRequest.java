@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiModelProperty;
  * The message request to configure the auto import interval
  */
 @ApiModel(description = "The message request to configure the auto import interval")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:46:40.225Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:55:43.788Z")
 public class ConfigureAutoImportIntervalRequest {
   @SerializedName("interval")
   private String interval = null;

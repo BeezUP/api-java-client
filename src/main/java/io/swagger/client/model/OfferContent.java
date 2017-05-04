@@ -31,7 +31,7 @@ import io.swagger.client.model.PreviousFixPeriodInvoiceProrataInfo;
 /**
  * OfferContent
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:46:40.225Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:55:43.788Z")
 public class OfferContent {
   @SerializedName("previousFixPeriodInvoiceProrataInfo")
   private PreviousFixPeriodInvoiceProrataInfo previousFixPeriodInvoiceProrataInfo = null;

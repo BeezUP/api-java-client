@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * Column named by the user
  */
 @ApiModel(description = "Column named by the user")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:46:40.225Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:55:43.788Z")
 public class UserColumName {
 
   @Override

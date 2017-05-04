@@ -24,7 +24,7 @@ import java.util.Map;
 /**
  * BeezUPCommonSuccessSummary
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:46:40.225Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:55:43.788Z")
 public class BeezUPCommonSuccessSummary {
   @SerializedName("successCode")
   private String successCode = null;

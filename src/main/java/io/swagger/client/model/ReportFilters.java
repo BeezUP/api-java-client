@@ -25,7 +25,7 @@ import java.util.List;
 /**
  * ReportFilters
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:46:40.225Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:55:43.788Z")
 public class ReportFilters {
   @SerializedName("reportFilters")
   private List<ReportFilterHeader> reportFilters = new ArrayList<ReportFilterHeader>();

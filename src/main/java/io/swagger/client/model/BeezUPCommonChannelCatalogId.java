@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * The channel catalog identifier
  */
 @ApiModel(description = "The channel catalog identifier")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:46:40.225Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:55:43.788Z")
 public class BeezUPCommonChannelCatalogId {
 
   @Override
