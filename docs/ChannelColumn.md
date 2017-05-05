@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **channelColumnId** | [**BeezUPCommonChannelColumnId**](BeezUPCommonChannelColumnId.md) |  | 
-**channelColumnName** | [**ChannelColumnName**](ChannelColumnName.md) |  | 
+**channelColumnName** | [**BeezUPCommonChannelColumnName**](BeezUPCommonChannelColumnName.md) |  | 
 **channelColumnDescription** | [**ChannelColumnDescription**](ChannelColumnDescription.md) |  |  [optional]
 **showInMapping** | [**ChannelColumnShowInMapping**](ChannelColumnShowInMapping.md) |  | 
 **position** | **Integer** | The position of the column starting from 1 | 

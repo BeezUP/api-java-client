@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **exportedProductCount** | **Integer** |  | 
 **columnMappingStatus** | [**ColumnMappingStatus**](ColumnMappingStatus.md) |  | 
-**categoryMappingState** | [**CategoryMappingState**](CategoryMappingState.md) |  |  [optional]
+**categoryMappingStatus** | [**CategoryMappingStatus**](CategoryMappingStatus.md) |  | 
 **apiSettingStatus** | [**ApiSettingStatus**](ApiSettingStatus.md) |  | 
 
 

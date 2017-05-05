@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * Your profile picture choice about usage of gravatar.
  */
 @ApiModel(description = "Your profile picture choice about usage of gravatar.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:07:09.864Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:47:15.399Z")
 public class UseGravatarProfilePicture {
 
   @Override

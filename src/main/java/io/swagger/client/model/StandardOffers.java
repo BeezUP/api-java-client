@@ -25,7 +25,7 @@ import java.util.List;
 /**
  * StandardOffers
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T12:31:28.102Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T12:38:53.309Z")
 public class StandardOffers {
   @SerializedName("offers")
   private List<StandardOffer> offers = new ArrayList<StandardOffer>();

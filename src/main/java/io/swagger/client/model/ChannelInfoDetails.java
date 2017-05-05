@@ -21,7 +21,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ChannelInfoDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T12:31:28.102Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T12:38:53.309Z")
 public class ChannelInfoDetails {
   @SerializedName("costs")
   private String costs = null;
@@ -104,7 +104,7 @@ public class ChannelInfoDetails {
    * The channel category
    * @return category
   **/
-  @ApiModelProperty(example = "null", value = "The channel category")
+  @ApiModelProperty(example = "NULL", value = "The channel category")
   public String getCategory() {
     return category;
   }
