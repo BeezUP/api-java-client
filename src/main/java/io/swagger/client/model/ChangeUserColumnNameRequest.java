@@ -23,7 +23,7 @@ import io.swagger.client.model.UserColumName;
  * The message request for the change user column name
  */
 @ApiModel(description = "The message request for the change user column name")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:32:45.871Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:36:43.626Z")
 public class ChangeUserColumnNameRequest {
   @SerializedName("userColumName")
   private UserColumName userColumName = null;

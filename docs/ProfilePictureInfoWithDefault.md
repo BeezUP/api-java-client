@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **profilePictureUrl** | [**ProfilePictureUrl**](ProfilePictureUrl.md) |  |  [optional]
 **useGravatarProfilePicture** | [**UseGravatarProfilePicture**](UseGravatarProfilePicture.md) |  | 
-**defaultPictureUrl** | [**ProfilePictureUrl**](ProfilePictureUrl.md) |  | 
+**defaultProfilePictureUrl** | [**DefaultProfilePictureUrl**](DefaultProfilePictureUrl.md) |  | 
 
 
 

@@ -23,7 +23,7 @@ import org.joda.time.DateTime;
  * This update will replace the following values.
  */
 @ApiModel(description = "This update will replace the following values.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:32:45.871Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:36:43.626Z")
 public class UpdateRuleRequest {
   @SerializedName("ruleName")
   private String ruleName = null;

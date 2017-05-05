@@ -22,7 +22,7 @@ import java.util.Map;
  * The key is the column identifier
  */
 @ApiModel(description = "The key is the column identifier")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:32:45.871Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:36:43.626Z")
 public class ProductValues extends HashMap<String, String> {
 
   @Override

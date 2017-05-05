@@ -456,6 +456,7 @@ Class | Method | HTTP request | Description
  - [CustomColumn](docs/CustomColumn.md)
  - [CustomColumns](docs/CustomColumns.md)
  - [DateSearchType](docs/DateSearchType.md)
+ - [DefaultProfilePictureUrl](docs/DefaultProfilePictureUrl.md)
  - [DetectedCatalogColumn](docs/DetectedCatalogColumn.md)
  - [DetectedCatalogColumns](docs/DetectedCatalogColumns.md)
  - [DisplayGroupName](docs/DisplayGroupName.md)

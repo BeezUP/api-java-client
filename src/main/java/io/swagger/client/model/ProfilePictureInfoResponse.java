@@ -23,31 +23,13 @@ import io.swagger.client.model.ProfilePictureInfoWithDefault;
 /**
  * ProfilePictureInfoResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:32:45.871Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:36:43.626Z")
 public class ProfilePictureInfoResponse {
-  @SerializedName("links")
-  private ProfilePictureInfoResponseLinks links = null;
-
   @SerializedName("profilePictureInfo")
   private ProfilePictureInfoWithDefault profilePictureInfo = null;
 
-  public ProfilePictureInfoResponse links(ProfilePictureInfoResponseLinks links) {
-    this.links = links;
-    return this;
-  }
-
-   /**
-   * Get links
-   * @return links
-  **/
-  @ApiModelProperty(example = "null", required = true, value = "")
-  public ProfilePictureInfoResponseLinks getLinks() {
-    return links;
-  }
-
-  public void setLinks(ProfilePictureInfoResponseLinks links) {
-    this.links = links;
-  }
+  @SerializedName("links")
+  private ProfilePictureInfoResponseLinks links = null;
 
   public ProfilePictureInfoResponse profilePictureInfo(ProfilePictureInfoWithDefault profilePictureInfo) {
     this.profilePictureInfo = profilePictureInfo;
@@ -67,6 +49,24 @@ public class ProfilePictureInfoResponse {
     this.profilePictureInfo = profilePictureInfo;
   }
 
+  public ProfilePictureInfoResponse links(ProfilePictureInfoResponseLinks links) {
+    this.links = links;
+    return this;
+  }
+
+   /**
+   * Get links
+   * @return links
+  **/
+  @ApiModelProperty(example = "null", required = true, value = "")
+  public ProfilePictureInfoResponseLinks getLinks() {
+    return links;
+  }
+
+  public void setLinks(ProfilePictureInfoResponseLinks links) {
+    this.links = links;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -77,13 +77,13 @@ public class ProfilePictureInfoResponse {
       return false;
     }
     ProfilePictureInfoResponse profilePictureInfoResponse = (ProfilePictureInfoResponse) o;
-    return Objects.equals(this.links, profilePictureInfoResponse.links) &&
-        Objects.equals(this.profilePictureInfo, profilePictureInfoResponse.profilePictureInfo);
+    return Objects.equals(this.profilePictureInfo, profilePictureInfoResponse.profilePictureInfo) &&
+        Objects.equals(this.links, profilePictureInfoResponse.links);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(links, profilePictureInfo);
+    return Objects.hash(profilePictureInfo, links);
   }
 
 
@@ -92,8 +92,8 @@ public class ProfilePictureInfoResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class ProfilePictureInfoResponse {\n");
     
-    sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("    profilePictureInfo: ").append(toIndentedString(profilePictureInfo)).append("\n");
+    sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("}");
     return sb.toString();
   }

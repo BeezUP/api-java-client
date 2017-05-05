@@ -31,7 +31,7 @@ import java.util.Map;
 /**
  * LinksSaveCreditCardInfoLink
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:32:45.871Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:36:43.626Z")
 public class LinksSaveCreditCardInfoLink {
   @SerializedName("docUrl")
   private BeezUPCommonDocUrl docUrl = null;
