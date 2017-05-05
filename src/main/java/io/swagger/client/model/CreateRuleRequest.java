@@ -23,7 +23,7 @@ import org.joda.time.DateTime;
 /**
  * CreateRuleRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:15:23.720Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:17:16.769Z")
 public class CreateRuleRequest {
   @SerializedName("optimisationActionName")
   private OptimisationActionName optimisationActionName = null;

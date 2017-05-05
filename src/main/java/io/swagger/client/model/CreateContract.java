@@ -27,7 +27,7 @@ import io.swagger.client.model.StoreCount;
 /**
  * CreateContract
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:15:23.720Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:17:16.769Z")
 public class CreateContract {
   @SerializedName("offerId")
   private OfferId offerId = null;
