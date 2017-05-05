@@ -32,7 +32,7 @@ import org.joda.time.DateTime;
 /**
  * ReportByCategoryRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:36:43.626Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:45:35.731Z")
 public class ReportByCategoryRequest {
   @SerializedName("channelId")
   private BeezUPCommonChannelId channelId = null;

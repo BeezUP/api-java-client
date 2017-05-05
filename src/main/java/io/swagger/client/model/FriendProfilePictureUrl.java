@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * Your friend&#39;s user profile picture url
  */
 @ApiModel(description = "Your friend's user profile picture url")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:36:43.626Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:45:35.731Z")
 public class FriendProfilePictureUrl {
 
   @Override

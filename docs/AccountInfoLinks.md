@@ -4,13 +4,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**savePersonalInfo** | [**LinksSavePersonalInfoLink**](LinksSavePersonalInfoLink.md) |  |  [optional]
-**changePassword** | [**LinksChangePasswordLink**](LinksChangePasswordLink.md) |  |  [optional]
-**saveCompanyInfo** | [**LinksSaveCompanyInfoLink**](LinksSaveCompanyInfoLink.md) |  |  [optional]
-**getProfilePictureInfo** | [**LinksGetProfilePictureInfoLink**](LinksGetProfilePictureInfoLink.md) |  |  [optional]
-**saveProfilePictureInfo** | [**LinksSaveProfilePictureInfoLink**](LinksSaveProfilePictureInfoLink.md) |  |  [optional]
-**getCreditCardInfo** | [**LinksGetCreditCardInfoLink**](LinksGetCreditCardInfoLink.md) |  |  [optional]
-**saveUserCreditCardLink** | [**LinksSaveCreditCardInfoLink**](LinksSaveCreditCardInfoLink.md) |  |  [optional]
+**savePersonalInfo** | [**LinksSavePersonalInfoLink**](LinksSavePersonalInfoLink.md) |  | 
+**changePassword** | [**LinksChangePasswordLink**](LinksChangePasswordLink.md) |  | 
+**saveCompanyInfo** | [**LinksSaveCompanyInfoLink**](LinksSaveCompanyInfoLink.md) |  | 
+**getProfilePictureInfo** | [**LinksGetProfilePictureInfoLink**](LinksGetProfilePictureInfoLink.md) |  | 
+**saveProfilePictureInfo** | [**LinksSaveProfilePictureInfoLink**](LinksSaveProfilePictureInfoLink.md) |  | 
+**getCreditCardInfo** | [**LinksGetCreditCardInfoLink**](LinksGetCreditCardInfoLink.md) |  | 
+**saveUserCreditCardLink** | [**LinksSaveCreditCardInfoLink**](LinksSaveCreditCardInfoLink.md) |  | 
 
 
 

@@ -25,7 +25,7 @@ import java.util.List;
  * The list of detected catalog column
  */
 @ApiModel(description = "The list of detected catalog column")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:36:43.626Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:45:35.731Z")
 public class DetectedCatalogColumns {
   @SerializedName("detectedCatalogColumns")
   private List<DetectedCatalogColumn> detectedCatalogColumns = new ArrayList<DetectedCatalogColumn>();

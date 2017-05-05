@@ -29,7 +29,7 @@ import io.swagger.client.model.LinksSaveProfilePictureInfoLink;
  * The different actions you can make on this account
  */
 @ApiModel(description = "The different actions you can make on this account")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:36:43.626Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:45:35.731Z")
 public class AccountInfoLinks {
   @SerializedName("savePersonalInfo")
   private LinksSavePersonalInfoLink savePersonalInfo = null;
@@ -61,7 +61,7 @@ public class AccountInfoLinks {
    * Get savePersonalInfo
    * @return savePersonalInfo
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public LinksSavePersonalInfoLink getSavePersonalInfo() {
     return savePersonalInfo;
   }
@@ -79,7 +79,7 @@ public class AccountInfoLinks {
    * Get changePassword
    * @return changePassword
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public LinksChangePasswordLink getChangePassword() {
     return changePassword;
   }
@@ -97,7 +97,7 @@ public class AccountInfoLinks {
    * Get saveCompanyInfo
    * @return saveCompanyInfo
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public LinksSaveCompanyInfoLink getSaveCompanyInfo() {
     return saveCompanyInfo;
   }
@@ -115,7 +115,7 @@ public class AccountInfoLinks {
    * Get getProfilePictureInfo
    * @return getProfilePictureInfo
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public LinksGetProfilePictureInfoLink getGetProfilePictureInfo() {
     return getProfilePictureInfo;
   }
@@ -133,7 +133,7 @@ public class AccountInfoLinks {
    * Get saveProfilePictureInfo
    * @return saveProfilePictureInfo
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public LinksSaveProfilePictureInfoLink getSaveProfilePictureInfo() {
     return saveProfilePictureInfo;
   }
@@ -151,7 +151,7 @@ public class AccountInfoLinks {
    * Get getCreditCardInfo
    * @return getCreditCardInfo
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public LinksGetCreditCardInfoLink getGetCreditCardInfo() {
     return getCreditCardInfo;
   }
@@ -169,7 +169,7 @@ public class AccountInfoLinks {
    * Get saveUserCreditCardLink
    * @return saveUserCreditCardLink
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public LinksSaveCreditCardInfoLink getSaveUserCreditCardLink() {
     return saveUserCreditCardLink;
   }

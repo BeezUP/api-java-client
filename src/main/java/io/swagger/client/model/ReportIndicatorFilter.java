@@ -24,7 +24,7 @@ import java.math.BigDecimal;
 /**
  * ReportIndicatorFilter
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:36:43.626Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:45:35.731Z")
 public class ReportIndicatorFilter {
   @SerializedName("indicator")
   private PerformanceIndicatorType indicator = null;

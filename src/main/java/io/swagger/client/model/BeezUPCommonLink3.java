@@ -30,7 +30,7 @@ import java.util.Map;
 /**
  * BeezUPCommonLink3
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:36:43.626Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:45:35.731Z")
 public class BeezUPCommonLink3 {
   @SerializedName("docUrl")
   private BeezUPCommonDocUrl docUrl = null;
