@@ -34,7 +34,7 @@ import org.joda.time.DateTime;
 /**
  * OptimiseRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:51:26.209Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T14:10:34.021Z")
 public class OptimiseRequest {
   @SerializedName("channelId")
   private BeezUPCommonChannelId channelId = null;
