@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**paginationResult** | [**BeezUPCommonPaginationResult**](BeezUPCommonPaginationResult.md) |  |  [optional]
-**exportations** | [**List&lt;OrderExportationReporting&gt;**](OrderExportationReporting.md) |  |  [optional]
+**paginationResult** | [**BeezUPCommonPaginationResult**](BeezUPCommonPaginationResult.md) |  | 
+**exportations** | [**List&lt;OrderExportationReporting&gt;**](OrderExportationReporting.md) |  | 
 
 
 

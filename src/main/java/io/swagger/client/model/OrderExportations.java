@@ -26,7 +26,7 @@ import java.util.List;
  * The list of Order report exportations
  */
 @ApiModel(description = "The list of Order report exportations")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:22:45.227Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:26:52.821Z")
 public class OrderExportations {
   @SerializedName("paginationResult")
   private BeezUPCommonPaginationResult paginationResult = null;
@@ -43,7 +43,7 @@ public class OrderExportations {
    * Get paginationResult
    * @return paginationResult
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public BeezUPCommonPaginationResult getPaginationResult() {
     return paginationResult;
   }
@@ -66,7 +66,7 @@ public class OrderExportations {
    * Get exportations
    * @return exportations
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public List<OrderExportationReporting> getExportations() {
     return exportations;
   }

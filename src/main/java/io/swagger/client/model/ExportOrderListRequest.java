@@ -21,9 +21,10 @@ import io.swagger.client.model.BeezUPCommonStoreId;
 import io.swagger.client.model.OrderListRequest;
 
 /**
- * ExportOrderListRequest
+ * The message request to export order list. The store identifier is requested to regroup the exportations.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:22:45.227Z")
+@ApiModel(description = "The message request to export order list. The store identifier is requested to regroup the exportations.")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:26:52.821Z")
 public class ExportOrderListRequest {
   @SerializedName("storeId")
   private BeezUPCommonStoreId storeId = null;

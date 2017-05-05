@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * The order marketplace identifier
  */
 @ApiModel(description = "The order marketplace identifier")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:22:45.227Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:26:52.821Z")
 public class MarketplaceOrderId {
 
   @Override
