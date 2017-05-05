@@ -56,6 +56,7 @@ Method | HTTP request | Description
 [**exportStoreReportByChannel**](BeezUPApi.md#exportStoreReportByChannel) | **POST** /v2/user/analytics/{storeId}/reports/bychannel/export | Export the report by channel
 [**exportStoreReportByProduct**](BeezUPApi.md#exportStoreReportByProduct) | **POST** /v2/user/analytics/{storeId}/reports/byproduct/export | Export the report by product
 [**getAutomaticTransitions**](BeezUPApi.md#getAutomaticTransitions) | **GET** /v2/user/marketplaces/orders/automaticTransitions | Get list of configured automatic Order status transitions
+[**getAvailableChannels**](BeezUPApi.md#getAvailableChannels) | **GET** /v2/user/channels/ | List all available channel for this store
 [**getBillingPeriods**](BeezUPApi.md#getBillingPeriods) | **GET** /v2/user/customer/billingPeriods | Get billing periods conditions
 [**getChannelCatalog**](BeezUPApi.md#getChannelCatalog) | **GET** /v2/user/channelCatalogs/{channelCatalogId} | Get the channel catalog information
 [**getChannelCatalogCategories**](BeezUPApi.md#getChannelCatalogCategories) | **GET** /v2/user/channelCatalogs/{channelCatalogId}/categoryMappings | Get channel catalog categories
@@ -70,7 +71,6 @@ Method | HTTP request | Description
 [**getChannelInfo**](BeezUPApi.md#getChannelInfo) | **GET** /v2/user/channels/{channelId} | Get channel information
 [**getContracts**](BeezUPApi.md#getContracts) | **GET** /v2/user/customer/contracts | Get contract list
 [**getCreditCardInfo**](BeezUPApi.md#getCreditCardInfo) | **GET** /v2/user/customer/account/creditCardInfo | Get credit card information
-[**getCurrentChannels**](BeezUPApi.md#getCurrentChannels) | **GET** /v2/user/channels/ | List all available channel for this store
 [**getFriendInfo**](BeezUPApi.md#getFriendInfo) | **GET** /v2/user/customer/friends/{userId} | Get friend information
 [**getInvoices**](BeezUPApi.md#getInvoices) | **GET** /v2/user/customer/invoices | Get all your invoices
 [**getMarketplaceAccountStores**](BeezUPApi.md#getMarketplaceAccountStores) | **GET** /v2/user/marketplaces/channelcatalogs/ | Get  you marketplace channel catalog list
@@ -2988,6 +2988,59 @@ This endpoint does not need any parameter.
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="getAvailableChannels"></a>
+# **getAvailableChannels**
+> List&lt;ChannelHeader&gt; getAvailableChannels(storeId)
+
+List all available channel for this store
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.ApiClient;
+//import io.swagger.client.ApiException;
+//import io.swagger.client.Configuration;
+//import io.swagger.client.auth.*;
+//import io.swagger.client.api.BeezUPApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+BeezUPApi apiInstance = new BeezUPApi();
+String storeId = "04730364-9826-4ff3-92e4-51fccd02bf10"; // String | The store identifier
+try {
+    List<ChannelHeader> result = apiInstance.getAvailableChannels(storeId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BeezUPApi#getAvailableChannels");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **storeId** | **String**| The store identifier |
+
+### Return type
+
+[**List&lt;ChannelHeader&gt;**](ChannelHeader.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="getBillingPeriods"></a>
 # **getBillingPeriods**
 > BillingPeriods getBillingPeriods()
@@ -3714,59 +3767,6 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**CreditCardInfoResponse**](CreditCardInfoResponse.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="getCurrentChannels"></a>
-# **getCurrentChannels**
-> List&lt;ChannelHeader&gt; getCurrentChannels(storeId)
-
-List all available channel for this store
-
-### Example
-```java
-// Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.BeezUPApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure API key authorization: api_key
-ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-api_key.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.setApiKeyPrefix("Token");
-
-BeezUPApi apiInstance = new BeezUPApi();
-String storeId = "04730364-9826-4ff3-92e4-51fccd02bf10"; // String | The store identifier
-try {
-    List<ChannelHeader> result = apiInstance.getCurrentChannels(storeId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling BeezUPApi#getCurrentChannels");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **storeId** | **String**| The store identifier |
-
-### Return type
-
-[**List&lt;ChannelHeader&gt;**](ChannelHeader.md)
 
 ### Authorization
 

@@ -17,11 +17,11 @@ import java.util.Objects;
 import io.swagger.annotations.ApiModel;
 
 /**
- * Your role in your company
+ * The channel column name
  */
-@ApiModel(description = "Your role in your company")
+@ApiModel(description = "The channel column name")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T12:31:28.102Z")
-public class WhatIDo {
+public class ChannelColumnName {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -43,7 +43,7 @@ public class WhatIDo {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class WhatIDo {\n");
+    sb.append("class ChannelColumnName {\n");
     
     sb.append("}");
     return sb.toString();

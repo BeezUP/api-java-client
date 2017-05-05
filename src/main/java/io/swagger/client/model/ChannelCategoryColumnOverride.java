@@ -18,22 +18,22 @@ import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.BeezUPCommonChannelColumnId;
-import io.swagger.client.model.BeezUPCommonChannelColumnName;
 import io.swagger.client.model.ChannelColumnConfiguration;
 import io.swagger.client.model.ChannelColumnDescription;
+import io.swagger.client.model.ChannelColumnName;
 import io.swagger.client.model.ChannelColumnRestrictedValues;
 import io.swagger.client.model.ChannelColumnShowInMapping;
 
 /**
  * ChannelCategoryColumnOverride
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:59:54.954Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T12:31:28.102Z")
 public class ChannelCategoryColumnOverride {
   @SerializedName("channelColumnId")
   private BeezUPCommonChannelColumnId channelColumnId = null;
 
   @SerializedName("channelColumnName")
-  private BeezUPCommonChannelColumnName channelColumnName = null;
+  private ChannelColumnName channelColumnName = null;
 
   @SerializedName("channelColumnDescription")
   private ChannelColumnDescription channelColumnDescription = null;
@@ -65,7 +65,7 @@ public class ChannelCategoryColumnOverride {
     this.channelColumnId = channelColumnId;
   }
 
-  public ChannelCategoryColumnOverride channelColumnName(BeezUPCommonChannelColumnName channelColumnName) {
+  public ChannelCategoryColumnOverride channelColumnName(ChannelColumnName channelColumnName) {
     this.channelColumnName = channelColumnName;
     return this;
   }
@@ -75,11 +75,11 @@ public class ChannelCategoryColumnOverride {
    * @return channelColumnName
   **/
   @ApiModelProperty(example = "null", required = true, value = "")
-  public BeezUPCommonChannelColumnName getChannelColumnName() {
+  public ChannelColumnName getChannelColumnName() {
     return channelColumnName;
   }
 
-  public void setChannelColumnName(BeezUPCommonChannelColumnName channelColumnName) {
+  public void setChannelColumnName(ChannelColumnName channelColumnName) {
     this.channelColumnName = channelColumnName;
   }
 

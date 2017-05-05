@@ -6598,6 +6598,126 @@ public class BeezUPApi {
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
+    /* Build call for getAvailableChannels */
+    private com.squareup.okhttp.Call getAvailableChannelsCall(String storeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/v2/user/channels/".replaceAll("\\{format\\}","json");
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (storeId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storeId", storeId));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "api_key" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getAvailableChannelsValidateBeforeCall(String storeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'storeId' is set
+        if (storeId == null) {
+            throw new ApiException("Missing the required parameter 'storeId' when calling getAvailableChannels(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = getAvailableChannelsCall(storeId, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * List all available channel for this store
+     * 
+     * @param storeId The store identifier (required)
+     * @return List&lt;ChannelHeader&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public List<ChannelHeader> getAvailableChannels(String storeId) throws ApiException {
+        ApiResponse<List<ChannelHeader>> resp = getAvailableChannelsWithHttpInfo(storeId);
+        return resp.getData();
+    }
+
+    /**
+     * List all available channel for this store
+     * 
+     * @param storeId The store identifier (required)
+     * @return ApiResponse&lt;List&lt;ChannelHeader&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<List<ChannelHeader>> getAvailableChannelsWithHttpInfo(String storeId) throws ApiException {
+        com.squareup.okhttp.Call call = getAvailableChannelsValidateBeforeCall(storeId, null, null);
+        Type localVarReturnType = new TypeToken<List<ChannelHeader>>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * List all available channel for this store (asynchronously)
+     * 
+     * @param storeId The store identifier (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getAvailableChannelsAsync(String storeId, final ApiCallback<List<ChannelHeader>> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getAvailableChannelsValidateBeforeCall(storeId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<List<ChannelHeader>>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
     /* Build call for getBillingPeriods */
     private com.squareup.okhttp.Call getBillingPeriodsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
@@ -8256,126 +8376,6 @@ public class BeezUPApi {
 
         com.squareup.okhttp.Call call = getCreditCardInfoValidateBeforeCall(progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreditCardInfoResponse>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /* Build call for getCurrentChannels */
-    private com.squareup.okhttp.Call getCurrentChannelsCall(String storeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
-        
-        // create path and map variables
-        String localVarPath = "/v2/user/channels/".replaceAll("\\{format\\}","json");
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        if (storeId != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storeId", storeId));
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] { "api_key" };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-    
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getCurrentChannelsValidateBeforeCall(String storeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'storeId' is set
-        if (storeId == null) {
-            throw new ApiException("Missing the required parameter 'storeId' when calling getCurrentChannels(Async)");
-        }
-        
-        
-        com.squareup.okhttp.Call call = getCurrentChannelsCall(storeId, progressListener, progressRequestListener);
-        return call;
-
-        
-        
-        
-        
-    }
-
-    /**
-     * List all available channel for this store
-     * 
-     * @param storeId The store identifier (required)
-     * @return List&lt;ChannelHeader&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public List<ChannelHeader> getCurrentChannels(String storeId) throws ApiException {
-        ApiResponse<List<ChannelHeader>> resp = getCurrentChannelsWithHttpInfo(storeId);
-        return resp.getData();
-    }
-
-    /**
-     * List all available channel for this store
-     * 
-     * @param storeId The store identifier (required)
-     * @return ApiResponse&lt;List&lt;ChannelHeader&gt;&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<List<ChannelHeader>> getCurrentChannelsWithHttpInfo(String storeId) throws ApiException {
-        com.squareup.okhttp.Call call = getCurrentChannelsValidateBeforeCall(storeId, null, null);
-        Type localVarReturnType = new TypeToken<List<ChannelHeader>>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * List all available channel for this store (asynchronously)
-     * 
-     * @param storeId The store identifier (required)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call getCurrentChannelsAsync(String storeId, final ApiCallback<List<ChannelHeader>> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = getCurrentChannelsValidateBeforeCall(storeId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<ChannelHeader>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

@@ -24,7 +24,7 @@ import java.util.List;
  * The message request to schedule the auto import
  */
 @ApiModel(description = "The message request to schedule the auto import")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:59:54.954Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T12:31:28.102Z")
 public class ScheduleAutoImportRequest {
   @SerializedName("schedules")
   private List<String> schedules = new ArrayList<String>();

@@ -25,7 +25,7 @@ import java.util.List;
  * The response given by the batch operation
  */
 @ApiModel(description = "The response given by the batch operation")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:59:54.954Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T12:31:28.102Z")
 public class BatchOrderOperationResponse {
   @SerializedName("operations")
   private List<OrderOperationResponse> operations = new ArrayList<OrderOperationResponse>();

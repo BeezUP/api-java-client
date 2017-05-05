@@ -1031,6 +1031,22 @@ public class BeezUPApiTest {
     }
     
     /**
+     * List all available channel for this store
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getAvailableChannelsTest() throws ApiException {
+        String storeId = null;
+        List<ChannelHeader> response = api.getAvailableChannels(storeId);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Get billing periods conditions
      *
      * 
@@ -1251,22 +1267,6 @@ public class BeezUPApiTest {
     @Test
     public void getCreditCardInfoTest() throws ApiException {
         CreditCardInfoResponse response = api.getCreditCardInfo();
-
-        // TODO: test validations
-    }
-    
-    /**
-     * List all available channel for this store
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getCurrentChannelsTest() throws ApiException {
-        String storeId = null;
-        List<ChannelHeader> response = api.getCurrentChannels(storeId);
 
         // TODO: test validations
     }

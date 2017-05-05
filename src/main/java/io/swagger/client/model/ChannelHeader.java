@@ -17,16 +17,16 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.client.model.AvailableChannelLink;
 import io.swagger.client.model.BeezUPCommonChannelId;
 import io.swagger.client.model.BeezUPCommonChannelName;
 import io.swagger.client.model.BeezUPCommonHttpUrl;
-import io.swagger.client.model.ChannelHeaderLinks;
 
 /**
  * The available channel
  */
 @ApiModel(description = "The available channel")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:59:54.954Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T12:31:28.102Z")
 public class ChannelHeader {
   @SerializedName("channelId")
   private BeezUPCommonChannelId channelId = null;
@@ -37,11 +37,8 @@ public class ChannelHeader {
   @SerializedName("channelLogoUrl")
   private BeezUPCommonHttpUrl channelLogoUrl = null;
 
-  @SerializedName("descriptionAvailable")
-  private Boolean descriptionAvailable = false;
-
   @SerializedName("links")
-  private ChannelHeaderLinks links = null;
+  private AvailableChannelLink links = null;
 
   public ChannelHeader channelId(BeezUPCommonChannelId channelId) {
     this.channelId = channelId;
@@ -97,25 +94,7 @@ public class ChannelHeader {
     this.channelLogoUrl = channelLogoUrl;
   }
 
-  public ChannelHeader descriptionAvailable(Boolean descriptionAvailable) {
-    this.descriptionAvailable = descriptionAvailable;
-    return this;
-  }
-
-   /**
-   * Indicates if we have more detailed information about this channel
-   * @return descriptionAvailable
-  **/
-  @ApiModelProperty(example = "true", required = true, value = "Indicates if we have more detailed information about this channel")
-  public Boolean getDescriptionAvailable() {
-    return descriptionAvailable;
-  }
-
-  public void setDescriptionAvailable(Boolean descriptionAvailable) {
-    this.descriptionAvailable = descriptionAvailable;
-  }
-
-  public ChannelHeader links(ChannelHeaderLinks links) {
+  public ChannelHeader links(AvailableChannelLink links) {
     this.links = links;
     return this;
   }
@@ -125,11 +104,11 @@ public class ChannelHeader {
    * @return links
   **/
   @ApiModelProperty(example = "null", required = true, value = "")
-  public ChannelHeaderLinks getLinks() {
+  public AvailableChannelLink getLinks() {
     return links;
   }
 
-  public void setLinks(ChannelHeaderLinks links) {
+  public void setLinks(AvailableChannelLink links) {
     this.links = links;
   }
 
@@ -146,13 +125,12 @@ public class ChannelHeader {
     return Objects.equals(this.channelId, channelHeader.channelId) &&
         Objects.equals(this.channelName, channelHeader.channelName) &&
         Objects.equals(this.channelLogoUrl, channelHeader.channelLogoUrl) &&
-        Objects.equals(this.descriptionAvailable, channelHeader.descriptionAvailable) &&
         Objects.equals(this.links, channelHeader.links);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(channelId, channelName, channelLogoUrl, descriptionAvailable, links);
+    return Objects.hash(channelId, channelName, channelLogoUrl, links);
   }
 
 
@@ -164,7 +142,6 @@ public class ChannelHeader {
     sb.append("    channelId: ").append(toIndentedString(channelId)).append("\n");
     sb.append("    channelName: ").append(toIndentedString(channelName)).append("\n");
     sb.append("    channelLogoUrl: ").append(toIndentedString(channelLogoUrl)).append("\n");
-    sb.append("    descriptionAvailable: ").append(toIndentedString(descriptionAvailable)).append("\n");
     sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("}");
     return sb.toString();

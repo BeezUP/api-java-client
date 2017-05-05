@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * The order merchant identifier
  */
 @ApiModel(description = "The order merchant identifier")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:59:54.954Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T12:31:28.102Z")
 public class OrderMerchantOrderId {
 
   @Override

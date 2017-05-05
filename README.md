@@ -148,6 +148,7 @@ Class | Method | HTTP request | Description
 *BeezUPApi* | [**exportStoreReportByChannel**](docs/BeezUPApi.md#exportStoreReportByChannel) | **POST** /v2/user/analytics/{storeId}/reports/bychannel/export | Export the report by channel
 *BeezUPApi* | [**exportStoreReportByProduct**](docs/BeezUPApi.md#exportStoreReportByProduct) | **POST** /v2/user/analytics/{storeId}/reports/byproduct/export | Export the report by product
 *BeezUPApi* | [**getAutomaticTransitions**](docs/BeezUPApi.md#getAutomaticTransitions) | **GET** /v2/user/marketplaces/orders/automaticTransitions | Get list of configured automatic Order status transitions
+*BeezUPApi* | [**getAvailableChannels**](docs/BeezUPApi.md#getAvailableChannels) | **GET** /v2/user/channels/ | List all available channel for this store
 *BeezUPApi* | [**getBillingPeriods**](docs/BeezUPApi.md#getBillingPeriods) | **GET** /v2/user/customer/billingPeriods | Get billing periods conditions
 *BeezUPApi* | [**getChannelCatalog**](docs/BeezUPApi.md#getChannelCatalog) | **GET** /v2/user/channelCatalogs/{channelCatalogId} | Get the channel catalog information
 *BeezUPApi* | [**getChannelCatalogCategories**](docs/BeezUPApi.md#getChannelCatalogCategories) | **GET** /v2/user/channelCatalogs/{channelCatalogId}/categoryMappings | Get channel catalog categories
@@ -162,7 +163,6 @@ Class | Method | HTTP request | Description
 *BeezUPApi* | [**getChannelInfo**](docs/BeezUPApi.md#getChannelInfo) | **GET** /v2/user/channels/{channelId} | Get channel information
 *BeezUPApi* | [**getContracts**](docs/BeezUPApi.md#getContracts) | **GET** /v2/user/customer/contracts | Get contract list
 *BeezUPApi* | [**getCreditCardInfo**](docs/BeezUPApi.md#getCreditCardInfo) | **GET** /v2/user/customer/account/creditCardInfo | Get credit card information
-*BeezUPApi* | [**getCurrentChannels**](docs/BeezUPApi.md#getCurrentChannels) | **GET** /v2/user/channels/ | List all available channel for this store
 *BeezUPApi* | [**getFriendInfo**](docs/BeezUPApi.md#getFriendInfo) | **GET** /v2/user/customer/friends/{userId} | Get friend information
 *BeezUPApi* | [**getInvoices**](docs/BeezUPApi.md#getInvoices) | **GET** /v2/user/customer/invoices | Get all your invoices
 *BeezUPApi* | [**getMarketplaceAccountStores**](docs/BeezUPApi.md#getMarketplaceAccountStores) | **GET** /v2/user/marketplaces/channelcatalogs/ | Get  you marketplace channel catalog list
@@ -289,6 +289,7 @@ Class | Method | HTTP request | Description
  - [AutomaticTransition](docs/AutomaticTransition.md)
  - [AutomaticTransitionInfo](docs/AutomaticTransitionInfo.md)
  - [AutomaticTransitionInfos](docs/AutomaticTransitionInfos.md)
+ - [AvailableChannelLink](docs/AvailableChannelLink.md)
  - [BatchOrderOperationResponse](docs/BatchOrderOperationResponse.md)
  - [BeezUPColumnConfiguration](docs/BeezUPColumnConfiguration.md)
  - [BeezUPCommonBeezUPColumnName](docs/BeezUPCommonBeezUPColumnName.md)
@@ -393,11 +394,11 @@ Class | Method | HTTP request | Description
  - [ChannelColumn](docs/ChannelColumn.md)
  - [ChannelColumnConfiguration](docs/ChannelColumnConfiguration.md)
  - [ChannelColumnDescription](docs/ChannelColumnDescription.md)
+ - [ChannelColumnName](docs/ChannelColumnName.md)
  - [ChannelColumnRestrictedValues](docs/ChannelColumnRestrictedValues.md)
  - [ChannelColumnShowInMapping](docs/ChannelColumnShowInMapping.md)
  - [ChannelFirstLevelCategory](docs/ChannelFirstLevelCategory.md)
  - [ChannelHeader](docs/ChannelHeader.md)
- - [ChannelHeaderLinks](docs/ChannelHeaderLinks.md)
  - [ChannelInfo](docs/ChannelInfo.md)
  - [ChannelInfoDetails](docs/ChannelInfoDetails.md)
  - [ChannelInfoKeyNumbers](docs/ChannelInfoKeyNumbers.md)
