@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * The technical code of the marketplace.
  */
 @ApiModel(description = "The technical code of the marketplace.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T12:58:38.338Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:14:33.629Z")
 public class BeezUPCommonMarketplaceTechnicalCode {
 
   @Override
