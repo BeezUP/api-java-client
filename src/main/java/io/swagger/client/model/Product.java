@@ -25,7 +25,7 @@ import io.swagger.client.model.ProductValues;
  * Represent a catalog product
  */
 @ApiModel(description = "Represent a catalog product")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T12:43:26.940Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T12:58:38.338Z")
 public class Product {
   @SerializedName("productId")
   private BeezUPCommonProductId productId = null;

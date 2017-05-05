@@ -23,7 +23,7 @@ import io.swagger.client.model.BeezUPCommonLink3;
  * The navigation links &#39;first&#39;, &#39;last&#39;, &#39;next&#39;, &#39;previous&#39;
  */
 @ApiModel(description = "The navigation links 'first', 'last', 'next', 'previous'")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T12:43:26.940Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T12:58:38.338Z")
 public class BeezUPCommonPaginationResultLinks {
   @SerializedName("first")
   private BeezUPCommonLink3 first = null;

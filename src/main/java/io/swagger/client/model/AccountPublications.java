@@ -26,7 +26,7 @@ import java.util.List;
  * The publication history for an account
  */
 @ApiModel(description = "The publication history for an account")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T12:43:26.940Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T12:58:38.338Z")
 public class AccountPublications {
   @SerializedName("links")
   private AccountPublicationsLinks links = null;
