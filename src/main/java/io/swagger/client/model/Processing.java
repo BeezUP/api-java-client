@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * If true, there is currently a harvest or an order change in progress. Otherwise false.
  */
 @ApiModel(description = "If true, there is currently a harvest or an order change in progress. Otherwise false.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:06:41.520Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:07:09.864Z")
 public class Processing {
 
   @Override

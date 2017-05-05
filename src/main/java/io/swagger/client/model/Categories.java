@@ -25,7 +25,7 @@ import java.util.List;
  * The object which contains the category list
  */
 @ApiModel(description = "The object which contains the category list")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:06:41.520Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:07:09.864Z")
 public class Categories {
   @SerializedName("categories")
   private List<Category> categories = new ArrayList<Category>();

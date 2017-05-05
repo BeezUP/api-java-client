@@ -23,7 +23,7 @@ import io.swagger.client.model.LinksSaveStoreAlertLink;
  * The different actions you can make on this offer
  */
 @ApiModel(description = "The different actions you can make on this offer")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:06:41.520Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:07:09.864Z")
 public class StoreAlertLinks {
   @SerializedName("saveStoreAlert")
   private LinksSaveStoreAlertLink saveStoreAlert = null;

@@ -23,7 +23,7 @@ import java.util.Map;
  * The channel category column overrides
  */
 @ApiModel(description = "The channel category column overrides")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:06:41.520Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:07:09.864Z")
 public class ChannelCategoryColumnOverrides extends HashMap<String, ChannelCategoryColumnOverride> {
 
   @Override

@@ -21,7 +21,7 @@ import java.util.List;
 /**
  * ChannelCatalogMarketplaceSettingArray
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:06:41.520Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:07:09.864Z")
 public class ChannelCatalogMarketplaceSettingArray extends ArrayList<ChannelCatalogMarketplaceSetting> {
 
   @Override

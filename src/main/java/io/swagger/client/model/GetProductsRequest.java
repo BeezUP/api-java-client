@@ -23,7 +23,7 @@ import io.swagger.client.model.BeezUPCommonCatalogCategoryPath;
  * The request message to get products based on these filters
  */
 @ApiModel(description = "The request message to get products based on these filters")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:06:41.520Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:07:09.864Z")
 public class GetProductsRequest {
   @SerializedName("sku")
   private String sku = null;
