@@ -23,7 +23,7 @@ import io.swagger.client.model.StoreCount;
  * Describe the store information related to the offer.
  */
 @ApiModel(description = "Describe the store information related to the offer.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:18:37.107Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:18:58.821Z")
 public class ContractStoreInfo {
   @SerializedName("storeCount")
   private StoreCount storeCount = null;

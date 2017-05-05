@@ -31,7 +31,7 @@ import java.util.Map;
 /**
  * LinksRunRulesLink
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:18:37.107Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:18:58.821Z")
 public class LinksRunRulesLink {
   @SerializedName("docUrl")
   private BeezUPCommonDocUrl docUrl = null;
