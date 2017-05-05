@@ -81,6 +81,7 @@ Method | HTTP request | Description
 [**getOrderHistory**](BeezUPApi.md#getOrderHistory) | **GET** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/history | Get an Order&#39;s harvest and change history
 [**getOrderListFull**](BeezUPApi.md#getOrderListFull) | **POST** /v2/user/marketplaces/orders/list/full | Get a paginated list of all Orders with all Order and Order Item(s) properties
 [**getOrderListLight**](BeezUPApi.md#getOrderListLight) | **POST** /v2/user/marketplaces/orders/list/light | Get a paginated list of all Orders without details
+[**getProfilePictureInfo**](BeezUPApi.md#getProfilePictureInfo) | **GET** /v2/user/customer/account/profilePictureInfo | Get profile picture information
 [**getPublications**](BeezUPApi.md#getPublications) | **GET** /v2/user/marketplaces/channelcatalogs/publications/{marketplaceTechnicalCode}/{accountId}/history | Fetch the publication history for an account, sorted by descending start date
 [**getReportFilter**](BeezUPApi.md#getReportFilter) | **GET** /v2/user/analytics/{storeId}/reports/filters/{reportFilterId} | Get the report filter description
 [**getReportFilters**](BeezUPApi.md#getReportFilters) | **GET** /v2/user/analytics/{storeId}/reports/filters | Get report filter list for the given store
@@ -4302,6 +4303,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OrderListLight**](OrderListLight.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getProfilePictureInfo"></a>
+# **getProfilePictureInfo**
+> ProfilePictureInfoResponse getProfilePictureInfo()
+
+Get profile picture information
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.ApiClient;
+//import io.swagger.client.ApiException;
+//import io.swagger.client.Configuration;
+//import io.swagger.client.auth.*;
+//import io.swagger.client.api.BeezUPApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+BeezUPApi apiInstance = new BeezUPApi();
+try {
+    ProfilePictureInfoResponse result = apiInstance.getProfilePictureInfo();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BeezUPApi#getProfilePictureInfo");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**ProfilePictureInfoResponse**](ProfilePictureInfoResponse.md)
 
 ### Authorization
 

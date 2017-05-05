@@ -98,6 +98,7 @@ import io.swagger.client.model.ProductOverrides;
 import io.swagger.client.model.ProductSample;
 import io.swagger.client.model.Products;
 import io.swagger.client.model.ProfilePictureInfo;
+import io.swagger.client.model.ProfilePictureInfoResponse;
 import io.swagger.client.model.ReportByCategoryRequest;
 import io.swagger.client.model.ReportByCategoryResponse;
 import io.swagger.client.model.ReportByChannelRequest;
@@ -1429,6 +1430,21 @@ public class BeezUPApiTest {
     public void getOrderListLightTest() throws ApiException {
         OrderListRequest request = null;
         OrderListLight response = api.getOrderListLight(request);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get profile picture information
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getProfilePictureInfoTest() throws ApiException {
+        ProfilePictureInfoResponse response = api.getProfilePictureInfo();
 
         // TODO: test validations
     }

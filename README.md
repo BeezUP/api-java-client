@@ -173,6 +173,7 @@ Class | Method | HTTP request | Description
 *BeezUPApi* | [**getOrderHistory**](docs/BeezUPApi.md#getOrderHistory) | **GET** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/history | Get an Order&#39;s harvest and change history
 *BeezUPApi* | [**getOrderListFull**](docs/BeezUPApi.md#getOrderListFull) | **POST** /v2/user/marketplaces/orders/list/full | Get a paginated list of all Orders with all Order and Order Item(s) properties
 *BeezUPApi* | [**getOrderListLight**](docs/BeezUPApi.md#getOrderListLight) | **POST** /v2/user/marketplaces/orders/list/light | Get a paginated list of all Orders without details
+*BeezUPApi* | [**getProfilePictureInfo**](docs/BeezUPApi.md#getProfilePictureInfo) | **GET** /v2/user/customer/account/profilePictureInfo | Get profile picture information
 *BeezUPApi* | [**getPublications**](docs/BeezUPApi.md#getPublications) | **GET** /v2/user/marketplaces/channelcatalogs/publications/{marketplaceTechnicalCode}/{accountId}/history | Fetch the publication history for an account, sorted by descending start date
 *BeezUPApi* | [**getReportFilter**](docs/BeezUPApi.md#getReportFilter) | **GET** /v2/user/analytics/{storeId}/reports/filters/{reportFilterId} | Get the report filter description
 *BeezUPApi* | [**getReportFilters**](docs/BeezUPApi.md#getReportFilters) | **GET** /v2/user/analytics/{storeId}/reports/filters | Get report filter list for the given store
@@ -527,6 +528,7 @@ Class | Method | HTTP request | Description
  - [LinksGetCreditCardInfoLink](docs/LinksGetCreditCardInfoLink.md)
  - [LinksGetMarketplaceAccountStoresLink](docs/LinksGetMarketplaceAccountStoresLink.md)
  - [LinksGetOrderLink](docs/LinksGetOrderLink.md)
+ - [LinksGetProfilePictureInfoLink](docs/LinksGetProfilePictureInfoLink.md)
  - [LinksGetPublicationsLink](docs/LinksGetPublicationsLink.md)
  - [LinksGetReportFilterLink](docs/LinksGetReportFilterLink.md)
  - [LinksGetReportFiltersLink](docs/LinksGetReportFiltersLink.md)
@@ -622,6 +624,8 @@ Class | Method | HTTP request | Description
  - [ProductValues](docs/ProductValues.md)
  - [Products](docs/Products.md)
  - [ProfilePictureInfo](docs/ProfilePictureInfo.md)
+ - [ProfilePictureInfoResponse](docs/ProfilePictureInfoResponse.md)
+ - [ProfilePictureInfoResponseLinks](docs/ProfilePictureInfoResponseLinks.md)
  - [ProfilePictureUrl](docs/ProfilePictureUrl.md)
  - [PromotionalCodeValidity](docs/PromotionalCodeValidity.md)
  - [PublicationFeedReporting](docs/PublicationFeedReporting.md)

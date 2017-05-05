@@ -19,6 +19,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.LinksChangePasswordLink;
 import io.swagger.client.model.LinksGetCreditCardInfoLink;
+import io.swagger.client.model.LinksGetProfilePictureInfoLink;
 import io.swagger.client.model.LinksSaveCompanyInfoLink;
 import io.swagger.client.model.LinksSaveCreditCardInfoLink;
 import io.swagger.client.model.LinksSavePersonalInfoLink;
@@ -28,7 +29,7 @@ import io.swagger.client.model.LinksSaveProfilePictureInfoLink;
  * The different actions you can make on this account
  */
 @ApiModel(description = "The different actions you can make on this account")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:15:40.708Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:26:33.625Z")
 public class AccountInfoLinks {
   @SerializedName("savePersonalInfo")
   private LinksSavePersonalInfoLink savePersonalInfo = null;
@@ -38,6 +39,9 @@ public class AccountInfoLinks {
 
   @SerializedName("saveCompanyInfo")
   private LinksSaveCompanyInfoLink saveCompanyInfo = null;
+
+  @SerializedName("getProfilePictureInfo")
+  private LinksGetProfilePictureInfoLink getProfilePictureInfo = null;
 
   @SerializedName("saveProfilePictureInfo")
   private LinksSaveProfilePictureInfoLink saveProfilePictureInfo = null;
@@ -100,6 +104,24 @@ public class AccountInfoLinks {
 
   public void setSaveCompanyInfo(LinksSaveCompanyInfoLink saveCompanyInfo) {
     this.saveCompanyInfo = saveCompanyInfo;
+  }
+
+  public AccountInfoLinks getProfilePictureInfo(LinksGetProfilePictureInfoLink getProfilePictureInfo) {
+    this.getProfilePictureInfo = getProfilePictureInfo;
+    return this;
+  }
+
+   /**
+   * Get getProfilePictureInfo
+   * @return getProfilePictureInfo
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public LinksGetProfilePictureInfoLink getGetProfilePictureInfo() {
+    return getProfilePictureInfo;
+  }
+
+  public void setGetProfilePictureInfo(LinksGetProfilePictureInfoLink getProfilePictureInfo) {
+    this.getProfilePictureInfo = getProfilePictureInfo;
   }
 
   public AccountInfoLinks saveProfilePictureInfo(LinksSaveProfilePictureInfoLink saveProfilePictureInfo) {
@@ -169,6 +191,7 @@ public class AccountInfoLinks {
     return Objects.equals(this.savePersonalInfo, accountInfoLinks.savePersonalInfo) &&
         Objects.equals(this.changePassword, accountInfoLinks.changePassword) &&
         Objects.equals(this.saveCompanyInfo, accountInfoLinks.saveCompanyInfo) &&
+        Objects.equals(this.getProfilePictureInfo, accountInfoLinks.getProfilePictureInfo) &&
         Objects.equals(this.saveProfilePictureInfo, accountInfoLinks.saveProfilePictureInfo) &&
         Objects.equals(this.getCreditCardInfo, accountInfoLinks.getCreditCardInfo) &&
         Objects.equals(this.saveUserCreditCardLink, accountInfoLinks.saveUserCreditCardLink);
@@ -176,7 +199,7 @@ public class AccountInfoLinks {
 
   @Override
   public int hashCode() {
-    return Objects.hash(savePersonalInfo, changePassword, saveCompanyInfo, saveProfilePictureInfo, getCreditCardInfo, saveUserCreditCardLink);
+    return Objects.hash(savePersonalInfo, changePassword, saveCompanyInfo, getProfilePictureInfo, saveProfilePictureInfo, getCreditCardInfo, saveUserCreditCardLink);
   }
 
 
@@ -188,6 +211,7 @@ public class AccountInfoLinks {
     sb.append("    savePersonalInfo: ").append(toIndentedString(savePersonalInfo)).append("\n");
     sb.append("    changePassword: ").append(toIndentedString(changePassword)).append("\n");
     sb.append("    saveCompanyInfo: ").append(toIndentedString(saveCompanyInfo)).append("\n");
+    sb.append("    getProfilePictureInfo: ").append(toIndentedString(getProfilePictureInfo)).append("\n");
     sb.append("    saveProfilePictureInfo: ").append(toIndentedString(saveProfilePictureInfo)).append("\n");
     sb.append("    getCreditCardInfo: ").append(toIndentedString(getCreditCardInfo)).append("\n");
     sb.append("    saveUserCreditCardLink: ").append(toIndentedString(saveUserCreditCardLink)).append("\n");
