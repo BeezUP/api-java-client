@@ -23,7 +23,7 @@ import io.swagger.client.model.ChannelCatalogMarketplaceSettingArray;
  * The channel catalog marketplace settings to save
  */
 @ApiModel(description = "The channel catalog marketplace settings to save")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:50:41.747Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:54:35.212Z")
 public class SetChannelCatalogMarketplaceSettingsRequest {
   @SerializedName("settings")
   private ChannelCatalogMarketplaceSettingArray settings = null;

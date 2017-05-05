@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * SaveAutomaticTransitionRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:50:41.747Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:54:35.212Z")
 public class SaveAutomaticTransitionRequest {
   @SerializedName("automaticTransitions")
   private List<AutomaticTransition> automaticTransitions = new ArrayList<AutomaticTransition>();

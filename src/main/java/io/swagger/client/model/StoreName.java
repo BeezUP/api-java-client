@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * The store name. Must be unique.
  */
 @ApiModel(description = "The store name. Must be unique.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:50:41.747Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:54:35.212Z")
 public class StoreName {
 
   @Override

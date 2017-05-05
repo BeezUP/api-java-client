@@ -24,7 +24,7 @@ import io.swagger.client.model.OrderIdentifierWithETag;
  * Contains the order identifier and the change order request
  */
 @ApiModel(description = "Contains the order identifier and the change order request")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:50:41.747Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:54:35.212Z")
 public class ChangeOrderListRequestItem {
   @SerializedName("order")
   private OrderIdentifierWithETag order = null;
