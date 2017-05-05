@@ -23,7 +23,7 @@ import java.math.BigDecimal;
 /**
  * GlobalPerformanceIndicatorByChannel
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:47:15.399Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:50:41.747Z")
 public class GlobalPerformanceIndicatorByChannel {
   @SerializedName("channel")
   private BeezUPCommonChannelBasicInfo channel = null;

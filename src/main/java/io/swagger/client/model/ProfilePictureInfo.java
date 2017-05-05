@@ -17,19 +17,19 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.client.model.ProfilePictureSelected;
 import io.swagger.client.model.ProfilePictureUrl;
-import io.swagger.client.model.UseGravatarProfilePicture;
 
 /**
  * ProfilePictureInfo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:47:15.399Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:50:41.747Z")
 public class ProfilePictureInfo {
   @SerializedName("profilePictureUrl")
   private ProfilePictureUrl profilePictureUrl = null;
 
-  @SerializedName("useGravatarProfilePicture")
-  private UseGravatarProfilePicture useGravatarProfilePicture = null;
+  @SerializedName("profilePictureSelected")
+  private ProfilePictureSelected profilePictureSelected = null;
 
   public ProfilePictureInfo profilePictureUrl(ProfilePictureUrl profilePictureUrl) {
     this.profilePictureUrl = profilePictureUrl;
@@ -49,22 +49,22 @@ public class ProfilePictureInfo {
     this.profilePictureUrl = profilePictureUrl;
   }
 
-  public ProfilePictureInfo useGravatarProfilePicture(UseGravatarProfilePicture useGravatarProfilePicture) {
-    this.useGravatarProfilePicture = useGravatarProfilePicture;
+  public ProfilePictureInfo profilePictureSelected(ProfilePictureSelected profilePictureSelected) {
+    this.profilePictureSelected = profilePictureSelected;
     return this;
   }
 
    /**
-   * Get useGravatarProfilePicture
-   * @return useGravatarProfilePicture
+   * Get profilePictureSelected
+   * @return profilePictureSelected
   **/
   @ApiModelProperty(example = "null", required = true, value = "")
-  public UseGravatarProfilePicture getUseGravatarProfilePicture() {
-    return useGravatarProfilePicture;
+  public ProfilePictureSelected getProfilePictureSelected() {
+    return profilePictureSelected;
   }
 
-  public void setUseGravatarProfilePicture(UseGravatarProfilePicture useGravatarProfilePicture) {
-    this.useGravatarProfilePicture = useGravatarProfilePicture;
+  public void setProfilePictureSelected(ProfilePictureSelected profilePictureSelected) {
+    this.profilePictureSelected = profilePictureSelected;
   }
 
 
@@ -78,12 +78,12 @@ public class ProfilePictureInfo {
     }
     ProfilePictureInfo profilePictureInfo = (ProfilePictureInfo) o;
     return Objects.equals(this.profilePictureUrl, profilePictureInfo.profilePictureUrl) &&
-        Objects.equals(this.useGravatarProfilePicture, profilePictureInfo.useGravatarProfilePicture);
+        Objects.equals(this.profilePictureSelected, profilePictureInfo.profilePictureSelected);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(profilePictureUrl, useGravatarProfilePicture);
+    return Objects.hash(profilePictureUrl, profilePictureSelected);
   }
 
 
@@ -93,7 +93,7 @@ public class ProfilePictureInfo {
     sb.append("class ProfilePictureInfo {\n");
     
     sb.append("    profilePictureUrl: ").append(toIndentedString(profilePictureUrl)).append("\n");
-    sb.append("    useGravatarProfilePicture: ").append(toIndentedString(useGravatarProfilePicture)).append("\n");
+    sb.append("    profilePictureSelected: ").append(toIndentedString(profilePictureSelected)).append("\n");
     sb.append("}");
     return sb.toString();
   }
