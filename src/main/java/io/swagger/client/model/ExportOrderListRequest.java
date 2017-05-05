@@ -17,15 +17,37 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.client.model.BeezUPCommonStoreId;
 import io.swagger.client.model.OrderListRequest;
 
 /**
  * ExportOrderListRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:13:16.265Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:22:45.227Z")
 public class ExportOrderListRequest {
+  @SerializedName("storeId")
+  private BeezUPCommonStoreId storeId = null;
+
   @SerializedName("orderListRequest")
   private OrderListRequest orderListRequest = null;
+
+  public ExportOrderListRequest storeId(BeezUPCommonStoreId storeId) {
+    this.storeId = storeId;
+    return this;
+  }
+
+   /**
+   * Get storeId
+   * @return storeId
+  **/
+  @ApiModelProperty(example = "null", required = true, value = "")
+  public BeezUPCommonStoreId getStoreId() {
+    return storeId;
+  }
+
+  public void setStoreId(BeezUPCommonStoreId storeId) {
+    this.storeId = storeId;
+  }
 
   public ExportOrderListRequest orderListRequest(OrderListRequest orderListRequest) {
     this.orderListRequest = orderListRequest;
@@ -55,12 +77,13 @@ public class ExportOrderListRequest {
       return false;
     }
     ExportOrderListRequest exportOrderListRequest = (ExportOrderListRequest) o;
-    return Objects.equals(this.orderListRequest, exportOrderListRequest.orderListRequest);
+    return Objects.equals(this.storeId, exportOrderListRequest.storeId) &&
+        Objects.equals(this.orderListRequest, exportOrderListRequest.orderListRequest);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(orderListRequest);
+    return Objects.hash(storeId, orderListRequest);
   }
 
 
@@ -69,6 +92,7 @@ public class ExportOrderListRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class ExportOrderListRequest {\n");
     
+    sb.append("    storeId: ").append(toIndentedString(storeId)).append("\n");
     sb.append("    orderListRequest: ").append(toIndentedString(orderListRequest)).append("\n");
     sb.append("}");
     return sb.toString();

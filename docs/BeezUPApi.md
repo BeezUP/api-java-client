@@ -4093,7 +4093,7 @@ Name | Type | Description  | Notes
 
 <a name="getOrderExportations"></a>
 # **getOrderExportations**
-> OrderExportations getOrderExportations(pageNumber, pageSize)
+> OrderExportations getOrderExportations(pageNumber, pageSize, storeId)
 
 Get a paginated list of Order report exportations
 
@@ -4117,8 +4117,9 @@ api_key.setApiKey("YOUR API KEY");
 BeezUPApi apiInstance = new BeezUPApi();
 Integer pageNumber = 1; // Integer | The page number you want to get
 Integer pageSize = 25; // Integer | The count of Order report exportations you want to get
+String storeId = "storeId_example"; // String | The store identifier to regroup the order exportations
 try {
-    OrderExportations result = apiInstance.getOrderExportations(pageNumber, pageSize);
+    OrderExportations result = apiInstance.getOrderExportations(pageNumber, pageSize, storeId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BeezUPApi#getOrderExportations");
@@ -4132,6 +4133,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pageNumber** | **Integer**| The page number you want to get |
  **pageSize** | **Integer**| The count of Order report exportations you want to get |
+ **storeId** | **String**| The store identifier to regroup the order exportations |
 
 ### Return type
 

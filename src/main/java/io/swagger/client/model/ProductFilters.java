@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * ProductFilters
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:13:16.265Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:22:45.227Z")
 public class ProductFilters {
   @SerializedName("sku")
   private String sku = null;

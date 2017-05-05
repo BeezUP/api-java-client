@@ -9089,7 +9089,7 @@ public class BeezUPApi {
         return call;
     }
     /* Build call for getOrderExportations */
-    private com.squareup.okhttp.Call getOrderExportationsCall(Integer pageNumber, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getOrderExportationsCall(Integer pageNumber, Integer pageSize, String storeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -9100,6 +9100,8 @@ public class BeezUPApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "pageNumber", pageNumber));
         if (pageSize != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "pageSize", pageSize));
+        if (storeId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "storeId", storeId));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -9134,7 +9136,7 @@ public class BeezUPApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getOrderExportationsValidateBeforeCall(Integer pageNumber, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getOrderExportationsValidateBeforeCall(Integer pageNumber, Integer pageSize, String storeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'pageNumber' is set
         if (pageNumber == null) {
@@ -9146,8 +9148,13 @@ public class BeezUPApi {
             throw new ApiException("Missing the required parameter 'pageSize' when calling getOrderExportations(Async)");
         }
         
+        // verify the required parameter 'storeId' is set
+        if (storeId == null) {
+            throw new ApiException("Missing the required parameter 'storeId' when calling getOrderExportations(Async)");
+        }
         
-        com.squareup.okhttp.Call call = getOrderExportationsCall(pageNumber, pageSize, progressListener, progressRequestListener);
+        
+        com.squareup.okhttp.Call call = getOrderExportationsCall(pageNumber, pageSize, storeId, progressListener, progressRequestListener);
         return call;
 
         
@@ -9161,11 +9168,12 @@ public class BeezUPApi {
      * 
      * @param pageNumber The page number you want to get (required)
      * @param pageSize The count of Order report exportations you want to get (required)
+     * @param storeId The store identifier to regroup the order exportations (required)
      * @return OrderExportations
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public OrderExportations getOrderExportations(Integer pageNumber, Integer pageSize) throws ApiException {
-        ApiResponse<OrderExportations> resp = getOrderExportationsWithHttpInfo(pageNumber, pageSize);
+    public OrderExportations getOrderExportations(Integer pageNumber, Integer pageSize, String storeId) throws ApiException {
+        ApiResponse<OrderExportations> resp = getOrderExportationsWithHttpInfo(pageNumber, pageSize, storeId);
         return resp.getData();
     }
 
@@ -9174,11 +9182,12 @@ public class BeezUPApi {
      * 
      * @param pageNumber The page number you want to get (required)
      * @param pageSize The count of Order report exportations you want to get (required)
+     * @param storeId The store identifier to regroup the order exportations (required)
      * @return ApiResponse&lt;OrderExportations&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<OrderExportations> getOrderExportationsWithHttpInfo(Integer pageNumber, Integer pageSize) throws ApiException {
-        com.squareup.okhttp.Call call = getOrderExportationsValidateBeforeCall(pageNumber, pageSize, null, null);
+    public ApiResponse<OrderExportations> getOrderExportationsWithHttpInfo(Integer pageNumber, Integer pageSize, String storeId) throws ApiException {
+        com.squareup.okhttp.Call call = getOrderExportationsValidateBeforeCall(pageNumber, pageSize, storeId, null, null);
         Type localVarReturnType = new TypeToken<OrderExportations>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -9188,11 +9197,12 @@ public class BeezUPApi {
      * 
      * @param pageNumber The page number you want to get (required)
      * @param pageSize The count of Order report exportations you want to get (required)
+     * @param storeId The store identifier to regroup the order exportations (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getOrderExportationsAsync(Integer pageNumber, Integer pageSize, final ApiCallback<OrderExportations> callback) throws ApiException {
+    public com.squareup.okhttp.Call getOrderExportationsAsync(Integer pageNumber, Integer pageSize, String storeId, final ApiCallback<OrderExportations> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -9213,7 +9223,7 @@ public class BeezUPApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getOrderExportationsValidateBeforeCall(pageNumber, pageSize, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getOrderExportationsValidateBeforeCall(pageNumber, pageSize, storeId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<OrderExportations>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

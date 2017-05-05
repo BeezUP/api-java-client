@@ -25,7 +25,7 @@ import java.util.List;
  * Describe the bonus information related to your current contract.
  */
 @ApiModel(description = "Describe the bonus information related to your current contract.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:13:16.265Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:22:45.227Z")
 public class ContractBonusInfo {
   @SerializedName("bonuses")
   private List<BonusInfo> bonuses = new ArrayList<BonusInfo>();

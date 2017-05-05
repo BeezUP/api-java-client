@@ -1379,7 +1379,8 @@ public class BeezUPApiTest {
     public void getOrderExportationsTest() throws ApiException {
         Integer pageNumber = null;
         Integer pageSize = null;
-        OrderExportations response = api.getOrderExportations(pageNumber, pageSize);
+        String storeId = null;
+        OrderExportations response = api.getOrderExportations(pageNumber, pageSize, storeId);
 
         // TODO: test validations
     }

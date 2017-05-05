@@ -31,7 +31,7 @@ import io.swagger.client.model.DefinitionslinksUpdateRuleLink;
  * Links to retrieve/action on other entities
  */
 @ApiModel(description = "Links to retrieve/action on other entities")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:13:16.265Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:22:45.227Z")
 public class RuleLinks {
   @SerializedName("self")
   private DefinitionslinksGetRuleLink self = null;
