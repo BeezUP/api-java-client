@@ -29,7 +29,7 @@ import org.joda.time.DateTime;
  * Contains common filter parameters
  */
 @ApiModel(description = "Contains common filter parameters")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:23:39.618Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:51:26.209Z")
 public class ReportFilterCommonParameters {
   @SerializedName("channelId")
   private BeezUPCommonChannelId channelId = null;

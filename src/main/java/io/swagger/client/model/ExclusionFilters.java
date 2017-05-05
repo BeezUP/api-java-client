@@ -23,7 +23,7 @@ import java.util.List;
  * The exclusion filter list
  */
 @ApiModel(description = "The exclusion filter list")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:23:39.618Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:51:26.209Z")
 public class ExclusionFilters extends ArrayList<ExclusionFilter> {
 
   @Override
