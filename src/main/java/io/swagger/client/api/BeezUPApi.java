@@ -144,6 +144,7 @@ import io.swagger.client.model.TrackedClicks;
 import io.swagger.client.model.TrackedExternalOrders;
 import io.swagger.client.model.TrackedOrders;
 import io.swagger.client.model.TrackingStatus;
+import java.util.UUID;
 import io.swagger.client.model.UnmapCategoryRequest;
 import io.swagger.client.model.UpdateRuleRequest;
 import io.swagger.client.model.UpdateStoreRequest;
@@ -2877,7 +2878,7 @@ public class BeezUPApi {
         return call;
     }
     /* Build call for changeOrder */
-    private com.squareup.okhttp.Call changeOrderCall(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, String changeOrderType, String userName, ChangeOrderRequest request, String ifMatch, Boolean testMode, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call changeOrderCall(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, String changeOrderType, String userName, ChangeOrderRequest request, String ifMatch, Boolean testMode, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = request;
         
         // create path and map variables
@@ -2928,7 +2929,7 @@ public class BeezUPApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call changeOrderValidateBeforeCall(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, String changeOrderType, String userName, ChangeOrderRequest request, String ifMatch, Boolean testMode, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call changeOrderValidateBeforeCall(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, String changeOrderType, String userName, ChangeOrderRequest request, String ifMatch, Boolean testMode, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'marketplaceTechnicalCode' is set
         if (marketplaceTechnicalCode == null) {
@@ -2988,7 +2989,7 @@ public class BeezUPApi {
      * @param testMode If true, the operation will be not be sent to marketplace. But the validation will be taken in account. (optional, default to false)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void changeOrder(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, String changeOrderType, String userName, ChangeOrderRequest request, String ifMatch, Boolean testMode) throws ApiException {
+    public void changeOrder(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, String changeOrderType, String userName, ChangeOrderRequest request, String ifMatch, Boolean testMode) throws ApiException {
         changeOrderWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId, changeOrderType, userName, request, ifMatch, testMode);
     }
 
@@ -3006,7 +3007,7 @@ public class BeezUPApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> changeOrderWithHttpInfo(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, String changeOrderType, String userName, ChangeOrderRequest request, String ifMatch, Boolean testMode) throws ApiException {
+    public ApiResponse<Void> changeOrderWithHttpInfo(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, String changeOrderType, String userName, ChangeOrderRequest request, String ifMatch, Boolean testMode) throws ApiException {
         com.squareup.okhttp.Call call = changeOrderValidateBeforeCall(marketplaceTechnicalCode, accountId, beezUPOrderId, changeOrderType, userName, request, ifMatch, testMode, null, null);
         return apiClient.execute(call);
     }
@@ -3026,7 +3027,7 @@ public class BeezUPApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call changeOrderAsync(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, String changeOrderType, String userName, ChangeOrderRequest request, String ifMatch, Boolean testMode, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call changeOrderAsync(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, String changeOrderType, String userName, ChangeOrderRequest request, String ifMatch, Boolean testMode, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3308,7 +3309,7 @@ public class BeezUPApi {
         return call;
     }
     /* Build call for clearMerchantOrderInfo */
-    private com.squareup.okhttp.Call clearMerchantOrderInfoCall(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call clearMerchantOrderInfoCall(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -3352,7 +3353,7 @@ public class BeezUPApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call clearMerchantOrderInfoValidateBeforeCall(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call clearMerchantOrderInfoValidateBeforeCall(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'marketplaceTechnicalCode' is set
         if (marketplaceTechnicalCode == null) {
@@ -3387,7 +3388,7 @@ public class BeezUPApi {
      * @param beezUPOrderId The BeezUP Order identifier (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void clearMerchantOrderInfo(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId) throws ApiException {
+    public void clearMerchantOrderInfo(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId) throws ApiException {
         clearMerchantOrderInfoWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId);
     }
 
@@ -3400,7 +3401,7 @@ public class BeezUPApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> clearMerchantOrderInfoWithHttpInfo(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId) throws ApiException {
+    public ApiResponse<Void> clearMerchantOrderInfoWithHttpInfo(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId) throws ApiException {
         com.squareup.okhttp.Call call = clearMerchantOrderInfoValidateBeforeCall(marketplaceTechnicalCode, accountId, beezUPOrderId, null, null);
         return apiClient.execute(call);
     }
@@ -3415,7 +3416,7 @@ public class BeezUPApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call clearMerchantOrderInfoAsync(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call clearMerchantOrderInfoAsync(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -8946,7 +8947,7 @@ public class BeezUPApi {
         return call;
     }
     /* Build call for getOrder */
-    private com.squareup.okhttp.Call getOrderCall(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, String ifNoneMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getOrderCall(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, String ifNoneMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -8992,7 +8993,7 @@ public class BeezUPApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getOrderValidateBeforeCall(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, String ifNoneMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getOrderValidateBeforeCall(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, String ifNoneMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'marketplaceTechnicalCode' is set
         if (marketplaceTechnicalCode == null) {
@@ -9029,7 +9030,7 @@ public class BeezUPApi {
      * @return Order
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Order getOrder(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, String ifNoneMatch) throws ApiException {
+    public Order getOrder(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, String ifNoneMatch) throws ApiException {
         ApiResponse<Order> resp = getOrderWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch);
         return resp.getData();
     }
@@ -9044,7 +9045,7 @@ public class BeezUPApi {
      * @return ApiResponse&lt;Order&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Order> getOrderWithHttpInfo(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, String ifNoneMatch) throws ApiException {
+    public ApiResponse<Order> getOrderWithHttpInfo(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, String ifNoneMatch) throws ApiException {
         com.squareup.okhttp.Call call = getOrderValidateBeforeCall(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch, null, null);
         Type localVarReturnType = new TypeToken<Order>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -9061,7 +9062,7 @@ public class BeezUPApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getOrderAsync(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, String ifNoneMatch, final ApiCallback<Order> callback) throws ApiException {
+    public com.squareup.okhttp.Call getOrderAsync(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, String ifNoneMatch, final ApiCallback<Order> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -9218,7 +9219,7 @@ public class BeezUPApi {
         return call;
     }
     /* Build call for getOrderHistory */
-    private com.squareup.okhttp.Call getOrderHistoryCall(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getOrderHistoryCall(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -9262,7 +9263,7 @@ public class BeezUPApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getOrderHistoryValidateBeforeCall(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getOrderHistoryValidateBeforeCall(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'marketplaceTechnicalCode' is set
         if (marketplaceTechnicalCode == null) {
@@ -9298,7 +9299,7 @@ public class BeezUPApi {
      * @return OrderHistory
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public OrderHistory getOrderHistory(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId) throws ApiException {
+    public OrderHistory getOrderHistory(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId) throws ApiException {
         ApiResponse<OrderHistory> resp = getOrderHistoryWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId);
         return resp.getData();
     }
@@ -9312,7 +9313,7 @@ public class BeezUPApi {
      * @return ApiResponse&lt;OrderHistory&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<OrderHistory> getOrderHistoryWithHttpInfo(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId) throws ApiException {
+    public ApiResponse<OrderHistory> getOrderHistoryWithHttpInfo(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId) throws ApiException {
         com.squareup.okhttp.Call call = getOrderHistoryValidateBeforeCall(marketplaceTechnicalCode, accountId, beezUPOrderId, null, null);
         Type localVarReturnType = new TypeToken<OrderHistory>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -9328,7 +9329,7 @@ public class BeezUPApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getOrderHistoryAsync(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, final ApiCallback<OrderHistory> callback) throws ApiException {
+    public com.squareup.okhttp.Call getOrderHistoryAsync(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, final ApiCallback<OrderHistory> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -13106,7 +13107,7 @@ public class BeezUPApi {
         return call;
     }
     /* Build call for harvestOrder */
-    private com.squareup.okhttp.Call harvestOrderCall(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call harvestOrderCall(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -13150,7 +13151,7 @@ public class BeezUPApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call harvestOrderValidateBeforeCall(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call harvestOrderValidateBeforeCall(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'marketplaceTechnicalCode' is set
         if (marketplaceTechnicalCode == null) {
@@ -13185,7 +13186,7 @@ public class BeezUPApi {
      * @param beezUPOrderId The BeezUP Order identifier (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void harvestOrder(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId) throws ApiException {
+    public void harvestOrder(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId) throws ApiException {
         harvestOrderWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId);
     }
 
@@ -13198,7 +13199,7 @@ public class BeezUPApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> harvestOrderWithHttpInfo(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId) throws ApiException {
+    public ApiResponse<Void> harvestOrderWithHttpInfo(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId) throws ApiException {
         com.squareup.okhttp.Call call = harvestOrderValidateBeforeCall(marketplaceTechnicalCode, accountId, beezUPOrderId, null, null);
         return apiClient.execute(call);
     }
@@ -13213,7 +13214,7 @@ public class BeezUPApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call harvestOrderAsync(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call harvestOrderAsync(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -19063,7 +19064,7 @@ public class BeezUPApi {
         return call;
     }
     /* Build call for setMerchantOrderInfo */
-    private com.squareup.okhttp.Call setMerchantOrderInfoCall(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, SetMerchantOrderInfoRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call setMerchantOrderInfoCall(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, SetMerchantOrderInfoRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = request;
         
         // create path and map variables
@@ -19107,7 +19108,7 @@ public class BeezUPApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call setMerchantOrderInfoValidateBeforeCall(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, SetMerchantOrderInfoRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call setMerchantOrderInfoValidateBeforeCall(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, SetMerchantOrderInfoRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'marketplaceTechnicalCode' is set
         if (marketplaceTechnicalCode == null) {
@@ -19148,7 +19149,7 @@ public class BeezUPApi {
      * @param request  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void setMerchantOrderInfo(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, SetMerchantOrderInfoRequest request) throws ApiException {
+    public void setMerchantOrderInfo(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, SetMerchantOrderInfoRequest request) throws ApiException {
         setMerchantOrderInfoWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId, request);
     }
 
@@ -19162,7 +19163,7 @@ public class BeezUPApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> setMerchantOrderInfoWithHttpInfo(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, SetMerchantOrderInfoRequest request) throws ApiException {
+    public ApiResponse<Void> setMerchantOrderInfoWithHttpInfo(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, SetMerchantOrderInfoRequest request) throws ApiException {
         com.squareup.okhttp.Call call = setMerchantOrderInfoValidateBeforeCall(marketplaceTechnicalCode, accountId, beezUPOrderId, request, null, null);
         return apiClient.execute(call);
     }
@@ -19178,7 +19179,7 @@ public class BeezUPApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call setMerchantOrderInfoAsync(String marketplaceTechnicalCode, Integer accountId, String beezUPOrderId, SetMerchantOrderInfoRequest request, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call setMerchantOrderInfoAsync(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, SetMerchantOrderInfoRequest request, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

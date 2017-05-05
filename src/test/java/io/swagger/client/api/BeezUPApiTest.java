@@ -131,6 +131,7 @@ import io.swagger.client.model.TrackedClicks;
 import io.swagger.client.model.TrackedExternalOrders;
 import io.swagger.client.model.TrackedOrders;
 import io.swagger.client.model.TrackingStatus;
+import java.util.UUID;
 import io.swagger.client.model.UnmapCategoryRequest;
 import io.swagger.client.model.UpdateRuleRequest;
 import io.swagger.client.model.UpdateStoreRequest;
@@ -533,7 +534,7 @@ public class BeezUPApiTest {
     public void changeOrderTest() throws ApiException {
         String marketplaceTechnicalCode = null;
         Integer accountId = null;
-        String beezUPOrderId = null;
+        UUID beezUPOrderId = null;
         String changeOrderType = null;
         String userName = null;
         ChangeOrderRequest request = null;
@@ -591,7 +592,7 @@ public class BeezUPApiTest {
     public void clearMerchantOrderInfoTest() throws ApiException {
         String marketplaceTechnicalCode = null;
         Integer accountId = null;
-        String beezUPOrderId = null;
+        UUID beezUPOrderId = null;
         api.clearMerchantOrderInfo(marketplaceTechnicalCode, accountId, beezUPOrderId);
 
         // TODO: test validations
@@ -1359,7 +1360,7 @@ public class BeezUPApiTest {
     public void getOrderTest() throws ApiException {
         String marketplaceTechnicalCode = null;
         Integer accountId = null;
-        String beezUPOrderId = null;
+        UUID beezUPOrderId = null;
         String ifNoneMatch = null;
         Order response = api.getOrder(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch);
 
@@ -1395,7 +1396,7 @@ public class BeezUPApiTest {
     public void getOrderHistoryTest() throws ApiException {
         String marketplaceTechnicalCode = null;
         Integer accountId = null;
-        String beezUPOrderId = null;
+        UUID beezUPOrderId = null;
         OrderHistory response = api.getOrderHistory(marketplaceTechnicalCode, accountId, beezUPOrderId);
 
         // TODO: test validations
@@ -1921,7 +1922,7 @@ public class BeezUPApiTest {
     public void harvestOrderTest() throws ApiException {
         String marketplaceTechnicalCode = null;
         Integer accountId = null;
-        String beezUPOrderId = null;
+        UUID beezUPOrderId = null;
         api.harvestOrder(marketplaceTechnicalCode, accountId, beezUPOrderId);
 
         // TODO: test validations
@@ -2733,7 +2734,7 @@ public class BeezUPApiTest {
     public void setMerchantOrderInfoTest() throws ApiException {
         String marketplaceTechnicalCode = null;
         Integer accountId = null;
-        String beezUPOrderId = null;
+        UUID beezUPOrderId = null;
         SetMerchantOrderInfoRequest request = null;
         api.setMerchantOrderInfo(marketplaceTechnicalCode, accountId, beezUPOrderId, request);
 

@@ -1379,7 +1379,7 @@ api_key.setApiKey("YOUR API KEY");
 BeezUPApi apiInstance = new BeezUPApi();
 String marketplaceTechnicalCode = "Amazon"; // String | The marketplace technical code
 Integer accountId = 1001; // Integer | The account identifier
-String beezUPOrderId = "00000000000000000000000000000000000000000000000"; // String | The BeezUP Order identifier
+UUID beezUPOrderId = new UUID(); // UUID | The BeezUP Order identifier
 String changeOrderType = "changeOrderType_example"; // String | The Order change type
 String userName = "userName_example"; // String | Sometimes the user in the e-commerce application is not the same as user associated with the current subscription key. We recommend providing your application's user login.
 ChangeOrderRequest request = new ChangeOrderRequest(); // ChangeOrderRequest | 
@@ -1399,7 +1399,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **marketplaceTechnicalCode** | **String**| The marketplace technical code |
  **accountId** | **Integer**| The account identifier |
- **beezUPOrderId** | **String**| The BeezUP Order identifier |
+ **beezUPOrderId** | **UUID**| The BeezUP Order identifier |
  **changeOrderType** | **String**| The Order change type |
  **userName** | **String**| Sometimes the user in the e-commerce application is not the same as user associated with the current subscription key. We recommend providing your application&#39;s user login. |
  **request** | [**ChangeOrderRequest**](ChangeOrderRequest.md)|  |
@@ -1558,7 +1558,7 @@ api_key.setApiKey("YOUR API KEY");
 BeezUPApi apiInstance = new BeezUPApi();
 String marketplaceTechnicalCode = "Amazon"; // String | The marketplace technical code
 Integer accountId = 1001; // Integer | The account identifier
-String beezUPOrderId = "00000000000000000000000000000000000000000000000"; // String | The BeezUP Order identifier
+UUID beezUPOrderId = new UUID(); // UUID | The BeezUP Order identifier
 try {
     apiInstance.clearMerchantOrderInfo(marketplaceTechnicalCode, accountId, beezUPOrderId);
 } catch (ApiException e) {
@@ -1573,7 +1573,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **marketplaceTechnicalCode** | **String**| The marketplace technical code |
  **accountId** | **Integer**| The account identifier |
- **beezUPOrderId** | **String**| The BeezUP Order identifier |
+ **beezUPOrderId** | **UUID**| The BeezUP Order identifier |
 
 ### Return type
 
@@ -4058,7 +4058,7 @@ api_key.setApiKey("YOUR API KEY");
 BeezUPApi apiInstance = new BeezUPApi();
 String marketplaceTechnicalCode = "Amazon"; // String | The marketplace technical code
 Integer accountId = 1001; // Integer | The account identifier
-String beezUPOrderId = "00000000000000000000000000000000000000000000000"; // String | The BeezUP Order identifier
+UUID beezUPOrderId = new UUID(); // UUID | The BeezUP Order identifier
 String ifNoneMatch = "ifNoneMatch_example"; // String | ETag value to identify the last known version of requested Order\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
 try {
     Order result = apiInstance.getOrder(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch);
@@ -4075,7 +4075,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **marketplaceTechnicalCode** | **String**| The marketplace technical code |
  **accountId** | **Integer**| The account identifier |
- **beezUPOrderId** | **String**| The BeezUP Order identifier |
+ **beezUPOrderId** | **UUID**| The BeezUP Order identifier |
  **ifNoneMatch** | **String**| ETag value to identify the last known version of requested Order\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | [optional]
 
 ### Return type
@@ -4172,7 +4172,7 @@ api_key.setApiKey("YOUR API KEY");
 BeezUPApi apiInstance = new BeezUPApi();
 String marketplaceTechnicalCode = "Amazon"; // String | The marketplace technical code
 Integer accountId = 1001; // Integer | The account identifier
-String beezUPOrderId = "00000000000000000000000000000000000000000000000"; // String | The BeezUP Order identifier
+UUID beezUPOrderId = new UUID(); // UUID | The BeezUP Order identifier
 try {
     OrderHistory result = apiInstance.getOrderHistory(marketplaceTechnicalCode, accountId, beezUPOrderId);
     System.out.println(result);
@@ -4188,7 +4188,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **marketplaceTechnicalCode** | **String**| The marketplace technical code |
  **accountId** | **Integer**| The account identifier |
- **beezUPOrderId** | **String**| The BeezUP Order identifier |
+ **beezUPOrderId** | **UUID**| The BeezUP Order identifier |
 
 ### Return type
 
@@ -5895,7 +5895,7 @@ api_key.setApiKey("YOUR API KEY");
 BeezUPApi apiInstance = new BeezUPApi();
 String marketplaceTechnicalCode = "Amazon"; // String | The marketplace technical code
 Integer accountId = 1001; // Integer | The account identifier
-String beezUPOrderId = "00000000000000000000000000000000000000000000000"; // String | The BeezUP Order identifier
+UUID beezUPOrderId = new UUID(); // UUID | The BeezUP Order identifier
 try {
     apiInstance.harvestOrder(marketplaceTechnicalCode, accountId, beezUPOrderId);
 } catch (ApiException e) {
@@ -5910,7 +5910,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **marketplaceTechnicalCode** | **String**| The marketplace technical code |
  **accountId** | **Integer**| The account identifier |
- **beezUPOrderId** | **String**| The BeezUP Order identifier |
+ **beezUPOrderId** | **UUID**| The BeezUP Order identifier |
 
 ### Return type
 
@@ -8485,7 +8485,7 @@ api_key.setApiKey("YOUR API KEY");
 BeezUPApi apiInstance = new BeezUPApi();
 String marketplaceTechnicalCode = "Amazon"; // String | The marketplace technical code
 Integer accountId = 1001; // Integer | The account identifier
-String beezUPOrderId = "00000000000000000000000000000000000000000000000"; // String | The BeezUP Order identifier
+UUID beezUPOrderId = new UUID(); // UUID | The BeezUP Order identifier
 SetMerchantOrderInfoRequest request = new SetMerchantOrderInfoRequest(); // SetMerchantOrderInfoRequest | 
 try {
     apiInstance.setMerchantOrderInfo(marketplaceTechnicalCode, accountId, beezUPOrderId, request);
@@ -8501,7 +8501,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **marketplaceTechnicalCode** | **String**| The marketplace technical code |
  **accountId** | **Integer**| The account identifier |
- **beezUPOrderId** | **String**| The BeezUP Order identifier |
+ **beezUPOrderId** | **UUID**| The BeezUP Order identifier |
  **request** | [**SetMerchantOrderInfoRequest**](SetMerchantOrderInfoRequest.md)|  |
 
 ### Return type

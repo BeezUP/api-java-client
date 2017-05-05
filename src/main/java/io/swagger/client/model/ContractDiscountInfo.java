@@ -23,7 +23,7 @@ import io.swagger.client.model.PromotionalCodeValidity;
  * Describe the discount information related to the offer.
  */
 @ApiModel(description = "Describe the discount information related to the offer.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:57:46.029Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:13:16.265Z")
 public class ContractDiscountInfo {
   @SerializedName("amountCodePromoDiscountPerMonth")
   private Double amountCodePromoDiscountPerMonth = null;

@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiModelProperty;
  * Describe the rights for a functionality
  */
 @ApiModel(description = "Describe the rights for a functionality")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:57:46.029Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:13:16.265Z")
 public class FunctionalityRightInfo {
   @SerializedName("functionalityCode")
   private String functionalityCode = null;

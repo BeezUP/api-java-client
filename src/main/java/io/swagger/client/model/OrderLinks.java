@@ -17,15 +17,20 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.client.model.DefinitionslinksGetOrderHistoryLink;
 import io.swagger.client.model.DefinitionslinksGetOrderLink;
+import io.swagger.client.model.OrderHeaderLinks;
 
 /**
  * OrderLinks
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:57:46.029Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:13:16.265Z")
 public class OrderLinks {
   @SerializedName("self")
   private DefinitionslinksGetOrderLink self = null;
+
+  @SerializedName("history")
+  private DefinitionslinksGetOrderHistoryLink history = null;
 
   public OrderLinks self(DefinitionslinksGetOrderLink self) {
     this.self = self;
@@ -45,6 +50,24 @@ public class OrderLinks {
     this.self = self;
   }
 
+  public OrderLinks history(DefinitionslinksGetOrderHistoryLink history) {
+    this.history = history;
+    return this;
+  }
+
+   /**
+   * Get history
+   * @return history
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public DefinitionslinksGetOrderHistoryLink getHistory() {
+    return history;
+  }
+
+  public void setHistory(DefinitionslinksGetOrderHistoryLink history) {
+    this.history = history;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -55,12 +78,13 @@ public class OrderLinks {
       return false;
     }
     OrderLinks orderLinks = (OrderLinks) o;
-    return Objects.equals(this.self, orderLinks.self);
+    return Objects.equals(this.self, orderLinks.self) &&
+        Objects.equals(this.history, orderLinks.history);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(self);
+    return Objects.hash(self, history);
   }
 
 
@@ -70,6 +94,7 @@ public class OrderLinks {
     sb.append("class OrderLinks {\n");
     
     sb.append("    self: ").append(toIndentedString(self)).append("\n");
+    sb.append("    history: ").append(toIndentedString(history)).append("\n");
     sb.append("}");
     return sb.toString();
   }

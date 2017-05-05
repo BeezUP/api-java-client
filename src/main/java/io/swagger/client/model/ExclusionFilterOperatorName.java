@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * The exclusion filter operator name
  */
 @ApiModel(description = "The exclusion filter operator name")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:57:46.029Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:13:16.265Z")
 public class ExclusionFilterOperatorName {
 
   @Override
