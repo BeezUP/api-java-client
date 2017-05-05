@@ -26,7 +26,7 @@ import io.swagger.client.model.ChannelHeaderLinks;
  * The available channel
  */
 @ApiModel(description = "The available channel")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T12:38:53.309Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T12:43:26.940Z")
 public class ChannelHeader {
   @SerializedName("channelId")
   private BeezUPCommonChannelId channelId = null;
@@ -39,6 +39,9 @@ public class ChannelHeader {
 
   @SerializedName("descriptionAvailable")
   private Boolean descriptionAvailable = false;
+
+  @SerializedName("isMarketplace")
+  private Boolean isMarketplace = false;
 
   @SerializedName("links")
   private ChannelHeaderLinks links = null;
@@ -115,6 +118,24 @@ public class ChannelHeader {
     this.descriptionAvailable = descriptionAvailable;
   }
 
+  public ChannelHeader isMarketplace(Boolean isMarketplace) {
+    this.isMarketplace = isMarketplace;
+    return this;
+  }
+
+   /**
+   * Indicates if the channel is a marketplace
+   * @return isMarketplace
+  **/
+  @ApiModelProperty(example = "true", required = true, value = "Indicates if the channel is a marketplace")
+  public Boolean getIsMarketplace() {
+    return isMarketplace;
+  }
+
+  public void setIsMarketplace(Boolean isMarketplace) {
+    this.isMarketplace = isMarketplace;
+  }
+
   public ChannelHeader links(ChannelHeaderLinks links) {
     this.links = links;
     return this;
@@ -147,12 +168,13 @@ public class ChannelHeader {
         Objects.equals(this.channelName, channelHeader.channelName) &&
         Objects.equals(this.channelLogoUrl, channelHeader.channelLogoUrl) &&
         Objects.equals(this.descriptionAvailable, channelHeader.descriptionAvailable) &&
+        Objects.equals(this.isMarketplace, channelHeader.isMarketplace) &&
         Objects.equals(this.links, channelHeader.links);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(channelId, channelName, channelLogoUrl, descriptionAvailable, links);
+    return Objects.hash(channelId, channelName, channelLogoUrl, descriptionAvailable, isMarketplace, links);
   }
 
 
@@ -165,6 +187,7 @@ public class ChannelHeader {
     sb.append("    channelName: ").append(toIndentedString(channelName)).append("\n");
     sb.append("    channelLogoUrl: ").append(toIndentedString(channelLogoUrl)).append("\n");
     sb.append("    descriptionAvailable: ").append(toIndentedString(descriptionAvailable)).append("\n");
+    sb.append("    isMarketplace: ").append(toIndentedString(isMarketplace)).append("\n");
     sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("}");
     return sb.toString();

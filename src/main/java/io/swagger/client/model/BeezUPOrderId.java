@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * The BeezUP Order identifier
  */
 @ApiModel(description = "The BeezUP Order identifier")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T12:38:53.309Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T12:43:26.940Z")
 public class BeezUPOrderId {
 
   @Override

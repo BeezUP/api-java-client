@@ -23,7 +23,7 @@ import java.util.List;
  * The column mapping list between a channel and a catalog
  */
 @ApiModel(description = "The column mapping list between a channel and a catalog")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T12:38:53.309Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T12:43:26.940Z")
 public class ColumnMappingList extends ArrayList<ColumnMapping> {
 
   @Override

@@ -23,7 +23,7 @@ import io.swagger.client.model.BeezUPCommonLink2;
  * The links related to an available channel
  */
 @ApiModel(description = "The links related to an available channel")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T12:38:53.309Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T12:43:26.940Z")
 public class ChannelHeaderLinks {
   @SerializedName("self")
   private BeezUPCommonLink2 self = null;
