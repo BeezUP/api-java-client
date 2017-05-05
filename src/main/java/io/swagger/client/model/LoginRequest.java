@@ -22,7 +22,7 @@ import io.swagger.client.model.BeezUPCommonEmail;
 /**
  * LoginRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:14:33.629Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:15:23.720Z")
 public class LoginRequest {
   @SerializedName("login")
   private BeezUPCommonEmail login = null;

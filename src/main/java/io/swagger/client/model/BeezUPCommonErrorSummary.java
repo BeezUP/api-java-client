@@ -27,7 +27,7 @@ import org.joda.time.DateTime;
 /**
  * BeezUPCommonErrorSummary
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:14:33.629Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:15:23.720Z")
 public class BeezUPCommonErrorSummary {
   @SerializedName("utcDate")
   private DateTime utcDate = null;

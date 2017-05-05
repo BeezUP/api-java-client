@@ -23,7 +23,7 @@ import io.swagger.client.model.DefinitionslinksGetRuleLink;
  * Links to retrieve/action on this rule execution
  */
 @ApiModel(description = "Links to retrieve/action on this rule execution")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:14:33.629Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:15:23.720Z")
 public class RuleExecutionReportingLinks {
   @SerializedName("rule")
   private DefinitionslinksGetRuleLink rule = null;

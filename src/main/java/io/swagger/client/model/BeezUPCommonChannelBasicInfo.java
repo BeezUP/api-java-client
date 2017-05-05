@@ -25,7 +25,7 @@ import io.swagger.client.model.BeezUPCommonHttpUrl;
  * The basic info related to a channel
  */
 @ApiModel(description = "The basic info related to a channel")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:14:33.629Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:15:23.720Z")
 public class BeezUPCommonChannelBasicInfo {
   @SerializedName("channelId")
   private BeezUPCommonChannelId channelId = null;
