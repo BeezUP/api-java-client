@@ -17,21 +17,25 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.client.model.ProfilePictureInfo;
 import io.swagger.client.model.ProfilePictureUrl;
 import io.swagger.client.model.UseGravatarProfilePicture;
 
 /**
- * ProfilePictureInfo
+ * ProfilePictureInfoWithDefault
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:32:45.871Z")
-public class ProfilePictureInfo {
+public class ProfilePictureInfoWithDefault {
   @SerializedName("profilePictureUrl")
   private ProfilePictureUrl profilePictureUrl = null;
 
   @SerializedName("useGravatarProfilePicture")
   private UseGravatarProfilePicture useGravatarProfilePicture = null;
 
-  public ProfilePictureInfo profilePictureUrl(ProfilePictureUrl profilePictureUrl) {
+  @SerializedName("defaultPictureUrl")
+  private ProfilePictureUrl defaultPictureUrl = null;
+
+  public ProfilePictureInfoWithDefault profilePictureUrl(ProfilePictureUrl profilePictureUrl) {
     this.profilePictureUrl = profilePictureUrl;
     return this;
   }
@@ -49,7 +53,7 @@ public class ProfilePictureInfo {
     this.profilePictureUrl = profilePictureUrl;
   }
 
-  public ProfilePictureInfo useGravatarProfilePicture(UseGravatarProfilePicture useGravatarProfilePicture) {
+  public ProfilePictureInfoWithDefault useGravatarProfilePicture(UseGravatarProfilePicture useGravatarProfilePicture) {
     this.useGravatarProfilePicture = useGravatarProfilePicture;
     return this;
   }
@@ -67,6 +71,24 @@ public class ProfilePictureInfo {
     this.useGravatarProfilePicture = useGravatarProfilePicture;
   }
 
+  public ProfilePictureInfoWithDefault defaultPictureUrl(ProfilePictureUrl defaultPictureUrl) {
+    this.defaultPictureUrl = defaultPictureUrl;
+    return this;
+  }
+
+   /**
+   * Get defaultPictureUrl
+   * @return defaultPictureUrl
+  **/
+  @ApiModelProperty(example = "null", required = true, value = "")
+  public ProfilePictureUrl getDefaultPictureUrl() {
+    return defaultPictureUrl;
+  }
+
+  public void setDefaultPictureUrl(ProfilePictureUrl defaultPictureUrl) {
+    this.defaultPictureUrl = defaultPictureUrl;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -76,24 +98,26 @@ public class ProfilePictureInfo {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ProfilePictureInfo profilePictureInfo = (ProfilePictureInfo) o;
-    return Objects.equals(this.profilePictureUrl, profilePictureInfo.profilePictureUrl) &&
-        Objects.equals(this.useGravatarProfilePicture, profilePictureInfo.useGravatarProfilePicture);
+    ProfilePictureInfoWithDefault profilePictureInfoWithDefault = (ProfilePictureInfoWithDefault) o;
+    return Objects.equals(this.profilePictureUrl, profilePictureInfoWithDefault.profilePictureUrl) &&
+        Objects.equals(this.useGravatarProfilePicture, profilePictureInfoWithDefault.useGravatarProfilePicture) &&
+        Objects.equals(this.defaultPictureUrl, profilePictureInfoWithDefault.defaultPictureUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(profilePictureUrl, useGravatarProfilePicture);
+    return Objects.hash(profilePictureUrl, useGravatarProfilePicture, defaultPictureUrl);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ProfilePictureInfo {\n");
+    sb.append("class ProfilePictureInfoWithDefault {\n");
     
     sb.append("    profilePictureUrl: ").append(toIndentedString(profilePictureUrl)).append("\n");
     sb.append("    useGravatarProfilePicture: ").append(toIndentedString(useGravatarProfilePicture)).append("\n");
+    sb.append("    defaultPictureUrl: ").append(toIndentedString(defaultPictureUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }

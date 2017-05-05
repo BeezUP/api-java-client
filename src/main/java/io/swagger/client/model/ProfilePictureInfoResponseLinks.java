@@ -23,7 +23,7 @@ import io.swagger.client.model.LinksSaveProfilePictureInfoLink;
 /**
  * ProfilePictureInfoResponseLinks
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:26:33.625Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:32:45.871Z")
 public class ProfilePictureInfoResponseLinks {
   @SerializedName("self")
   private LinksGetProfilePictureInfoLink self = null;
@@ -40,7 +40,7 @@ public class ProfilePictureInfoResponseLinks {
    * Get self
    * @return self
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public LinksGetProfilePictureInfoLink getSelf() {
     return self;
   }
@@ -58,7 +58,7 @@ public class ProfilePictureInfoResponseLinks {
    * Get save
    * @return save
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public LinksSaveProfilePictureInfoLink getSave() {
     return save;
   }

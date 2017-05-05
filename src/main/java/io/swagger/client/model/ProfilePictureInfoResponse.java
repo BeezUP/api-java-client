@@ -17,19 +17,19 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.ProfilePictureInfo;
 import io.swagger.client.model.ProfilePictureInfoResponseLinks;
+import io.swagger.client.model.ProfilePictureInfoWithDefault;
 
 /**
  * ProfilePictureInfoResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:26:33.625Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:32:45.871Z")
 public class ProfilePictureInfoResponse {
   @SerializedName("links")
   private ProfilePictureInfoResponseLinks links = null;
 
   @SerializedName("profilePictureInfo")
-  private ProfilePictureInfo profilePictureInfo = null;
+  private ProfilePictureInfoWithDefault profilePictureInfo = null;
 
   public ProfilePictureInfoResponse links(ProfilePictureInfoResponseLinks links) {
     this.links = links;
@@ -40,7 +40,7 @@ public class ProfilePictureInfoResponse {
    * Get links
    * @return links
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public ProfilePictureInfoResponseLinks getLinks() {
     return links;
   }
@@ -49,7 +49,7 @@ public class ProfilePictureInfoResponse {
     this.links = links;
   }
 
-  public ProfilePictureInfoResponse profilePictureInfo(ProfilePictureInfo profilePictureInfo) {
+  public ProfilePictureInfoResponse profilePictureInfo(ProfilePictureInfoWithDefault profilePictureInfo) {
     this.profilePictureInfo = profilePictureInfo;
     return this;
   }
@@ -58,12 +58,12 @@ public class ProfilePictureInfoResponse {
    * Get profilePictureInfo
    * @return profilePictureInfo
   **/
-  @ApiModelProperty(example = "null", value = "")
-  public ProfilePictureInfo getProfilePictureInfo() {
+  @ApiModelProperty(example = "null", required = true, value = "")
+  public ProfilePictureInfoWithDefault getProfilePictureInfo() {
     return profilePictureInfo;
   }
 
-  public void setProfilePictureInfo(ProfilePictureInfo profilePictureInfo) {
+  public void setProfilePictureInfo(ProfilePictureInfoWithDefault profilePictureInfo) {
     this.profilePictureInfo = profilePictureInfo;
   }
 

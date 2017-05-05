@@ -22,7 +22,7 @@ import java.util.List;
  * The channel category path
  */
 @ApiModel(description = "The channel category path")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:26:33.625Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:32:45.871Z")
 public class BeezUPCommonChannelCategoryPath extends ArrayList<String> {
 
   @Override

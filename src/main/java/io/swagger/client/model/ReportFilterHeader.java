@@ -22,7 +22,7 @@ import io.swagger.client.model.ReportFilterHeaderLinks;
 /**
  * ReportFilterHeader
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:26:33.625Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:32:45.871Z")
 public class ReportFilterHeader {
   @SerializedName("reportFilterId")
   private String reportFilterId = null;
