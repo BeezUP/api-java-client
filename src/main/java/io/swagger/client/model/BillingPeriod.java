@@ -21,7 +21,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * BillingPeriod
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T19:25:59.922Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:06:41.520Z")
 public class BillingPeriod {
   @SerializedName("billingPeriodInMonth")
   private Integer billingPeriodInMonth = null;

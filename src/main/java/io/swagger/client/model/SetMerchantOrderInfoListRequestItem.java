@@ -26,7 +26,7 @@ import io.swagger.client.model.OrderMerchantOrderId;
 /**
  * SetMerchantOrderInfoListRequestItem
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T19:25:59.922Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:06:41.520Z")
 public class SetMerchantOrderInfoListRequestItem {
   @SerializedName("marketplaceTechnicalCode")
   private MarketplaceTechnicalCode marketplaceTechnicalCode = null;

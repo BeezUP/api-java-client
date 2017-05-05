@@ -27,7 +27,7 @@ import org.joda.time.DateTime;
  * Represent the reporting of the Order report exportations
  */
 @ApiModel(description = "Represent the reporting of the Order report exportations")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T19:25:59.922Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:06:41.520Z")
 public class OrderExportationReporting {
   @SerializedName("abortionUtcDate")
   private DateTime abortionUtcDate = null;

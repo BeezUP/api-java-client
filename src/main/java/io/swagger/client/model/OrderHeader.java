@@ -20,9 +20,9 @@ import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.AccountId;
 import io.swagger.client.model.BeezUPCommonCurrencyCode;
 import io.swagger.client.model.BeezUPCommonHttpUrl;
-import io.swagger.client.model.BeezUPCommonLink2;
 import io.swagger.client.model.BeezUPOrderId;
 import io.swagger.client.model.BeezUPOrderStatus;
+import io.swagger.client.model.DefinitionsorderHeaderLinks;
 import io.swagger.client.model.Etag;
 import io.swagger.client.model.MarketplaceBusinessCode;
 import io.swagger.client.model.MarketplaceOrderId;
@@ -34,15 +34,13 @@ import io.swagger.client.model.OrderMerchantECommerceSoftwareVersion;
 import io.swagger.client.model.OrderMerchantOrderId;
 import io.swagger.client.model.Processing;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 import org.joda.time.DateTime;
 
 /**
  * Describe the basic information related to an order. All properties with the prefix order_ are translated in the list of values /user/lov/OrderMetaInfoOrderDetails
  */
 @ApiModel(description = "Describe the basic information related to an order. All properties with the prefix order_ are translated in the list of values /user/lov/OrderMetaInfoOrderDetails")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T19:25:59.922Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:06:41.520Z")
 public class OrderHeader {
   @SerializedName("marketplaceTechnicalCode")
   private MarketplaceTechnicalCode marketplaceTechnicalCode = null;
@@ -102,7 +100,7 @@ public class OrderHeader {
   private Etag etag = null;
 
   @SerializedName("links")
-  private List<BeezUPCommonLink2> links = new ArrayList<BeezUPCommonLink2>();
+  private DefinitionsorderHeaderLinks links = null;
 
   public OrderHeader marketplaceTechnicalCode(MarketplaceTechnicalCode marketplaceTechnicalCode) {
     this.marketplaceTechnicalCode = marketplaceTechnicalCode;
@@ -446,13 +444,8 @@ public class OrderHeader {
     this.etag = etag;
   }
 
-  public OrderHeader links(List<BeezUPCommonLink2> links) {
+  public OrderHeader links(DefinitionsorderHeaderLinks links) {
     this.links = links;
-    return this;
-  }
-
-  public OrderHeader addLinksItem(BeezUPCommonLink2 linksItem) {
-    this.links.add(linksItem);
     return this;
   }
 
@@ -460,12 +453,12 @@ public class OrderHeader {
    * Get links
    * @return links
   **/
-  @ApiModelProperty(example = "[{&quot;rel&quot;:&quot;self&quot;,&quot;href&quot;:&quot;/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;marketplaceTechnicalCode&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:&quot;Amazon&quot;},{&quot;name&quot;:&quot;accountId&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:1001},{&quot;name&quot;:&quot;beezUPOrderId&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:&quot;00000000000000000000000000000000000000000000000&quot;}]},{&quot;rel&quot;:&quot;history&quot;,&quot;href&quot;:&quot;/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/history&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;marketplaceTechnicalCode&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:&quot;Amazon&quot;},{&quot;name&quot;:&quot;accountId&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:1001},{&quot;name&quot;:&quot;beezUPOrderId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:&quot;00000000000000000000000000000000000000000000000&quot;}]},{&quot;rel&quot;:&quot;setMerchantOrderId&quot;,&quot;href&quot;:&quot;/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/SetMerchantOrderId&quot;,&quot;method&quot;:&quot;POST&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;marketplaceTechnicalCode&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;Amazon&quot;},{&quot;name&quot;:&quot;accountId&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:1001},{&quot;name&quot;:&quot;beezUPOrderId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:&quot;00000000000000000000000000000000000000000000000&quot;},{&quot;name&quot;:&quot;order_MerchantOrderId&quot;,&quot;in&quot;:&quot;body&quot;,&quot;type&quot;:&quot;string&quot;,&quot;required&quot;:true},{&quot;name&quot;:&quot;order_MerchantECommerceSoftwareName&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;body&quot;},{&quot;name&quot;:&quot;order_MerchantECommerceSoftwareVersion&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;body&quot;}]},{&quot;rel&quot;:&quot;clearMerchantOrderId&quot;,&quot;href&quot;:&quot;/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/clearmerchandorderid&quot;,&quot;method&quot;:&quot;POST&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;marketplaceTechnicalCode&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:&quot;Amazon&quot;},{&quot;name&quot;:&quot;accountId&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:1001},{&quot;name&quot;:&quot;beezUPOrderId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:&quot;00000000000000000000000000000000000000000000000&quot;}]},{&quot;rel&quot;:&quot;harvest&quot;,&quot;href&quot;:&quot;/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/harvest&quot;,&quot;method&quot;:&quot;POST&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;marketplaceTechnicalCode&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:&quot;Amazon&quot;},{&quot;name&quot;:&quot;accountId&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:1001},{&quot;name&quot;:&quot;beezUPOrderId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:&quot;00000000000000000000000000000000000000000000000&quot;}]}]", required = true, value = "")
-  public List<BeezUPCommonLink2> getLinks() {
+  @ApiModelProperty(example = "null", required = true, value = "")
+  public DefinitionsorderHeaderLinks getLinks() {
     return links;
   }
 
-  public void setLinks(List<BeezUPCommonLink2> links) {
+  public void setLinks(DefinitionsorderHeaderLinks links) {
     this.links = links;
   }
 

@@ -24,7 +24,7 @@ import io.swagger.client.model.FriendProfilePictureUrl;
 /**
  * UserFriendInfo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T19:25:59.922Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:06:41.520Z")
 public class UserFriendInfo {
   @SerializedName("userId")
   private String userId = null;
@@ -131,7 +131,7 @@ public class UserFriendInfo {
    * Get profilePictureUrl
    * @return profilePictureUrl
   **/
-  @ApiModelProperty(example = "null", required = true, value = "")
+  @ApiModelProperty(example = "null", value = "")
   public FriendProfilePictureUrl getProfilePictureUrl() {
     return profilePictureUrl;
   }

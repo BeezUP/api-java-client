@@ -25,7 +25,7 @@ import java.util.List;
  * Contains all change order operations you want to make
  */
 @ApiModel(description = "Contains all change order operations you want to make")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T19:25:59.922Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:06:41.520Z")
 public class ChangeOrderListRequest {
   @SerializedName("changeOrders")
   private List<ChangeOrderListRequestItem> changeOrders = new ArrayList<ChangeOrderListRequestItem>();

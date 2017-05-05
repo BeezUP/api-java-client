@@ -20,9 +20,9 @@ import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.AccountId;
 import io.swagger.client.model.BeezUPCommonCurrencyCode;
 import io.swagger.client.model.BeezUPCommonHttpUrl;
-import io.swagger.client.model.BeezUPCommonLink2;
 import io.swagger.client.model.BeezUPOrderId;
 import io.swagger.client.model.BeezUPOrderStatus;
+import io.swagger.client.model.DefinitionsorderHeaderLinks;
 import io.swagger.client.model.Etag;
 import io.swagger.client.model.MarketplaceBusinessCode;
 import io.swagger.client.model.MarketplaceOrderId;
@@ -34,6 +34,7 @@ import io.swagger.client.model.OrderItem;
 import io.swagger.client.model.OrderMerchantECommerceSoftwareName;
 import io.swagger.client.model.OrderMerchantECommerceSoftwareVersion;
 import io.swagger.client.model.OrderMerchantOrderId;
+import io.swagger.client.model.OrderTransitionLinks;
 import io.swagger.client.model.Processing;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -43,7 +44,7 @@ import org.joda.time.DateTime;
 /**
  * Order
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T19:25:59.922Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:06:41.520Z")
 public class Order {
   @SerializedName("marketplaceTechnicalCode")
   private MarketplaceTechnicalCode marketplaceTechnicalCode = null;
@@ -103,7 +104,7 @@ public class Order {
   private Etag etag = null;
 
   @SerializedName("links")
-  private List<BeezUPCommonLink2> links = new ArrayList<BeezUPCommonLink2>();
+  private DefinitionsorderHeaderLinks links = null;
 
   @SerializedName("order_MarketPlaceChannel")
   private String orderMarketPlaceChannel = null;
@@ -232,7 +233,7 @@ public class Order {
   private List<OrderItem> orderItems = new ArrayList<OrderItem>();
 
   @SerializedName("transitionLinks")
-  private List<BeezUPCommonLink2> transitionLinks = new ArrayList<BeezUPCommonLink2>();
+  private OrderTransitionLinks transitionLinks = null;
 
   public Order marketplaceTechnicalCode(MarketplaceTechnicalCode marketplaceTechnicalCode) {
     this.marketplaceTechnicalCode = marketplaceTechnicalCode;
@@ -576,13 +577,8 @@ public class Order {
     this.etag = etag;
   }
 
-  public Order links(List<BeezUPCommonLink2> links) {
+  public Order links(DefinitionsorderHeaderLinks links) {
     this.links = links;
-    return this;
-  }
-
-  public Order addLinksItem(BeezUPCommonLink2 linksItem) {
-    this.links.add(linksItem);
     return this;
   }
 
@@ -590,12 +586,12 @@ public class Order {
    * Get links
    * @return links
   **/
-  @ApiModelProperty(example = "[{&quot;rel&quot;:&quot;self&quot;,&quot;href&quot;:&quot;/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;marketplaceTechnicalCode&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:&quot;Amazon&quot;},{&quot;name&quot;:&quot;accountId&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:1001},{&quot;name&quot;:&quot;beezUPOrderId&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:&quot;00000000000000000000000000000000000000000000000&quot;}]},{&quot;rel&quot;:&quot;history&quot;,&quot;href&quot;:&quot;/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/history&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;marketplaceTechnicalCode&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:&quot;Amazon&quot;},{&quot;name&quot;:&quot;accountId&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:1001},{&quot;name&quot;:&quot;beezUPOrderId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:&quot;00000000000000000000000000000000000000000000000&quot;}]},{&quot;rel&quot;:&quot;setMerchantOrderId&quot;,&quot;href&quot;:&quot;/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/SetMerchantOrderId&quot;,&quot;method&quot;:&quot;POST&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;marketplaceTechnicalCode&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;Amazon&quot;},{&quot;name&quot;:&quot;accountId&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:1001},{&quot;name&quot;:&quot;beezUPOrderId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:&quot;00000000000000000000000000000000000000000000000&quot;},{&quot;name&quot;:&quot;order_MerchantOrderId&quot;,&quot;in&quot;:&quot;body&quot;,&quot;type&quot;:&quot;string&quot;,&quot;required&quot;:true},{&quot;name&quot;:&quot;order_MerchantECommerceSoftwareName&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;body&quot;},{&quot;name&quot;:&quot;order_MerchantECommerceSoftwareVersion&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;body&quot;}]},{&quot;rel&quot;:&quot;clearMerchantOrderId&quot;,&quot;href&quot;:&quot;/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/clearmerchandorderid&quot;,&quot;method&quot;:&quot;POST&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;marketplaceTechnicalCode&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:&quot;Amazon&quot;},{&quot;name&quot;:&quot;accountId&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:1001},{&quot;name&quot;:&quot;beezUPOrderId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:&quot;00000000000000000000000000000000000000000000000&quot;}]},{&quot;rel&quot;:&quot;harvest&quot;,&quot;href&quot;:&quot;/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/harvest&quot;,&quot;method&quot;:&quot;POST&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;marketplaceTechnicalCode&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:&quot;Amazon&quot;},{&quot;name&quot;:&quot;accountId&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:1001},{&quot;name&quot;:&quot;beezUPOrderId&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:&quot;00000000000000000000000000000000000000000000000&quot;}]}]", required = true, value = "")
-  public List<BeezUPCommonLink2> getLinks() {
+  @ApiModelProperty(example = "null", required = true, value = "")
+  public DefinitionsorderHeaderLinks getLinks() {
     return links;
   }
 
-  public void setLinks(List<BeezUPCommonLink2> links) {
+  public void setLinks(DefinitionsorderHeaderLinks links) {
     this.links = links;
   }
 
@@ -1360,13 +1356,8 @@ public class Order {
     this.orderItems = orderItems;
   }
 
-  public Order transitionLinks(List<BeezUPCommonLink2> transitionLinks) {
+  public Order transitionLinks(OrderTransitionLinks transitionLinks) {
     this.transitionLinks = transitionLinks;
-    return this;
-  }
-
-  public Order addTransitionLinksItem(BeezUPCommonLink2 transitionLinksItem) {
-    this.transitionLinks.add(transitionLinksItem);
     return this;
   }
 
@@ -1374,12 +1365,12 @@ public class Order {
    * Get transitionLinks
    * @return transitionLinks
   **/
-  @ApiModelProperty(example = "[{&quot;rel&quot;:&quot;ShipOrder&quot;,&quot;operationId&quot;:&quot;ChangeOrder&quot;,&quot;href&quot;:&quot;/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/{changeOrderType}&quot;,&quot;method&quot;:&quot;POST&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;If-Match&quot;,&quot;in&quot;:&quot;header&quot;,&quot;value&quot;:&quot;\&quot;ca071a4580129f932a03971968ffef69\&quot;&quot;},{&quot;name&quot;:&quot;marketplaceTechnicalCode&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:&quot;Amazon&quot;},{&quot;name&quot;:&quot;accountId&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:1001},{&quot;name&quot;:&quot;beezUPOrderId&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:&quot;00000000000000000000000000000000000000000000000&quot;},{&quot;name&quot;:&quot;changeOrderType&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:&quot;ShipOrder&quot;},{&quot;name&quot;:&quot;userName&quot;,&quot;in&quot;:&quot;query&quot;,&quot;required&quot;:true},{&quot;name&quot;:&quot;testMode&quot;,&quot;in&quot;:&quot;query&quot;,&quot;type&quot;:&quot;boolean&quot;},{&quot;name&quot;:&quot;order_Shipping_ShipperTrackingNumber&quot;,&quot;required&quot;:true,&quot;in&quot;:&quot;body&quot;,&quot;type&quot;:&quot;string&quot;},{&quot;name&quot;:&quot;order_Shipping_ShippingUrl&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;body&quot;},{&quot;name&quot;:&quot;order_Shipping_CarrierName&quot;,&quot;type&quot;:&quot;string&quot;,&quot;in&quot;:&quot;body&quot;,&quot;lovLink&quot;:{&quot;rel&quot;:&quot;LOV_AuchanCarrierCode&quot;,&quot;href&quot;:&quot;/v2/user/lov/{listName}&quot;,&quot;listName&quot;:&quot;AuchanCarrierCode&quot;},&quot;lovRequired&quot;:true},{&quot;name&quot;:&quot;order_Shipping_FulfillmentDate&quot;,&quot;type&quot;:&quot;date-time&quot;,&quot;in&quot;:&quot;body&quot;},{&quot;name&quot;:&quot;order_Shipping_EstimatedDeliveryDate&quot;,&quot;type&quot;:&quot;date-time&quot;,&quot;in&quot;:&quot;body&quot;}]},{&quot;rel&quot;:&quot;RefundOrder&quot;,&quot;operationId&quot;:&quot;ChangeOrder&quot;,&quot;href&quot;:&quot;/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/{changeOrderType}&quot;,&quot;method&quot;:&quot;POST&quot;,&quot;parameters&quot;:[{&quot;name&quot;:&quot;If-Match&quot;,&quot;in&quot;:&quot;header&quot;,&quot;value&quot;:&quot;\&quot;ca071a4580129f932a03971968ffef69\&quot;&quot;},{&quot;name&quot;:&quot;marketplaceTechnicalCode&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:&quot;Amazon&quot;},{&quot;name&quot;:&quot;accountId&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:1001},{&quot;name&quot;:&quot;beezUPOrderId&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:&quot;00000000000000000000000000000000000000000000000&quot;},{&quot;name&quot;:&quot;changeOrderType&quot;,&quot;in&quot;:&quot;path&quot;,&quot;required&quot;:true,&quot;value&quot;:&quot;RefundOrder&quot;},{&quot;name&quot;:&quot;userName&quot;,&quot;in&quot;:&quot;query&quot;,&quot;required&quot;:true},{&quot;name&quot;:&quot;testMode&quot;,&quot;in&quot;:&quot;query&quot;,&quot;type&quot;:&quot;boolean&quot;},{&quot;name&quot;:&quot;order_Shipping_Price&quot;,&quot;in&quot;:&quot;body&quot;,&quot;type&quot;:&quot;number&quot;}]}]", required = true, value = "")
-  public List<BeezUPCommonLink2> getTransitionLinks() {
+  @ApiModelProperty(example = "null", required = true, value = "")
+  public OrderTransitionLinks getTransitionLinks() {
     return transitionLinks;
   }
 
-  public void setTransitionLinks(List<BeezUPCommonLink2> transitionLinks) {
+  public void setTransitionLinks(OrderTransitionLinks transitionLinks) {
     this.transitionLinks = transitionLinks;
   }
 
