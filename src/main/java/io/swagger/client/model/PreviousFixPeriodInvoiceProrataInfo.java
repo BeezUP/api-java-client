@@ -23,7 +23,7 @@ import org.joda.time.DateTime;
  * Describe the prorata info based on your previous invoice
  */
 @ApiModel(description = "Describe the prorata info based on your previous invoice")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:13:41.476Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:15:40.708Z")
 public class PreviousFixPeriodInvoiceProrataInfo {
   @SerializedName("computedProrataToBeDeducted")
   private Double computedProrataToBeDeducted = null;

@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * Invoices
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:13:41.476Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:15:40.708Z")
 public class Invoices {
   @SerializedName("invoices")
   private List<Invoice> invoices = new ArrayList<Invoice>();

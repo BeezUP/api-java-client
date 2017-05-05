@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * Buyer full name
  */
 @ApiModel(description = "Buyer full name")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:13:41.476Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:15:40.708Z")
 public class OrderBuyerName {
 
   @Override
