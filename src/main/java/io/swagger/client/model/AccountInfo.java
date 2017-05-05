@@ -29,7 +29,7 @@ import io.swagger.client.model.ProfilePictureUrl;
 /**
  * AccountInfo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:17:16.769Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:18:37.107Z")
 public class AccountInfo {
   @SerializedName("userId")
   private BeezUPCommonUserId userId = null;

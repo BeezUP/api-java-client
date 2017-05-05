@@ -21,7 +21,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * GetChannelCatalogProductInfoListRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:17:16.769Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:18:37.107Z")
 public class GetChannelCatalogProductInfoListRequest {
   @SerializedName("sku")
   private String sku = null;
