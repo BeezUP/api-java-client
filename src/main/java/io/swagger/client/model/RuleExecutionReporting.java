@@ -27,7 +27,7 @@ import org.joda.time.DateTime;
 /**
  * RuleExecutionReporting
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:18:58.821Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:23:39.618Z")
 public class RuleExecutionReporting {
   @SerializedName("ruleId")
   private String ruleId = null;

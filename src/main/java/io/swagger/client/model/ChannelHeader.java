@@ -26,7 +26,7 @@ import io.swagger.client.model.ChannelHeaderLinks;
  * The available channel
  */
 @ApiModel(description = "The available channel")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:18:58.821Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:23:39.618Z")
 public class ChannelHeader {
   @SerializedName("channelId")
   private BeezUPCommonChannelId channelId = null;

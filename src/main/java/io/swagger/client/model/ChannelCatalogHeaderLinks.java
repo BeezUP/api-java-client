@@ -22,7 +22,7 @@ import io.swagger.client.model.BeezUPCommonLink3;
 /**
  * ChannelCatalogHeaderLinks
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T11:55:43.788Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-04T14:07:10.326Z")
 public class ChannelCatalogHeaderLinks {
   @SerializedName("self")
   private BeezUPCommonLink3 self = null;
