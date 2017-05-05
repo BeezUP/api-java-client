@@ -24,7 +24,7 @@ import io.swagger.client.model.OrderHeaderLinks;
 /**
  * OrderLinks
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:58:49.009Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:59:54.954Z")
 public class OrderLinks {
   @SerializedName("self")
   private DefinitionslinksGetOrderLink self = null;

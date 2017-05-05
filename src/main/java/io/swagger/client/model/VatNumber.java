@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * Your company VATNumber. Used for french company. This number is checked with official web service before being saved.
  */
 @ApiModel(description = "Your company VATNumber. Used for french company. This number is checked with official web service before being saved.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:58:49.009Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:59:54.954Z")
 public class VatNumber {
 
   @Override
