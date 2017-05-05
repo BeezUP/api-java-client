@@ -590,6 +590,7 @@ Class | Method | HTTP request | Description
  - [OrderIdentifier](docs/OrderIdentifier.md)
  - [OrderIdentifierWithETag](docs/OrderIdentifierWithETag.md)
  - [OrderItem](docs/OrderItem.md)
+ - [OrderLinks](docs/OrderLinks.md)
  - [OrderListFull](docs/OrderListFull.md)
  - [OrderListLight](docs/OrderListLight.md)
  - [OrderListRequest](docs/OrderListRequest.md)

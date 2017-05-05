@@ -26,7 +26,7 @@ import io.swagger.client.model.StoreCount;
 /**
  * OfferRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:07:09.864Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:13:41.476Z")
 public class OfferRequest {
   @SerializedName("offerId")
   private OfferId offerId = null;

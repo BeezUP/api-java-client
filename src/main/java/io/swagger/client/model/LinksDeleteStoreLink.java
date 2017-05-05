@@ -31,7 +31,7 @@ import java.util.Map;
 /**
  * LinksDeleteStoreLink
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:07:09.864Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:13:41.476Z")
 public class LinksDeleteStoreLink {
   @SerializedName("docUrl")
   private BeezUPCommonDocUrl docUrl = null;

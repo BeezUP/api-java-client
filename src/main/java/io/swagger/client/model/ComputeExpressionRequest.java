@@ -24,7 +24,7 @@ import io.swagger.client.model.ProductValues;
  * The request message to compute an expression based on the provided product values
  */
 @ApiModel(description = "The request message to compute an expression based on the provided product values")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:07:09.864Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:13:41.476Z")
 public class ComputeExpressionRequest {
   @SerializedName("productValues")
   private ProductValues productValues = null;

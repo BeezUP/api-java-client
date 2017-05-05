@@ -22,7 +22,6 @@ import io.swagger.client.model.BeezUPCommonCurrencyCode;
 import io.swagger.client.model.BeezUPCommonHttpUrl;
 import io.swagger.client.model.BeezUPOrderId;
 import io.swagger.client.model.BeezUPOrderStatus;
-import io.swagger.client.model.DefinitionsorderHeaderLinks;
 import io.swagger.client.model.Etag;
 import io.swagger.client.model.MarketplaceBusinessCode;
 import io.swagger.client.model.MarketplaceOrderId;
@@ -31,6 +30,7 @@ import io.swagger.client.model.MarketplaceTechnicalCode;
 import io.swagger.client.model.OrderBuyerName;
 import io.swagger.client.model.OrderHeader;
 import io.swagger.client.model.OrderItem;
+import io.swagger.client.model.OrderLinks;
 import io.swagger.client.model.OrderMerchantECommerceSoftwareName;
 import io.swagger.client.model.OrderMerchantECommerceSoftwareVersion;
 import io.swagger.client.model.OrderMerchantOrderId;
@@ -44,7 +44,7 @@ import org.joda.time.DateTime;
 /**
  * Order
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:07:09.864Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:13:41.476Z")
 public class Order {
   @SerializedName("marketplaceTechnicalCode")
   private MarketplaceTechnicalCode marketplaceTechnicalCode = null;
@@ -104,7 +104,7 @@ public class Order {
   private Etag etag = null;
 
   @SerializedName("links")
-  private DefinitionsorderHeaderLinks links = null;
+  private OrderLinks links = null;
 
   @SerializedName("order_MarketPlaceChannel")
   private String orderMarketPlaceChannel = null;
@@ -577,7 +577,7 @@ public class Order {
     this.etag = etag;
   }
 
-  public Order links(DefinitionsorderHeaderLinks links) {
+  public Order links(OrderLinks links) {
     this.links = links;
     return this;
   }
@@ -587,11 +587,11 @@ public class Order {
    * @return links
   **/
   @ApiModelProperty(example = "null", required = true, value = "")
-  public DefinitionsorderHeaderLinks getLinks() {
+  public OrderLinks getLinks() {
     return links;
   }
 
-  public void setLinks(DefinitionsorderHeaderLinks links) {
+  public void setLinks(OrderLinks links) {
     this.links = links;
   }
 

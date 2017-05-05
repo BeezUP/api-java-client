@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * Can be null. The billing period in month based on /billingperiods
  */
 @ApiModel(description = "Can be null. The billing period in month based on /billingperiods")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:07:09.864Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:13:41.476Z")
 public class BillingPeriodInMonth {
 
   @Override

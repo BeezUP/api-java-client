@@ -14,14 +14,37 @@
 package io.swagger.client.model;
 
 import java.util.Objects;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import io.swagger.client.model.DefinitionslinksGetOrderLink;
 
 /**
- * The exclusion filter operator name
+ * OrderLinks
  */
-@ApiModel(description = "The exclusion filter operator name")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:13:41.476Z")
-public class ExclusionFilterOperatorName {
+public class OrderLinks {
+  @SerializedName("self")
+  private DefinitionslinksGetOrderLink self = null;
+
+  public OrderLinks self(DefinitionslinksGetOrderLink self) {
+    this.self = self;
+    return this;
+  }
+
+   /**
+   * Get self
+   * @return self
+  **/
+  @ApiModelProperty(example = "null", required = true, value = "")
+  public DefinitionslinksGetOrderLink getSelf() {
+    return self;
+  }
+
+  public void setSelf(DefinitionslinksGetOrderLink self) {
+    this.self = self;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -31,20 +54,22 @@ public class ExclusionFilterOperatorName {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    return true;
+    OrderLinks orderLinks = (OrderLinks) o;
+    return Objects.equals(this.self, orderLinks.self);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash();
+    return Objects.hash(self);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ExclusionFilterOperatorName {\n");
+    sb.append("class OrderLinks {\n");
     
+    sb.append("    self: ").append(toIndentedString(self)).append("\n");
     sb.append("}");
     return sb.toString();
   }

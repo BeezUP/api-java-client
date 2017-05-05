@@ -26,7 +26,7 @@ import io.swagger.client.model.OrderIdentifier;
 /**
  * OrderIdentifierWithETag
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:07:09.864Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:13:41.476Z")
 public class OrderIdentifierWithETag {
   @SerializedName("marketplaceTechnicalCode")
   private MarketplaceTechnicalCode marketplaceTechnicalCode = null;

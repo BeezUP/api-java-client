@@ -25,7 +25,7 @@ import java.util.List;
 /**
  * ChannelCatalogList
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:07:09.864Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T09:13:41.476Z")
 public class ChannelCatalogList {
   @SerializedName("links")
   private List<BeezUPCommonLink2> links = new ArrayList<BeezUPCommonLink2>();
