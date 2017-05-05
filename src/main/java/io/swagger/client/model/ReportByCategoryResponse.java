@@ -27,7 +27,7 @@ import java.util.List;
 /**
  * ReportByCategoryResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:26:52.821Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:47:15.399Z")
 public class ReportByCategoryResponse {
   @SerializedName("paginationResult")
   private BeezUPCommonPaginationResult paginationResult = null;

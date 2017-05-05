@@ -23,7 +23,7 @@ import io.swagger.client.model.LinksSaveProfilePictureInfoLink;
 /**
  * ProfilePictureInfoResponseLinks
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:26:52.821Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:47:15.399Z")
 public class ProfilePictureInfoResponseLinks {
   @SerializedName("self")
   private LinksGetProfilePictureInfoLink self = null;
