@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * Card Verification Code
  */
 @ApiModel(description = "Card Verification Code")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:45:35.731Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:57:46.029Z")
 public class CardVerificationCode {
 
   @Override

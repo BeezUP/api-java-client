@@ -20,13 +20,14 @@ import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.LinksDeleteStoreLink;
 import io.swagger.client.model.LinksGetSharesLink;
 import io.swagger.client.model.LinksGetStoreLink;
+import io.swagger.client.model.LinksShareLink;
 import io.swagger.client.model.LinksUpdateStoreLink;
 
 /**
  * The action links for this store
  */
 @ApiModel(description = "The action links for this store")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:45:35.731Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:57:46.029Z")
 public class StoreHeaderLinks {
   @SerializedName("self")
   private LinksGetStoreLink self = null;
@@ -39,6 +40,9 @@ public class StoreHeaderLinks {
 
   @SerializedName("getShares")
   private LinksGetSharesLink getShares = null;
+
+  @SerializedName("share")
+  private LinksShareLink share = null;
 
   public StoreHeaderLinks self(LinksGetStoreLink self) {
     this.self = self;
@@ -112,6 +116,24 @@ public class StoreHeaderLinks {
     this.getShares = getShares;
   }
 
+  public StoreHeaderLinks share(LinksShareLink share) {
+    this.share = share;
+    return this;
+  }
+
+   /**
+   * Get share
+   * @return share
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public LinksShareLink getShare() {
+    return share;
+  }
+
+  public void setShare(LinksShareLink share) {
+    this.share = share;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -125,12 +147,13 @@ public class StoreHeaderLinks {
     return Objects.equals(this.self, storeHeaderLinks.self) &&
         Objects.equals(this.deleteStore, storeHeaderLinks.deleteStore) &&
         Objects.equals(this.updateStore, storeHeaderLinks.updateStore) &&
-        Objects.equals(this.getShares, storeHeaderLinks.getShares);
+        Objects.equals(this.getShares, storeHeaderLinks.getShares) &&
+        Objects.equals(this.share, storeHeaderLinks.share);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(self, deleteStore, updateStore, getShares);
+    return Objects.hash(self, deleteStore, updateStore, getShares, share);
   }
 
 
@@ -143,6 +166,7 @@ public class StoreHeaderLinks {
     sb.append("    deleteStore: ").append(toIndentedString(deleteStore)).append("\n");
     sb.append("    updateStore: ").append(toIndentedString(updateStore)).append("\n");
     sb.append("    getShares: ").append(toIndentedString(getShares)).append("\n");
+    sb.append("    share: ").append(toIndentedString(share)).append("\n");
     sb.append("}");
     return sb.toString();
   }

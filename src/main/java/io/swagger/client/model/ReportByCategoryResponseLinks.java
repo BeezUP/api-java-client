@@ -23,7 +23,7 @@ import io.swagger.client.model.ReportByCommonResponseLinks;
 /**
  * ReportByCategoryResponseLinks
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:45:35.731Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:57:46.029Z")
 public class ReportByCategoryResponseLinks {
   @SerializedName("enableAllProducts")
   private LinksOptimiseLink enableAllProducts = null;

@@ -29,7 +29,7 @@ import org.joda.time.LocalDate;
  * Describe the commitment information related to the offer.
  */
 @ApiModel(description = "Describe the commitment information related to the offer.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:45:35.731Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T10:57:46.029Z")
 public class ContractCommitmentInfo {
   @SerializedName("commitmentCalculatedFinishDate")
   private DateTime commitmentCalculatedFinishDate = null;
