@@ -23,7 +23,7 @@ import io.swagger.client.model.BeezUPCommonCurrencyCode;
  * Describe the pricing information related to the offer.
  */
 @ApiModel(description = "Describe the pricing information related to the offer.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:54:35.212Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:58:49.009Z")
 public class ContractMoneyInfo {
   @SerializedName("amountExcludingTaxesAndExcludingCodePromoDiscountIncludingBillingPeriodDiscount")
   private Double amountExcludingTaxesAndExcludingCodePromoDiscountIncludingBillingPeriodDiscount = null;

@@ -17,39 +17,33 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.AutomaticTransition;
-import java.util.ArrayList;
-import java.util.List;
+import io.swagger.client.model.BeezUPCommonLink2;
 
 /**
- * SaveAutomaticTransitionRequest
+ * The links related to an available channel
  */
+@ApiModel(description = "The links related to an available channel")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T11:58:49.009Z")
-public class SaveAutomaticTransitionRequest {
-  @SerializedName("automaticTransitions")
-  private List<AutomaticTransition> automaticTransitions = new ArrayList<AutomaticTransition>();
+public class ChannelHeaderLinks {
+  @SerializedName("self")
+  private BeezUPCommonLink2 self = null;
 
-  public SaveAutomaticTransitionRequest automaticTransitions(List<AutomaticTransition> automaticTransitions) {
-    this.automaticTransitions = automaticTransitions;
-    return this;
-  }
-
-  public SaveAutomaticTransitionRequest addAutomaticTransitionsItem(AutomaticTransition automaticTransitionsItem) {
-    this.automaticTransitions.add(automaticTransitionsItem);
+  public ChannelHeaderLinks self(BeezUPCommonLink2 self) {
+    this.self = self;
     return this;
   }
 
    /**
-   * Get automaticTransitions
-   * @return automaticTransitions
+   * Get self
+   * @return self
   **/
   @ApiModelProperty(example = "null", required = true, value = "")
-  public List<AutomaticTransition> getAutomaticTransitions() {
-    return automaticTransitions;
+  public BeezUPCommonLink2 getSelf() {
+    return self;
   }
 
-  public void setAutomaticTransitions(List<AutomaticTransition> automaticTransitions) {
-    this.automaticTransitions = automaticTransitions;
+  public void setSelf(BeezUPCommonLink2 self) {
+    this.self = self;
   }
 
 
@@ -61,22 +55,22 @@ public class SaveAutomaticTransitionRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SaveAutomaticTransitionRequest saveAutomaticTransitionRequest = (SaveAutomaticTransitionRequest) o;
-    return Objects.equals(this.automaticTransitions, saveAutomaticTransitionRequest.automaticTransitions);
+    ChannelHeaderLinks channelHeaderLinks = (ChannelHeaderLinks) o;
+    return Objects.equals(this.self, channelHeaderLinks.self);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(automaticTransitions);
+    return Objects.hash(self);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SaveAutomaticTransitionRequest {\n");
+    sb.append("class ChannelHeaderLinks {\n");
     
-    sb.append("    automaticTransitions: ").append(toIndentedString(automaticTransitions)).append("\n");
+    sb.append("    self: ").append(toIndentedString(self)).append("\n");
     sb.append("}");
     return sb.toString();
   }
