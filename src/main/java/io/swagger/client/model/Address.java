@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * Your address
  */
 @ApiModel(description = "Your address")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:18:58.821Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T14:10:34.021Z")
 public class Address {
 
   @Override

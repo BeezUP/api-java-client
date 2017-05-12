@@ -25,7 +25,7 @@ import java.util.List;
 /**
  * RuleList
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:18:58.821Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T14:10:34.021Z")
 public class RuleList {
   @SerializedName("rules")
   private List<Rule> rules = new ArrayList<Rule>();

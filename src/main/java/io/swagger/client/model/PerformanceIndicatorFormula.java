@@ -24,7 +24,7 @@ import io.swagger.client.model.PerformanceIndicatorFormulaParameterType;
  * The KPI formula
  */
 @ApiModel(description = "The KPI formula")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:18:58.821Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T14:10:34.021Z")
 public class PerformanceIndicatorFormula {
   @SerializedName("firstParameter")
   private PerformanceIndicatorFormulaParameterType firstParameter = null;

@@ -17,50 +17,50 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.DefinitionslinksDeleteRuleLink;
-import io.swagger.client.model.DefinitionslinksDisableRuleLink;
-import io.swagger.client.model.DefinitionslinksEnableRuleLink;
-import io.swagger.client.model.DefinitionslinksGetReportFilterLink;
-import io.swagger.client.model.DefinitionslinksGetRuleLink;
-import io.swagger.client.model.DefinitionslinksMoveDownRuleLink;
-import io.swagger.client.model.DefinitionslinksMoveUpRuleLink;
-import io.swagger.client.model.DefinitionslinksRunRuleLink;
-import io.swagger.client.model.DefinitionslinksUpdateRuleLink;
+import io.swagger.client.model.LinksDeleteRuleLink;
+import io.swagger.client.model.LinksDisableRuleLink;
+import io.swagger.client.model.LinksEnableRuleLink;
+import io.swagger.client.model.LinksGetReportFilterLink;
+import io.swagger.client.model.LinksGetRuleLink;
+import io.swagger.client.model.LinksMoveDownRuleLink;
+import io.swagger.client.model.LinksMoveUpRuleLink;
+import io.swagger.client.model.LinksRunRuleLink;
+import io.swagger.client.model.LinksUpdateRuleLink;
 
 /**
  * Links to retrieve/action on other entities
  */
 @ApiModel(description = "Links to retrieve/action on other entities")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:18:58.821Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T14:10:34.021Z")
 public class RuleLinks {
   @SerializedName("self")
-  private DefinitionslinksGetRuleLink self = null;
+  private LinksGetRuleLink self = null;
 
   @SerializedName("run")
-  private DefinitionslinksRunRuleLink run = null;
+  private LinksRunRuleLink run = null;
 
   @SerializedName("delete")
-  private DefinitionslinksDeleteRuleLink delete = null;
+  private LinksDeleteRuleLink delete = null;
 
   @SerializedName("moveup")
-  private DefinitionslinksMoveUpRuleLink moveup = null;
+  private LinksMoveUpRuleLink moveup = null;
 
   @SerializedName("movedown")
-  private DefinitionslinksMoveDownRuleLink movedown = null;
+  private LinksMoveDownRuleLink movedown = null;
 
   @SerializedName("enable")
-  private DefinitionslinksEnableRuleLink enable = null;
+  private LinksEnableRuleLink enable = null;
 
   @SerializedName("disable")
-  private DefinitionslinksDisableRuleLink disable = null;
+  private LinksDisableRuleLink disable = null;
 
   @SerializedName("update")
-  private DefinitionslinksUpdateRuleLink update = null;
+  private LinksUpdateRuleLink update = null;
 
   @SerializedName("reportFilter")
-  private DefinitionslinksGetReportFilterLink reportFilter = null;
+  private LinksGetReportFilterLink reportFilter = null;
 
-  public RuleLinks self(DefinitionslinksGetRuleLink self) {
+  public RuleLinks self(LinksGetRuleLink self) {
     this.self = self;
     return this;
   }
@@ -70,15 +70,15 @@ public class RuleLinks {
    * @return self
   **/
   @ApiModelProperty(example = "null", value = "")
-  public DefinitionslinksGetRuleLink getSelf() {
+  public LinksGetRuleLink getSelf() {
     return self;
   }
 
-  public void setSelf(DefinitionslinksGetRuleLink self) {
+  public void setSelf(LinksGetRuleLink self) {
     this.self = self;
   }
 
-  public RuleLinks run(DefinitionslinksRunRuleLink run) {
+  public RuleLinks run(LinksRunRuleLink run) {
     this.run = run;
     return this;
   }
@@ -88,15 +88,15 @@ public class RuleLinks {
    * @return run
   **/
   @ApiModelProperty(example = "null", value = "")
-  public DefinitionslinksRunRuleLink getRun() {
+  public LinksRunRuleLink getRun() {
     return run;
   }
 
-  public void setRun(DefinitionslinksRunRuleLink run) {
+  public void setRun(LinksRunRuleLink run) {
     this.run = run;
   }
 
-  public RuleLinks delete(DefinitionslinksDeleteRuleLink delete) {
+  public RuleLinks delete(LinksDeleteRuleLink delete) {
     this.delete = delete;
     return this;
   }
@@ -106,15 +106,15 @@ public class RuleLinks {
    * @return delete
   **/
   @ApiModelProperty(example = "null", value = "")
-  public DefinitionslinksDeleteRuleLink getDelete() {
+  public LinksDeleteRuleLink getDelete() {
     return delete;
   }
 
-  public void setDelete(DefinitionslinksDeleteRuleLink delete) {
+  public void setDelete(LinksDeleteRuleLink delete) {
     this.delete = delete;
   }
 
-  public RuleLinks moveup(DefinitionslinksMoveUpRuleLink moveup) {
+  public RuleLinks moveup(LinksMoveUpRuleLink moveup) {
     this.moveup = moveup;
     return this;
   }
@@ -124,15 +124,15 @@ public class RuleLinks {
    * @return moveup
   **/
   @ApiModelProperty(example = "null", value = "")
-  public DefinitionslinksMoveUpRuleLink getMoveup() {
+  public LinksMoveUpRuleLink getMoveup() {
     return moveup;
   }
 
-  public void setMoveup(DefinitionslinksMoveUpRuleLink moveup) {
+  public void setMoveup(LinksMoveUpRuleLink moveup) {
     this.moveup = moveup;
   }
 
-  public RuleLinks movedown(DefinitionslinksMoveDownRuleLink movedown) {
+  public RuleLinks movedown(LinksMoveDownRuleLink movedown) {
     this.movedown = movedown;
     return this;
   }
@@ -142,15 +142,15 @@ public class RuleLinks {
    * @return movedown
   **/
   @ApiModelProperty(example = "null", value = "")
-  public DefinitionslinksMoveDownRuleLink getMovedown() {
+  public LinksMoveDownRuleLink getMovedown() {
     return movedown;
   }
 
-  public void setMovedown(DefinitionslinksMoveDownRuleLink movedown) {
+  public void setMovedown(LinksMoveDownRuleLink movedown) {
     this.movedown = movedown;
   }
 
-  public RuleLinks enable(DefinitionslinksEnableRuleLink enable) {
+  public RuleLinks enable(LinksEnableRuleLink enable) {
     this.enable = enable;
     return this;
   }
@@ -160,15 +160,15 @@ public class RuleLinks {
    * @return enable
   **/
   @ApiModelProperty(example = "null", value = "")
-  public DefinitionslinksEnableRuleLink getEnable() {
+  public LinksEnableRuleLink getEnable() {
     return enable;
   }
 
-  public void setEnable(DefinitionslinksEnableRuleLink enable) {
+  public void setEnable(LinksEnableRuleLink enable) {
     this.enable = enable;
   }
 
-  public RuleLinks disable(DefinitionslinksDisableRuleLink disable) {
+  public RuleLinks disable(LinksDisableRuleLink disable) {
     this.disable = disable;
     return this;
   }
@@ -178,15 +178,15 @@ public class RuleLinks {
    * @return disable
   **/
   @ApiModelProperty(example = "null", value = "")
-  public DefinitionslinksDisableRuleLink getDisable() {
+  public LinksDisableRuleLink getDisable() {
     return disable;
   }
 
-  public void setDisable(DefinitionslinksDisableRuleLink disable) {
+  public void setDisable(LinksDisableRuleLink disable) {
     this.disable = disable;
   }
 
-  public RuleLinks update(DefinitionslinksUpdateRuleLink update) {
+  public RuleLinks update(LinksUpdateRuleLink update) {
     this.update = update;
     return this;
   }
@@ -196,15 +196,15 @@ public class RuleLinks {
    * @return update
   **/
   @ApiModelProperty(example = "null", value = "")
-  public DefinitionslinksUpdateRuleLink getUpdate() {
+  public LinksUpdateRuleLink getUpdate() {
     return update;
   }
 
-  public void setUpdate(DefinitionslinksUpdateRuleLink update) {
+  public void setUpdate(LinksUpdateRuleLink update) {
     this.update = update;
   }
 
-  public RuleLinks reportFilter(DefinitionslinksGetReportFilterLink reportFilter) {
+  public RuleLinks reportFilter(LinksGetReportFilterLink reportFilter) {
     this.reportFilter = reportFilter;
     return this;
   }
@@ -214,11 +214,11 @@ public class RuleLinks {
    * @return reportFilter
   **/
   @ApiModelProperty(example = "null", value = "")
-  public DefinitionslinksGetReportFilterLink getReportFilter() {
+  public LinksGetReportFilterLink getReportFilter() {
     return reportFilter;
   }
 
-  public void setReportFilter(DefinitionslinksGetReportFilterLink reportFilter) {
+  public void setReportFilter(LinksGetReportFilterLink reportFilter) {
     this.reportFilter = reportFilter;
   }
 
