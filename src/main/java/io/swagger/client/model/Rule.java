@@ -17,15 +17,15 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.client.model.DefinitionsruleLinks;
 import io.swagger.client.model.OptimisationActionName;
 import io.swagger.client.model.RuleLastExecutionStatus;
-import io.swagger.client.model.RuleLinks;
 import org.joda.time.DateTime;
 
 /**
  * Rule
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T14:10:34.021Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:18:58.821Z")
 public class Rule {
   @SerializedName("ruleId")
   private String ruleId = null;
@@ -58,7 +58,7 @@ public class Rule {
   private DateTime validityEndUtcDate = null;
 
   @SerializedName("links")
-  private RuleLinks links = null;
+  private DefinitionsruleLinks links = null;
 
   public Rule ruleId(String ruleId) {
     this.ruleId = ruleId;
@@ -240,7 +240,7 @@ public class Rule {
     this.validityEndUtcDate = validityEndUtcDate;
   }
 
-  public Rule links(RuleLinks links) {
+  public Rule links(DefinitionsruleLinks links) {
     this.links = links;
     return this;
   }
@@ -250,11 +250,11 @@ public class Rule {
    * @return links
   **/
   @ApiModelProperty(example = "null", required = true, value = "")
-  public RuleLinks getLinks() {
+  public DefinitionsruleLinks getLinks() {
     return links;
   }
 
-  public void setLinks(RuleLinks links) {
+  public void setLinks(DefinitionsruleLinks links) {
     this.links = links;
   }
 

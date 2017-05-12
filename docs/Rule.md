@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **enabled** | **Boolean** | Is the rule enabled | 
 **validityStartUtcDate** | [**DateTime**](DateTime.md) | Rule validity start utc date |  [optional]
 **validityEndUtcDate** | [**DateTime**](DateTime.md) | Rule validity end utc date |  [optional]
-**links** | [**RuleLinks**](RuleLinks.md) |  | 
+**links** | [**DefinitionsruleLinks**](DefinitionsruleLinks.md) |  | 
 
 
 

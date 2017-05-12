@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**self** | [**LinksGetOrderLink**](LinksGetOrderLink.md) |  | 
+**self** | [**DefinitionslinksGetOrderLink**](DefinitionslinksGetOrderLink.md) |  | 
 
 
 

@@ -17,18 +17,18 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.LinksGetRuleLink;
+import io.swagger.client.model.DefinitionslinksGetRuleLink;
 
 /**
  * Links to retrieve/action on this rule execution
  */
 @ApiModel(description = "Links to retrieve/action on this rule execution")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T14:10:34.021Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:18:58.821Z")
 public class RuleExecutionReportingLinks {
   @SerializedName("rule")
-  private LinksGetRuleLink rule = null;
+  private DefinitionslinksGetRuleLink rule = null;
 
-  public RuleExecutionReportingLinks rule(LinksGetRuleLink rule) {
+  public RuleExecutionReportingLinks rule(DefinitionslinksGetRuleLink rule) {
     this.rule = rule;
     return this;
   }
@@ -38,11 +38,11 @@ public class RuleExecutionReportingLinks {
    * @return rule
   **/
   @ApiModelProperty(example = "null", value = "")
-  public LinksGetRuleLink getRule() {
+  public DefinitionslinksGetRuleLink getRule() {
     return rule;
   }
 
-  public void setRule(LinksGetRuleLink rule) {
+  public void setRule(DefinitionslinksGetRuleLink rule) {
     this.rule = rule;
   }
 
