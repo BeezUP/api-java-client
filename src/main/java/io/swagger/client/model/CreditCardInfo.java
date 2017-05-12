@@ -25,7 +25,7 @@ import io.swagger.client.model.ExpirationYear;
 /**
  * CreditCardInfo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:18:37.107Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T14:10:34.021Z")
 public class CreditCardInfo {
   @SerializedName("cardNumber")
   private CardNumber cardNumber = null;

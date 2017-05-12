@@ -17,22 +17,22 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.DefinitionslinksGetOrderHistoryLink;
-import io.swagger.client.model.DefinitionslinksGetOrderLink;
+import io.swagger.client.model.LinksGetOrderHistoryLink;
+import io.swagger.client.model.LinksGetOrderLink;
 import io.swagger.client.model.OrderHeaderLinks;
 
 /**
  * OrderLinks
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:18:37.107Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T14:10:34.021Z")
 public class OrderLinks {
   @SerializedName("self")
-  private DefinitionslinksGetOrderLink self = null;
+  private LinksGetOrderLink self = null;
 
   @SerializedName("history")
-  private DefinitionslinksGetOrderHistoryLink history = null;
+  private LinksGetOrderHistoryLink history = null;
 
-  public OrderLinks self(DefinitionslinksGetOrderLink self) {
+  public OrderLinks self(LinksGetOrderLink self) {
     this.self = self;
     return this;
   }
@@ -42,15 +42,15 @@ public class OrderLinks {
    * @return self
   **/
   @ApiModelProperty(example = "null", required = true, value = "")
-  public DefinitionslinksGetOrderLink getSelf() {
+  public LinksGetOrderLink getSelf() {
     return self;
   }
 
-  public void setSelf(DefinitionslinksGetOrderLink self) {
+  public void setSelf(LinksGetOrderLink self) {
     this.self = self;
   }
 
-  public OrderLinks history(DefinitionslinksGetOrderHistoryLink history) {
+  public OrderLinks history(LinksGetOrderHistoryLink history) {
     this.history = history;
     return this;
   }
@@ -60,11 +60,11 @@ public class OrderLinks {
    * @return history
   **/
   @ApiModelProperty(example = "null", value = "")
-  public DefinitionslinksGetOrderHistoryLink getHistory() {
+  public LinksGetOrderHistoryLink getHistory() {
     return history;
   }
 
-  public void setHistory(DefinitionslinksGetOrderHistoryLink history) {
+  public void setHistory(LinksGetOrderHistoryLink history) {
     this.history = history;
   }
 

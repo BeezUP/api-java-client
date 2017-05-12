@@ -17,17 +17,17 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.DefinitionsruleExecutionReportingLinks;
 import io.swagger.client.model.OptimisationActionName;
 import io.swagger.client.model.RuleExecutionReportingErrorType;
 import io.swagger.client.model.RuleExecutionReportingExecutionSource;
+import io.swagger.client.model.RuleExecutionReportingLinks;
 import io.swagger.client.model.RuleExecutionReportingStatus;
 import org.joda.time.DateTime;
 
 /**
  * RuleExecutionReporting
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:18:37.107Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T14:10:34.021Z")
 public class RuleExecutionReporting {
   @SerializedName("ruleId")
   private String ruleId = null;
@@ -69,7 +69,7 @@ public class RuleExecutionReporting {
   private String reportUrl = null;
 
   @SerializedName("links")
-  private DefinitionsruleExecutionReportingLinks links = null;
+  private RuleExecutionReportingLinks links = null;
 
   public RuleExecutionReporting ruleId(String ruleId) {
     this.ruleId = ruleId;
@@ -305,7 +305,7 @@ public class RuleExecutionReporting {
     this.reportUrl = reportUrl;
   }
 
-  public RuleExecutionReporting links(DefinitionsruleExecutionReportingLinks links) {
+  public RuleExecutionReporting links(RuleExecutionReportingLinks links) {
     this.links = links;
     return this;
   }
@@ -315,11 +315,11 @@ public class RuleExecutionReporting {
    * @return links
   **/
   @ApiModelProperty(example = "null", value = "")
-  public DefinitionsruleExecutionReportingLinks getLinks() {
+  public RuleExecutionReportingLinks getLinks() {
     return links;
   }
 
-  public void setLinks(DefinitionsruleExecutionReportingLinks links) {
+  public void setLinks(RuleExecutionReportingLinks links) {
     this.links = links;
   }
 
