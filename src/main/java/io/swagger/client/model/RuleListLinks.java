@@ -17,30 +17,30 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.LinksCreateRuleLink;
-import io.swagger.client.model.LinksGetRulesExecutionsLink;
-import io.swagger.client.model.LinksGetRulesLink;
-import io.swagger.client.model.LinksRunRulesLink;
+import io.swagger.client.model.DefinitionslinksCreateRuleLink;
+import io.swagger.client.model.DefinitionslinksGetRulesExecutionsLink;
+import io.swagger.client.model.DefinitionslinksGetRulesLink;
+import io.swagger.client.model.DefinitionslinksRunRulesLink;
 
 /**
  * Links to know if the user can create a rule or run all rules
  */
 @ApiModel(description = "Links to know if the user can create a rule or run all rules")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T14:10:34.021Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:18:37.107Z")
 public class RuleListLinks {
   @SerializedName("self")
-  private LinksGetRulesLink self = null;
+  private DefinitionslinksGetRulesLink self = null;
 
   @SerializedName("create")
-  private LinksCreateRuleLink create = null;
+  private DefinitionslinksCreateRuleLink create = null;
 
   @SerializedName("history")
-  private LinksGetRulesExecutionsLink history = null;
+  private DefinitionslinksGetRulesExecutionsLink history = null;
 
   @SerializedName("run")
-  private LinksRunRulesLink run = null;
+  private DefinitionslinksRunRulesLink run = null;
 
-  public RuleListLinks self(LinksGetRulesLink self) {
+  public RuleListLinks self(DefinitionslinksGetRulesLink self) {
     this.self = self;
     return this;
   }
@@ -50,15 +50,15 @@ public class RuleListLinks {
    * @return self
   **/
   @ApiModelProperty(example = "null", value = "")
-  public LinksGetRulesLink getSelf() {
+  public DefinitionslinksGetRulesLink getSelf() {
     return self;
   }
 
-  public void setSelf(LinksGetRulesLink self) {
+  public void setSelf(DefinitionslinksGetRulesLink self) {
     this.self = self;
   }
 
-  public RuleListLinks create(LinksCreateRuleLink create) {
+  public RuleListLinks create(DefinitionslinksCreateRuleLink create) {
     this.create = create;
     return this;
   }
@@ -68,15 +68,15 @@ public class RuleListLinks {
    * @return create
   **/
   @ApiModelProperty(example = "null", value = "")
-  public LinksCreateRuleLink getCreate() {
+  public DefinitionslinksCreateRuleLink getCreate() {
     return create;
   }
 
-  public void setCreate(LinksCreateRuleLink create) {
+  public void setCreate(DefinitionslinksCreateRuleLink create) {
     this.create = create;
   }
 
-  public RuleListLinks history(LinksGetRulesExecutionsLink history) {
+  public RuleListLinks history(DefinitionslinksGetRulesExecutionsLink history) {
     this.history = history;
     return this;
   }
@@ -86,15 +86,15 @@ public class RuleListLinks {
    * @return history
   **/
   @ApiModelProperty(example = "null", value = "")
-  public LinksGetRulesExecutionsLink getHistory() {
+  public DefinitionslinksGetRulesExecutionsLink getHistory() {
     return history;
   }
 
-  public void setHistory(LinksGetRulesExecutionsLink history) {
+  public void setHistory(DefinitionslinksGetRulesExecutionsLink history) {
     this.history = history;
   }
 
-  public RuleListLinks run(LinksRunRulesLink run) {
+  public RuleListLinks run(DefinitionslinksRunRulesLink run) {
     this.run = run;
     return this;
   }
@@ -104,11 +104,11 @@ public class RuleListLinks {
    * @return run
   **/
   @ApiModelProperty(example = "null", value = "")
-  public LinksRunRulesLink getRun() {
+  public DefinitionslinksRunRulesLink getRun() {
     return run;
   }
 
-  public void setRun(LinksRunRulesLink run) {
+  public void setRun(DefinitionslinksRunRulesLink run) {
     this.run = run;
   }
 

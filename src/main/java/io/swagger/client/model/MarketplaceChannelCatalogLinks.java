@@ -25,7 +25,7 @@ import io.swagger.client.model.LinksGetPublicationsLink;
  * Indicate the actions you can do on a channel catalog. If the settings are valid, you will be able to access to the publication history.
  */
 @ApiModel(description = "Indicate the actions you can do on a channel catalog. If the settings are valid, you will be able to access to the publication history.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T14:10:34.021Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:18:37.107Z")
 public class MarketplaceChannelCatalogLinks {
   @SerializedName("properties")
   private LinksGetChannelCatalogMarketplacePropertiesLink properties = null;

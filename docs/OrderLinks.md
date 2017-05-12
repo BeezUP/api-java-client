@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**self** | [**LinksGetOrderLink**](LinksGetOrderLink.md) |  | 
-**history** | [**LinksGetOrderHistoryLink**](LinksGetOrderHistoryLink.md) |  |  [optional]
+**self** | [**DefinitionslinksGetOrderLink**](DefinitionslinksGetOrderLink.md) |  | 
+**history** | [**DefinitionslinksGetOrderHistoryLink**](DefinitionslinksGetOrderHistoryLink.md) |  |  [optional]
 
 
 

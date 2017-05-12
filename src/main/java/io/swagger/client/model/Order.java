@@ -44,7 +44,7 @@ import org.joda.time.DateTime;
 /**
  * Order
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T14:10:34.021Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:18:37.107Z")
 public class Order {
   @SerializedName("marketplaceTechnicalCode")
   private MarketplaceTechnicalCode marketplaceTechnicalCode = null;
@@ -907,10 +907,10 @@ public class Order {
   }
 
    /**
-   * The shipping address country iso code alpha 2 (see http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#/decoding_table for more details)
+   * The shipping address country iso code alpha 2 (see http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Decoding_table for more details)
    * @return orderShippingAddressCountryIsoCodeAlpha2
   **/
-  @ApiModelProperty(example = "FR", value = "The shipping address country iso code alpha 2 (see http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#/decoding_table for more details)")
+  @ApiModelProperty(example = "FR", value = "The shipping address country iso code alpha 2 (see http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Decoding_table for more details)")
   public String getOrderShippingAddressCountryIsoCodeAlpha2() {
     return orderShippingAddressCountryIsoCodeAlpha2;
   }
@@ -1249,10 +1249,10 @@ public class Order {
   }
 
    /**
-   * The Buyer address country iso code alpha 2 (see http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#/decoding_table for more details)
+   * The Buyer address country iso code alpha 2 (see http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Decoding_table for more details)
    * @return orderBuyerAddressCountryIsoCodeAlpha2
   **/
-  @ApiModelProperty(example = "FR", value = "The Buyer address country iso code alpha 2 (see http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#/decoding_table for more details)")
+  @ApiModelProperty(example = "FR", value = "The Buyer address country iso code alpha 2 (see http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Decoding_table for more details)")
   public String getOrderBuyerAddressCountryIsoCodeAlpha2() {
     return orderBuyerAddressCountryIsoCodeAlpha2;
   }

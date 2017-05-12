@@ -17,17 +17,17 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.LinksGetOrderLink;
+import io.swagger.client.model.DefinitionslinksGetOrderLink;
 
 /**
  * OrderHeaderLinks
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T14:10:34.021Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:18:37.107Z")
 public class OrderHeaderLinks {
   @SerializedName("self")
-  private LinksGetOrderLink self = null;
+  private DefinitionslinksGetOrderLink self = null;
 
-  public OrderHeaderLinks self(LinksGetOrderLink self) {
+  public OrderHeaderLinks self(DefinitionslinksGetOrderLink self) {
     this.self = self;
     return this;
   }
@@ -37,11 +37,11 @@ public class OrderHeaderLinks {
    * @return self
   **/
   @ApiModelProperty(example = "null", required = true, value = "")
-  public LinksGetOrderLink getSelf() {
+  public DefinitionslinksGetOrderLink getSelf() {
     return self;
   }
 
-  public void setSelf(LinksGetOrderLink self) {
+  public void setSelf(DefinitionslinksGetOrderLink self) {
     this.self = self;
   }
 

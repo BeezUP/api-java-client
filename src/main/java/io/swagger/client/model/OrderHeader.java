@@ -22,13 +22,13 @@ import io.swagger.client.model.BeezUPCommonCurrencyCode;
 import io.swagger.client.model.BeezUPCommonHttpUrl;
 import io.swagger.client.model.BeezUPOrderId;
 import io.swagger.client.model.BeezUPOrderStatus;
+import io.swagger.client.model.DefinitionsorderHeaderLinks;
 import io.swagger.client.model.Etag;
 import io.swagger.client.model.MarketplaceBusinessCode;
 import io.swagger.client.model.MarketplaceOrderId;
 import io.swagger.client.model.MarketplaceOrderStatus;
 import io.swagger.client.model.MarketplaceTechnicalCode;
 import io.swagger.client.model.OrderBuyerName;
-import io.swagger.client.model.OrderHeaderLinks;
 import io.swagger.client.model.OrderMerchantECommerceSoftwareName;
 import io.swagger.client.model.OrderMerchantECommerceSoftwareVersion;
 import io.swagger.client.model.OrderMerchantOrderId;
@@ -40,7 +40,7 @@ import org.joda.time.DateTime;
  * Describe the basic information related to an order. All properties with the prefix order_ are translated in the list of values /user/lov/OrderMetaInfoOrderDetails
  */
 @ApiModel(description = "Describe the basic information related to an order. All properties with the prefix order_ are translated in the list of values /user/lov/OrderMetaInfoOrderDetails")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T14:10:34.021Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T13:18:37.107Z")
 public class OrderHeader {
   @SerializedName("marketplaceTechnicalCode")
   private MarketplaceTechnicalCode marketplaceTechnicalCode = null;
@@ -100,7 +100,7 @@ public class OrderHeader {
   private Etag etag = null;
 
   @SerializedName("links")
-  private OrderHeaderLinks links = null;
+  private DefinitionsorderHeaderLinks links = null;
 
   public OrderHeader marketplaceTechnicalCode(MarketplaceTechnicalCode marketplaceTechnicalCode) {
     this.marketplaceTechnicalCode = marketplaceTechnicalCode;
@@ -444,7 +444,7 @@ public class OrderHeader {
     this.etag = etag;
   }
 
-  public OrderHeader links(OrderHeaderLinks links) {
+  public OrderHeader links(DefinitionsorderHeaderLinks links) {
     this.links = links;
     return this;
   }
@@ -454,11 +454,11 @@ public class OrderHeader {
    * @return links
   **/
   @ApiModelProperty(example = "null", required = true, value = "")
-  public OrderHeaderLinks getLinks() {
+  public DefinitionsorderHeaderLinks getLinks() {
     return links;
   }
 
-  public void setLinks(OrderHeaderLinks links) {
+  public void setLinks(DefinitionsorderHeaderLinks links) {
     this.links = links;
   }
 

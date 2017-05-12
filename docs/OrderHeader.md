@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **orderCurrencyCode** | [**BeezUPCommonCurrencyCode**](BeezUPCommonCurrencyCode.md) |  |  [optional]
 **processing** | [**Processing**](Processing.md) |  | 
 **etag** | [**Etag**](Etag.md) |  | 
-**links** | [**OrderHeaderLinks**](OrderHeaderLinks.md) |  | 
+**links** | [**DefinitionsorderHeaderLinks**](DefinitionsorderHeaderLinks.md) |  | 
 
 
 
