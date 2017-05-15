@@ -1,6 +1,6 @@
 /*
  * BeezUP API
- * This is the RESTful API of BeezUP which allows you to manage everything related to BeezUP
+ * This API will allow you to create your account and to get your tokens. \\ If you lost your password, you have an operation to get it back. 
  *
  * OpenAPI spec version: 2.0
  * Contact: support@beezup.com
@@ -24,7 +24,7 @@ import java.util.List;
  * The message request to schedule the auto import
  */
 @ApiModel(description = "The message request to schedule the auto import")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:40:14.157Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:48:39.678Z")
 public class ScheduleAutoImportRequest {
   @SerializedName("schedules")
   private List<String> schedules = new ArrayList<String>();
