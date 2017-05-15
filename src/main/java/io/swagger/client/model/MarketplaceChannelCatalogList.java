@@ -26,7 +26,7 @@ import java.util.List;
  * The marketplace channel catalog list
  */
 @ApiModel(description = "The marketplace channel catalog list")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T13:43:05.416Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T14:10:42.368Z")
 public class MarketplaceChannelCatalogList {
   @SerializedName("links")
   private MarketplaceChannelCatalogListLinks links = null;

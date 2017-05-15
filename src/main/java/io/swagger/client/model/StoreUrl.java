@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * The url of your store
  */
 @ApiModel(description = "The url of your store")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T13:43:05.416Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T14:10:42.368Z")
 public class StoreUrl {
 
   @Override

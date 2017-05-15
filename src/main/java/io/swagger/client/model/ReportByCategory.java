@@ -25,7 +25,7 @@ import java.math.BigDecimal;
 /**
  * ReportByCategory
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T13:43:05.416Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T14:10:42.368Z")
 public class ReportByCategory {
   @SerializedName("catalogCategoryId")
   private BeezUPCommonCatalogCategoryId catalogCategoryId = null;

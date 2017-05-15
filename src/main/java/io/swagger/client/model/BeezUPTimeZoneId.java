@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * The time zone identifier based on the list of values /v2/user/lov/BeezUPTimeZone
  */
 @ApiModel(description = "The time zone identifier based on the list of values /v2/user/lov/BeezUPTimeZone")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T13:43:05.416Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T14:10:42.368Z")
 public class BeezUPTimeZoneId {
 
   @Override

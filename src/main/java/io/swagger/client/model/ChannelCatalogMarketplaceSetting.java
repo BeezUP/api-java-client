@@ -24,7 +24,7 @@ import java.util.List;
  * Model for fetching a channel catalog marketplace setting
  */
 @ApiModel(description = "Model for fetching a channel catalog marketplace setting")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T13:43:05.416Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T14:10:42.368Z")
 public class ChannelCatalogMarketplaceSetting {
   @SerializedName("name")
   private String name = null;

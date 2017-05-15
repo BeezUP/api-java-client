@@ -24,7 +24,7 @@ import io.swagger.client.model.InputFileReadConfiguration;
  * Describe how to get and read a file
  */
 @ApiModel(description = "Describe how to get and read a file")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T13:43:05.416Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T14:10:42.368Z")
 public class InputFileConfiguration {
   @SerializedName("fileNumber")
   private Integer fileNumber = null;

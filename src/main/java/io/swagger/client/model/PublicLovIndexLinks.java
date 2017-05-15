@@ -23,7 +23,7 @@ import io.swagger.client.model.PublicLovLinks;
 /**
  * PublicLovIndexLinks
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T13:43:05.416Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T14:10:42.368Z")
 public class PublicLovIndexLinks {
   @SerializedName("self")
   private LinksGetPublicLovIndexLink self = null;
