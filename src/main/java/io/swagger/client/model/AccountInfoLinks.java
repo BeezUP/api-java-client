@@ -1,6 +1,6 @@
 /*
- * Public - Security
- * This API will allow you to create your account and to get your tokens. \\ If you lost your password, you have an operation to get it back. 
+ * BeezUP API
+ * This is the RESTful API of BeezUP which allows you to manage everything related to BeezUP
  *
  * OpenAPI spec version: 2.0
  * Contact: support@beezup.com
@@ -29,7 +29,7 @@ import io.swagger.client.model.LinksSaveProfilePictureInfoLink;
  * The different actions you can make on this account
  */
 @ApiModel(description = "The different actions you can make on this account")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:14:52.070Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:26:19.914Z")
 public class AccountInfoLinks {
   @SerializedName("savePersonalInfo")
   private LinksSavePersonalInfoLink savePersonalInfo = null;

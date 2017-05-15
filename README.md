@@ -62,7 +62,7 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api.beezup.com/v2*
+All URIs are relative to *https://api.beezup.comv2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -600,13 +600,8 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Authorization
 
+All endpoints do not require authorization.
 Authentication schemes defined for the API:
-### api_key
-
-- **Type**: API key
-- **API key parameter name**: Ocp-Apim-Subscription-Key
-- **Location**: HTTP header
-
 
 ## Recommendation
 

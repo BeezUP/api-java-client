@@ -1,6 +1,6 @@
 /*
- * Public - Security
- * This API will allow you to create your account and to get your tokens. \\ If you lost your password, you have an operation to get it back. 
+ * BeezUP API
+ * This is the RESTful API of BeezUP which allows you to manage everything related to BeezUP
  *
  * OpenAPI spec version: 2.0
  * Contact: support@beezup.com
@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * The country iso code alpha 3 &lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3\&quot;&gt;(ISO 3166-1_alpha-3)&lt;/a&gt;
  */
 @ApiModel(description = "The country iso code alpha 3 <a href=\"https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3\">(ISO 3166-1_alpha-3)</a>")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:14:52.070Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:26:19.914Z")
 public class BeezUPCommonCountryIsoCodeAlpha3 {
 
   @Override

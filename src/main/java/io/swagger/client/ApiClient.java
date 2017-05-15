@@ -1,6 +1,6 @@
 /*
- * Public - Security
- * This API will allow you to create your account and to get your tokens. \\ If you lost your password, you have an operation to get it back. 
+ * BeezUP API
+ * This is the RESTful API of BeezUP which allows you to manage everything related to BeezUP
  *
  * OpenAPI spec version: 2.0
  * Contact: support@beezup.com
@@ -112,7 +112,7 @@ public class ApiClient {
      */
     public static final String LENIENT_DATETIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSSZ";
 
-    private String basePath = "https://api.beezup.com/v2";
+    private String basePath = "https://api.beezup.comv2";
     private boolean lenientOnJson = false;
     private boolean debugging = false;
     private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
@@ -161,7 +161,6 @@ public class ApiClient {
 
         // Setup authentications (key: authentication name, value: authentication).
         authentications = new HashMap<String, Authentication>();
-        authentications.put("api_key", new ApiKeyAuth("header", "Ocp-Apim-Subscription-Key"));
         // Prevent the authentications from being modified.
         authentications = Collections.unmodifiableMap(authentications);
     }
@@ -178,7 +177,7 @@ public class ApiClient {
     /**
      * Set base path
      *
-     * @param basePath Base path of the URL (e.g https://api.beezup.com/v2
+     * @param basePath Base path of the URL (e.g https://api.beezup.comv2
      * @return An instance of OkHttpClient
      */
     public ApiClient setBasePath(String basePath) {
