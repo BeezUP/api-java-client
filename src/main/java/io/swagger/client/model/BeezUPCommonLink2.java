@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * BeezUPCommonLink2
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:48:39.678Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:58:06.674Z")
 public class BeezUPCommonLink2 {
   @SerializedName("rel")
   private String rel = null;

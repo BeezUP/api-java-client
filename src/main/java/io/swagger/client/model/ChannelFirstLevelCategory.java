@@ -30,7 +30,7 @@ import java.util.List;
  * The first level category with his sub categories
  */
 @ApiModel(description = "The first level category with his sub categories")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:48:39.678Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:58:06.674Z")
 public class ChannelFirstLevelCategory {
   @SerializedName("channelCategoryId")
   private BeezUPCommonChannelCategoryId channelCategoryId = null;

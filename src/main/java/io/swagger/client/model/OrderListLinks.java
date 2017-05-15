@@ -27,7 +27,7 @@ import io.swagger.client.model.LinksSetMerchantOrderInfoListLink;
  * The list of actions you can do from the order list response
  */
 @ApiModel(description = "The list of actions you can do from the order list response")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:48:39.678Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:58:06.674Z")
 public class OrderListLinks {
   @SerializedName("harvest")
   private LinksHarvestAllLink harvest = null;

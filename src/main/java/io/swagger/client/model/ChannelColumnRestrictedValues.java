@@ -22,7 +22,7 @@ import java.util.Map;
  * The restricted values. The key will be the restricted value identifier (format:guid) and the value will be the restriced value 
  */
 @ApiModel(description = "The restricted values. The key will be the restricted value identifier (format:guid) and the value will be the restriced value ")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:48:39.678Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:58:06.674Z")
 public class ChannelColumnRestrictedValues extends HashMap<String, String> {
 
   @Override

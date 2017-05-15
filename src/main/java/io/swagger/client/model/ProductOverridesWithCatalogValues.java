@@ -23,7 +23,7 @@ import java.util.Map;
  * The key is the channel column identifier
  */
 @ApiModel(description = "The key is the channel column identifier")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:48:39.678Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:58:06.674Z")
 public class ProductOverridesWithCatalogValues extends HashMap<String, ProductOverrideWithCatalogValue> {
 
   @Override

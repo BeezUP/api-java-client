@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * The termination reason, if your current contract is scheduled to be terminated.
  */
 @ApiModel(description = "The termination reason, if your current contract is scheduled to be terminated.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:48:39.678Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:58:06.674Z")
 public class ContractTerminationReason {
 
   @Override

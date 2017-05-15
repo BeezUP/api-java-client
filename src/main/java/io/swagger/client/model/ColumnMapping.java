@@ -25,7 +25,7 @@ import io.swagger.client.model.BeezUPCommonChannelColumnId;
  * Represent a mapping between a channel column considering channel category mapping and a catalog column
  */
 @ApiModel(description = "Represent a mapping between a channel column considering channel category mapping and a catalog column")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:48:39.678Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:58:06.674Z")
 public class ColumnMapping {
   @SerializedName("channelColumnId")
   private BeezUPCommonChannelColumnId channelColumnId = null;

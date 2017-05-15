@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * If non null, format used to parse the value to the storage type of this column\\r\\n will be used for parsing and for consolidation proces
  */
 @ApiModel(description = "If non null, format used to parse the value to the storage type of this column\\r\\n will be used for parsing and for consolidation proces")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:48:39.678Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:58:06.674Z")
 public class ColumnFormat {
 
   @Override

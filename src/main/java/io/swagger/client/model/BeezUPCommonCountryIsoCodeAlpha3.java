@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * The country iso code alpha 3 &lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3\&quot;&gt;(ISO 3166-1_alpha-3)&lt;/a&gt;
  */
 @ApiModel(description = "The country iso code alpha 3 <a href=\"https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3\">(ISO 3166-1_alpha-3)</a>")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:48:39.678Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:58:06.674Z")
 public class BeezUPCommonCountryIsoCodeAlpha3 {
 
   @Override

@@ -1,169 +1,179 @@
 # BeezUPApi
 
-All URIs are relative to *https://api.beezup.comv2*
+All URIs are relative to *https://api.beezup.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**activateUserAccount**](BeezUPApi.md#activateUserAccount) | **POST** /v2/user/customer/account/activate | Activate the user account
-[**autoConfigureAutoImportInterval**](BeezUPApi.md#autoConfigureAutoImportInterval) | **POST** /v2/user/catalogs/{storeId}/autoImport/scheduling/interval | Configure Auto Import Interval
-[**autoDeleteAutoImport**](BeezUPApi.md#autoDeleteAutoImport) | **DELETE** /v2/user/catalogs/{storeId}/autoImport | Delete Auto Import
-[**autoGetAutoImportConfiguration**](BeezUPApi.md#autoGetAutoImportConfiguration) | **GET** /v2/user/catalogs/{storeId}/autoImport | Get the auto import configuration
-[**autoPauseAutoImport**](BeezUPApi.md#autoPauseAutoImport) | **POST** /v2/user/catalogs/{storeId}/autoImport/pause | Pause Auto Import
-[**autoResumeAutoImport**](BeezUPApi.md#autoResumeAutoImport) | **POST** /v2/user/catalogs/{storeId}/autoImport/resume | Resume Auto Import
-[**autoScheduleAutoImport**](BeezUPApi.md#autoScheduleAutoImport) | **POST** /v2/user/catalogs/{storeId}/autoImport/scheduling/schedules | Configure Auto Import Schedules
-[**autoStartAutoImport**](BeezUPApi.md#autoStartAutoImport) | **POST** /v2/user/catalogs/{storeId}/autoImport/start | Start Auto Import Manually
-[**catalogChangeCatalogColumnUserName**](BeezUPApi.md#catalogChangeCatalogColumnUserName) | **POST** /v2/user/catalogs/{storeId}/catalogColumns/{columnId}/rename | Change Catalog Column User Name
-[**catalogChangeCustomColumnExpression**](BeezUPApi.md#catalogChangeCustomColumnExpression) | **PUT** /v2/user/catalogs/{storeId}/customColumns/{columnId}/expression | Change custom column expression
-[**catalogChangeCustomColumnUserName**](BeezUPApi.md#catalogChangeCustomColumnUserName) | **POST** /v2/user/catalogs/{storeId}/customColumns/{columnId}/rename | Change Custom Column User Name
-[**catalogComputeExpression**](BeezUPApi.md#catalogComputeExpression) | **POST** /v2/user/catalogs/{storeId}/customColumns/computeExpression | Compute the expression for this catalog.
-[**catalogDeleteCustomColumn**](BeezUPApi.md#catalogDeleteCustomColumn) | **DELETE** /v2/user/catalogs/{storeId}/customColumns/{columnId} | Delete custom column
-[**catalogGetBeezUPColumns**](BeezUPApi.md#catalogGetBeezUPColumns) | **GET** /v2/user/catalogs/beezupColumns | Get the BeezUP columns
-[**catalogGetCatalogColumns**](BeezUPApi.md#catalogGetCatalogColumns) | **GET** /v2/user/catalogs/{storeId}/catalogColumns | Get catalog column list
-[**catalogGetCategories**](BeezUPApi.md#catalogGetCategories) | **GET** /v2/user/catalogs/{storeId}/categories | Get category list
-[**catalogGetCustomColumnExpression**](BeezUPApi.md#catalogGetCustomColumnExpression) | **GET** /v2/user/catalogs/{storeId}/customColumns/{columnId}/expression | Get the encrypted custom column expression
-[**catalogGetCustomColumns**](BeezUPApi.md#catalogGetCustomColumns) | **GET** /v2/user/catalogs/{storeId}/customColumns | Get custom column list
-[**catalogGetProduct**](BeezUPApi.md#catalogGetProduct) | **GET** /v2/user/catalogs/{storeId}/products/{productId} | Get product
-[**catalogGetProducts**](BeezUPApi.md#catalogGetProducts) | **POST** /v2/user/catalogs/{storeId}/products | Get product list
-[**catalogGetRandomProducts**](BeezUPApi.md#catalogGetRandomProducts) | **GET** /v2/user/catalogs/{storeId}/products/random | Get random product list
-[**catalogSaveCustomColumn**](BeezUPApi.md#catalogSaveCustomColumn) | **PUT** /v2/user/catalogs/{storeId}/customColumns/{columnId} | Create or replace a custom column
-[**changeOrder**](BeezUPApi.md#changeOrder) | **POST** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/{changeOrderType} | Change your marketplace Order Information (accept, ship, etc.)
-[**changeOrderList**](BeezUPApi.md#changeOrderList) | **POST** /v2/user/marketplaces/orders/batches/changeOrders/{changeOrderType} | Send a batch of operations to change your marketplace Order information (accept, ship, etc.)
-[**changePassword**](BeezUPApi.md#changePassword) | **POST** /v2/user/customer/account/changePassword | Change user password
-[**clearMerchantOrderInfo**](BeezUPApi.md#clearMerchantOrderInfo) | **POST** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/clearMerchantOrderInfo | Clear an Order&#39;s merchant information
-[**clearMerchantOrderInfoList**](BeezUPApi.md#clearMerchantOrderInfoList) | **POST** /v2/user/marketplaces/orders/batches/clearMerchantOrderInfos | Send a batch of operations to clear an Order&#39;s merchant information
-[**configureAutomaticTransitions**](BeezUPApi.md#configureAutomaticTransitions) | **POST** /v2/user/marketplaces/orders/automaticTransitions | Configure new or existing automatic Order status transition
-[**configureChannelCatalogCostSettings**](BeezUPApi.md#configureChannelCatalogCostSettings) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/settings/cost | Disable a channel catalog
-[**configureChannelCatalogExclusionFilters**](BeezUPApi.md#configureChannelCatalogExclusionFilters) | **PUT** /v2/user/channelCatalogs/{channelCatalogId}/exclusionFilters | Configure channel catalog exclusion filters
-[**configureChannelCatalogGeneralSettings**](BeezUPApi.md#configureChannelCatalogGeneralSettings) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/settings/general | Disable a channel catalog
-[**createChannelCatalog**](BeezUPApi.md#createChannelCatalog) | **POST** /v2/user/channelCatalogs/ | Create a new channel catalog
-[**createContract**](BeezUPApi.md#createContract) | **POST** /v2/user/customer/contracts | Create a new contract
-[**createRule**](BeezUPApi.md#createRule) | **POST** /v2/user/analytics/{storeId}/rules | Rule creation
-[**createStore**](BeezUPApi.md#createStore) | **POST** /v2/user/customer/stores | Create a new store
-[**deleteChannelCatalog**](BeezUPApi.md#deleteChannelCatalog) | **DELETE** /v2/user/channelCatalogs/{channelCatalogId} | Delete the channel catalog
-[**deleteChannelCatalogProductValueOverride**](BeezUPApi.md#deleteChannelCatalogProductValueOverride) | **DELETE** /v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides/{channelColumnId} | Delete a specific channel catalog product value override
-[**deleteNextContract**](BeezUPApi.md#deleteNextContract) | **DELETE** /v2/user/customer/contracts/next | Delete your next contract
-[**deleteReportFilter**](BeezUPApi.md#deleteReportFilter) | **DELETE** /v2/user/analytics/{storeId}/reports/filters/{reportFilterId} | Delete the report filter
-[**deleteRule**](BeezUPApi.md#deleteRule) | **DELETE** /v2/user/analytics/{storeId}/rules/{ruleId} | Delete Rule
-[**deleteShare**](BeezUPApi.md#deleteShare) | **DELETE** /v2/user/customer/stores/{storeId}/shares/{userId} | Delete a share to another user
-[**deleteStore**](BeezUPApi.md#deleteStore) | **DELETE** /v2/user/customer/stores/{storeId} | Delete a store
-[**disableChannelCatalog**](BeezUPApi.md#disableChannelCatalog) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/disable | Disable a channel catalog
-[**disableChannelCatalogProduct**](BeezUPApi.md#disableChannelCatalogProduct) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/disable | Disable channel catalog product
-[**disableRule**](BeezUPApi.md#disableRule) | **POST** /v2/user/analytics/{storeId}/rules/{ruleId}/disable | Disable rule
-[**enableChannelCatalog**](BeezUPApi.md#enableChannelCatalog) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/enable | Enable a channel catalog
-[**enableRule**](BeezUPApi.md#enableRule) | **POST** /v2/user/analytics/{storeId}/rules/{ruleId}/enable | Enable rule
-[**exportOrders**](BeezUPApi.md#exportOrders) | **POST** /v2/user/marketplaces/orders/exportations | Request a new Order report exportation to be generated
-[**exportStoreReportByCategory**](BeezUPApi.md#exportStoreReportByCategory) | **POST** /v2/user/analytics/{storeId}/reports/bycategory/export | Export the report by category
-[**exportStoreReportByChannel**](BeezUPApi.md#exportStoreReportByChannel) | **POST** /v2/user/analytics/{storeId}/reports/bychannel/export | Export the report by channel
-[**exportStoreReportByProduct**](BeezUPApi.md#exportStoreReportByProduct) | **POST** /v2/user/analytics/{storeId}/reports/byproduct/export | Export the report by product
-[**getAutomaticTransitions**](BeezUPApi.md#getAutomaticTransitions) | **GET** /v2/user/marketplaces/orders/automaticTransitions | Get list of configured automatic Order status transitions
-[**getAvailableChannels**](BeezUPApi.md#getAvailableChannels) | **GET** /v2/user/channels/ | List all available channel for this store
-[**getBillingPeriods**](BeezUPApi.md#getBillingPeriods) | **GET** /v2/user/customer/billingPeriods | Get billing periods conditions
-[**getChannelCatalog**](BeezUPApi.md#getChannelCatalog) | **GET** /v2/user/channelCatalogs/{channelCatalogId} | Get the channel catalog information
-[**getChannelCatalogCategories**](BeezUPApi.md#getChannelCatalogCategories) | **GET** /v2/user/channelCatalogs/{channelCatalogId}/categoryMappings | Get channel catalog categories
-[**getChannelCatalogExclusionFilterOperators**](BeezUPApi.md#getChannelCatalogExclusionFilterOperators) | **GET** /v2/user/channelCatalogs/exclusionFilterOperators | Get channel catalog exclusion filter operators
-[**getChannelCatalogMarketplaceProperties**](BeezUPApi.md#getChannelCatalogMarketplaceProperties) | **GET** /v2/user/marketplaces/channelcatalogs/{channelCatalogId}/properties | Get the marketplace properties for a channel catalog
-[**getChannelCatalogMarketplaceSettings**](BeezUPApi.md#getChannelCatalogMarketplaceSettings) | **GET** /v2/user/marketplaces/channelcatalogs/{channelCatalogId}/settings | Get the marketplace settings for a channel catalog
-[**getChannelCatalogProductInfo**](BeezUPApi.md#getChannelCatalogProductInfo) | **GET** /v2/user/channelCatalogs/{channelCatalogId}/products/{productId} | Get channel catalog product information
-[**getChannelCatalogProductInfoList**](BeezUPApi.md#getChannelCatalogProductInfoList) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/products | Get channel catalog product information list
-[**getChannelCatalogs**](BeezUPApi.md#getChannelCatalogs) | **GET** /v2/user/channelCatalogs/ | List all your current channel catalogs
-[**getChannelCategories**](BeezUPApi.md#getChannelCategories) | **GET** /v2/user/channels/{channelId}/categories | Get channel categories
-[**getChannelColumns**](BeezUPApi.md#getChannelColumns) | **POST** /v2/user/channels/{channelId}/columns | Get channel columns
-[**getChannelInfo**](BeezUPApi.md#getChannelInfo) | **GET** /v2/user/channels/{channelId} | Get channel information
-[**getContracts**](BeezUPApi.md#getContracts) | **GET** /v2/user/customer/contracts | Get contract list
-[**getCreditCardInfo**](BeezUPApi.md#getCreditCardInfo) | **GET** /v2/user/customer/account/creditCardInfo | Get credit card information
-[**getFriendInfo**](BeezUPApi.md#getFriendInfo) | **GET** /v2/user/customer/friends/{userId} | Get friend information
-[**getInvoices**](BeezUPApi.md#getInvoices) | **GET** /v2/user/customer/invoices | Get all your invoices
-[**getMarketplaceAccountStores**](BeezUPApi.md#getMarketplaceAccountStores) | **GET** /v2/user/marketplaces/channelcatalogs/ | Get  you marketplace channel catalog list
-[**getMarketplaceAccountsSynchronization**](BeezUPApi.md#getMarketplaceAccountsSynchronization) | **GET** /v2/user/marketplaces/orders/status | Get current synchronization status between your marketplaces and BeezUP accounts
-[**getOffer**](BeezUPApi.md#getOffer) | **POST** /v2/user/customer/offers | Get offer pricing
-[**getOrder**](BeezUPApi.md#getOrder) | **GET** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId} | Get full Order and Order Item(s) properties
-[**getOrderExportations**](BeezUPApi.md#getOrderExportations) | **GET** /v2/user/marketplaces/orders/exportations | Get a paginated list of Order report exportations
-[**getOrderHistory**](BeezUPApi.md#getOrderHistory) | **GET** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/history | Get an Order&#39;s harvest and change history
-[**getOrderListFull**](BeezUPApi.md#getOrderListFull) | **POST** /v2/user/marketplaces/orders/list/full | Get a paginated list of all Orders with all Order and Order Item(s) properties
-[**getOrderListLight**](BeezUPApi.md#getOrderListLight) | **POST** /v2/user/marketplaces/orders/list/light | Get a paginated list of all Orders without details
-[**getProfilePictureInfo**](BeezUPApi.md#getProfilePictureInfo) | **GET** /v2/user/customer/account/profilePictureInfo | Get profile picture information
-[**getPublications**](BeezUPApi.md#getPublications) | **GET** /v2/user/marketplaces/channelcatalogs/publications/{marketplaceTechnicalCode}/{accountId}/history | Fetch the publication history for an account, sorted by descending start date
-[**getReportFilter**](BeezUPApi.md#getReportFilter) | **GET** /v2/user/analytics/{storeId}/reports/filters/{reportFilterId} | Get the report filter description
-[**getReportFilters**](BeezUPApi.md#getReportFilters) | **GET** /v2/user/analytics/{storeId}/reports/filters | Get report filter list for the given store
-[**getRights**](BeezUPApi.md#getRights) | **POST** /v2/user/customer/stores/{storeId}/rights | Get store&#39;s rights
-[**getRule**](BeezUPApi.md#getRule) | **GET** /v2/user/analytics/{storeId}/rules/{ruleId} | Gets the rule
-[**getRules**](BeezUPApi.md#getRules) | **GET** /v2/user/analytics/{storeId}/rules | Gets the list of rules for a given store
-[**getRulesExecutions**](BeezUPApi.md#getRulesExecutions) | **GET** /v2/user/analytics/{storeId}/rules/executions | Get the rules execution history
-[**getShares**](BeezUPApi.md#getShares) | **GET** /v2/user/customer/stores/{storeId}/shares | Get shares related to this store
-[**getStandardOffers**](BeezUPApi.md#getStandardOffers) | **GET** /v2/user/customer/offers | Get all standard offers
-[**getStore**](BeezUPApi.md#getStore) | **GET** /v2/user/customer/stores/{storeId} | Get store&#39;s information
-[**getStoreAlerts**](BeezUPApi.md#getStoreAlerts) | **GET** /v2/user/customer/stores/{storeId}/alerts | Get store&#39;s alerts
-[**getStoreReportByCategory**](BeezUPApi.md#getStoreReportByCategory) | **POST** /v2/user/analytics/{storeId}/reports/bycategory | Get the report by category
-[**getStoreReportByChannel**](BeezUPApi.md#getStoreReportByChannel) | **POST** /v2/user/analytics/{storeId}/reports/bychannel | Get the report by channel
-[**getStoreReportByDay**](BeezUPApi.md#getStoreReportByDay) | **POST** /v2/user/analytics/{storeId}/reports/byday | Get the report by day
-[**getStoreReportByDayExport**](BeezUPApi.md#getStoreReportByDayExport) | **POST** /v2/user/analytics/{storeId}/reports/byday/export | Get the report by day
-[**getStoreReportByProduct**](BeezUPApi.md#getStoreReportByProduct) | **POST** /v2/user/analytics/{storeId}/reports/byproduct | Get the report by product
-[**getStoreTrackedClicks**](BeezUPApi.md#getStoreTrackedClicks) | **GET** /v2/user/analytics/{storeId}/tracking/clicks | Get the latest clicks tracked
-[**getStoreTrackedExternalOrders**](BeezUPApi.md#getStoreTrackedExternalOrders) | **GET** /v2/user/analytics/{storeId}/tracking/externalorders | Get the latest external orders tracked
-[**getStoreTrackedOrders**](BeezUPApi.md#getStoreTrackedOrders) | **GET** /v2/user/analytics/{storeId}/tracking/orders | Get the latest orders tracked
-[**getStoreTrackingStatus**](BeezUPApi.md#getStoreTrackingStatus) | **GET** /v2/user/analytics/{storeId}/tracking/status | Get store tracking synchronization status
-[**getStores**](BeezUPApi.md#getStores) | **GET** /v2/user/customer/stores | Get store list
-[**getTrackingStatus**](BeezUPApi.md#getTrackingStatus) | **GET** /v2/user/analytics/tracking/status | Display the synchronization status of the clicks and orders
-[**getUserAccountInfo**](BeezUPApi.md#getUserAccountInfo) | **GET** /v2/user/customer/account | Get user account information
-[**getUserListGroup**](BeezUPApi.md#getUserListGroup) | **GET** /v2/user/lov/groups/{listGroupName} | Get list of values related to this group name
-[**getUserListGroupNames**](BeezUPApi.md#getUserListGroupNames) | **GET** /v2/user/lov/groups | Get list of group of list name
-[**getUserListNames**](BeezUPApi.md#getUserListNames) | **GET** /v2/user/lov/ | Get all list names
-[**getUserListOfValues**](BeezUPApi.md#getUserListOfValues) | **GET** /v2/user/lov/{listName} | Get the list of values related to this list name
-[**harvestAll**](BeezUPApi.md#harvestAll) | **POST** /v2/user/marketplaces/orders/harvest | Send harvest request to all your marketplaces
-[**harvestOrder**](BeezUPApi.md#harvestOrder) | **POST** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/harvest | Send harvest request for a single Order
-[**importationActivateAutoImport**](BeezUPApi.md#importationActivateAutoImport) | **POST** /v2/user/catalogs/{storeId}/autoImport | Activate the auto importation of the last successful manual catalog importation.
-[**importationCancel**](BeezUPApi.md#importationCancel) | **DELETE** /v2/user/catalogs/{storeId}/importations/{executionId} | Cancel importation
-[**importationCommit**](BeezUPApi.md#importationCommit) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/commit | Commit Importation
-[**importationCommitColumns**](BeezUPApi.md#importationCommitColumns) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/commitColumns | Commit columns
-[**importationConfigureCatalogColumn**](BeezUPApi.md#importationConfigureCatalogColumn) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId} | Configure catalog column
-[**importationConfigureRemainingCatalogColumns**](BeezUPApi.md#importationConfigureRemainingCatalogColumns) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/configureRemainingCatalogColumns | Configure remaining catalog columns
-[**importationDeleteCustomColumn**](BeezUPApi.md#importationDeleteCustomColumn) | **DELETE** /v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId} | Delete Custom Column
-[**importationGetCustomColumnExpression**](BeezUPApi.md#importationGetCustomColumnExpression) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/expression | Get the encrypted custom column expression in this importation
-[**importationGetCustomColumns**](BeezUPApi.md#importationGetCustomColumns) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId}/customColumns | Get custom columns currently place in this importation
-[**importationGetDetectedCatalogColumns**](BeezUPApi.md#importationGetDetectedCatalogColumns) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns | Get detected catalog columns during this importation.
-[**importationGetImportationMonitoring**](BeezUPApi.md#importationGetImportationMonitoring) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId} | Get the importation status
-[**importationGetManualUpdateLastInputConfig**](BeezUPApi.md#importationGetManualUpdateLastInputConfig) | **GET** /v2/user/catalogs/{storeId}/inputConfiguration | Get the last input configuration
-[**importationGetProductSample**](BeezUPApi.md#importationGetProductSample) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex} | Get the product sample related to this importation with all columns (catalog and custom)
-[**importationGetProductSampleCustomColumnValue**](BeezUPApi.md#importationGetProductSampleCustomColumnValue) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex}/customColumns/{columnId} | Get product sample custom column value related to this importation.
-[**importationGetReportings**](BeezUPApi.md#importationGetReportings) | **GET** /v2/user/catalogs/{storeId}/importations | Get the latest catalog importation reporting
-[**importationIgnoreColumn**](BeezUPApi.md#importationIgnoreColumn) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/ignore | Ignore Column
-[**importationMapCatalogColumn**](BeezUPApi.md#importationMapCatalogColumn) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/map | Map catalog column to a BeezUP column
-[**importationMapCustomColumn**](BeezUPApi.md#importationMapCustomColumn) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/map | Map custom column to a BeezUP column
-[**importationReattendColumn**](BeezUPApi.md#importationReattendColumn) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/reattend | Reattend Column
-[**importationSaveCustomColumn**](BeezUPApi.md#importationSaveCustomColumn) | **PUT** /v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId} | Create or replace a custom column
-[**importationStartManualUpdate**](BeezUPApi.md#importationStartManualUpdate) | **POST** /v2/user/catalogs/{storeId}/importations | Start Manual Import
-[**importationTechnicalProgression**](BeezUPApi.md#importationTechnicalProgression) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId}/technicalProgression | Get technical progression
-[**importationUnmapCatalogColumn**](BeezUPApi.md#importationUnmapCatalogColumn) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/unmap | Unmap catalog column
-[**importationUnmapCustomColumn**](BeezUPApi.md#importationUnmapCustomColumn) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/unmap | Unmap custom column
-[**logout**](BeezUPApi.md#logout) | **POST** /v2/user/customer/security/logout | Log out the current user from go2
-[**mapChannelCatalogCategory**](BeezUPApi.md#mapChannelCatalogCategory) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/categoryMappings/map | Map channel catalog category
-[**mapChannelCatalogColumns**](BeezUPApi.md#mapChannelCatalogColumns) | **PUT** /v2/user/channelCatalogs/{channelCatalogId}/columnMappings | Configure channel catalog column mappings
-[**moveDownRule**](BeezUPApi.md#moveDownRule) | **POST** /v2/user/analytics/{storeId}/rules/{ruleId}/movedown | Move the rule down
-[**moveUpRule**](BeezUPApi.md#moveUpRule) | **POST** /v2/user/analytics/{storeId}/rules/{ruleId}/moveup | Move the rule up
-[**optimise**](BeezUPApi.md#optimise) | **POST** /v2/user/analytics/{storeId}/optimisations/{actionName} | Optimise products
-[**optimiseByCategory**](BeezUPApi.md#optimiseByCategory) | **POST** /v2/user/analytics/{storeId}/optimisations/bycategory/{catalogCategoryId}/{actionName} | Optimise products&#39;s category
-[**optimiseByChannel**](BeezUPApi.md#optimiseByChannel) | **POST** /v2/user/analytics/{storeId}/optimisations/bychannel/{channelId}/{actionName} | Optimise products&#39;s category
-[**optimiseByProduct**](BeezUPApi.md#optimiseByProduct) | **POST** /v2/user/analytics/{storeId}/optimisations/byproduct/{productId}/{actionName} | Optimise products
-[**overrideChannelCatalogProductOverrides**](BeezUPApi.md#overrideChannelCatalogProductOverrides) | **PUT** /v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides | Override channel catalog product values
-[**reactivateCurrentContract**](BeezUPApi.md#reactivateCurrentContract) | **POST** /v2/user/customer/contracts/current/reenableAutoRenewal | Reactivate your terminated contract.
-[**reenableChannelCatalogProduct**](BeezUPApi.md#reenableChannelCatalogProduct) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/reenable | Reenable channel catalog product
-[**resendEmailActivation**](BeezUPApi.md#resendEmailActivation) | **POST** /v2/user/customer/account/resendEmailActivation | Resend email activation
-[**runRule**](BeezUPApi.md#runRule) | **POST** /v2/user/analytics/{storeId}/rules/{ruleId}/run | Run rule
-[**runRules**](BeezUPApi.md#runRules) | **POST** /v2/user/analytics/{storeId}/rules/run | Run all rules for this store
-[**saveCompanyInfo**](BeezUPApi.md#saveCompanyInfo) | **PUT** /v2/user/customer/account/companyInfo | Change company information
-[**saveCreditCardInfo**](BeezUPApi.md#saveCreditCardInfo) | **PUT** /v2/user/customer/account/creditCardInfo | Save user credit card info
-[**savePersonalInfo**](BeezUPApi.md#savePersonalInfo) | **PUT** /v2/user/customer/account/personalInfo | Save user personal information
-[**saveProfilePictureInfo**](BeezUPApi.md#saveProfilePictureInfo) | **PUT** /v2/user/customer/account/profilePictureInfo | Change user picture information
-[**saveReportFilter**](BeezUPApi.md#saveReportFilter) | **PUT** /v2/user/analytics/{storeId}/reports/filters/{reportFilterId} | Save the report filter
-[**saveStoreAlert**](BeezUPApi.md#saveStoreAlert) | **PUT** /v2/user/customer/stores/{storeId}/alerts/{alertId} | Save store alert
-[**setChannelCatalogMarketplaceSettings**](BeezUPApi.md#setChannelCatalogMarketplaceSettings) | **POST** /v2/user/marketplaces/channelcatalogs/{channelCatalogId}/settings | Save new marketplace settings for a channel catalog
-[**setMerchantOrderInfo**](BeezUPApi.md#setMerchantOrderInfo) | **POST** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/setMerchantOrderInfo | Set an Order&#39;s merchant information
-[**setMerchantOrderInfoList**](BeezUPApi.md#setMerchantOrderInfoList) | **POST** /v2/user/marketplaces/orders/batches/setMerchantOrderInfos | Send a batch of operations to set an Order&#39;s merchant information
-[**share**](BeezUPApi.md#share) | **POST** /v2/user/customer/stores/{storeId}/shares | Share a store to another user
-[**terminateCurrentContract**](BeezUPApi.md#terminateCurrentContract) | **POST** /v2/user/customer/contracts/current/disableAutoRenewal | Schedule termination of your current contract at the end of the commitment.
-[**unmapChannelCatalogCategory**](BeezUPApi.md#unmapChannelCatalogCategory) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/categoryMappings/unmap | Unmap channel catalog category
-[**updateRule**](BeezUPApi.md#updateRule) | **PATCH** /v2/user/analytics/{storeId}/rules/{ruleId} | Update Rule
-[**updateStore**](BeezUPApi.md#updateStore) | **PATCH** /v2/user/customer/stores/{storeId} | Update some store&#39;s information.
+[**activateUserAccount**](BeezUPApi.md#activateUserAccount) | **POST** /user/customer/account/activate | Activate the user account
+[**autoConfigureAutoImportInterval**](BeezUPApi.md#autoConfigureAutoImportInterval) | **POST** /user/catalogs/{storeId}/autoImport/scheduling/interval | Configure Auto Import Interval
+[**autoDeleteAutoImport**](BeezUPApi.md#autoDeleteAutoImport) | **DELETE** /user/catalogs/{storeId}/autoImport | Delete Auto Import
+[**autoGetAutoImportConfiguration**](BeezUPApi.md#autoGetAutoImportConfiguration) | **GET** /user/catalogs/{storeId}/autoImport | Get the auto import configuration
+[**autoPauseAutoImport**](BeezUPApi.md#autoPauseAutoImport) | **POST** /user/catalogs/{storeId}/autoImport/pause | Pause Auto Import
+[**autoResumeAutoImport**](BeezUPApi.md#autoResumeAutoImport) | **POST** /user/catalogs/{storeId}/autoImport/resume | Resume Auto Import
+[**autoScheduleAutoImport**](BeezUPApi.md#autoScheduleAutoImport) | **POST** /user/catalogs/{storeId}/autoImport/scheduling/schedules | Configure Auto Import Schedules
+[**autoStartAutoImport**](BeezUPApi.md#autoStartAutoImport) | **POST** /user/catalogs/{storeId}/autoImport/start | Start Auto Import Manually
+[**catalogChangeCatalogColumnUserName**](BeezUPApi.md#catalogChangeCatalogColumnUserName) | **POST** /user/catalogs/{storeId}/catalogColumns/{columnId}/rename | Change Catalog Column User Name
+[**catalogChangeCustomColumnExpression**](BeezUPApi.md#catalogChangeCustomColumnExpression) | **PUT** /user/catalogs/{storeId}/customColumns/{columnId}/expression | Change custom column expression
+[**catalogChangeCustomColumnUserName**](BeezUPApi.md#catalogChangeCustomColumnUserName) | **POST** /user/catalogs/{storeId}/customColumns/{columnId}/rename | Change Custom Column User Name
+[**catalogComputeExpression**](BeezUPApi.md#catalogComputeExpression) | **POST** /user/catalogs/{storeId}/customColumns/computeExpression | Compute the expression for this catalog.
+[**catalogDeleteCustomColumn**](BeezUPApi.md#catalogDeleteCustomColumn) | **DELETE** /user/catalogs/{storeId}/customColumns/{columnId} | Delete custom column
+[**catalogGetBeezUPColumns**](BeezUPApi.md#catalogGetBeezUPColumns) | **GET** /user/catalogs/beezupColumns | Get the BeezUP columns
+[**catalogGetCatalogColumns**](BeezUPApi.md#catalogGetCatalogColumns) | **GET** /user/catalogs/{storeId}/catalogColumns | Get catalog column list
+[**catalogGetCategories**](BeezUPApi.md#catalogGetCategories) | **GET** /user/catalogs/{storeId}/categories | Get category list
+[**catalogGetCustomColumnExpression**](BeezUPApi.md#catalogGetCustomColumnExpression) | **GET** /user/catalogs/{storeId}/customColumns/{columnId}/expression | Get the encrypted custom column expression
+[**catalogGetCustomColumns**](BeezUPApi.md#catalogGetCustomColumns) | **GET** /user/catalogs/{storeId}/customColumns | Get custom column list
+[**catalogGetProduct**](BeezUPApi.md#catalogGetProduct) | **GET** /user/catalogs/{storeId}/products/{productId} | Get product
+[**catalogGetProducts**](BeezUPApi.md#catalogGetProducts) | **POST** /user/catalogs/{storeId}/products | Get product list
+[**catalogGetRandomProducts**](BeezUPApi.md#catalogGetRandomProducts) | **GET** /user/catalogs/{storeId}/products/random | Get random product list
+[**catalogSaveCustomColumn**](BeezUPApi.md#catalogSaveCustomColumn) | **PUT** /user/catalogs/{storeId}/customColumns/{columnId} | Create or replace a custom column
+[**changeOrder**](BeezUPApi.md#changeOrder) | **POST** /user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/{changeOrderType} | Change your marketplace Order Information (accept, ship, etc.)
+[**changeOrderList**](BeezUPApi.md#changeOrderList) | **POST** /user/marketplaces/orders/batches/changeOrders/{changeOrderType} | Send a batch of operations to change your marketplace Order information (accept, ship, etc.)
+[**changePassword**](BeezUPApi.md#changePassword) | **POST** /user/customer/account/changePassword | Change user password
+[**clearMerchantOrderInfo**](BeezUPApi.md#clearMerchantOrderInfo) | **POST** /user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/clearMerchantOrderInfo | Clear an Order&#39;s merchant information
+[**clearMerchantOrderInfoList**](BeezUPApi.md#clearMerchantOrderInfoList) | **POST** /user/marketplaces/orders/batches/clearMerchantOrderInfos | Send a batch of operations to clear an Order&#39;s merchant information
+[**configureAutomaticTransitions**](BeezUPApi.md#configureAutomaticTransitions) | **POST** /user/marketplaces/orders/automaticTransitions | Configure new or existing automatic Order status transition
+[**configureChannelCatalogCostSettings**](BeezUPApi.md#configureChannelCatalogCostSettings) | **POST** /user/channelCatalogs/{channelCatalogId}/settings/cost | Disable a channel catalog
+[**configureChannelCatalogExclusionFilters**](BeezUPApi.md#configureChannelCatalogExclusionFilters) | **PUT** /user/channelCatalogs/{channelCatalogId}/exclusionFilters | Configure channel catalog exclusion filters
+[**configureChannelCatalogGeneralSettings**](BeezUPApi.md#configureChannelCatalogGeneralSettings) | **POST** /user/channelCatalogs/{channelCatalogId}/settings/general | Disable a channel catalog
+[**createChannelCatalog**](BeezUPApi.md#createChannelCatalog) | **POST** /user/channelCatalogs/ | Create a new channel catalog
+[**createContract**](BeezUPApi.md#createContract) | **POST** /user/customer/contracts | Create a new contract
+[**createRule**](BeezUPApi.md#createRule) | **POST** /user/analytics/{storeId}/rules | Rule creation
+[**createStore**](BeezUPApi.md#createStore) | **POST** /user/customer/stores | Create a new store
+[**deleteChannelCatalog**](BeezUPApi.md#deleteChannelCatalog) | **DELETE** /user/channelCatalogs/{channelCatalogId} | Delete the channel catalog
+[**deleteChannelCatalogExportationCache**](BeezUPApi.md#deleteChannelCatalogExportationCache) | **DELETE** /user/channelCatalogs/{channelCatalogId}/exportations/cache | Delete the exportation cache
+[**deleteChannelCatalogProductValueOverride**](BeezUPApi.md#deleteChannelCatalogProductValueOverride) | **DELETE** /user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides/{channelColumnId} | Delete a specific channel catalog product value override
+[**deleteNextContract**](BeezUPApi.md#deleteNextContract) | **DELETE** /user/customer/contracts/next | Delete your next contract
+[**deleteReportFilter**](BeezUPApi.md#deleteReportFilter) | **DELETE** /user/analytics/{storeId}/reports/filters/{reportFilterId} | Delete the report filter
+[**deleteRule**](BeezUPApi.md#deleteRule) | **DELETE** /user/analytics/{storeId}/rules/{ruleId} | Delete Rule
+[**deleteShare**](BeezUPApi.md#deleteShare) | **DELETE** /user/customer/stores/{storeId}/shares/{userId} | Delete a share to another user
+[**deleteStore**](BeezUPApi.md#deleteStore) | **DELETE** /user/customer/stores/{storeId} | Delete a store
+[**disableChannelCatalog**](BeezUPApi.md#disableChannelCatalog) | **POST** /user/channelCatalogs/{channelCatalogId}/disable | Disable a channel catalog
+[**disableChannelCatalogProduct**](BeezUPApi.md#disableChannelCatalogProduct) | **POST** /user/channelCatalogs/{channelCatalogId}/products/{productId}/disable | Disable channel catalog product
+[**disableRule**](BeezUPApi.md#disableRule) | **POST** /user/analytics/{storeId}/rules/{ruleId}/disable | Disable rule
+[**enableChannelCatalog**](BeezUPApi.md#enableChannelCatalog) | **POST** /user/channelCatalogs/{channelCatalogId}/enable | Enable a channel catalog
+[**enableRule**](BeezUPApi.md#enableRule) | **POST** /user/analytics/{storeId}/rules/{ruleId}/enable | Enable rule
+[**exportOrders**](BeezUPApi.md#exportOrders) | **POST** /user/marketplaces/orders/exportations | Request a new Order report exportation to be generated
+[**exportStoreReportByCategory**](BeezUPApi.md#exportStoreReportByCategory) | **POST** /user/analytics/{storeId}/reports/bycategory/export | Export the report by category
+[**exportStoreReportByChannel**](BeezUPApi.md#exportStoreReportByChannel) | **POST** /user/analytics/{storeId}/reports/bychannel/export | Export the report by channel
+[**exportStoreReportByProduct**](BeezUPApi.md#exportStoreReportByProduct) | **POST** /user/analytics/{storeId}/reports/byproduct/export | Export the report by product
+[**getAutomaticTransitions**](BeezUPApi.md#getAutomaticTransitions) | **GET** /user/marketplaces/orders/automaticTransitions | Get list of configured automatic Order status transitions
+[**getAvailableChannels**](BeezUPApi.md#getAvailableChannels) | **GET** /user/channels/ | List all available channel for this store
+[**getBillingPeriods**](BeezUPApi.md#getBillingPeriods) | **GET** /user/customer/billingPeriods | Get billing periods conditions
+[**getChannelCatalog**](BeezUPApi.md#getChannelCatalog) | **GET** /user/channelCatalogs/{channelCatalogId} | Get the channel catalog information
+[**getChannelCatalogCategories**](BeezUPApi.md#getChannelCatalogCategories) | **GET** /user/channelCatalogs/{channelCatalogId}/categoryMappings | Get channel catalog categories
+[**getChannelCatalogExclusionFilterOperators**](BeezUPApi.md#getChannelCatalogExclusionFilterOperators) | **GET** /user/channelCatalogs/exclusionFilterOperators | Get channel catalog exclusion filter operators
+[**getChannelCatalogExportationCacheInfo**](BeezUPApi.md#getChannelCatalogExportationCacheInfo) | **GET** /user/channelCatalogs/{channelCatalogId}/exportations/cache | Get the exportation cache information
+[**getChannelCatalogExportationHistory**](BeezUPApi.md#getChannelCatalogExportationHistory) | **GET** /user/channelCatalogs/{channelCatalogId}/exportations/history | Get the exportation history
+[**getChannelCatalogMarketplaceProperties**](BeezUPApi.md#getChannelCatalogMarketplaceProperties) | **GET** /user/marketplaces/channelcatalogs/{channelCatalogId}/properties | Get the marketplace properties for a channel catalog
+[**getChannelCatalogMarketplaceSettings**](BeezUPApi.md#getChannelCatalogMarketplaceSettings) | **GET** /user/marketplaces/channelcatalogs/{channelCatalogId}/settings | Get the marketplace settings for a channel catalog
+[**getChannelCatalogProductByChannelCatalog**](BeezUPApi.md#getChannelCatalogProductByChannelCatalog) | **POST** /user/channelCatalogs/products/{productId} | Get channel catalog products related to these channel catalogs
+[**getChannelCatalogProductInfo**](BeezUPApi.md#getChannelCatalogProductInfo) | **GET** /user/channelCatalogs/{channelCatalogId}/products/{productId} | Get channel catalog product information
+[**getChannelCatalogProductInfoList**](BeezUPApi.md#getChannelCatalogProductInfoList) | **POST** /user/channelCatalogs/{channelCatalogId}/products | Get channel catalog product information list
+[**getChannelCatalogs**](BeezUPApi.md#getChannelCatalogs) | **GET** /user/channelCatalogs/ | List all your current channel catalogs
+[**getChannelCategories**](BeezUPApi.md#getChannelCategories) | **GET** /user/channels/{channelId}/categories | Get channel categories
+[**getChannelColumns**](BeezUPApi.md#getChannelColumns) | **POST** /user/channels/{channelId}/columns | Get channel columns
+[**getChannelInfo**](BeezUPApi.md#getChannelInfo) | **GET** /user/channels/{channelId} | Get channel information
+[**getChannels**](BeezUPApi.md#getChannels) | **GET** /public/channels/{countryIsoCode} | The channel list for one country
+[**getChannelsIndex**](BeezUPApi.md#getChannelsIndex) | **GET** /public/channels/ | Get public channel index
+[**getContracts**](BeezUPApi.md#getContracts) | **GET** /user/customer/contracts | Get contract list
+[**getCreditCardInfo**](BeezUPApi.md#getCreditCardInfo) | **GET** /user/customer/account/creditCardInfo | Get credit card information
+[**getFriendInfo**](BeezUPApi.md#getFriendInfo) | **GET** /user/customer/friends/{userId} | Get friend information
+[**getInvoices**](BeezUPApi.md#getInvoices) | **GET** /user/customer/invoices | Get all your invoices
+[**getMarketplaceAccountStores**](BeezUPApi.md#getMarketplaceAccountStores) | **GET** /user/marketplaces/channelcatalogs/ | Get  you marketplace channel catalog list
+[**getMarketplaceAccountsSynchronization**](BeezUPApi.md#getMarketplaceAccountsSynchronization) | **GET** /user/marketplaces/orders/status | Get current synchronization status between your marketplaces and BeezUP accounts
+[**getOffer**](BeezUPApi.md#getOffer) | **POST** /user/customer/offers | Get offer pricing
+[**getOrder**](BeezUPApi.md#getOrder) | **GET** /user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId} | Get full Order and Order Item(s) properties
+[**getOrderExportations**](BeezUPApi.md#getOrderExportations) | **GET** /user/marketplaces/orders/exportations | Get a paginated list of Order report exportations
+[**getOrderHistory**](BeezUPApi.md#getOrderHistory) | **GET** /user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/history | Get an Order&#39;s harvest and change history
+[**getOrderIndex**](BeezUPApi.md#getOrderIndex) | **GET** /user/marketplaces/orders/ | Get all actions you can do on the order API
+[**getOrderListFull**](BeezUPApi.md#getOrderListFull) | **POST** /user/marketplaces/orders/list/full | Get a paginated list of all Orders with all Order and Order Item(s) properties
+[**getOrderListLight**](BeezUPApi.md#getOrderListLight) | **POST** /user/marketplaces/orders/list/light | Get a paginated list of all Orders without details
+[**getProfilePictureInfo**](BeezUPApi.md#getProfilePictureInfo) | **GET** /user/customer/account/profilePictureInfo | Get profile picture information
+[**getPublicListOfValues**](BeezUPApi.md#getPublicListOfValues) | **GET** /public/lov/{listName} | Get the list of values related to this list name
+[**getPublicLovIndex**](BeezUPApi.md#getPublicLovIndex) | **GET** /public/lov/ | Get all list names
+[**getPublications**](BeezUPApi.md#getPublications) | **GET** /user/marketplaces/channelcatalogs/publications/{marketplaceTechnicalCode}/{accountId}/history | Fetch the publication history for an account, sorted by descending start date
+[**getReportFilter**](BeezUPApi.md#getReportFilter) | **GET** /user/analytics/{storeId}/reports/filters/{reportFilterId} | Get the report filter description
+[**getReportFilters**](BeezUPApi.md#getReportFilters) | **GET** /user/analytics/{storeId}/reports/filters | Get report filter list for the given store
+[**getRights**](BeezUPApi.md#getRights) | **POST** /user/customer/stores/{storeId}/rights | Get store&#39;s rights
+[**getRule**](BeezUPApi.md#getRule) | **GET** /user/analytics/{storeId}/rules/{ruleId} | Gets the rule
+[**getRules**](BeezUPApi.md#getRules) | **GET** /user/analytics/{storeId}/rules | Gets the list of rules for a given store
+[**getRulesExecutions**](BeezUPApi.md#getRulesExecutions) | **GET** /user/analytics/{storeId}/rules/executions | Get the rules execution history
+[**getShares**](BeezUPApi.md#getShares) | **GET** /user/customer/stores/{storeId}/shares | Get shares related to this store
+[**getStandardOffers**](BeezUPApi.md#getStandardOffers) | **GET** /user/customer/offers | Get all standard offers
+[**getStore**](BeezUPApi.md#getStore) | **GET** /user/customer/stores/{storeId} | Get store&#39;s information
+[**getStoreAlerts**](BeezUPApi.md#getStoreAlerts) | **GET** /user/customer/stores/{storeId}/alerts | Get store&#39;s alerts
+[**getStoreReportByCategory**](BeezUPApi.md#getStoreReportByCategory) | **POST** /user/analytics/{storeId}/reports/bycategory | Get the report by category
+[**getStoreReportByChannel**](BeezUPApi.md#getStoreReportByChannel) | **POST** /user/analytics/{storeId}/reports/bychannel | Get the report by channel
+[**getStoreReportByDay**](BeezUPApi.md#getStoreReportByDay) | **POST** /user/analytics/{storeId}/reports/byday | Get the report by day
+[**getStoreReportByDayExport**](BeezUPApi.md#getStoreReportByDayExport) | **POST** /user/analytics/{storeId}/reports/byday/export | Get the report by day
+[**getStoreReportByProduct**](BeezUPApi.md#getStoreReportByProduct) | **POST** /user/analytics/{storeId}/reports/byproduct | Get the report by product
+[**getStoreTrackedClicks**](BeezUPApi.md#getStoreTrackedClicks) | **GET** /user/analytics/{storeId}/tracking/clicks | Get the latest clicks tracked
+[**getStoreTrackedExternalOrders**](BeezUPApi.md#getStoreTrackedExternalOrders) | **GET** /user/analytics/{storeId}/tracking/externalorders | Get the latest external orders tracked
+[**getStoreTrackedOrders**](BeezUPApi.md#getStoreTrackedOrders) | **GET** /user/analytics/{storeId}/tracking/orders | Get the latest orders tracked
+[**getStoreTrackingStatus**](BeezUPApi.md#getStoreTrackingStatus) | **GET** /user/analytics/{storeId}/tracking/status | Get store tracking synchronization status
+[**getStores**](BeezUPApi.md#getStores) | **GET** /user/customer/stores | Get store list
+[**getTrackingStatus**](BeezUPApi.md#getTrackingStatus) | **GET** /user/analytics/tracking/status | Display the synchronization status of the clicks and orders
+[**getUserAccountInfo**](BeezUPApi.md#getUserAccountInfo) | **GET** /user/customer/account | Get user account information
+[**getUserListOfValues**](BeezUPApi.md#getUserListOfValues) | **GET** /user/lov/{listName} | Get the list of values related to this list name
+[**getUserLovIndex**](BeezUPApi.md#getUserLovIndex) | **GET** /user/lov/ | Get all list names
+[**harvestAll**](BeezUPApi.md#harvestAll) | **POST** /user/marketplaces/orders/harvest | Send harvest request to all your marketplaces
+[**harvestOrder**](BeezUPApi.md#harvestOrder) | **POST** /user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/harvest | Send harvest request for a single Order
+[**importationActivateAutoImport**](BeezUPApi.md#importationActivateAutoImport) | **POST** /user/catalogs/{storeId}/autoImport | Activate the auto importation of the last successful manual catalog importation.
+[**importationCancel**](BeezUPApi.md#importationCancel) | **DELETE** /user/catalogs/{storeId}/importations/{executionId} | Cancel importation
+[**importationCommit**](BeezUPApi.md#importationCommit) | **POST** /user/catalogs/{storeId}/importations/{executionId}/commit | Commit Importation
+[**importationCommitColumns**](BeezUPApi.md#importationCommitColumns) | **POST** /user/catalogs/{storeId}/importations/{executionId}/commitColumns | Commit columns
+[**importationConfigureCatalogColumn**](BeezUPApi.md#importationConfigureCatalogColumn) | **POST** /user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId} | Configure catalog column
+[**importationConfigureRemainingCatalogColumns**](BeezUPApi.md#importationConfigureRemainingCatalogColumns) | **POST** /user/catalogs/{storeId}/importations/{executionId}/configureRemainingCatalogColumns | Configure remaining catalog columns
+[**importationDeleteCustomColumn**](BeezUPApi.md#importationDeleteCustomColumn) | **DELETE** /user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId} | Delete Custom Column
+[**importationGetCustomColumnExpression**](BeezUPApi.md#importationGetCustomColumnExpression) | **GET** /user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/expression | Get the encrypted custom column expression in this importation
+[**importationGetCustomColumns**](BeezUPApi.md#importationGetCustomColumns) | **GET** /user/catalogs/{storeId}/importations/{executionId}/customColumns | Get custom columns currently place in this importation
+[**importationGetDetectedCatalogColumns**](BeezUPApi.md#importationGetDetectedCatalogColumns) | **GET** /user/catalogs/{storeId}/importations/{executionId}/catalogColumns | Get detected catalog columns during this importation.
+[**importationGetImportationMonitoring**](BeezUPApi.md#importationGetImportationMonitoring) | **GET** /user/catalogs/{storeId}/importations/{executionId} | Get the importation status
+[**importationGetManualUpdateLastInputConfig**](BeezUPApi.md#importationGetManualUpdateLastInputConfig) | **GET** /user/catalogs/{storeId}/inputConfiguration | Get the last input configuration
+[**importationGetProductSample**](BeezUPApi.md#importationGetProductSample) | **GET** /user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex} | Get the product sample related to this importation with all columns (catalog and custom)
+[**importationGetProductSampleCustomColumnValue**](BeezUPApi.md#importationGetProductSampleCustomColumnValue) | **GET** /user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex}/customColumns/{columnId} | Get product sample custom column value related to this importation.
+[**importationGetReportings**](BeezUPApi.md#importationGetReportings) | **GET** /user/catalogs/{storeId}/importations | Get the latest catalog importation reporting
+[**importationIgnoreColumn**](BeezUPApi.md#importationIgnoreColumn) | **POST** /user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/ignore | Ignore Column
+[**importationMapCatalogColumn**](BeezUPApi.md#importationMapCatalogColumn) | **POST** /user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/map | Map catalog column to a BeezUP column
+[**importationMapCustomColumn**](BeezUPApi.md#importationMapCustomColumn) | **POST** /user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/map | Map custom column to a BeezUP column
+[**importationReattendColumn**](BeezUPApi.md#importationReattendColumn) | **POST** /user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/reattend | Reattend Column
+[**importationSaveCustomColumn**](BeezUPApi.md#importationSaveCustomColumn) | **PUT** /user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId} | Create or replace a custom column
+[**importationStartManualUpdate**](BeezUPApi.md#importationStartManualUpdate) | **POST** /user/catalogs/{storeId}/importations | Start Manual Import
+[**importationTechnicalProgression**](BeezUPApi.md#importationTechnicalProgression) | **GET** /user/catalogs/{storeId}/importations/{executionId}/technicalProgression | Get technical progression
+[**importationUnmapCatalogColumn**](BeezUPApi.md#importationUnmapCatalogColumn) | **POST** /user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/unmap | Unmap catalog column
+[**importationUnmapCustomColumn**](BeezUPApi.md#importationUnmapCustomColumn) | **POST** /user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/unmap | Unmap custom column
+[**login**](BeezUPApi.md#login) | **POST** /public/security/login | Login
+[**logout**](BeezUPApi.md#logout) | **POST** /user/customer/security/logout | Log out the current user from go2
+[**lostPassword**](BeezUPApi.md#lostPassword) | **POST** /public/security/lostpassword | Lost password
+[**mapChannelCatalogCategory**](BeezUPApi.md#mapChannelCatalogCategory) | **POST** /user/channelCatalogs/{channelCatalogId}/categoryMappings/map | Map channel catalog category
+[**mapChannelCatalogColumns**](BeezUPApi.md#mapChannelCatalogColumns) | **PUT** /user/channelCatalogs/{channelCatalogId}/columnMappings | Configure channel catalog column mappings
+[**moveDownRule**](BeezUPApi.md#moveDownRule) | **POST** /user/analytics/{storeId}/rules/{ruleId}/movedown | Move the rule down
+[**moveUpRule**](BeezUPApi.md#moveUpRule) | **POST** /user/analytics/{storeId}/rules/{ruleId}/moveup | Move the rule up
+[**optimise**](BeezUPApi.md#optimise) | **POST** /user/analytics/{storeId}/optimisations/{actionName} | Optimise products
+[**optimiseByCategory**](BeezUPApi.md#optimiseByCategory) | **POST** /user/analytics/{storeId}/optimisations/bycategory/{catalogCategoryId}/{actionName} | Optimise products&#39;s category
+[**optimiseByChannel**](BeezUPApi.md#optimiseByChannel) | **POST** /user/analytics/{storeId}/optimisations/bychannel/{channelId}/{actionName} | Optimise products&#39;s category
+[**optimiseByProduct**](BeezUPApi.md#optimiseByProduct) | **POST** /user/analytics/{storeId}/optimisations/byproduct/{productId}/{actionName} | Optimise products
+[**overrideChannelCatalogProductOverrides**](BeezUPApi.md#overrideChannelCatalogProductOverrides) | **PUT** /user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides | Override channel catalog product values
+[**reactivateCurrentContract**](BeezUPApi.md#reactivateCurrentContract) | **POST** /user/customer/contracts/current/reenableAutoRenewal | Reactivate your terminated contract.
+[**reenableChannelCatalogProduct**](BeezUPApi.md#reenableChannelCatalogProduct) | **POST** /user/channelCatalogs/{channelCatalogId}/products/{productId}/reenable | Reenable channel catalog product
+[**register**](BeezUPApi.md#register) | **POST** /public/security/register | User Registration
+[**resendEmailActivation**](BeezUPApi.md#resendEmailActivation) | **POST** /user/customer/account/resendEmailActivation | Resend email activation
+[**runRule**](BeezUPApi.md#runRule) | **POST** /user/analytics/{storeId}/rules/{ruleId}/run | Run rule
+[**runRules**](BeezUPApi.md#runRules) | **POST** /user/analytics/{storeId}/rules/run | Run all rules for this store
+[**saveCompanyInfo**](BeezUPApi.md#saveCompanyInfo) | **PUT** /user/customer/account/companyInfo | Change company information
+[**saveCreditCardInfo**](BeezUPApi.md#saveCreditCardInfo) | **PUT** /user/customer/account/creditCardInfo | Save user credit card info
+[**savePersonalInfo**](BeezUPApi.md#savePersonalInfo) | **PUT** /user/customer/account/personalInfo | Save user personal information
+[**saveProfilePictureInfo**](BeezUPApi.md#saveProfilePictureInfo) | **PUT** /user/customer/account/profilePictureInfo | Change user picture information
+[**saveReportFilter**](BeezUPApi.md#saveReportFilter) | **PUT** /user/analytics/{storeId}/reports/filters/{reportFilterId} | Save the report filter
+[**saveStoreAlert**](BeezUPApi.md#saveStoreAlert) | **PUT** /user/customer/stores/{storeId}/alerts/{alertId} | Save store alert
+[**setChannelCatalogMarketplaceSettings**](BeezUPApi.md#setChannelCatalogMarketplaceSettings) | **POST** /user/marketplaces/channelcatalogs/{channelCatalogId}/settings | Save new marketplace settings for a channel catalog
+[**setMerchantOrderInfo**](BeezUPApi.md#setMerchantOrderInfo) | **POST** /user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/setMerchantOrderInfo | Set an Order&#39;s merchant information
+[**setMerchantOrderInfoList**](BeezUPApi.md#setMerchantOrderInfoList) | **POST** /user/marketplaces/orders/batches/setMerchantOrderInfos | Send a batch of operations to set an Order&#39;s merchant information
+[**share**](BeezUPApi.md#share) | **POST** /user/customer/stores/{storeId}/shares | Share a store to another user
+[**terminateCurrentContract**](BeezUPApi.md#terminateCurrentContract) | **POST** /user/customer/contracts/current/disableAutoRenewal | Schedule termination of your current contract at the end of the commitment.
+[**unmapChannelCatalogCategory**](BeezUPApi.md#unmapChannelCatalogCategory) | **POST** /user/channelCatalogs/{channelCatalogId}/categoryMappings/unmap | Unmap channel catalog category
+[**updateRule**](BeezUPApi.md#updateRule) | **PATCH** /user/analytics/{storeId}/rules/{ruleId} | Update Rule
+[**updateStore**](BeezUPApi.md#updateStore) | **PATCH** /user/customer/stores/{storeId} | Update some store&#39;s information.
 
 
 <a name="activateUserAccount"></a>
@@ -537,7 +547,7 @@ null (empty response body)
 
 <a name="autoStartAutoImport"></a>
 # **autoStartAutoImport**
-> List&lt;BeezUPCommonLink2&gt; autoStartAutoImport(storeId)
+> LinksImportationGetImportationMonitoringLink autoStartAutoImport(storeId)
 
 Start Auto Import Manually
 
@@ -561,7 +571,7 @@ api_key.setApiKey("YOUR API KEY");
 BeezUPApi apiInstance = new BeezUPApi();
 String storeId = "storeId_example"; // String | Your store identifier
 try {
-    List<BeezUPCommonLink2> result = apiInstance.autoStartAutoImport(storeId);
+    LinksImportationGetImportationMonitoringLink result = apiInstance.autoStartAutoImport(storeId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BeezUPApi#autoStartAutoImport");
@@ -577,7 +587,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;BeezUPCommonLink2&gt;**](BeezUPCommonLink2.md)
+[**LinksImportationGetImportationMonitoringLink**](LinksImportationGetImportationMonitoringLink.md)
 
 ### Authorization
 
@@ -1383,7 +1393,7 @@ UUID beezUPOrderId = new UUID(); // UUID | The BeezUP Order identifier
 String changeOrderType = "changeOrderType_example"; // String | The Order change type
 String userName = "userName_example"; // String | Sometimes the user in the e-commerce application is not the same as user associated with the current subscription key. We recommend providing your application's user login.
 ChangeOrderRequest request = new ChangeOrderRequest(); // ChangeOrderRequest | 
-String ifMatch = "ifMatch_example"; // String | ETag value to identify the last known version of requested Order, to ensure that you are making a change on the lastest version of the order.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+String ifMatch = "ifMatch_example"; // String | ETag value to identify the last known version of requested resource.\\ To ensure that you are making a change on the lastest version of the resource.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
 Boolean testMode = false; // Boolean | If true, the operation will be not be sent to marketplace. But the validation will be taken in account.
 try {
     apiInstance.changeOrder(marketplaceTechnicalCode, accountId, beezUPOrderId, changeOrderType, userName, request, ifMatch, testMode);
@@ -1403,7 +1413,7 @@ Name | Type | Description  | Notes
  **changeOrderType** | **String**| The Order change type |
  **userName** | **String**| Sometimes the user in the e-commerce application is not the same as user associated with the current subscription key. We recommend providing your application&#39;s user login. |
  **request** | [**ChangeOrderRequest**](ChangeOrderRequest.md)|  |
- **ifMatch** | **String**| ETag value to identify the last known version of requested Order, to ensure that you are making a change on the lastest version of the order.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  |
+ **ifMatch** | **String**| ETag value to identify the last known version of requested resource.\\ To ensure that you are making a change on the lastest version of the resource.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  |
  **testMode** | **Boolean**| If true, the operation will be not be sent to marketplace. But the validation will be taken in account. | [optional] [default to false]
 
 ### Return type
@@ -1667,7 +1677,7 @@ api_key.setApiKey("YOUR API KEY");
 //api_key.setApiKeyPrefix("Token");
 
 BeezUPApi apiInstance = new BeezUPApi();
-SaveAutomaticTransitionRequest request = new SaveAutomaticTransitionRequest(); // SaveAutomaticTransitionRequest | 
+ConfigureAutomaticTransitionRequest request = new ConfigureAutomaticTransitionRequest(); // ConfigureAutomaticTransitionRequest | 
 try {
     apiInstance.configureAutomaticTransitions(request);
 } catch (ApiException e) {
@@ -1680,7 +1690,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**SaveAutomaticTransitionRequest**](SaveAutomaticTransitionRequest.md)|  |
+ **request** | [**ConfigureAutomaticTransitionRequest**](ConfigureAutomaticTransitionRequest.md)|  |
 
 ### Return type
 
@@ -2074,7 +2084,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteChannelCatalog"></a>
 # **deleteChannelCatalog**
-> deleteChannelCatalog()
+> deleteChannelCatalog(channelCatalogId)
 
 Delete the channel catalog
 
@@ -2096,8 +2106,9 @@ api_key.setApiKey("YOUR API KEY");
 //api_key.setApiKeyPrefix("Token");
 
 BeezUPApi apiInstance = new BeezUPApi();
+String channelCatalogId = "6d6b04de-406b-4539-8e7e-bf3e8da5dfb0"; // String | The channel catalog identifier
 try {
-    apiInstance.deleteChannelCatalog();
+    apiInstance.deleteChannelCatalog(channelCatalogId);
 } catch (ApiException e) {
     System.err.println("Exception when calling BeezUPApi#deleteChannelCatalog");
     e.printStackTrace();
@@ -2105,7 +2116,62 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **channelCatalogId** | **String**| The channel catalog identifier |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="deleteChannelCatalogExportationCache"></a>
+# **deleteChannelCatalogExportationCache**
+> deleteChannelCatalogExportationCache(channelCatalogId)
+
+Delete the exportation cache
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.ApiClient;
+//import io.swagger.client.ApiException;
+//import io.swagger.client.Configuration;
+//import io.swagger.client.auth.*;
+//import io.swagger.client.api.BeezUPApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+BeezUPApi apiInstance = new BeezUPApi();
+String channelCatalogId = "6d6b04de-406b-4539-8e7e-bf3e8da5dfb0"; // String | The channel catalog identifier
+try {
+    apiInstance.deleteChannelCatalogExportationCache(channelCatalogId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BeezUPApi#deleteChannelCatalogExportationCache");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **channelCatalogId** | **String**| The channel catalog identifier |
 
 ### Return type
 
@@ -2708,7 +2774,7 @@ null (empty response body)
 
 <a name="exportOrders"></a>
 # **exportOrders**
-> exportOrders(format, request)
+> exportOrders(request)
 
 Request a new Order report exportation to be generated
 
@@ -2732,10 +2798,9 @@ api_key.setApiKey("YOUR API KEY");
 //api_key.setApiKeyPrefix("Token");
 
 BeezUPApi apiInstance = new BeezUPApi();
-String format = "csv"; // String | The type of the file to export
 ExportOrderListRequest request = new ExportOrderListRequest(); // ExportOrderListRequest | 
 try {
-    apiInstance.exportOrders(format, request);
+    apiInstance.exportOrders(request);
 } catch (ApiException e) {
     System.err.println("Exception when calling BeezUPApi#exportOrders");
     e.printStackTrace();
@@ -2746,7 +2811,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **String**| The type of the file to export | [default to csv] [enum: csv]
  **request** | [**ExportOrderListRequest**](ExportOrderListRequest.md)|  |
 
 ### Return type
@@ -3245,6 +3309,116 @@ This endpoint does not need any parameter.
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="getChannelCatalogExportationCacheInfo"></a>
+# **getChannelCatalogExportationCacheInfo**
+> ChannelCatalogExportCacheInfoResponse getChannelCatalogExportationCacheInfo(channelCatalogId)
+
+Get the exportation cache information
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.ApiClient;
+//import io.swagger.client.ApiException;
+//import io.swagger.client.Configuration;
+//import io.swagger.client.auth.*;
+//import io.swagger.client.api.BeezUPApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+BeezUPApi apiInstance = new BeezUPApi();
+String channelCatalogId = "6d6b04de-406b-4539-8e7e-bf3e8da5dfb0"; // String | The channel catalog identifier
+try {
+    ChannelCatalogExportCacheInfoResponse result = apiInstance.getChannelCatalogExportationCacheInfo(channelCatalogId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BeezUPApi#getChannelCatalogExportationCacheInfo");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **channelCatalogId** | **String**| The channel catalog identifier |
+
+### Return type
+
+[**ChannelCatalogExportCacheInfoResponse**](ChannelCatalogExportCacheInfoResponse.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getChannelCatalogExportationHistory"></a>
+# **getChannelCatalogExportationHistory**
+> ChannelCatalogExportationHistory getChannelCatalogExportationHistory(channelCatalogId, pageNumber, pageSize)
+
+Get the exportation history
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.ApiClient;
+//import io.swagger.client.ApiException;
+//import io.swagger.client.Configuration;
+//import io.swagger.client.auth.*;
+//import io.swagger.client.api.BeezUPApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+BeezUPApi apiInstance = new BeezUPApi();
+String channelCatalogId = "6d6b04de-406b-4539-8e7e-bf3e8da5dfb0"; // String | The channel catalog identifier
+Integer pageNumber = 1; // Integer | The page number you want to get
+Integer pageSize = 25; // Integer | The entry count you want to get
+try {
+    ChannelCatalogExportationHistory result = apiInstance.getChannelCatalogExportationHistory(channelCatalogId, pageNumber, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BeezUPApi#getChannelCatalogExportationHistory");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **channelCatalogId** | **String**| The channel catalog identifier |
+ **pageNumber** | **Integer**| The page number you want to get |
+ **pageSize** | **Integer**| The entry count you want to get |
+
+### Return type
+
+[**ChannelCatalogExportationHistory**](ChannelCatalogExportationHistory.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="getChannelCatalogMarketplaceProperties"></a>
 # **getChannelCatalogMarketplaceProperties**
 > ChannelCatalogMarketplaceProperties getChannelCatalogMarketplaceProperties(channelCatalogId)
@@ -3341,6 +3515,61 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ChannelCatalogMarketplaceSettings**](ChannelCatalogMarketplaceSettings.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getChannelCatalogProductByChannelCatalog"></a>
+# **getChannelCatalogProductByChannelCatalog**
+> ChannelCatalogProductByChannelCatalogResponse getChannelCatalogProductByChannelCatalog(productId, request)
+
+Get channel catalog products related to these channel catalogs
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.ApiClient;
+//import io.swagger.client.ApiException;
+//import io.swagger.client.Configuration;
+//import io.swagger.client.auth.*;
+//import io.swagger.client.api.BeezUPApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+BeezUPApi apiInstance = new BeezUPApi();
+String productId = "578419df-1bbf-41a6-96fa-862e42182b67"; // String | The product identifier
+ChannelCatalogProductByChannelCatalogRequest request = new ChannelCatalogProductByChannelCatalogRequest(); // ChannelCatalogProductByChannelCatalogRequest | 
+try {
+    ChannelCatalogProductByChannelCatalogResponse result = apiInstance.getChannelCatalogProductByChannelCatalog(productId, request);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BeezUPApi#getChannelCatalogProductByChannelCatalog");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **String**| The product identifier |
+ **request** | [**ChannelCatalogProductByChannelCatalogRequest**](ChannelCatalogProductByChannelCatalogRequest.md)|  | [optional]
+
+### Return type
+
+[**ChannelCatalogProductByChannelCatalogResponse**](ChannelCatalogProductByChannelCatalogResponse.md)
 
 ### Authorization
 
@@ -3673,6 +3902,92 @@ Name | Type | Description  | Notes
 ### Authorization
 
 [api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getChannels"></a>
+# **getChannels**
+> ChannelInfoList getChannels(countryIsoCode, acceptEncoding)
+
+The channel list for one country
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.ApiException;
+//import io.swagger.client.api.BeezUPApi;
+
+
+BeezUPApi apiInstance = new BeezUPApi();
+String countryIsoCode = "countryIsoCode_example"; // String | The country iso code alpha 3 based on this: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3#Decoding_table \\ To know which country are available you have to use the operation: GetChannelsByCountry 
+List<String> acceptEncoding = Arrays.asList("acceptEncoding_example"); // List<String> | Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size.
+try {
+    ChannelInfoList result = apiInstance.getChannels(countryIsoCode, acceptEncoding);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BeezUPApi#getChannels");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **countryIsoCode** | **String**| The country iso code alpha 3 based on this: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3#Decoding_table \\ To know which country are available you have to use the operation: GetChannelsByCountry  |
+ **acceptEncoding** | [**List&lt;String&gt;**](String.md)| Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size. |
+
+### Return type
+
+[**ChannelInfoList**](ChannelInfoList.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getChannelsIndex"></a>
+# **getChannelsIndex**
+> PublicChannelIndex getChannelsIndex()
+
+Get public channel index
+
+Use this operation to get the correct link to the channels and to the list of values
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.ApiException;
+//import io.swagger.client.api.BeezUPApi;
+
+
+BeezUPApi apiInstance = new BeezUPApi();
+try {
+    PublicChannelIndex result = apiInstance.getChannelsIndex();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BeezUPApi#getChannelsIndex");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**PublicChannelIndex**](PublicChannelIndex.md)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 
@@ -4059,7 +4374,7 @@ BeezUPApi apiInstance = new BeezUPApi();
 String marketplaceTechnicalCode = "Amazon"; // String | The marketplace technical code
 Integer accountId = 1001; // Integer | The account identifier
 UUID beezUPOrderId = new UUID(); // UUID | The BeezUP Order identifier
-String ifNoneMatch = "ifNoneMatch_example"; // String | ETag value to identify the last known version of requested Order\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+String ifNoneMatch = "ifNoneMatch_example"; // String | ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
 try {
     Order result = apiInstance.getOrder(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch);
     System.out.println(result);
@@ -4076,7 +4391,7 @@ Name | Type | Description  | Notes
  **marketplaceTechnicalCode** | **String**| The marketplace technical code |
  **accountId** | **Integer**| The account identifier |
  **beezUPOrderId** | **UUID**| The BeezUP Order identifier |
- **ifNoneMatch** | **String**| ETag value to identify the last known version of requested Order\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | [optional]
+ **ifNoneMatch** | **String**| ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | [optional]
 
 ### Return type
 
@@ -4116,7 +4431,7 @@ api_key.setApiKey("YOUR API KEY");
 
 BeezUPApi apiInstance = new BeezUPApi();
 Integer pageNumber = 1; // Integer | The page number you want to get
-Integer pageSize = 25; // Integer | The count of Order report exportations you want to get
+Integer pageSize = 25; // Integer | The entry count you want to get
 String storeId = "storeId_example"; // String | The store identifier to regroup the order exportations
 try {
     OrderExportations result = apiInstance.getOrderExportations(pageNumber, pageSize, storeId);
@@ -4132,7 +4447,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pageNumber** | **Integer**| The page number you want to get |
- **pageSize** | **Integer**| The count of Order report exportations you want to get |
+ **pageSize** | **Integer**| The entry count you want to get |
  **storeId** | **String**| The store identifier to regroup the order exportations |
 
 ### Return type
@@ -4205,6 +4520,55 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="getOrderIndex"></a>
+# **getOrderIndex**
+> OrderIndex getOrderIndex()
+
+Get all actions you can do on the order API
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.ApiClient;
+//import io.swagger.client.ApiException;
+//import io.swagger.client.Configuration;
+//import io.swagger.client.auth.*;
+//import io.swagger.client.api.BeezUPApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+BeezUPApi apiInstance = new BeezUPApi();
+try {
+    OrderIndex result = apiInstance.getOrderIndex();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BeezUPApi#getOrderIndex");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**OrderIndex**](OrderIndex.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="getOrderListFull"></a>
 # **getOrderListFull**
 > OrderListFull getOrderListFull(acceptEncoding, request)
@@ -4247,7 +4611,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **acceptEncoding** | [**List&lt;String&gt;**](String.md)| Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size |
- **request** | [**OrderListRequest**](OrderListRequest.md)|  | [optional]
+ **request** | [**OrderListRequest**](OrderListRequest.md)|  |
 
 ### Return type
 
@@ -4300,7 +4664,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**OrderListRequest**](OrderListRequest.md)|  | [optional]
+ **request** | [**OrderListRequest**](OrderListRequest.md)|  |
 
 ### Return type
 
@@ -4358,6 +4722,96 @@ This endpoint does not need any parameter.
 ### Authorization
 
 [api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getPublicListOfValues"></a>
+# **getPublicListOfValues**
+> PublicListOfValuesResponse getPublicListOfValues(listName, acceptLanguage, ifNoneMatch)
+
+Get the list of values related to this list name
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.ApiException;
+//import io.swagger.client.api.BeezUPApi;
+
+
+BeezUPApi apiInstance = new BeezUPApi();
+String listName = "listName_example"; // String | The list of value name your want to get
+List<String> acceptLanguage = Arrays.asList("acceptLanguage_example"); // List<String> | Indicates that the client accepts the following languages.
+String ifNoneMatch = "ifNoneMatch_example"; // String | ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+try {
+    PublicListOfValuesResponse result = apiInstance.getPublicListOfValues(listName, acceptLanguage, ifNoneMatch);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BeezUPApi#getPublicListOfValues");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **listName** | **String**| The list of value name your want to get |
+ **acceptLanguage** | [**List&lt;String&gt;**](String.md)| Indicates that the client accepts the following languages. | [optional]
+ **ifNoneMatch** | **String**| ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | [optional]
+
+### Return type
+
+[**PublicListOfValuesResponse**](PublicListOfValuesResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getPublicLovIndex"></a>
+# **getPublicLovIndex**
+> PublicLovIndex getPublicLovIndex(ifNoneMatch)
+
+Get all list names
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.ApiException;
+//import io.swagger.client.api.BeezUPApi;
+
+
+BeezUPApi apiInstance = new BeezUPApi();
+String ifNoneMatch = "ifNoneMatch_example"; // String | ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+try {
+    PublicLovIndex result = apiInstance.getPublicLovIndex(ifNoneMatch);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BeezUPApi#getPublicLovIndex");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ifNoneMatch** | **String**| ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | [optional]
+
+### Return type
+
+[**PublicLovIndex**](PublicLovIndex.md)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 
@@ -5617,160 +6071,9 @@ This endpoint does not need any parameter.
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="getUserListGroup"></a>
-# **getUserListGroup**
-> List&lt;BeezUPCommonLOVLink2&gt; getUserListGroup(listGroupName)
-
-Get list of values related to this group name
-
-### Example
-```java
-// Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.BeezUPApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure API key authorization: api_key
-ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-api_key.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.setApiKeyPrefix("Token");
-
-BeezUPApi apiInstance = new BeezUPApi();
-String listGroupName = "listGroupName_example"; // String | The list group name your want to get
-try {
-    List<BeezUPCommonLOVLink2> result = apiInstance.getUserListGroup(listGroupName);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling BeezUPApi#getUserListGroup");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **listGroupName** | **String**| The list group name your want to get |
-
-### Return type
-
-[**List&lt;BeezUPCommonLOVLink2&gt;**](BeezUPCommonLOVLink2.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="getUserListGroupNames"></a>
-# **getUserListGroupNames**
-> List&lt;BeezUPCommonLOVLink2&gt; getUserListGroupNames()
-
-Get list of group of list name
-
-### Example
-```java
-// Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.BeezUPApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure API key authorization: api_key
-ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-api_key.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.setApiKeyPrefix("Token");
-
-BeezUPApi apiInstance = new BeezUPApi();
-try {
-    List<BeezUPCommonLOVLink2> result = apiInstance.getUserListGroupNames();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling BeezUPApi#getUserListGroupNames");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**List&lt;BeezUPCommonLOVLink2&gt;**](BeezUPCommonLOVLink2.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="getUserListNames"></a>
-# **getUserListNames**
-> List&lt;BeezUPCommonLOVLink2&gt; getUserListNames()
-
-Get all list names
-
-### Example
-```java
-// Import classes:
-//import io.swagger.client.ApiClient;
-//import io.swagger.client.ApiException;
-//import io.swagger.client.Configuration;
-//import io.swagger.client.auth.*;
-//import io.swagger.client.api.BeezUPApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure API key authorization: api_key
-ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-api_key.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.setApiKeyPrefix("Token");
-
-BeezUPApi apiInstance = new BeezUPApi();
-try {
-    List<BeezUPCommonLOVLink2> result = apiInstance.getUserListNames();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling BeezUPApi#getUserListNames");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**List&lt;BeezUPCommonLOVLink2&gt;**](BeezUPCommonLOVLink2.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
 <a name="getUserListOfValues"></a>
 # **getUserListOfValues**
-> List&lt;BeezUPCommonListOfValueItem&gt; getUserListOfValues(listName, acceptLanguage)
+> UserListOfValuesResponse getUserListOfValues(listName, acceptLanguage, ifNoneMatch)
 
 Get the list of values related to this list name
 
@@ -5794,8 +6097,9 @@ api_key.setApiKey("YOUR API KEY");
 BeezUPApi apiInstance = new BeezUPApi();
 String listName = "listName_example"; // String | The list of value name your want to get
 List<String> acceptLanguage = Arrays.asList("acceptLanguage_example"); // List<String> | Indicates that the client accepts the following languages.
+String ifNoneMatch = "ifNoneMatch_example"; // String | ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
 try {
-    List<BeezUPCommonListOfValueItem> result = apiInstance.getUserListOfValues(listName, acceptLanguage);
+    UserListOfValuesResponse result = apiInstance.getUserListOfValues(listName, acceptLanguage, ifNoneMatch);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BeezUPApi#getUserListOfValues");
@@ -5809,10 +6113,60 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **listName** | **String**| The list of value name your want to get |
  **acceptLanguage** | [**List&lt;String&gt;**](String.md)| Indicates that the client accepts the following languages. | [optional]
+ **ifNoneMatch** | **String**| ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | [optional]
 
 ### Return type
 
-[**List&lt;BeezUPCommonListOfValueItem&gt;**](BeezUPCommonListOfValueItem.md)
+[**UserListOfValuesResponse**](UserListOfValuesResponse.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getUserLovIndex"></a>
+# **getUserLovIndex**
+> UserLovIndex getUserLovIndex()
+
+Get all list names
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.ApiClient;
+//import io.swagger.client.ApiException;
+//import io.swagger.client.Configuration;
+//import io.swagger.client.auth.*;
+//import io.swagger.client.api.BeezUPApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+BeezUPApi apiInstance = new BeezUPApi();
+try {
+    UserLovIndex result = apiInstance.getUserLovIndex();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BeezUPApi#getUserLovIndex");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**UserLovIndex**](UserLovIndex.md)
 
 ### Authorization
 
@@ -7047,7 +7401,7 @@ null (empty response body)
 
 <a name="importationStartManualUpdate"></a>
 # **importationStartManualUpdate**
-> List&lt;BeezUPCommonLink2&gt; importationStartManualUpdate(storeId, request)
+> LinksImportationGetImportationMonitoringLink importationStartManualUpdate(storeId, request)
 
 Start Manual Import
 
@@ -7072,7 +7426,7 @@ BeezUPApi apiInstance = new BeezUPApi();
 String storeId = "storeId_example"; // String | Your store identifier
 StartManualImportRequest request = new StartManualImportRequest(); // StartManualImportRequest | 
 try {
-    List<BeezUPCommonLink2> result = apiInstance.importationStartManualUpdate(storeId, request);
+    LinksImportationGetImportationMonitoringLink result = apiInstance.importationStartManualUpdate(storeId, request);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BeezUPApi#importationStartManualUpdate");
@@ -7089,7 +7443,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;BeezUPCommonLink2&gt;**](BeezUPCommonLink2.md)
+[**LinksImportationGetImportationMonitoringLink**](LinksImportationGetImportationMonitoringLink.md)
 
 ### Authorization
 
@@ -7267,6 +7621,51 @@ null (empty response body)
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="login"></a>
+# **login**
+> ApiCredentials login(request)
+
+Login
+
+User Login - The login will give your tokens
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.ApiException;
+//import io.swagger.client.api.BeezUPApi;
+
+
+BeezUPApi apiInstance = new BeezUPApi();
+LoginRequest request = new LoginRequest(); // LoginRequest | 
+try {
+    ApiCredentials result = apiInstance.login(request);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BeezUPApi#login");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**LoginRequest**](LoginRequest.md)|  |
+
+### Return type
+
+[**ApiCredentials**](ApiCredentials.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="logout"></a>
 # **logout**
 > logout()
@@ -7311,6 +7710,50 @@ null (empty response body)
 ### Authorization
 
 [api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="lostPassword"></a>
+# **lostPassword**
+> lostPassword(email)
+
+Lost password
+
+Lost password - Your password will be regenerated and sent to your email
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.ApiException;
+//import io.swagger.client.api.BeezUPApi;
+
+
+BeezUPApi apiInstance = new BeezUPApi();
+BeezUPCommonEmail email = new BeezUPCommonEmail(); // BeezUPCommonEmail | Your email
+try {
+    apiInstance.lostPassword(email);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BeezUPApi#lostPassword");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **email** | [**BeezUPCommonEmail**](BeezUPCommonEmail.md)| Your email |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 
@@ -7925,6 +8368,50 @@ null (empty response body)
 ### Authorization
 
 [api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="register"></a>
+# **register**
+> register(request)
+
+User Registration
+
+User Registration - Create a new user on BeezUP
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.ApiException;
+//import io.swagger.client.api.BeezUPApi;
+
+
+BeezUPApi apiInstance = new BeezUPApi();
+RegisterRequest request = new RegisterRequest(); // RegisterRequest | 
+try {
+    apiInstance.register(request);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BeezUPApi#register");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**RegisterRequest**](RegisterRequest.md)|  |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 

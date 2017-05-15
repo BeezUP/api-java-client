@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiModelProperty;
  * The message contains the offer identifier required to execute this operation
  */
 @ApiModel(description = "The message contains the offer identifier required to execute this operation")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:48:39.678Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:58:06.674Z")
 public class UpgradeOfferRequired {
   @SerializedName("offerId")
   private Integer offerId = null;

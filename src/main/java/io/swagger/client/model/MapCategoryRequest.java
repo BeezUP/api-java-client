@@ -23,7 +23,7 @@ import io.swagger.client.model.ChannelCatalogCategoryMapping;
  * The request message to make a mapping between catalog category path and a channel category path
  */
 @ApiModel(description = "The request message to make a mapping between catalog category path and a channel category path")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:48:39.678Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:58:06.674Z")
 public class MapCategoryRequest {
   @SerializedName("overrideSubCategoryMappings")
   private Boolean overrideSubCategoryMappings = null;

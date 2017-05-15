@@ -25,7 +25,7 @@ import io.swagger.client.model.InputFileReadXmlConfiguration;
  * Describe how to read the file. If FileFormatStrategy is CSV, csvFileReadProperties is required. Otherwise the xmlFileReadProperties is required. 
  */
 @ApiModel(description = "Describe how to read the file. If FileFormatStrategy is CSV, csvFileReadProperties is required. Otherwise the xmlFileReadProperties is required. ")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:48:39.678Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:58:06.674Z")
 public class InputFileReadConfiguration {
   @SerializedName("format")
   private FileFormatStrategy format = null;

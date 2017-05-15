@@ -1,6 +1,6 @@
 /*
  * BeezUP API
- * This is the RESTful API of BeezUP which allows you to manage everything related to BeezUP
+ * This API will allow you to create your account and to get your tokens. \\ If you lost your password, you have an operation to get it back. 
  *
  * OpenAPI spec version: 2.0
  * Contact: support@beezup.com
@@ -30,17 +30,17 @@ import java.io.IOException;
 import io.swagger.client.model.AccountInfo;
 import io.swagger.client.model.AccountPublications;
 import io.swagger.client.model.AccountSynchronizations;
+import io.swagger.client.model.ApiCredentials;
 import io.swagger.client.model.AutoImportConfiguration;
 import io.swagger.client.model.AutomaticTransitionInfos;
 import io.swagger.client.model.BatchOrderOperationResponse;
 import io.swagger.client.model.BeezUPColumnConfiguration;
 import io.swagger.client.model.BeezUPCommonChannelColumnId;
+import io.swagger.client.model.BeezUPCommonEmail;
 import io.swagger.client.model.BeezUPCommonErrorResponseMessage;
 import io.swagger.client.model.BeezUPCommonInfoSummaries;
-import io.swagger.client.model.BeezUPCommonLOVLink2;
 import io.swagger.client.model.BeezUPCommonLink2;
 import io.swagger.client.model.BeezUPCommonLink3;
-import io.swagger.client.model.BeezUPCommonListOfValueItem;
 import io.swagger.client.model.BillingPeriods;
 import io.swagger.client.model.CatalogColumns;
 import io.swagger.client.model.Categories;
@@ -52,20 +52,26 @@ import io.swagger.client.model.ChangePasswordRequest;
 import io.swagger.client.model.ChangeUserColumnNameRequest;
 import io.swagger.client.model.ChannelCatalog;
 import io.swagger.client.model.ChannelCatalogCategoryMappings;
+import io.swagger.client.model.ChannelCatalogExportCacheInfoResponse;
+import io.swagger.client.model.ChannelCatalogExportationHistory;
 import io.swagger.client.model.ChannelCatalogList;
 import io.swagger.client.model.ChannelCatalogMarketplaceProperties;
 import io.swagger.client.model.ChannelCatalogMarketplaceSettings;
+import io.swagger.client.model.ChannelCatalogProductByChannelCatalogRequest;
+import io.swagger.client.model.ChannelCatalogProductByChannelCatalogResponse;
 import io.swagger.client.model.ChannelCatalogProductInfo;
 import io.swagger.client.model.ChannelCatalogProductInfoList;
 import io.swagger.client.model.ChannelColumn;
 import io.swagger.client.model.ChannelHeader;
 import io.swagger.client.model.ChannelInfo;
+import io.swagger.client.model.ChannelInfoList;
 import io.swagger.client.model.ChannelRootCategory;
 import io.swagger.client.model.ClearMerchantOrderInfoListRequest;
 import io.swagger.client.model.ColumnMappingList;
 import io.swagger.client.model.CompanyInfo;
 import io.swagger.client.model.ComputeExpressionRequest;
 import io.swagger.client.model.ConfigureAutoImportIntervalRequest;
+import io.swagger.client.model.ConfigureAutomaticTransitionRequest;
 import io.swagger.client.model.ConfigureCatalogColumnCatalogRequest;
 import io.swagger.client.model.Contracts;
 import io.swagger.client.model.CostSettings;
@@ -93,6 +99,8 @@ import io.swagger.client.model.InlineResponse409;
 import io.swagger.client.model.Invoices;
 import io.swagger.client.model.LastManualImportInputConfiguration;
 import io.swagger.client.model.LinksGetStoresLink;
+import io.swagger.client.model.LinksImportationGetImportationMonitoringLink;
+import io.swagger.client.model.LoginRequest;
 import io.swagger.client.model.MapBeezUPColumnRequest;
 import io.swagger.client.model.MapCategoryRequest;
 import io.swagger.client.model.MarketplaceChannelCatalogList;
@@ -102,6 +110,7 @@ import io.swagger.client.model.OptimiseRequest;
 import io.swagger.client.model.Order;
 import io.swagger.client.model.OrderExportations;
 import io.swagger.client.model.OrderHistory;
+import io.swagger.client.model.OrderIndex;
 import io.swagger.client.model.OrderListFull;
 import io.swagger.client.model.OrderListLight;
 import io.swagger.client.model.OrderListRequest;
@@ -112,6 +121,10 @@ import io.swagger.client.model.ProductSample;
 import io.swagger.client.model.Products;
 import io.swagger.client.model.ProfilePictureInfo;
 import io.swagger.client.model.ProfilePictureInfoResponse;
+import io.swagger.client.model.PublicChannelIndex;
+import io.swagger.client.model.PublicListOfValuesResponse;
+import io.swagger.client.model.PublicLovIndex;
+import io.swagger.client.model.RegisterRequest;
 import io.swagger.client.model.ReportByCategoryRequest;
 import io.swagger.client.model.ReportByCategoryResponse;
 import io.swagger.client.model.ReportByChannelRequest;
@@ -125,7 +138,6 @@ import io.swagger.client.model.ReportFilters;
 import io.swagger.client.model.Rule;
 import io.swagger.client.model.RuleExecutionReportings;
 import io.swagger.client.model.RuleList;
-import io.swagger.client.model.SaveAutomaticTransitionRequest;
 import io.swagger.client.model.SaveReportFilterRequest;
 import io.swagger.client.model.SaveStoreAlertRequest;
 import io.swagger.client.model.ScheduleAutoImportRequest;
@@ -150,6 +162,8 @@ import io.swagger.client.model.UpdateRuleRequest;
 import io.swagger.client.model.UpdateStoreRequest;
 import io.swagger.client.model.UpgradeOfferRequired;
 import io.swagger.client.model.UserFriendInfo;
+import io.swagger.client.model.UserListOfValuesResponse;
+import io.swagger.client.model.UserLovIndex;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -181,7 +195,7 @@ public class BeezUPApi {
         Object localVarPostBody = emailActivationId;
         
         // create path and map variables
-        String localVarPath = "/v2/user/customer/account/activate".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/customer/account/activate".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -295,7 +309,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/autoImport/scheduling/interval".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/autoImport/scheduling/interval".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -418,7 +432,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/autoImport".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/autoImport".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -533,7 +547,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/autoImport".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/autoImport".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -652,7 +666,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/autoImport/pause".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/autoImport/pause".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -767,7 +781,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/autoImport/resume".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/autoImport/resume".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -882,7 +896,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/autoImport/scheduling/schedules".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/autoImport/scheduling/schedules".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -1005,7 +1019,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/autoImport/start".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/autoImport/start".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -1064,11 +1078,11 @@ public class BeezUPApi {
      * Start Auto Import Manually
      * 
      * @param storeId Your store identifier (required)
-     * @return List&lt;BeezUPCommonLink2&gt;
+     * @return LinksImportationGetImportationMonitoringLink
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<BeezUPCommonLink2> autoStartAutoImport(String storeId) throws ApiException {
-        ApiResponse<List<BeezUPCommonLink2>> resp = autoStartAutoImportWithHttpInfo(storeId);
+    public LinksImportationGetImportationMonitoringLink autoStartAutoImport(String storeId) throws ApiException {
+        ApiResponse<LinksImportationGetImportationMonitoringLink> resp = autoStartAutoImportWithHttpInfo(storeId);
         return resp.getData();
     }
 
@@ -1076,12 +1090,12 @@ public class BeezUPApi {
      * Start Auto Import Manually
      * 
      * @param storeId Your store identifier (required)
-     * @return ApiResponse&lt;List&lt;BeezUPCommonLink2&gt;&gt;
+     * @return ApiResponse&lt;LinksImportationGetImportationMonitoringLink&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<BeezUPCommonLink2>> autoStartAutoImportWithHttpInfo(String storeId) throws ApiException {
+    public ApiResponse<LinksImportationGetImportationMonitoringLink> autoStartAutoImportWithHttpInfo(String storeId) throws ApiException {
         com.squareup.okhttp.Call call = autoStartAutoImportValidateBeforeCall(storeId, null, null);
-        Type localVarReturnType = new TypeToken<List<BeezUPCommonLink2>>(){}.getType();
+        Type localVarReturnType = new TypeToken<LinksImportationGetImportationMonitoringLink>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -1093,7 +1107,7 @@ public class BeezUPApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call autoStartAutoImportAsync(String storeId, final ApiCallback<List<BeezUPCommonLink2>> callback) throws ApiException {
+    public com.squareup.okhttp.Call autoStartAutoImportAsync(String storeId, final ApiCallback<LinksImportationGetImportationMonitoringLink> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1115,7 +1129,7 @@ public class BeezUPApi {
         }
 
         com.squareup.okhttp.Call call = autoStartAutoImportValidateBeforeCall(storeId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<BeezUPCommonLink2>>(){}.getType();
+        Type localVarReturnType = new TypeToken<LinksImportationGetImportationMonitoringLink>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -1124,7 +1138,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/catalogColumns/{columnId}/rename".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/catalogColumns/{columnId}/rename".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "columnId" + "\\}", apiClient.escapeString(columnId.toString()));
 
@@ -1256,7 +1270,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/customColumns/{columnId}/expression".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/customColumns/{columnId}/expression".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "columnId" + "\\}", apiClient.escapeString(columnId.toString()));
 
@@ -1388,7 +1402,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/customColumns/{columnId}/rename".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/customColumns/{columnId}/rename".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "columnId" + "\\}", apiClient.escapeString(columnId.toString()));
 
@@ -1520,7 +1534,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/customColumns/computeExpression".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/customColumns/computeExpression".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -1647,7 +1661,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/customColumns/{columnId}".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/customColumns/{columnId}".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "columnId" + "\\}", apiClient.escapeString(columnId.toString()));
 
@@ -1771,7 +1785,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/beezupColumns".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/catalogs/beezupColumns".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -1881,7 +1895,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/catalogColumns".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/catalogColumns".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -2000,7 +2014,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/categories".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/categories".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -2129,7 +2143,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/customColumns/{columnId}/expression".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/customColumns/{columnId}/expression".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "columnId" + "\\}", apiClient.escapeString(columnId.toString()));
 
@@ -2257,7 +2271,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/customColumns".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/customColumns".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -2376,7 +2390,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/products/{productId}".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/products/{productId}".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "productId" + "\\}", apiClient.escapeString(productId.toString()));
 
@@ -2504,7 +2518,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/products".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/products".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -2626,7 +2640,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/products/random".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/products/random".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -2750,7 +2764,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/customColumns/{columnId}".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/customColumns/{columnId}".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "columnId" + "\\}", apiClient.escapeString(columnId.toString()));
 
@@ -2882,7 +2896,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/{changeOrderType}".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/{changeOrderType}".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "marketplaceTechnicalCode" + "\\}", apiClient.escapeString(marketplaceTechnicalCode.toString()))
         .replaceAll("\\{" + "accountId" + "\\}", apiClient.escapeString(accountId.toString()))
         .replaceAll("\\{" + "beezUPOrderId" + "\\}", apiClient.escapeString(beezUPOrderId.toString()))
@@ -2985,7 +2999,7 @@ public class BeezUPApi {
      * @param changeOrderType The Order change type (required)
      * @param userName Sometimes the user in the e-commerce application is not the same as user associated with the current subscription key. We recommend providing your application&#39;s user login. (required)
      * @param request  (required)
-     * @param ifMatch ETag value to identify the last known version of requested Order, to ensure that you are making a change on the lastest version of the order.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (required)
+     * @param ifMatch ETag value to identify the last known version of requested resource.\\ To ensure that you are making a change on the lastest version of the resource.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (required)
      * @param testMode If true, the operation will be not be sent to marketplace. But the validation will be taken in account. (optional, default to false)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -3002,7 +3016,7 @@ public class BeezUPApi {
      * @param changeOrderType The Order change type (required)
      * @param userName Sometimes the user in the e-commerce application is not the same as user associated with the current subscription key. We recommend providing your application&#39;s user login. (required)
      * @param request  (required)
-     * @param ifMatch ETag value to identify the last known version of requested Order, to ensure that you are making a change on the lastest version of the order.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (required)
+     * @param ifMatch ETag value to identify the last known version of requested resource.\\ To ensure that you are making a change on the lastest version of the resource.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (required)
      * @param testMode If true, the operation will be not be sent to marketplace. But the validation will be taken in account. (optional, default to false)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -3021,7 +3035,7 @@ public class BeezUPApi {
      * @param changeOrderType The Order change type (required)
      * @param userName Sometimes the user in the e-commerce application is not the same as user associated with the current subscription key. We recommend providing your application&#39;s user login. (required)
      * @param request  (required)
-     * @param ifMatch ETag value to identify the last known version of requested Order, to ensure that you are making a change on the lastest version of the order.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (required)
+     * @param ifMatch ETag value to identify the last known version of requested resource.\\ To ensure that you are making a change on the lastest version of the resource.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (required)
      * @param testMode If true, the operation will be not be sent to marketplace. But the validation will be taken in account. (optional, default to false)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -3057,7 +3071,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/marketplaces/orders/batches/changeOrders/{changeOrderType}".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/marketplaces/orders/batches/changeOrders/{changeOrderType}".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "changeOrderType" + "\\}", apiClient.escapeString(changeOrderType.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -3199,7 +3213,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/customer/account/changePassword".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/customer/account/changePassword".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -3313,7 +3327,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/clearMerchantOrderInfo".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/clearMerchantOrderInfo".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "marketplaceTechnicalCode" + "\\}", apiClient.escapeString(marketplaceTechnicalCode.toString()))
         .replaceAll("\\{" + "accountId" + "\\}", apiClient.escapeString(accountId.toString()))
         .replaceAll("\\{" + "beezUPOrderId" + "\\}", apiClient.escapeString(beezUPOrderId.toString()));
@@ -3446,7 +3460,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/marketplaces/orders/batches/clearMerchantOrderInfos".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/marketplaces/orders/batches/clearMerchantOrderInfos".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -3560,11 +3574,11 @@ public class BeezUPApi {
         return call;
     }
     /* Build call for configureAutomaticTransitions */
-    private com.squareup.okhttp.Call configureAutomaticTransitionsCall(SaveAutomaticTransitionRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call configureAutomaticTransitionsCall(ConfigureAutomaticTransitionRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/marketplaces/orders/automaticTransitions".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/marketplaces/orders/automaticTransitions".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -3601,7 +3615,7 @@ public class BeezUPApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call configureAutomaticTransitionsValidateBeforeCall(SaveAutomaticTransitionRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call configureAutomaticTransitionsValidateBeforeCall(ConfigureAutomaticTransitionRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'request' is set
         if (request == null) {
@@ -3624,7 +3638,7 @@ public class BeezUPApi {
      * @param request  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void configureAutomaticTransitions(SaveAutomaticTransitionRequest request) throws ApiException {
+    public void configureAutomaticTransitions(ConfigureAutomaticTransitionRequest request) throws ApiException {
         configureAutomaticTransitionsWithHttpInfo(request);
     }
 
@@ -3635,7 +3649,7 @@ public class BeezUPApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> configureAutomaticTransitionsWithHttpInfo(SaveAutomaticTransitionRequest request) throws ApiException {
+    public ApiResponse<Void> configureAutomaticTransitionsWithHttpInfo(ConfigureAutomaticTransitionRequest request) throws ApiException {
         com.squareup.okhttp.Call call = configureAutomaticTransitionsValidateBeforeCall(request, null, null);
         return apiClient.execute(call);
     }
@@ -3648,7 +3662,7 @@ public class BeezUPApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call configureAutomaticTransitionsAsync(SaveAutomaticTransitionRequest request, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call configureAutomaticTransitionsAsync(ConfigureAutomaticTransitionRequest request, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3678,7 +3692,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/settings/cost".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/channelCatalogs/{channelCatalogId}/settings/cost".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "channelCatalogId" + "\\}", apiClient.escapeString(channelCatalogId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -3801,7 +3815,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/exclusionFilters".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/channelCatalogs/{channelCatalogId}/exclusionFilters".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "channelCatalogId" + "\\}", apiClient.escapeString(channelCatalogId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -3924,7 +3938,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/settings/general".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/channelCatalogs/{channelCatalogId}/settings/general".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "channelCatalogId" + "\\}", apiClient.escapeString(channelCatalogId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -4047,7 +4061,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/channelCatalogs/".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/channelCatalogs/".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -4165,7 +4179,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/customer/contracts".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/customer/contracts".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -4283,7 +4297,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/analytics/{storeId}/rules".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/analytics/{storeId}/rules".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -4406,7 +4420,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/customer/stores".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/customer/stores".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -4520,11 +4534,12 @@ public class BeezUPApi {
         return call;
     }
     /* Build call for deleteChannelCatalog */
-    private com.squareup.okhttp.Call deleteChannelCatalogCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call deleteChannelCatalogCall(String channelCatalogId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/channelCatalogs/{channelCatalogId}".replaceAll("\\{format\\}","json")
+        .replaceAll("\\{" + "channelCatalogId" + "\\}", apiClient.escapeString(channelCatalogId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -4561,10 +4576,15 @@ public class BeezUPApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deleteChannelCatalogValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call deleteChannelCatalogValidateBeforeCall(String channelCatalogId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'channelCatalogId' is set
+        if (channelCatalogId == null) {
+            throw new ApiException("Missing the required parameter 'channelCatalogId' when calling deleteChannelCatalog(Async)");
+        }
         
         
-        com.squareup.okhttp.Call call = deleteChannelCatalogCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteChannelCatalogCall(channelCatalogId, progressListener, progressRequestListener);
         return call;
 
         
@@ -4576,31 +4596,34 @@ public class BeezUPApi {
     /**
      * Delete the channel catalog
      * 
+     * @param channelCatalogId The channel catalog identifier (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void deleteChannelCatalog() throws ApiException {
-        deleteChannelCatalogWithHttpInfo();
+    public void deleteChannelCatalog(String channelCatalogId) throws ApiException {
+        deleteChannelCatalogWithHttpInfo(channelCatalogId);
     }
 
     /**
      * Delete the channel catalog
      * 
+     * @param channelCatalogId The channel catalog identifier (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> deleteChannelCatalogWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = deleteChannelCatalogValidateBeforeCall(null, null);
+    public ApiResponse<Void> deleteChannelCatalogWithHttpInfo(String channelCatalogId) throws ApiException {
+        com.squareup.okhttp.Call call = deleteChannelCatalogValidateBeforeCall(channelCatalogId, null, null);
         return apiClient.execute(call);
     }
 
     /**
      * Delete the channel catalog (asynchronously)
      * 
+     * @param channelCatalogId The channel catalog identifier (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteChannelCatalogAsync(final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteChannelCatalogAsync(String channelCatalogId, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -4621,7 +4644,122 @@ public class BeezUPApi {
             };
         }
 
-        com.squareup.okhttp.Call call = deleteChannelCatalogValidateBeforeCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteChannelCatalogValidateBeforeCall(channelCatalogId, progressListener, progressRequestListener);
+        apiClient.executeAsync(call, callback);
+        return call;
+    }
+    /* Build call for deleteChannelCatalogExportationCache */
+    private com.squareup.okhttp.Call deleteChannelCatalogExportationCacheCall(String channelCatalogId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/user/channelCatalogs/{channelCatalogId}/exportations/cache".replaceAll("\\{format\\}","json")
+        .replaceAll("\\{" + "channelCatalogId" + "\\}", apiClient.escapeString(channelCatalogId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "api_key" };
+        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call deleteChannelCatalogExportationCacheValidateBeforeCall(String channelCatalogId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'channelCatalogId' is set
+        if (channelCatalogId == null) {
+            throw new ApiException("Missing the required parameter 'channelCatalogId' when calling deleteChannelCatalogExportationCache(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = deleteChannelCatalogExportationCacheCall(channelCatalogId, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Delete the exportation cache
+     * 
+     * @param channelCatalogId The channel catalog identifier (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public void deleteChannelCatalogExportationCache(String channelCatalogId) throws ApiException {
+        deleteChannelCatalogExportationCacheWithHttpInfo(channelCatalogId);
+    }
+
+    /**
+     * Delete the exportation cache
+     * 
+     * @param channelCatalogId The channel catalog identifier (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Void> deleteChannelCatalogExportationCacheWithHttpInfo(String channelCatalogId) throws ApiException {
+        com.squareup.okhttp.Call call = deleteChannelCatalogExportationCacheValidateBeforeCall(channelCatalogId, null, null);
+        return apiClient.execute(call);
+    }
+
+    /**
+     * Delete the exportation cache (asynchronously)
+     * 
+     * @param channelCatalogId The channel catalog identifier (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call deleteChannelCatalogExportationCacheAsync(String channelCatalogId, final ApiCallback<Void> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = deleteChannelCatalogExportationCacheValidateBeforeCall(channelCatalogId, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -4630,7 +4768,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides/{channelColumnId}".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides/{channelColumnId}".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "channelCatalogId" + "\\}", apiClient.escapeString(channelCatalogId.toString()))
         .replaceAll("\\{" + "productId" + "\\}", apiClient.escapeString(productId.toString()))
         .replaceAll("\\{" + "channelColumnId" + "\\}", apiClient.escapeString(channelColumnId.toString()));
@@ -4763,7 +4901,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/customer/contracts/next".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/customer/contracts/next".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -4869,7 +5007,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/analytics/{storeId}/reports/filters/{reportFilterId}".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/analytics/{storeId}/reports/filters/{reportFilterId}".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "reportFilterId" + "\\}", apiClient.escapeString(reportFilterId.toString()));
 
@@ -4993,7 +5131,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/analytics/{storeId}/rules/{ruleId}".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/analytics/{storeId}/rules/{ruleId}".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "ruleId" + "\\}", apiClient.escapeString(ruleId.toString()));
 
@@ -5117,7 +5255,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/customer/stores/{storeId}/shares/{userId}".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/customer/stores/{storeId}/shares/{userId}".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "userId" + "\\}", apiClient.escapeString(userId.toString()));
 
@@ -5241,7 +5379,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/customer/stores/{storeId}".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/customer/stores/{storeId}".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -5356,7 +5494,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/disable".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/channelCatalogs/{channelCatalogId}/disable".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "channelCatalogId" + "\\}", apiClient.escapeString(channelCatalogId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -5471,7 +5609,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/disable".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/channelCatalogs/{channelCatalogId}/products/{productId}/disable".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "channelCatalogId" + "\\}", apiClient.escapeString(channelCatalogId.toString()))
         .replaceAll("\\{" + "productId" + "\\}", apiClient.escapeString(productId.toString()));
 
@@ -5595,7 +5733,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/analytics/{storeId}/rules/{ruleId}/disable".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/analytics/{storeId}/rules/{ruleId}/disable".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "ruleId" + "\\}", apiClient.escapeString(ruleId.toString()));
 
@@ -5719,7 +5857,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/enable".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/channelCatalogs/{channelCatalogId}/enable".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "channelCatalogId" + "\\}", apiClient.escapeString(channelCatalogId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -5834,7 +5972,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/analytics/{storeId}/rules/{ruleId}/enable".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/analytics/{storeId}/rules/{ruleId}/enable".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "ruleId" + "\\}", apiClient.escapeString(ruleId.toString()));
 
@@ -5954,15 +6092,13 @@ public class BeezUPApi {
         return call;
     }
     /* Build call for exportOrders */
-    private com.squareup.okhttp.Call exportOrdersCall(String format, ExportOrderListRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call exportOrdersCall(ExportOrderListRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/marketplaces/orders/exportations".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/marketplaces/orders/exportations".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        if (format != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "format", format));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -5997,12 +6133,7 @@ public class BeezUPApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call exportOrdersValidateBeforeCall(String format, ExportOrderListRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'format' is set
-        if (format == null) {
-            throw new ApiException("Missing the required parameter 'format' when calling exportOrders(Async)");
-        }
+    private com.squareup.okhttp.Call exportOrdersValidateBeforeCall(ExportOrderListRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'request' is set
         if (request == null) {
@@ -6010,7 +6141,7 @@ public class BeezUPApi {
         }
         
         
-        com.squareup.okhttp.Call call = exportOrdersCall(format, request, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = exportOrdersCall(request, progressListener, progressRequestListener);
         return call;
 
         
@@ -6022,37 +6153,34 @@ public class BeezUPApi {
     /**
      * Request a new Order report exportation to be generated
      * A new file will be generated containing a summary of all the Orders matching the requested filter settings.
-     * @param format The type of the file to export (required)
      * @param request  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void exportOrders(String format, ExportOrderListRequest request) throws ApiException {
-        exportOrdersWithHttpInfo(format, request);
+    public void exportOrders(ExportOrderListRequest request) throws ApiException {
+        exportOrdersWithHttpInfo(request);
     }
 
     /**
      * Request a new Order report exportation to be generated
      * A new file will be generated containing a summary of all the Orders matching the requested filter settings.
-     * @param format The type of the file to export (required)
      * @param request  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> exportOrdersWithHttpInfo(String format, ExportOrderListRequest request) throws ApiException {
-        com.squareup.okhttp.Call call = exportOrdersValidateBeforeCall(format, request, null, null);
+    public ApiResponse<Void> exportOrdersWithHttpInfo(ExportOrderListRequest request) throws ApiException {
+        com.squareup.okhttp.Call call = exportOrdersValidateBeforeCall(request, null, null);
         return apiClient.execute(call);
     }
 
     /**
      * Request a new Order report exportation to be generated (asynchronously)
      * A new file will be generated containing a summary of all the Orders matching the requested filter settings.
-     * @param format The type of the file to export (required)
      * @param request  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call exportOrdersAsync(String format, ExportOrderListRequest request, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call exportOrdersAsync(ExportOrderListRequest request, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -6073,7 +6201,7 @@ public class BeezUPApi {
             };
         }
 
-        com.squareup.okhttp.Call call = exportOrdersValidateBeforeCall(format, request, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = exportOrdersValidateBeforeCall(request, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -6082,7 +6210,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/analytics/{storeId}/reports/bycategory/export".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/analytics/{storeId}/reports/bycategory/export".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -6219,7 +6347,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/analytics/{storeId}/reports/bychannel/export".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/analytics/{storeId}/reports/bychannel/export".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -6356,7 +6484,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/analytics/{storeId}/reports/byproduct/export".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/analytics/{storeId}/reports/byproduct/export".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -6493,7 +6621,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/marketplaces/orders/automaticTransitions".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/marketplaces/orders/automaticTransitions".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -6603,7 +6731,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/channels/".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/channels/".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (storeId != null)
@@ -6723,7 +6851,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/customer/billingPeriods".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/customer/billingPeriods".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -6833,7 +6961,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/channelCatalogs/{channelCatalogId}".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "channelCatalogId" + "\\}", apiClient.escapeString(channelCatalogId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -6952,7 +7080,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/categoryMappings".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/channelCatalogs/{channelCatalogId}/categoryMappings".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "channelCatalogId" + "\\}", apiClient.escapeString(channelCatalogId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -7071,7 +7199,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/channelCatalogs/exclusionFilterOperators".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/channelCatalogs/exclusionFilterOperators".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -7176,12 +7304,270 @@ public class BeezUPApi {
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
+    /* Build call for getChannelCatalogExportationCacheInfo */
+    private com.squareup.okhttp.Call getChannelCatalogExportationCacheInfoCall(String channelCatalogId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/user/channelCatalogs/{channelCatalogId}/exportations/cache".replaceAll("\\{format\\}","json")
+        .replaceAll("\\{" + "channelCatalogId" + "\\}", apiClient.escapeString(channelCatalogId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "api_key" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getChannelCatalogExportationCacheInfoValidateBeforeCall(String channelCatalogId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'channelCatalogId' is set
+        if (channelCatalogId == null) {
+            throw new ApiException("Missing the required parameter 'channelCatalogId' when calling getChannelCatalogExportationCacheInfo(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = getChannelCatalogExportationCacheInfoCall(channelCatalogId, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Get the exportation cache information
+     * 
+     * @param channelCatalogId The channel catalog identifier (required)
+     * @return ChannelCatalogExportCacheInfoResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ChannelCatalogExportCacheInfoResponse getChannelCatalogExportationCacheInfo(String channelCatalogId) throws ApiException {
+        ApiResponse<ChannelCatalogExportCacheInfoResponse> resp = getChannelCatalogExportationCacheInfoWithHttpInfo(channelCatalogId);
+        return resp.getData();
+    }
+
+    /**
+     * Get the exportation cache information
+     * 
+     * @param channelCatalogId The channel catalog identifier (required)
+     * @return ApiResponse&lt;ChannelCatalogExportCacheInfoResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<ChannelCatalogExportCacheInfoResponse> getChannelCatalogExportationCacheInfoWithHttpInfo(String channelCatalogId) throws ApiException {
+        com.squareup.okhttp.Call call = getChannelCatalogExportationCacheInfoValidateBeforeCall(channelCatalogId, null, null);
+        Type localVarReturnType = new TypeToken<ChannelCatalogExportCacheInfoResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get the exportation cache information (asynchronously)
+     * 
+     * @param channelCatalogId The channel catalog identifier (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getChannelCatalogExportationCacheInfoAsync(String channelCatalogId, final ApiCallback<ChannelCatalogExportCacheInfoResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getChannelCatalogExportationCacheInfoValidateBeforeCall(channelCatalogId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ChannelCatalogExportCacheInfoResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /* Build call for getChannelCatalogExportationHistory */
+    private com.squareup.okhttp.Call getChannelCatalogExportationHistoryCall(String channelCatalogId, Integer pageNumber, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/user/channelCatalogs/{channelCatalogId}/exportations/history".replaceAll("\\{format\\}","json")
+        .replaceAll("\\{" + "channelCatalogId" + "\\}", apiClient.escapeString(channelCatalogId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (pageNumber != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "pageNumber", pageNumber));
+        if (pageSize != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "pageSize", pageSize));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "api_key" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getChannelCatalogExportationHistoryValidateBeforeCall(String channelCatalogId, Integer pageNumber, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'channelCatalogId' is set
+        if (channelCatalogId == null) {
+            throw new ApiException("Missing the required parameter 'channelCatalogId' when calling getChannelCatalogExportationHistory(Async)");
+        }
+        
+        // verify the required parameter 'pageNumber' is set
+        if (pageNumber == null) {
+            throw new ApiException("Missing the required parameter 'pageNumber' when calling getChannelCatalogExportationHistory(Async)");
+        }
+        
+        // verify the required parameter 'pageSize' is set
+        if (pageSize == null) {
+            throw new ApiException("Missing the required parameter 'pageSize' when calling getChannelCatalogExportationHistory(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = getChannelCatalogExportationHistoryCall(channelCatalogId, pageNumber, pageSize, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Get the exportation history
+     * 
+     * @param channelCatalogId The channel catalog identifier (required)
+     * @param pageNumber The page number you want to get (required)
+     * @param pageSize The entry count you want to get (required)
+     * @return ChannelCatalogExportationHistory
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ChannelCatalogExportationHistory getChannelCatalogExportationHistory(String channelCatalogId, Integer pageNumber, Integer pageSize) throws ApiException {
+        ApiResponse<ChannelCatalogExportationHistory> resp = getChannelCatalogExportationHistoryWithHttpInfo(channelCatalogId, pageNumber, pageSize);
+        return resp.getData();
+    }
+
+    /**
+     * Get the exportation history
+     * 
+     * @param channelCatalogId The channel catalog identifier (required)
+     * @param pageNumber The page number you want to get (required)
+     * @param pageSize The entry count you want to get (required)
+     * @return ApiResponse&lt;ChannelCatalogExportationHistory&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<ChannelCatalogExportationHistory> getChannelCatalogExportationHistoryWithHttpInfo(String channelCatalogId, Integer pageNumber, Integer pageSize) throws ApiException {
+        com.squareup.okhttp.Call call = getChannelCatalogExportationHistoryValidateBeforeCall(channelCatalogId, pageNumber, pageSize, null, null);
+        Type localVarReturnType = new TypeToken<ChannelCatalogExportationHistory>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get the exportation history (asynchronously)
+     * 
+     * @param channelCatalogId The channel catalog identifier (required)
+     * @param pageNumber The page number you want to get (required)
+     * @param pageSize The entry count you want to get (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getChannelCatalogExportationHistoryAsync(String channelCatalogId, Integer pageNumber, Integer pageSize, final ApiCallback<ChannelCatalogExportationHistory> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getChannelCatalogExportationHistoryValidateBeforeCall(channelCatalogId, pageNumber, pageSize, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ChannelCatalogExportationHistory>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
     /* Build call for getChannelCatalogMarketplaceProperties */
     private com.squareup.okhttp.Call getChannelCatalogMarketplacePropertiesCall(String channelCatalogId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/marketplaces/channelcatalogs/{channelCatalogId}/properties".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/marketplaces/channelcatalogs/{channelCatalogId}/properties".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "channelCatalogId" + "\\}", apiClient.escapeString(channelCatalogId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -7300,7 +7686,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/marketplaces/channelcatalogs/{channelCatalogId}/settings".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/marketplaces/channelcatalogs/{channelCatalogId}/settings".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "channelCatalogId" + "\\}", apiClient.escapeString(channelCatalogId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -7414,12 +7800,134 @@ public class BeezUPApi {
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
+    /* Build call for getChannelCatalogProductByChannelCatalog */
+    private com.squareup.okhttp.Call getChannelCatalogProductByChannelCatalogCall(String productId, ChannelCatalogProductByChannelCatalogRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = request;
+        
+        // create path and map variables
+        String localVarPath = "/user/channelCatalogs/products/{productId}".replaceAll("\\{format\\}","json")
+        .replaceAll("\\{" + "productId" + "\\}", apiClient.escapeString(productId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "api_key" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getChannelCatalogProductByChannelCatalogValidateBeforeCall(String productId, ChannelCatalogProductByChannelCatalogRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'productId' is set
+        if (productId == null) {
+            throw new ApiException("Missing the required parameter 'productId' when calling getChannelCatalogProductByChannelCatalog(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = getChannelCatalogProductByChannelCatalogCall(productId, request, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Get channel catalog products related to these channel catalogs
+     * 
+     * @param productId The product identifier (required)
+     * @param request  (optional)
+     * @return ChannelCatalogProductByChannelCatalogResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ChannelCatalogProductByChannelCatalogResponse getChannelCatalogProductByChannelCatalog(String productId, ChannelCatalogProductByChannelCatalogRequest request) throws ApiException {
+        ApiResponse<ChannelCatalogProductByChannelCatalogResponse> resp = getChannelCatalogProductByChannelCatalogWithHttpInfo(productId, request);
+        return resp.getData();
+    }
+
+    /**
+     * Get channel catalog products related to these channel catalogs
+     * 
+     * @param productId The product identifier (required)
+     * @param request  (optional)
+     * @return ApiResponse&lt;ChannelCatalogProductByChannelCatalogResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<ChannelCatalogProductByChannelCatalogResponse> getChannelCatalogProductByChannelCatalogWithHttpInfo(String productId, ChannelCatalogProductByChannelCatalogRequest request) throws ApiException {
+        com.squareup.okhttp.Call call = getChannelCatalogProductByChannelCatalogValidateBeforeCall(productId, request, null, null);
+        Type localVarReturnType = new TypeToken<ChannelCatalogProductByChannelCatalogResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get channel catalog products related to these channel catalogs (asynchronously)
+     * 
+     * @param productId The product identifier (required)
+     * @param request  (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getChannelCatalogProductByChannelCatalogAsync(String productId, ChannelCatalogProductByChannelCatalogRequest request, final ApiCallback<ChannelCatalogProductByChannelCatalogResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getChannelCatalogProductByChannelCatalogValidateBeforeCall(productId, request, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ChannelCatalogProductByChannelCatalogResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
     /* Build call for getChannelCatalogProductInfo */
     private com.squareup.okhttp.Call getChannelCatalogProductInfoCall(String channelCatalogId, String productId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/products/{productId}".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/channelCatalogs/{channelCatalogId}/products/{productId}".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "channelCatalogId" + "\\}", apiClient.escapeString(channelCatalogId.toString()))
         .replaceAll("\\{" + "productId" + "\\}", apiClient.escapeString(productId.toString()));
 
@@ -7547,7 +8055,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/products".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/channelCatalogs/{channelCatalogId}/products".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "channelCatalogId" + "\\}", apiClient.escapeString(channelCatalogId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -7669,7 +8177,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/channelCatalogs/".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/channelCatalogs/".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (storeId != null)
@@ -7784,7 +8292,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/channels/{channelId}/categories".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/channels/{channelId}/categories".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "channelId" + "\\}", apiClient.escapeString(channelId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -7913,7 +8421,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/channels/{channelId}/columns".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/channels/{channelId}/columns".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "channelId" + "\\}", apiClient.escapeString(channelId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -8045,7 +8553,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/channels/{channelId}".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/channels/{channelId}".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "channelId" + "\\}", apiClient.escapeString(channelId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -8159,12 +8667,251 @@ public class BeezUPApi {
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
+    /* Build call for getChannels */
+    private com.squareup.okhttp.Call getChannelsCall(String countryIsoCode, List<String> acceptEncoding, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/public/channels/{countryIsoCode}".replaceAll("\\{format\\}","json")
+        .replaceAll("\\{" + "countryIsoCode" + "\\}", apiClient.escapeString(countryIsoCode.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (acceptEncoding != null)
+        localVarHeaderParams.put("Accept-Encoding", apiClient.parameterToString(acceptEncoding));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getChannelsValidateBeforeCall(String countryIsoCode, List<String> acceptEncoding, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'countryIsoCode' is set
+        if (countryIsoCode == null) {
+            throw new ApiException("Missing the required parameter 'countryIsoCode' when calling getChannels(Async)");
+        }
+        
+        // verify the required parameter 'acceptEncoding' is set
+        if (acceptEncoding == null) {
+            throw new ApiException("Missing the required parameter 'acceptEncoding' when calling getChannels(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = getChannelsCall(countryIsoCode, acceptEncoding, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * The channel list for one country
+     * 
+     * @param countryIsoCode The country iso code alpha 3 based on this: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3#Decoding_table \\ To know which country are available you have to use the operation: GetChannelsByCountry  (required)
+     * @param acceptEncoding Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size. (required)
+     * @return ChannelInfoList
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ChannelInfoList getChannels(String countryIsoCode, List<String> acceptEncoding) throws ApiException {
+        ApiResponse<ChannelInfoList> resp = getChannelsWithHttpInfo(countryIsoCode, acceptEncoding);
+        return resp.getData();
+    }
+
+    /**
+     * The channel list for one country
+     * 
+     * @param countryIsoCode The country iso code alpha 3 based on this: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3#Decoding_table \\ To know which country are available you have to use the operation: GetChannelsByCountry  (required)
+     * @param acceptEncoding Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size. (required)
+     * @return ApiResponse&lt;ChannelInfoList&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<ChannelInfoList> getChannelsWithHttpInfo(String countryIsoCode, List<String> acceptEncoding) throws ApiException {
+        com.squareup.okhttp.Call call = getChannelsValidateBeforeCall(countryIsoCode, acceptEncoding, null, null);
+        Type localVarReturnType = new TypeToken<ChannelInfoList>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * The channel list for one country (asynchronously)
+     * 
+     * @param countryIsoCode The country iso code alpha 3 based on this: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3#Decoding_table \\ To know which country are available you have to use the operation: GetChannelsByCountry  (required)
+     * @param acceptEncoding Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size. (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getChannelsAsync(String countryIsoCode, List<String> acceptEncoding, final ApiCallback<ChannelInfoList> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getChannelsValidateBeforeCall(countryIsoCode, acceptEncoding, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ChannelInfoList>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /* Build call for getChannelsIndex */
+    private com.squareup.okhttp.Call getChannelsIndexCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/public/channels/".replaceAll("\\{format\\}","json");
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getChannelsIndexValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        
+        com.squareup.okhttp.Call call = getChannelsIndexCall(progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Get public channel index
+     * Use this operation to get the correct link to the channels and to the list of values
+     * @return PublicChannelIndex
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PublicChannelIndex getChannelsIndex() throws ApiException {
+        ApiResponse<PublicChannelIndex> resp = getChannelsIndexWithHttpInfo();
+        return resp.getData();
+    }
+
+    /**
+     * Get public channel index
+     * Use this operation to get the correct link to the channels and to the list of values
+     * @return ApiResponse&lt;PublicChannelIndex&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PublicChannelIndex> getChannelsIndexWithHttpInfo() throws ApiException {
+        com.squareup.okhttp.Call call = getChannelsIndexValidateBeforeCall(null, null);
+        Type localVarReturnType = new TypeToken<PublicChannelIndex>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get public channel index (asynchronously)
+     * Use this operation to get the correct link to the channels and to the list of values
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getChannelsIndexAsync(final ApiCallback<PublicChannelIndex> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getChannelsIndexValidateBeforeCall(progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PublicChannelIndex>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
     /* Build call for getContracts */
     private com.squareup.okhttp.Call getContractsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/customer/contracts".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/customer/contracts".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -8274,7 +9021,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/customer/account/creditCardInfo".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/customer/account/creditCardInfo".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -8384,7 +9131,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/customer/friends/{userId}".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/customer/friends/{userId}".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "userId" + "\\}", apiClient.escapeString(userId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -8503,7 +9250,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/customer/invoices".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/customer/invoices".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -8613,7 +9360,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/marketplaces/channelcatalogs/".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/marketplaces/channelcatalogs/".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -8723,7 +9470,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/marketplaces/orders/status".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/marketplaces/orders/status".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -8833,7 +9580,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/customer/offers".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/customer/offers".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -8951,7 +9698,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "marketplaceTechnicalCode" + "\\}", apiClient.escapeString(marketplaceTechnicalCode.toString()))
         .replaceAll("\\{" + "accountId" + "\\}", apiClient.escapeString(accountId.toString()))
         .replaceAll("\\{" + "beezUPOrderId" + "\\}", apiClient.escapeString(beezUPOrderId.toString()));
@@ -9026,7 +9773,7 @@ public class BeezUPApi {
      * @param marketplaceTechnicalCode The marketplace technical code (required)
      * @param accountId The account identifier (required)
      * @param beezUPOrderId The BeezUP Order identifier (required)
-     * @param ifNoneMatch ETag value to identify the last known version of requested Order\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
+     * @param ifNoneMatch ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
      * @return Order
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -9041,7 +9788,7 @@ public class BeezUPApi {
      * @param marketplaceTechnicalCode The marketplace technical code (required)
      * @param accountId The account identifier (required)
      * @param beezUPOrderId The BeezUP Order identifier (required)
-     * @param ifNoneMatch ETag value to identify the last known version of requested Order\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
+     * @param ifNoneMatch ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
      * @return ApiResponse&lt;Order&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -9057,7 +9804,7 @@ public class BeezUPApi {
      * @param marketplaceTechnicalCode The marketplace technical code (required)
      * @param accountId The account identifier (required)
      * @param beezUPOrderId The BeezUP Order identifier (required)
-     * @param ifNoneMatch ETag value to identify the last known version of requested Order\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
+     * @param ifNoneMatch ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -9093,7 +9840,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/marketplaces/orders/exportations".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/marketplaces/orders/exportations".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (pageNumber != null)
@@ -9167,7 +9914,7 @@ public class BeezUPApi {
      * Get a paginated list of Order report exportations
      * 
      * @param pageNumber The page number you want to get (required)
-     * @param pageSize The count of Order report exportations you want to get (required)
+     * @param pageSize The entry count you want to get (required)
      * @param storeId The store identifier to regroup the order exportations (required)
      * @return OrderExportations
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -9181,7 +9928,7 @@ public class BeezUPApi {
      * Get a paginated list of Order report exportations
      * 
      * @param pageNumber The page number you want to get (required)
-     * @param pageSize The count of Order report exportations you want to get (required)
+     * @param pageSize The entry count you want to get (required)
      * @param storeId The store identifier to regroup the order exportations (required)
      * @return ApiResponse&lt;OrderExportations&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -9196,7 +9943,7 @@ public class BeezUPApi {
      * Get a paginated list of Order report exportations (asynchronously)
      * 
      * @param pageNumber The page number you want to get (required)
-     * @param pageSize The count of Order report exportations you want to get (required)
+     * @param pageSize The entry count you want to get (required)
      * @param storeId The store identifier to regroup the order exportations (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -9233,7 +9980,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/history".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/history".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "marketplaceTechnicalCode" + "\\}", apiClient.escapeString(marketplaceTechnicalCode.toString()))
         .replaceAll("\\{" + "accountId" + "\\}", apiClient.escapeString(accountId.toString()))
         .replaceAll("\\{" + "beezUPOrderId" + "\\}", apiClient.escapeString(beezUPOrderId.toString()));
@@ -9365,12 +10112,122 @@ public class BeezUPApi {
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
+    /* Build call for getOrderIndex */
+    private com.squareup.okhttp.Call getOrderIndexCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/user/marketplaces/orders/".replaceAll("\\{format\\}","json");
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "api_key" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getOrderIndexValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        
+        com.squareup.okhttp.Call call = getOrderIndexCall(progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Get all actions you can do on the order API
+     * 
+     * @return OrderIndex
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public OrderIndex getOrderIndex() throws ApiException {
+        ApiResponse<OrderIndex> resp = getOrderIndexWithHttpInfo();
+        return resp.getData();
+    }
+
+    /**
+     * Get all actions you can do on the order API
+     * 
+     * @return ApiResponse&lt;OrderIndex&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<OrderIndex> getOrderIndexWithHttpInfo() throws ApiException {
+        com.squareup.okhttp.Call call = getOrderIndexValidateBeforeCall(null, null);
+        Type localVarReturnType = new TypeToken<OrderIndex>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get all actions you can do on the order API (asynchronously)
+     * 
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getOrderIndexAsync(final ApiCallback<OrderIndex> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getOrderIndexValidateBeforeCall(progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<OrderIndex>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
     /* Build call for getOrderListFull */
     private com.squareup.okhttp.Call getOrderListFullCall(List<String> acceptEncoding, OrderListRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/marketplaces/orders/list/full".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/marketplaces/orders/list/full".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -9416,6 +10273,11 @@ public class BeezUPApi {
             throw new ApiException("Missing the required parameter 'acceptEncoding' when calling getOrderListFull(Async)");
         }
         
+        // verify the required parameter 'request' is set
+        if (request == null) {
+            throw new ApiException("Missing the required parameter 'request' when calling getOrderListFull(Async)");
+        }
+        
         
         com.squareup.okhttp.Call call = getOrderListFullCall(acceptEncoding, request, progressListener, progressRequestListener);
         return call;
@@ -9430,7 +10292,7 @@ public class BeezUPApi {
      * Get a paginated list of all Orders with all Order and Order Item(s) properties
      * The purpose of this operation is to reduce the amount of request to the API.\\ \\ Previous implmentation of this feature only returned a partial (light) version of the Orders. The purpose of this API is to reduce the number of incoming requests by returning the complete (full) Order and Order Item(s) properties. 
      * @param acceptEncoding Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size (required)
-     * @param request  (optional)
+     * @param request  (required)
      * @return OrderListFull
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -9443,7 +10305,7 @@ public class BeezUPApi {
      * Get a paginated list of all Orders with all Order and Order Item(s) properties
      * The purpose of this operation is to reduce the amount of request to the API.\\ \\ Previous implmentation of this feature only returned a partial (light) version of the Orders. The purpose of this API is to reduce the number of incoming requests by returning the complete (full) Order and Order Item(s) properties. 
      * @param acceptEncoding Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size (required)
-     * @param request  (optional)
+     * @param request  (required)
      * @return ApiResponse&lt;OrderListFull&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -9457,7 +10319,7 @@ public class BeezUPApi {
      * Get a paginated list of all Orders with all Order and Order Item(s) properties (asynchronously)
      * The purpose of this operation is to reduce the amount of request to the API.\\ \\ Previous implmentation of this feature only returned a partial (light) version of the Orders. The purpose of this API is to reduce the number of incoming requests by returning the complete (full) Order and Order Item(s) properties. 
      * @param acceptEncoding Allows the client to indicate wether it accepts a compressed encoding to reduce traffic size (required)
-     * @param request  (optional)
+     * @param request  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -9493,7 +10355,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/marketplaces/orders/list/light".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/marketplaces/orders/list/light".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -9532,6 +10394,11 @@ public class BeezUPApi {
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call getOrderListLightValidateBeforeCall(OrderListRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
+        // verify the required parameter 'request' is set
+        if (request == null) {
+            throw new ApiException("Missing the required parameter 'request' when calling getOrderListLight(Async)");
+        }
+        
         
         com.squareup.okhttp.Call call = getOrderListLightCall(request, progressListener, progressRequestListener);
         return call;
@@ -9545,7 +10412,7 @@ public class BeezUPApi {
     /**
      * Get a paginated list of all Orders without details
      * 
-     * @param request  (optional)
+     * @param request  (required)
      * @return OrderListLight
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -9557,7 +10424,7 @@ public class BeezUPApi {
     /**
      * Get a paginated list of all Orders without details
      * 
-     * @param request  (optional)
+     * @param request  (required)
      * @return ApiResponse&lt;OrderListLight&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -9570,7 +10437,7 @@ public class BeezUPApi {
     /**
      * Get a paginated list of all Orders without details (asynchronously)
      * 
-     * @param request  (optional)
+     * @param request  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -9606,7 +10473,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/customer/account/profilePictureInfo".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/customer/account/profilePictureInfo".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -9711,12 +10578,256 @@ public class BeezUPApi {
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
+    /* Build call for getPublicListOfValues */
+    private com.squareup.okhttp.Call getPublicListOfValuesCall(String listName, List<String> acceptLanguage, String ifNoneMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/public/lov/{listName}".replaceAll("\\{format\\}","json")
+        .replaceAll("\\{" + "listName" + "\\}", apiClient.escapeString(listName.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (acceptLanguage != null)
+        localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
+        if (ifNoneMatch != null)
+        localVarHeaderParams.put("If-None-Match", apiClient.parameterToString(ifNoneMatch));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getPublicListOfValuesValidateBeforeCall(String listName, List<String> acceptLanguage, String ifNoneMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'listName' is set
+        if (listName == null) {
+            throw new ApiException("Missing the required parameter 'listName' when calling getPublicListOfValues(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = getPublicListOfValuesCall(listName, acceptLanguage, ifNoneMatch, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Get the list of values related to this list name
+     * 
+     * @param listName The list of value name your want to get (required)
+     * @param acceptLanguage Indicates that the client accepts the following languages. (optional)
+     * @param ifNoneMatch ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
+     * @return PublicListOfValuesResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PublicListOfValuesResponse getPublicListOfValues(String listName, List<String> acceptLanguage, String ifNoneMatch) throws ApiException {
+        ApiResponse<PublicListOfValuesResponse> resp = getPublicListOfValuesWithHttpInfo(listName, acceptLanguage, ifNoneMatch);
+        return resp.getData();
+    }
+
+    /**
+     * Get the list of values related to this list name
+     * 
+     * @param listName The list of value name your want to get (required)
+     * @param acceptLanguage Indicates that the client accepts the following languages. (optional)
+     * @param ifNoneMatch ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
+     * @return ApiResponse&lt;PublicListOfValuesResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PublicListOfValuesResponse> getPublicListOfValuesWithHttpInfo(String listName, List<String> acceptLanguage, String ifNoneMatch) throws ApiException {
+        com.squareup.okhttp.Call call = getPublicListOfValuesValidateBeforeCall(listName, acceptLanguage, ifNoneMatch, null, null);
+        Type localVarReturnType = new TypeToken<PublicListOfValuesResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get the list of values related to this list name (asynchronously)
+     * 
+     * @param listName The list of value name your want to get (required)
+     * @param acceptLanguage Indicates that the client accepts the following languages. (optional)
+     * @param ifNoneMatch ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getPublicListOfValuesAsync(String listName, List<String> acceptLanguage, String ifNoneMatch, final ApiCallback<PublicListOfValuesResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getPublicListOfValuesValidateBeforeCall(listName, acceptLanguage, ifNoneMatch, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PublicListOfValuesResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /* Build call for getPublicLovIndex */
+    private com.squareup.okhttp.Call getPublicLovIndexCall(String ifNoneMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/public/lov/".replaceAll("\\{format\\}","json");
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (ifNoneMatch != null)
+        localVarHeaderParams.put("If-None-Match", apiClient.parameterToString(ifNoneMatch));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getPublicLovIndexValidateBeforeCall(String ifNoneMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        
+        com.squareup.okhttp.Call call = getPublicLovIndexCall(ifNoneMatch, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Get all list names
+     * 
+     * @param ifNoneMatch ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
+     * @return PublicLovIndex
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PublicLovIndex getPublicLovIndex(String ifNoneMatch) throws ApiException {
+        ApiResponse<PublicLovIndex> resp = getPublicLovIndexWithHttpInfo(ifNoneMatch);
+        return resp.getData();
+    }
+
+    /**
+     * Get all list names
+     * 
+     * @param ifNoneMatch ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
+     * @return ApiResponse&lt;PublicLovIndex&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PublicLovIndex> getPublicLovIndexWithHttpInfo(String ifNoneMatch) throws ApiException {
+        com.squareup.okhttp.Call call = getPublicLovIndexValidateBeforeCall(ifNoneMatch, null, null);
+        Type localVarReturnType = new TypeToken<PublicLovIndex>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get all list names (asynchronously)
+     * 
+     * @param ifNoneMatch ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getPublicLovIndexAsync(String ifNoneMatch, final ApiCallback<PublicLovIndex> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getPublicLovIndexValidateBeforeCall(ifNoneMatch, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PublicLovIndex>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
     /* Build call for getPublications */
     private com.squareup.okhttp.Call getPublicationsCall(String marketplaceTechnicalCode, Integer accountId, String channelCatalogId, Integer count, List<String> publicationTypes, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/marketplaces/channelcatalogs/publications/{marketplaceTechnicalCode}/{accountId}/history".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/marketplaces/channelcatalogs/publications/{marketplaceTechnicalCode}/{accountId}/history".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "marketplaceTechnicalCode" + "\\}", apiClient.escapeString(marketplaceTechnicalCode.toString()))
         .replaceAll("\\{" + "accountId" + "\\}", apiClient.escapeString(accountId.toString()));
 
@@ -9859,7 +10970,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/analytics/{storeId}/reports/filters/{reportFilterId}".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/analytics/{storeId}/reports/filters/{reportFilterId}".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "reportFilterId" + "\\}", apiClient.escapeString(reportFilterId.toString()));
 
@@ -9987,7 +11098,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/analytics/{storeId}/reports/filters".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/analytics/{storeId}/reports/filters".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -10106,7 +11217,7 @@ public class BeezUPApi {
         Object localVarPostBody = functionalityCodeList;
         
         // create path and map variables
-        String localVarPath = "/v2/user/customer/stores/{storeId}/rights".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/customer/stores/{storeId}/rights".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -10233,7 +11344,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/analytics/{storeId}/rules/{ruleId}".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/analytics/{storeId}/rules/{ruleId}".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "ruleId" + "\\}", apiClient.escapeString(ruleId.toString()));
 
@@ -10361,7 +11472,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/analytics/{storeId}/rules".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/analytics/{storeId}/rules".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -10480,7 +11591,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/analytics/{storeId}/rules/executions".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/analytics/{storeId}/rules/executions".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -10619,7 +11730,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/customer/stores/{storeId}/shares".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/customer/stores/{storeId}/shares".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -10738,7 +11849,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/customer/offers".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/customer/offers".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -10848,7 +11959,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/customer/stores/{storeId}".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/customer/stores/{storeId}".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -10967,7 +12078,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/customer/stores/{storeId}/alerts".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/customer/stores/{storeId}/alerts".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -11086,7 +12197,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/analytics/{storeId}/reports/bycategory".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/analytics/{storeId}/reports/bycategory".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -11213,7 +12324,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/analytics/{storeId}/reports/bychannel".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/analytics/{storeId}/reports/bychannel".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -11340,7 +12451,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/analytics/{storeId}/reports/byday".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/analytics/{storeId}/reports/byday".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -11467,7 +12578,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/analytics/{storeId}/reports/byday/export".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/analytics/{storeId}/reports/byday/export".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -11604,7 +12715,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/analytics/{storeId}/reports/byproduct".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/analytics/{storeId}/reports/byproduct".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -11731,7 +12842,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/analytics/{storeId}/tracking/clicks".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/analytics/{storeId}/tracking/clicks".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -11855,7 +12966,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/analytics/{storeId}/tracking/externalorders".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/analytics/{storeId}/tracking/externalorders".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -11979,7 +13090,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/analytics/{storeId}/tracking/orders".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/analytics/{storeId}/tracking/orders".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -12103,7 +13214,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/analytics/{storeId}/tracking/status".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/analytics/{storeId}/tracking/status".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -12222,7 +13333,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/customer/stores".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/customer/stores".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -12332,7 +13443,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/analytics/tracking/status".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/analytics/tracking/status".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -12442,7 +13553,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/customer/account".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/customer/account".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -12547,17 +13658,21 @@ public class BeezUPApi {
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
-    /* Build call for getUserListGroup */
-    private com.squareup.okhttp.Call getUserListGroupCall(String listGroupName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    /* Build call for getUserListOfValues */
+    private com.squareup.okhttp.Call getUserListOfValuesCall(String listName, List<String> acceptLanguage, String ifNoneMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/lov/groups/{listGroupName}".replaceAll("\\{format\\}","json")
-        .replaceAll("\\{" + "listGroupName" + "\\}", apiClient.escapeString(listGroupName.toString()));
+        String localVarPath = "/user/lov/{listName}".replaceAll("\\{format\\}","json")
+        .replaceAll("\\{" + "listName" + "\\}", apiClient.escapeString(listName.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (acceptLanguage != null)
+        localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
+        if (ifNoneMatch != null)
+        localVarHeaderParams.put("If-None-Match", apiClient.parameterToString(ifNoneMatch));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -12590,15 +13705,15 @@ public class BeezUPApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getUserListGroupValidateBeforeCall(String listGroupName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getUserListOfValuesValidateBeforeCall(String listName, List<String> acceptLanguage, String ifNoneMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'listGroupName' is set
-        if (listGroupName == null) {
-            throw new ApiException("Missing the required parameter 'listGroupName' when calling getUserListGroup(Async)");
+        // verify the required parameter 'listName' is set
+        if (listName == null) {
+            throw new ApiException("Missing the required parameter 'listName' when calling getUserListOfValues(Async)");
         }
         
         
-        com.squareup.okhttp.Call call = getUserListGroupCall(listGroupName, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getUserListOfValuesCall(listName, acceptLanguage, ifNoneMatch, progressListener, progressRequestListener);
         return call;
 
         
@@ -12608,39 +13723,45 @@ public class BeezUPApi {
     }
 
     /**
-     * Get list of values related to this group name
+     * Get the list of values related to this list name
      * 
-     * @param listGroupName The list group name your want to get (required)
-     * @return List&lt;BeezUPCommonLOVLink2&gt;
+     * @param listName The list of value name your want to get (required)
+     * @param acceptLanguage Indicates that the client accepts the following languages. (optional)
+     * @param ifNoneMatch ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
+     * @return UserListOfValuesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<BeezUPCommonLOVLink2> getUserListGroup(String listGroupName) throws ApiException {
-        ApiResponse<List<BeezUPCommonLOVLink2>> resp = getUserListGroupWithHttpInfo(listGroupName);
+    public UserListOfValuesResponse getUserListOfValues(String listName, List<String> acceptLanguage, String ifNoneMatch) throws ApiException {
+        ApiResponse<UserListOfValuesResponse> resp = getUserListOfValuesWithHttpInfo(listName, acceptLanguage, ifNoneMatch);
         return resp.getData();
     }
 
     /**
-     * Get list of values related to this group name
+     * Get the list of values related to this list name
      * 
-     * @param listGroupName The list group name your want to get (required)
-     * @return ApiResponse&lt;List&lt;BeezUPCommonLOVLink2&gt;&gt;
+     * @param listName The list of value name your want to get (required)
+     * @param acceptLanguage Indicates that the client accepts the following languages. (optional)
+     * @param ifNoneMatch ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
+     * @return ApiResponse&lt;UserListOfValuesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<BeezUPCommonLOVLink2>> getUserListGroupWithHttpInfo(String listGroupName) throws ApiException {
-        com.squareup.okhttp.Call call = getUserListGroupValidateBeforeCall(listGroupName, null, null);
-        Type localVarReturnType = new TypeToken<List<BeezUPCommonLOVLink2>>(){}.getType();
+    public ApiResponse<UserListOfValuesResponse> getUserListOfValuesWithHttpInfo(String listName, List<String> acceptLanguage, String ifNoneMatch) throws ApiException {
+        com.squareup.okhttp.Call call = getUserListOfValuesValidateBeforeCall(listName, acceptLanguage, ifNoneMatch, null, null);
+        Type localVarReturnType = new TypeToken<UserListOfValuesResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Get list of values related to this group name (asynchronously)
+     * Get the list of values related to this list name (asynchronously)
      * 
-     * @param listGroupName The list group name your want to get (required)
+     * @param listName The list of value name your want to get (required)
+     * @param acceptLanguage Indicates that the client accepts the following languages. (optional)
+     * @param ifNoneMatch ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getUserListGroupAsync(String listGroupName, final ApiCallback<List<BeezUPCommonLOVLink2>> callback) throws ApiException {
+    public com.squareup.okhttp.Call getUserListOfValuesAsync(String listName, List<String> acceptLanguage, String ifNoneMatch, final ApiCallback<UserListOfValuesResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -12661,17 +13782,17 @@ public class BeezUPApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getUserListGroupValidateBeforeCall(listGroupName, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<BeezUPCommonLOVLink2>>(){}.getType();
+        com.squareup.okhttp.Call call = getUserListOfValuesValidateBeforeCall(listName, acceptLanguage, ifNoneMatch, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<UserListOfValuesResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
-    /* Build call for getUserListGroupNames */
-    private com.squareup.okhttp.Call getUserListGroupNamesCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    /* Build call for getUserLovIndex */
+    private com.squareup.okhttp.Call getUserLovIndexCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/lov/groups".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/lov/".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -12708,120 +13829,10 @@ public class BeezUPApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getUserListGroupNamesValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getUserLovIndexValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         
-        com.squareup.okhttp.Call call = getUserListGroupNamesCall(progressListener, progressRequestListener);
-        return call;
-
-        
-        
-        
-        
-    }
-
-    /**
-     * Get list of group of list name
-     * 
-     * @return List&lt;BeezUPCommonLOVLink2&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public List<BeezUPCommonLOVLink2> getUserListGroupNames() throws ApiException {
-        ApiResponse<List<BeezUPCommonLOVLink2>> resp = getUserListGroupNamesWithHttpInfo();
-        return resp.getData();
-    }
-
-    /**
-     * Get list of group of list name
-     * 
-     * @return ApiResponse&lt;List&lt;BeezUPCommonLOVLink2&gt;&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<List<BeezUPCommonLOVLink2>> getUserListGroupNamesWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = getUserListGroupNamesValidateBeforeCall(null, null);
-        Type localVarReturnType = new TypeToken<List<BeezUPCommonLOVLink2>>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * Get list of group of list name (asynchronously)
-     * 
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call getUserListGroupNamesAsync(final ApiCallback<List<BeezUPCommonLOVLink2>> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = getUserListGroupNamesValidateBeforeCall(progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<BeezUPCommonLOVLink2>>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /* Build call for getUserListNames */
-    private com.squareup.okhttp.Call getUserListNamesCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
-        
-        // create path and map variables
-        String localVarPath = "/v2/user/lov/".replaceAll("\\{format\\}","json");
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] { "api_key" };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-    
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getUserListNamesValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        
-        com.squareup.okhttp.Call call = getUserListNamesCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getUserLovIndexCall(progressListener, progressRequestListener);
         return call;
 
         
@@ -12833,23 +13844,23 @@ public class BeezUPApi {
     /**
      * Get all list names
      * 
-     * @return List&lt;BeezUPCommonLOVLink2&gt;
+     * @return UserLovIndex
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<BeezUPCommonLOVLink2> getUserListNames() throws ApiException {
-        ApiResponse<List<BeezUPCommonLOVLink2>> resp = getUserListNamesWithHttpInfo();
+    public UserLovIndex getUserLovIndex() throws ApiException {
+        ApiResponse<UserLovIndex> resp = getUserLovIndexWithHttpInfo();
         return resp.getData();
     }
 
     /**
      * Get all list names
      * 
-     * @return ApiResponse&lt;List&lt;BeezUPCommonLOVLink2&gt;&gt;
+     * @return ApiResponse&lt;UserLovIndex&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<BeezUPCommonLOVLink2>> getUserListNamesWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = getUserListNamesValidateBeforeCall(null, null);
-        Type localVarReturnType = new TypeToken<List<BeezUPCommonLOVLink2>>(){}.getType();
+    public ApiResponse<UserLovIndex> getUserLovIndexWithHttpInfo() throws ApiException {
+        com.squareup.okhttp.Call call = getUserLovIndexValidateBeforeCall(null, null);
+        Type localVarReturnType = new TypeToken<UserLovIndex>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -12860,7 +13871,7 @@ public class BeezUPApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getUserListNamesAsync(final ApiCallback<List<BeezUPCommonLOVLink2>> callback) throws ApiException {
+    public com.squareup.okhttp.Call getUserLovIndexAsync(final ApiCallback<UserLovIndex> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -12881,132 +13892,8 @@ public class BeezUPApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getUserListNamesValidateBeforeCall(progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<BeezUPCommonLOVLink2>>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /* Build call for getUserListOfValues */
-    private com.squareup.okhttp.Call getUserListOfValuesCall(String listName, List<String> acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
-        
-        // create path and map variables
-        String localVarPath = "/v2/user/lov/{listName}".replaceAll("\\{format\\}","json")
-        .replaceAll("\\{" + "listName" + "\\}", apiClient.escapeString(listName.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (acceptLanguage != null)
-        localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] { "api_key" };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-    
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getUserListOfValuesValidateBeforeCall(String listName, List<String> acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'listName' is set
-        if (listName == null) {
-            throw new ApiException("Missing the required parameter 'listName' when calling getUserListOfValues(Async)");
-        }
-        
-        
-        com.squareup.okhttp.Call call = getUserListOfValuesCall(listName, acceptLanguage, progressListener, progressRequestListener);
-        return call;
-
-        
-        
-        
-        
-    }
-
-    /**
-     * Get the list of values related to this list name
-     * 
-     * @param listName The list of value name your want to get (required)
-     * @param acceptLanguage Indicates that the client accepts the following languages. (optional)
-     * @return List&lt;BeezUPCommonListOfValueItem&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public List<BeezUPCommonListOfValueItem> getUserListOfValues(String listName, List<String> acceptLanguage) throws ApiException {
-        ApiResponse<List<BeezUPCommonListOfValueItem>> resp = getUserListOfValuesWithHttpInfo(listName, acceptLanguage);
-        return resp.getData();
-    }
-
-    /**
-     * Get the list of values related to this list name
-     * 
-     * @param listName The list of value name your want to get (required)
-     * @param acceptLanguage Indicates that the client accepts the following languages. (optional)
-     * @return ApiResponse&lt;List&lt;BeezUPCommonListOfValueItem&gt;&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<List<BeezUPCommonListOfValueItem>> getUserListOfValuesWithHttpInfo(String listName, List<String> acceptLanguage) throws ApiException {
-        com.squareup.okhttp.Call call = getUserListOfValuesValidateBeforeCall(listName, acceptLanguage, null, null);
-        Type localVarReturnType = new TypeToken<List<BeezUPCommonListOfValueItem>>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * Get the list of values related to this list name (asynchronously)
-     * 
-     * @param listName The list of value name your want to get (required)
-     * @param acceptLanguage Indicates that the client accepts the following languages. (optional)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call getUserListOfValuesAsync(String listName, List<String> acceptLanguage, final ApiCallback<List<BeezUPCommonListOfValueItem>> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = getUserListOfValuesValidateBeforeCall(listName, acceptLanguage, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<BeezUPCommonListOfValueItem>>(){}.getType();
+        com.squareup.okhttp.Call call = getUserLovIndexValidateBeforeCall(progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<UserLovIndex>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -13015,7 +13902,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/marketplaces/orders/harvest".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/marketplaces/orders/harvest".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -13121,7 +14008,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/harvest".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/harvest".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "marketplaceTechnicalCode" + "\\}", apiClient.escapeString(marketplaceTechnicalCode.toString()))
         .replaceAll("\\{" + "accountId" + "\\}", apiClient.escapeString(accountId.toString()))
         .replaceAll("\\{" + "beezUPOrderId" + "\\}", apiClient.escapeString(beezUPOrderId.toString()));
@@ -13254,7 +14141,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/autoImport".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/autoImport".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -13369,7 +14256,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/importations/{executionId}".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "executionId" + "\\}", apiClient.escapeString(executionId.toString()));
 
@@ -13493,7 +14380,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/commit".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/commit".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "executionId" + "\\}", apiClient.escapeString(executionId.toString()));
 
@@ -13617,7 +14504,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/commitColumns".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/commitColumns".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "executionId" + "\\}", apiClient.escapeString(executionId.toString()));
 
@@ -13741,7 +14628,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "executionId" + "\\}", apiClient.escapeString(executionId.toString()))
         .replaceAll("\\{" + "columnId" + "\\}", apiClient.escapeString(columnId.toString()));
@@ -13882,7 +14769,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/configureRemainingCatalogColumns".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/configureRemainingCatalogColumns".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "executionId" + "\\}", apiClient.escapeString(executionId.toString()));
 
@@ -14006,7 +14893,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "executionId" + "\\}", apiClient.escapeString(executionId.toString()))
         .replaceAll("\\{" + "columnId" + "\\}", apiClient.escapeString(columnId.toString()));
@@ -14139,7 +15026,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/expression".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/expression".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "executionId" + "\\}", apiClient.escapeString(executionId.toString()))
         .replaceAll("\\{" + "columnId" + "\\}", apiClient.escapeString(columnId.toString()));
@@ -14276,7 +15163,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/customColumns".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "executionId" + "\\}", apiClient.escapeString(executionId.toString()));
 
@@ -14404,7 +15291,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/catalogColumns".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "executionId" + "\\}", apiClient.escapeString(executionId.toString()));
 
@@ -14532,7 +15419,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/importations/{executionId}".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "executionId" + "\\}", apiClient.escapeString(executionId.toString()));
 
@@ -14660,7 +15547,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/inputConfiguration".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/inputConfiguration".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -14779,7 +15666,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex}".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex}".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "executionId" + "\\}", apiClient.escapeString(executionId.toString()))
         .replaceAll("\\{" + "productSampleIndex" + "\\}", apiClient.escapeString(productSampleIndex.toString()));
@@ -14916,7 +15803,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex}/customColumns/{columnId}".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex}/customColumns/{columnId}".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "executionId" + "\\}", apiClient.escapeString(executionId.toString()))
         .replaceAll("\\{" + "productSampleIndex" + "\\}", apiClient.escapeString(productSampleIndex.toString()))
@@ -15062,7 +15949,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/importations".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/importations".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -15181,7 +16068,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/ignore".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/ignore".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "executionId" + "\\}", apiClient.escapeString(executionId.toString()))
         .replaceAll("\\{" + "columnId" + "\\}", apiClient.escapeString(columnId.toString()));
@@ -15314,7 +16201,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/map".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/map".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "executionId" + "\\}", apiClient.escapeString(executionId.toString()))
         .replaceAll("\\{" + "columnId" + "\\}", apiClient.escapeString(columnId.toString()));
@@ -15455,7 +16342,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/map".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/map".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "executionId" + "\\}", apiClient.escapeString(executionId.toString()))
         .replaceAll("\\{" + "columnId" + "\\}", apiClient.escapeString(columnId.toString()));
@@ -15596,7 +16483,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/reattend".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/reattend".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "executionId" + "\\}", apiClient.escapeString(executionId.toString()))
         .replaceAll("\\{" + "columnId" + "\\}", apiClient.escapeString(columnId.toString()));
@@ -15729,7 +16616,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "executionId" + "\\}", apiClient.escapeString(executionId.toString()))
         .replaceAll("\\{" + "columnId" + "\\}", apiClient.escapeString(columnId.toString()));
@@ -15870,7 +16757,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/importations".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/importations".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -15935,11 +16822,11 @@ public class BeezUPApi {
      * 
      * @param storeId Your store identifier (required)
      * @param request  (required)
-     * @return List&lt;BeezUPCommonLink2&gt;
+     * @return LinksImportationGetImportationMonitoringLink
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<BeezUPCommonLink2> importationStartManualUpdate(String storeId, StartManualImportRequest request) throws ApiException {
-        ApiResponse<List<BeezUPCommonLink2>> resp = importationStartManualUpdateWithHttpInfo(storeId, request);
+    public LinksImportationGetImportationMonitoringLink importationStartManualUpdate(String storeId, StartManualImportRequest request) throws ApiException {
+        ApiResponse<LinksImportationGetImportationMonitoringLink> resp = importationStartManualUpdateWithHttpInfo(storeId, request);
         return resp.getData();
     }
 
@@ -15948,12 +16835,12 @@ public class BeezUPApi {
      * 
      * @param storeId Your store identifier (required)
      * @param request  (required)
-     * @return ApiResponse&lt;List&lt;BeezUPCommonLink2&gt;&gt;
+     * @return ApiResponse&lt;LinksImportationGetImportationMonitoringLink&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<BeezUPCommonLink2>> importationStartManualUpdateWithHttpInfo(String storeId, StartManualImportRequest request) throws ApiException {
+    public ApiResponse<LinksImportationGetImportationMonitoringLink> importationStartManualUpdateWithHttpInfo(String storeId, StartManualImportRequest request) throws ApiException {
         com.squareup.okhttp.Call call = importationStartManualUpdateValidateBeforeCall(storeId, request, null, null);
-        Type localVarReturnType = new TypeToken<List<BeezUPCommonLink2>>(){}.getType();
+        Type localVarReturnType = new TypeToken<LinksImportationGetImportationMonitoringLink>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -15966,7 +16853,7 @@ public class BeezUPApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call importationStartManualUpdateAsync(String storeId, StartManualImportRequest request, final ApiCallback<List<BeezUPCommonLink2>> callback) throws ApiException {
+    public com.squareup.okhttp.Call importationStartManualUpdateAsync(String storeId, StartManualImportRequest request, final ApiCallback<LinksImportationGetImportationMonitoringLink> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -15988,7 +16875,7 @@ public class BeezUPApi {
         }
 
         com.squareup.okhttp.Call call = importationStartManualUpdateValidateBeforeCall(storeId, request, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<BeezUPCommonLink2>>(){}.getType();
+        Type localVarReturnType = new TypeToken<LinksImportationGetImportationMonitoringLink>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -15997,7 +16884,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/technicalProgression".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/technicalProgression".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "executionId" + "\\}", apiClient.escapeString(executionId.toString()));
 
@@ -16125,7 +17012,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/unmap".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/unmap".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "executionId" + "\\}", apiClient.escapeString(executionId.toString()))
         .replaceAll("\\{" + "columnId" + "\\}", apiClient.escapeString(columnId.toString()));
@@ -16258,7 +17145,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/unmap".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/unmap".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "executionId" + "\\}", apiClient.escapeString(executionId.toString()))
         .replaceAll("\\{" + "columnId" + "\\}", apiClient.escapeString(columnId.toString()));
@@ -16386,12 +17273,130 @@ public class BeezUPApi {
         apiClient.executeAsync(call, callback);
         return call;
     }
+    /* Build call for login */
+    private com.squareup.okhttp.Call loginCall(LoginRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = request;
+        
+        // create path and map variables
+        String localVarPath = "/public/security/login".replaceAll("\\{format\\}","json");
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call loginValidateBeforeCall(LoginRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'request' is set
+        if (request == null) {
+            throw new ApiException("Missing the required parameter 'request' when calling login(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = loginCall(request, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Login
+     * User Login - The login will give your tokens
+     * @param request  (required)
+     * @return ApiCredentials
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiCredentials login(LoginRequest request) throws ApiException {
+        ApiResponse<ApiCredentials> resp = loginWithHttpInfo(request);
+        return resp.getData();
+    }
+
+    /**
+     * Login
+     * User Login - The login will give your tokens
+     * @param request  (required)
+     * @return ApiResponse&lt;ApiCredentials&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<ApiCredentials> loginWithHttpInfo(LoginRequest request) throws ApiException {
+        com.squareup.okhttp.Call call = loginValidateBeforeCall(request, null, null);
+        Type localVarReturnType = new TypeToken<ApiCredentials>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Login (asynchronously)
+     * User Login - The login will give your tokens
+     * @param request  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call loginAsync(LoginRequest request, final ApiCallback<ApiCredentials> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = loginValidateBeforeCall(request, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ApiCredentials>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
     /* Build call for logout */
     private com.squareup.okhttp.Call logoutCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/customer/security/logout".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/customer/security/logout".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -16492,12 +17497,126 @@ public class BeezUPApi {
         apiClient.executeAsync(call, callback);
         return call;
     }
+    /* Build call for lostPassword */
+    private com.squareup.okhttp.Call lostPasswordCall(BeezUPCommonEmail email, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = email;
+        
+        // create path and map variables
+        String localVarPath = "/public/security/lostpassword".replaceAll("\\{format\\}","json");
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call lostPasswordValidateBeforeCall(BeezUPCommonEmail email, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'email' is set
+        if (email == null) {
+            throw new ApiException("Missing the required parameter 'email' when calling lostPassword(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = lostPasswordCall(email, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Lost password
+     * Lost password - Your password will be regenerated and sent to your email
+     * @param email Your email (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public void lostPassword(BeezUPCommonEmail email) throws ApiException {
+        lostPasswordWithHttpInfo(email);
+    }
+
+    /**
+     * Lost password
+     * Lost password - Your password will be regenerated and sent to your email
+     * @param email Your email (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Void> lostPasswordWithHttpInfo(BeezUPCommonEmail email) throws ApiException {
+        com.squareup.okhttp.Call call = lostPasswordValidateBeforeCall(email, null, null);
+        return apiClient.execute(call);
+    }
+
+    /**
+     * Lost password (asynchronously)
+     * Lost password - Your password will be regenerated and sent to your email
+     * @param email Your email (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call lostPasswordAsync(BeezUPCommonEmail email, final ApiCallback<Void> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = lostPasswordValidateBeforeCall(email, progressListener, progressRequestListener);
+        apiClient.executeAsync(call, callback);
+        return call;
+    }
     /* Build call for mapChannelCatalogCategory */
     private com.squareup.okhttp.Call mapChannelCatalogCategoryCall(String channelCatalogId, MapCategoryRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/categoryMappings/map".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/channelCatalogs/{channelCatalogId}/categoryMappings/map".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "channelCatalogId" + "\\}", apiClient.escapeString(channelCatalogId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -16620,7 +17739,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/columnMappings".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/channelCatalogs/{channelCatalogId}/columnMappings".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "channelCatalogId" + "\\}", apiClient.escapeString(channelCatalogId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -16743,7 +17862,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/analytics/{storeId}/rules/{ruleId}/movedown".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/analytics/{storeId}/rules/{ruleId}/movedown".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "ruleId" + "\\}", apiClient.escapeString(ruleId.toString()));
 
@@ -16867,7 +17986,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/analytics/{storeId}/rules/{ruleId}/moveup".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/analytics/{storeId}/rules/{ruleId}/moveup".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "ruleId" + "\\}", apiClient.escapeString(ruleId.toString()));
 
@@ -16991,7 +18110,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/analytics/{storeId}/optimisations/{actionName}".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/analytics/{storeId}/optimisations/{actionName}".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "actionName" + "\\}", apiClient.escapeString(actionName.toString()));
 
@@ -17123,7 +18242,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/analytics/{storeId}/optimisations/bycategory/{catalogCategoryId}/{actionName}".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/analytics/{storeId}/optimisations/bycategory/{catalogCategoryId}/{actionName}".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "catalogCategoryId" + "\\}", apiClient.escapeString(catalogCategoryId.toString()))
         .replaceAll("\\{" + "actionName" + "\\}", apiClient.escapeString(actionName.toString()));
@@ -17259,7 +18378,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/analytics/{storeId}/optimisations/bychannel/{channelId}/{actionName}".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/analytics/{storeId}/optimisations/bychannel/{channelId}/{actionName}".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "channelId" + "\\}", apiClient.escapeString(channelId.toString()))
         .replaceAll("\\{" + "actionName" + "\\}", apiClient.escapeString(actionName.toString()));
@@ -17392,7 +18511,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/analytics/{storeId}/optimisations/byproduct/{productId}/{actionName}".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/analytics/{storeId}/optimisations/byproduct/{productId}/{actionName}".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "productId" + "\\}", apiClient.escapeString(productId.toString()))
         .replaceAll("\\{" + "actionName" + "\\}", apiClient.escapeString(actionName.toString()));
@@ -17528,7 +18647,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "channelCatalogId" + "\\}", apiClient.escapeString(channelCatalogId.toString()))
         .replaceAll("\\{" + "productId" + "\\}", apiClient.escapeString(productId.toString()));
 
@@ -17660,7 +18779,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/customer/contracts/current/reenableAutoRenewal".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/customer/contracts/current/reenableAutoRenewal".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -17766,7 +18885,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/reenable".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/channelCatalogs/{channelCatalogId}/products/{productId}/reenable".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "channelCatalogId" + "\\}", apiClient.escapeString(channelCatalogId.toString()))
         .replaceAll("\\{" + "productId" + "\\}", apiClient.escapeString(productId.toString()));
 
@@ -17885,12 +19004,126 @@ public class BeezUPApi {
         apiClient.executeAsync(call, callback);
         return call;
     }
+    /* Build call for register */
+    private com.squareup.okhttp.Call registerCall(RegisterRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = request;
+        
+        // create path and map variables
+        String localVarPath = "/public/security/register".replaceAll("\\{format\\}","json");
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call registerValidateBeforeCall(RegisterRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'request' is set
+        if (request == null) {
+            throw new ApiException("Missing the required parameter 'request' when calling register(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = registerCall(request, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * User Registration
+     * User Registration - Create a new user on BeezUP
+     * @param request  (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public void register(RegisterRequest request) throws ApiException {
+        registerWithHttpInfo(request);
+    }
+
+    /**
+     * User Registration
+     * User Registration - Create a new user on BeezUP
+     * @param request  (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Void> registerWithHttpInfo(RegisterRequest request) throws ApiException {
+        com.squareup.okhttp.Call call = registerValidateBeforeCall(request, null, null);
+        return apiClient.execute(call);
+    }
+
+    /**
+     * User Registration (asynchronously)
+     * User Registration - Create a new user on BeezUP
+     * @param request  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call registerAsync(RegisterRequest request, final ApiCallback<Void> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = registerValidateBeforeCall(request, progressListener, progressRequestListener);
+        apiClient.executeAsync(call, callback);
+        return call;
+    }
     /* Build call for resendEmailActivation */
     private com.squareup.okhttp.Call resendEmailActivationCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/customer/account/resendEmailActivation".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/customer/account/resendEmailActivation".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -17996,7 +19229,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/analytics/{storeId}/rules/{ruleId}/run".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/analytics/{storeId}/rules/{ruleId}/run".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "ruleId" + "\\}", apiClient.escapeString(ruleId.toString()));
 
@@ -18120,7 +19353,7 @@ public class BeezUPApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/v2/user/analytics/{storeId}/rules/run".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/analytics/{storeId}/rules/run".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -18235,7 +19468,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/customer/account/companyInfo".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/customer/account/companyInfo".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -18349,7 +19582,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/customer/account/creditCardInfo".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/customer/account/creditCardInfo".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -18463,7 +19696,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/customer/account/personalInfo".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/customer/account/personalInfo".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -18577,7 +19810,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/customer/account/profilePictureInfo".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/customer/account/profilePictureInfo".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -18691,7 +19924,7 @@ public class BeezUPApi {
         Object localVarPostBody = reportFilter;
         
         // create path and map variables
-        String localVarPath = "/v2/user/analytics/{storeId}/reports/filters/{reportFilterId}".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/analytics/{storeId}/reports/filters/{reportFilterId}".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "reportFilterId" + "\\}", apiClient.escapeString(reportFilterId.toString()));
 
@@ -18823,7 +20056,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/customer/stores/{storeId}/alerts/{alertId}".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/customer/stores/{storeId}/alerts/{alertId}".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "alertId" + "\\}", apiClient.escapeString(alertId.toString()));
 
@@ -18955,7 +20188,7 @@ public class BeezUPApi {
         Object localVarPostBody = model;
         
         // create path and map variables
-        String localVarPath = "/v2/user/marketplaces/channelcatalogs/{channelCatalogId}/settings".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/marketplaces/channelcatalogs/{channelCatalogId}/settings".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "channelCatalogId" + "\\}", apiClient.escapeString(channelCatalogId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -19078,7 +20311,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/setMerchantOrderInfo".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/setMerchantOrderInfo".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "marketplaceTechnicalCode" + "\\}", apiClient.escapeString(marketplaceTechnicalCode.toString()))
         .replaceAll("\\{" + "accountId" + "\\}", apiClient.escapeString(accountId.toString()))
         .replaceAll("\\{" + "beezUPOrderId" + "\\}", apiClient.escapeString(beezUPOrderId.toString()));
@@ -19219,7 +20452,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/marketplaces/orders/batches/setMerchantOrderInfos".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/marketplaces/orders/batches/setMerchantOrderInfos".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -19337,7 +20570,7 @@ public class BeezUPApi {
         Object localVarPostBody = email;
         
         // create path and map variables
-        String localVarPath = "/v2/user/customer/stores/{storeId}/shares".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/customer/stores/{storeId}/shares".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -19460,7 +20693,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/customer/contracts/current/disableAutoRenewal".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/customer/contracts/current/disableAutoRenewal".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -19574,7 +20807,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/channelCatalogs/{channelCatalogId}/categoryMappings/unmap".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/channelCatalogs/{channelCatalogId}/categoryMappings/unmap".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "channelCatalogId" + "\\}", apiClient.escapeString(channelCatalogId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -19697,7 +20930,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/analytics/{storeId}/rules/{ruleId}".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/analytics/{storeId}/rules/{ruleId}".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()))
         .replaceAll("\\{" + "ruleId" + "\\}", apiClient.escapeString(ruleId.toString()));
 
@@ -19829,7 +21062,7 @@ public class BeezUPApi {
         Object localVarPostBody = request;
         
         // create path and map variables
-        String localVarPath = "/v2/user/customer/stores/{storeId}".replaceAll("\\{format\\}","json")
+        String localVarPath = "/user/customer/stores/{storeId}".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "storeId" + "\\}", apiClient.escapeString(storeId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();

@@ -23,7 +23,7 @@ import io.swagger.client.model.LinksGetAutomaticTransitionsLink;
 /**
  * AutomaticTransitionInfosLinks
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:48:39.678Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:58:06.674Z")
 public class AutomaticTransitionInfosLinks {
   @SerializedName("self")
   private LinksGetAutomaticTransitionsLink self = null;

@@ -1,6 +1,6 @@
 /*
  * BeezUP API
- * This is the RESTful API of BeezUP which allows you to manage everything related to BeezUP
+ * This API will allow you to create your account and to get your tokens. \\ If you lost your password, you have an operation to get it back. 
  *
  * OpenAPI spec version: 2.0
  * Contact: support@beezup.com
@@ -17,17 +17,17 @@ import io.swagger.client.ApiException;
 import io.swagger.client.model.AccountInfo;
 import io.swagger.client.model.AccountPublications;
 import io.swagger.client.model.AccountSynchronizations;
+import io.swagger.client.model.ApiCredentials;
 import io.swagger.client.model.AutoImportConfiguration;
 import io.swagger.client.model.AutomaticTransitionInfos;
 import io.swagger.client.model.BatchOrderOperationResponse;
 import io.swagger.client.model.BeezUPColumnConfiguration;
 import io.swagger.client.model.BeezUPCommonChannelColumnId;
+import io.swagger.client.model.BeezUPCommonEmail;
 import io.swagger.client.model.BeezUPCommonErrorResponseMessage;
 import io.swagger.client.model.BeezUPCommonInfoSummaries;
-import io.swagger.client.model.BeezUPCommonLOVLink2;
 import io.swagger.client.model.BeezUPCommonLink2;
 import io.swagger.client.model.BeezUPCommonLink3;
-import io.swagger.client.model.BeezUPCommonListOfValueItem;
 import io.swagger.client.model.BillingPeriods;
 import io.swagger.client.model.CatalogColumns;
 import io.swagger.client.model.Categories;
@@ -39,20 +39,26 @@ import io.swagger.client.model.ChangePasswordRequest;
 import io.swagger.client.model.ChangeUserColumnNameRequest;
 import io.swagger.client.model.ChannelCatalog;
 import io.swagger.client.model.ChannelCatalogCategoryMappings;
+import io.swagger.client.model.ChannelCatalogExportCacheInfoResponse;
+import io.swagger.client.model.ChannelCatalogExportationHistory;
 import io.swagger.client.model.ChannelCatalogList;
 import io.swagger.client.model.ChannelCatalogMarketplaceProperties;
 import io.swagger.client.model.ChannelCatalogMarketplaceSettings;
+import io.swagger.client.model.ChannelCatalogProductByChannelCatalogRequest;
+import io.swagger.client.model.ChannelCatalogProductByChannelCatalogResponse;
 import io.swagger.client.model.ChannelCatalogProductInfo;
 import io.swagger.client.model.ChannelCatalogProductInfoList;
 import io.swagger.client.model.ChannelColumn;
 import io.swagger.client.model.ChannelHeader;
 import io.swagger.client.model.ChannelInfo;
+import io.swagger.client.model.ChannelInfoList;
 import io.swagger.client.model.ChannelRootCategory;
 import io.swagger.client.model.ClearMerchantOrderInfoListRequest;
 import io.swagger.client.model.ColumnMappingList;
 import io.swagger.client.model.CompanyInfo;
 import io.swagger.client.model.ComputeExpressionRequest;
 import io.swagger.client.model.ConfigureAutoImportIntervalRequest;
+import io.swagger.client.model.ConfigureAutomaticTransitionRequest;
 import io.swagger.client.model.ConfigureCatalogColumnCatalogRequest;
 import io.swagger.client.model.Contracts;
 import io.swagger.client.model.CostSettings;
@@ -80,6 +86,8 @@ import io.swagger.client.model.InlineResponse409;
 import io.swagger.client.model.Invoices;
 import io.swagger.client.model.LastManualImportInputConfiguration;
 import io.swagger.client.model.LinksGetStoresLink;
+import io.swagger.client.model.LinksImportationGetImportationMonitoringLink;
+import io.swagger.client.model.LoginRequest;
 import io.swagger.client.model.MapBeezUPColumnRequest;
 import io.swagger.client.model.MapCategoryRequest;
 import io.swagger.client.model.MarketplaceChannelCatalogList;
@@ -89,6 +97,7 @@ import io.swagger.client.model.OptimiseRequest;
 import io.swagger.client.model.Order;
 import io.swagger.client.model.OrderExportations;
 import io.swagger.client.model.OrderHistory;
+import io.swagger.client.model.OrderIndex;
 import io.swagger.client.model.OrderListFull;
 import io.swagger.client.model.OrderListLight;
 import io.swagger.client.model.OrderListRequest;
@@ -99,6 +108,10 @@ import io.swagger.client.model.ProductSample;
 import io.swagger.client.model.Products;
 import io.swagger.client.model.ProfilePictureInfo;
 import io.swagger.client.model.ProfilePictureInfoResponse;
+import io.swagger.client.model.PublicChannelIndex;
+import io.swagger.client.model.PublicListOfValuesResponse;
+import io.swagger.client.model.PublicLovIndex;
+import io.swagger.client.model.RegisterRequest;
 import io.swagger.client.model.ReportByCategoryRequest;
 import io.swagger.client.model.ReportByCategoryResponse;
 import io.swagger.client.model.ReportByChannelRequest;
@@ -112,7 +125,6 @@ import io.swagger.client.model.ReportFilters;
 import io.swagger.client.model.Rule;
 import io.swagger.client.model.RuleExecutionReportings;
 import io.swagger.client.model.RuleList;
-import io.swagger.client.model.SaveAutomaticTransitionRequest;
 import io.swagger.client.model.SaveReportFilterRequest;
 import io.swagger.client.model.SaveStoreAlertRequest;
 import io.swagger.client.model.ScheduleAutoImportRequest;
@@ -137,6 +149,8 @@ import io.swagger.client.model.UpdateRuleRequest;
 import io.swagger.client.model.UpdateStoreRequest;
 import io.swagger.client.model.UpgradeOfferRequired;
 import io.swagger.client.model.UserFriendInfo;
+import io.swagger.client.model.UserListOfValuesResponse;
+import io.swagger.client.model.UserLovIndex;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -279,7 +293,7 @@ public class BeezUPApiTest {
     @Test
     public void autoStartAutoImportTest() throws ApiException {
         String storeId = null;
-        List<BeezUPCommonLink2> response = api.autoStartAutoImport(storeId);
+        LinksImportationGetImportationMonitoringLink response = api.autoStartAutoImport(storeId);
 
         // TODO: test validations
     }
@@ -624,7 +638,7 @@ public class BeezUPApiTest {
      */
     @Test
     public void configureAutomaticTransitionsTest() throws ApiException {
-        SaveAutomaticTransitionRequest request = null;
+        ConfigureAutomaticTransitionRequest request = null;
         api.configureAutomaticTransitions(request);
 
         // TODO: test validations
@@ -756,7 +770,24 @@ public class BeezUPApiTest {
      */
     @Test
     public void deleteChannelCatalogTest() throws ApiException {
-        api.deleteChannelCatalog();
+        String channelCatalogId = null;
+        api.deleteChannelCatalog(channelCatalogId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Delete the exportation cache
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void deleteChannelCatalogExportationCacheTest() throws ApiException {
+        String channelCatalogId = null;
+        api.deleteChannelCatalogExportationCache(channelCatalogId);
 
         // TODO: test validations
     }
@@ -954,9 +985,8 @@ public class BeezUPApiTest {
      */
     @Test
     public void exportOrdersTest() throws ApiException {
-        String format = null;
         ExportOrderListRequest request = null;
-        api.exportOrders(format, request);
+        api.exportOrders(request);
 
         // TODO: test validations
     }
@@ -1109,6 +1139,40 @@ public class BeezUPApiTest {
     }
     
     /**
+     * Get the exportation cache information
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getChannelCatalogExportationCacheInfoTest() throws ApiException {
+        String channelCatalogId = null;
+        ChannelCatalogExportCacheInfoResponse response = api.getChannelCatalogExportationCacheInfo(channelCatalogId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get the exportation history
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getChannelCatalogExportationHistoryTest() throws ApiException {
+        String channelCatalogId = null;
+        Integer pageNumber = null;
+        Integer pageSize = null;
+        ChannelCatalogExportationHistory response = api.getChannelCatalogExportationHistory(channelCatalogId, pageNumber, pageSize);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Get the marketplace properties for a channel catalog
      *
      * 
@@ -1136,6 +1200,23 @@ public class BeezUPApiTest {
     public void getChannelCatalogMarketplaceSettingsTest() throws ApiException {
         String channelCatalogId = null;
         ChannelCatalogMarketplaceSettings response = api.getChannelCatalogMarketplaceSettings(channelCatalogId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get channel catalog products related to these channel catalogs
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getChannelCatalogProductByChannelCatalogTest() throws ApiException {
+        String productId = null;
+        ChannelCatalogProductByChannelCatalogRequest request = null;
+        ChannelCatalogProductByChannelCatalogResponse response = api.getChannelCatalogProductByChannelCatalog(productId, request);
 
         // TODO: test validations
     }
@@ -1237,6 +1318,38 @@ public class BeezUPApiTest {
     public void getChannelInfoTest() throws ApiException {
         String channelId = null;
         ChannelInfo response = api.getChannelInfo(channelId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * The channel list for one country
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getChannelsTest() throws ApiException {
+        String countryIsoCode = null;
+        List<String> acceptEncoding = null;
+        ChannelInfoList response = api.getChannels(countryIsoCode, acceptEncoding);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get public channel index
+     *
+     * Use this operation to get the correct link to the channels and to the list of values
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getChannelsIndexTest() throws ApiException {
+        PublicChannelIndex response = api.getChannelsIndex();
 
         // TODO: test validations
     }
@@ -1404,6 +1517,21 @@ public class BeezUPApiTest {
     }
     
     /**
+     * Get all actions you can do on the order API
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getOrderIndexTest() throws ApiException {
+        OrderIndex response = api.getOrderIndex();
+
+        // TODO: test validations
+    }
+    
+    /**
      * Get a paginated list of all Orders with all Order and Order Item(s) properties
      *
      * The purpose of this operation is to reduce the amount of request to the API.\\ \\ Previous implmentation of this feature only returned a partial (light) version of the Orders. The purpose of this API is to reduce the number of incoming requests by returning the complete (full) Order and Order Item(s) properties. 
@@ -1447,6 +1575,40 @@ public class BeezUPApiTest {
     @Test
     public void getProfilePictureInfoTest() throws ApiException {
         ProfilePictureInfoResponse response = api.getProfilePictureInfo();
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get the list of values related to this list name
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getPublicListOfValuesTest() throws ApiException {
+        String listName = null;
+        List<String> acceptLanguage = null;
+        String ifNoneMatch = null;
+        PublicListOfValuesResponse response = api.getPublicListOfValues(listName, acceptLanguage, ifNoneMatch);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get all list names
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getPublicLovIndexTest() throws ApiException {
+        String ifNoneMatch = null;
+        PublicLovIndex response = api.getPublicLovIndex(ifNoneMatch);
 
         // TODO: test validations
     }
@@ -1834,7 +1996,7 @@ public class BeezUPApiTest {
     }
     
     /**
-     * Get list of values related to this group name
+     * Get the list of values related to this list name
      *
      * 
      *
@@ -1842,24 +2004,11 @@ public class BeezUPApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getUserListGroupTest() throws ApiException {
-        String listGroupName = null;
-        List<BeezUPCommonLOVLink2> response = api.getUserListGroup(listGroupName);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Get list of group of list name
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getUserListGroupNamesTest() throws ApiException {
-        List<BeezUPCommonLOVLink2> response = api.getUserListGroupNames();
+    public void getUserListOfValuesTest() throws ApiException {
+        String listName = null;
+        List<String> acceptLanguage = null;
+        String ifNoneMatch = null;
+        UserListOfValuesResponse response = api.getUserListOfValues(listName, acceptLanguage, ifNoneMatch);
 
         // TODO: test validations
     }
@@ -1873,25 +2022,8 @@ public class BeezUPApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getUserListNamesTest() throws ApiException {
-        List<BeezUPCommonLOVLink2> response = api.getUserListNames();
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Get the list of values related to this list name
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getUserListOfValuesTest() throws ApiException {
-        String listName = null;
-        List<String> acceptLanguage = null;
-        List<BeezUPCommonListOfValueItem> response = api.getUserListOfValues(listName, acceptLanguage);
+    public void getUserLovIndexTest() throws ApiException {
+        UserLovIndex response = api.getUserLovIndex();
 
         // TODO: test validations
     }
@@ -2293,7 +2425,7 @@ public class BeezUPApiTest {
     public void importationStartManualUpdateTest() throws ApiException {
         String storeId = null;
         StartManualImportRequest request = null;
-        List<BeezUPCommonLink2> response = api.importationStartManualUpdate(storeId, request);
+        LinksImportationGetImportationMonitoringLink response = api.importationStartManualUpdate(storeId, request);
 
         // TODO: test validations
     }
@@ -2352,6 +2484,22 @@ public class BeezUPApiTest {
     }
     
     /**
+     * Login
+     *
+     * User Login - The login will give your tokens
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void loginTest() throws ApiException {
+        LoginRequest request = null;
+        ApiCredentials response = api.login(request);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Log out the current user from go2
      *
      * Log out the current user from go2
@@ -2362,6 +2510,22 @@ public class BeezUPApiTest {
     @Test
     public void logoutTest() throws ApiException {
         api.logout();
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Lost password
+     *
+     * Lost password - Your password will be regenerated and sent to your email
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void lostPasswordTest() throws ApiException {
+        BeezUPCommonEmail email = null;
+        api.lostPassword(email);
 
         // TODO: test validations
     }
@@ -2554,6 +2718,22 @@ public class BeezUPApiTest {
         String channelCatalogId = null;
         String productId = null;
         api.reenableChannelCatalogProduct(channelCatalogId, productId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * User Registration
+     *
+     * User Registration - Create a new user on BeezUP
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void registerTest() throws ApiException {
+        RegisterRequest request = null;
+        api.register(request);
 
         // TODO: test validations
     }

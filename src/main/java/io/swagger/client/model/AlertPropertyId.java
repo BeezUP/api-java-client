@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * The property identifier of the alert
  */
 @ApiModel(description = "The property identifier of the alert")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:48:39.678Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:58:06.674Z")
 public class AlertPropertyId {
 
   @Override
