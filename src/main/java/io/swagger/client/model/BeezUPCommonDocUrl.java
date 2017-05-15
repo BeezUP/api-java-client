@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * The documentation related to this operation.
  */
 @ApiModel(description = "The documentation related to this operation.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:26:19.914Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:40:14.157Z")
 public class BeezUPCommonDocUrl {
 
   @Override

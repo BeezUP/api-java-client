@@ -40,7 +40,7 @@ import org.joda.time.DateTime;
  * Describe the basic information related to an order. All properties with the prefix order_ are translated in the list of values /user/lov/OrderMetaInfoOrderDetails
  */
 @ApiModel(description = "Describe the basic information related to an order. All properties with the prefix order_ are translated in the list of values /user/lov/OrderMetaInfoOrderDetails")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:26:19.914Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:40:14.157Z")
 public class OrderHeader {
   @SerializedName("marketplaceTechnicalCode")
   private BeezUPCommonMarketplaceTechnicalCode marketplaceTechnicalCode = null;
