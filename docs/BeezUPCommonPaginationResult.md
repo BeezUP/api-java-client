@@ -4,10 +4,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**entryCount** | **Integer** | The entry count currently returned |  [optional]
-**pageCount** | **Integer** | The page count |  [optional]
-**totalEntryCount** | **Integer** | The total entry count |  [optional]
-**links** | [**BeezUPCommonPaginationResultLinks**](BeezUPCommonPaginationResultLinks.md) |  |  [optional]
+**entryCount** | **Integer** | The entry count currently returned | 
+**pageCount** | **Integer** | The page count | 
+**totalEntryCount** | **Integer** | The total entry count | 
+**links** | [**BeezUPCommonPaginationResultLinks**](BeezUPCommonPaginationResultLinks.md) |  | 
 
 
 

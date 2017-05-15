@@ -1,10 +1,10 @@
 # ChannelCatalogsColumnMappingsApi
 
-All URIs are relative to *https://api.beezup.comv2*
+All URIs are relative to *https://api.beezup.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**mapChannelCatalogColumns**](ChannelCatalogsColumnMappingsApi.md#mapChannelCatalogColumns) | **PUT** /v2/user/channelCatalogs/{channelCatalogId}/columnMappings | Configure channel catalog column mappings
+[**mapChannelCatalogColumns**](ChannelCatalogsColumnMappingsApi.md#mapChannelCatalogColumns) | **PUT** /user/channelCatalogs/{channelCatalogId}/columnMappings | Configure channel catalog column mappings
 
 
 <a name="mapChannelCatalogColumns"></a>

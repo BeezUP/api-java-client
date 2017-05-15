@@ -4,13 +4,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**marketplaceTechnicalCode** | [**MarketplaceTechnicalCode**](MarketplaceTechnicalCode.md) |  | 
+**marketplaceTechnicalCode** | [**BeezUPCommonMarketplaceTechnicalCode**](BeezUPCommonMarketplaceTechnicalCode.md) |  | 
 **accountId** | [**AccountId**](AccountId.md) |  | 
 **orderStatusTransitionId** | **Integer** |  | 
 **enabled** | **Boolean** |  | 
-**marketplaceBusinessCode** | [**MarketplaceBusinessCode**](MarketplaceBusinessCode.md) |  | 
+**marketplaceBusinessCode** | [**BeezUPCommonMarketplaceBusinessCode**](BeezUPCommonMarketplaceBusinessCode.md) |  | 
 **beezUPOrderStatus** | [**BeezUPOrderStatus**](BeezUPOrderStatus.md) |  | 
 **businessOperationType** | [**BusinessOperationType**](BusinessOperationType.md) |  | 
+**links** | [**AutomaticTransitionInfoLinks**](AutomaticTransitionInfoLinks.md) |  |  [optional]
 
 
 

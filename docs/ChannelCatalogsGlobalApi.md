@@ -1,13 +1,13 @@
 # ChannelCatalogsGlobalApi
 
-All URIs are relative to *https://api.beezup.comv2*
+All URIs are relative to *https://api.beezup.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createChannelCatalog**](ChannelCatalogsGlobalApi.md#createChannelCatalog) | **POST** /v2/user/channelCatalogs/ | Create a new channel catalog
-[**deleteChannelCatalog**](ChannelCatalogsGlobalApi.md#deleteChannelCatalog) | **DELETE** /v2/user/channelCatalogs/{channelCatalogId} | Delete the channel catalog
-[**getChannelCatalog**](ChannelCatalogsGlobalApi.md#getChannelCatalog) | **GET** /v2/user/channelCatalogs/{channelCatalogId} | Get the channel catalog information
-[**getChannelCatalogs**](ChannelCatalogsGlobalApi.md#getChannelCatalogs) | **GET** /v2/user/channelCatalogs/ | List all your current channel catalogs
+[**createChannelCatalog**](ChannelCatalogsGlobalApi.md#createChannelCatalog) | **POST** /user/channelCatalogs/ | Create a new channel catalog
+[**deleteChannelCatalog**](ChannelCatalogsGlobalApi.md#deleteChannelCatalog) | **DELETE** /user/channelCatalogs/{channelCatalogId} | Delete the channel catalog
+[**getChannelCatalog**](ChannelCatalogsGlobalApi.md#getChannelCatalog) | **GET** /user/channelCatalogs/{channelCatalogId} | Get the channel catalog information
+[**getChannelCatalogs**](ChannelCatalogsGlobalApi.md#getChannelCatalogs) | **GET** /user/channelCatalogs/ | List all your current channel catalogs
 
 
 <a name="createChannelCatalog"></a>
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteChannelCatalog"></a>
 # **deleteChannelCatalog**
-> deleteChannelCatalog()
+> deleteChannelCatalog(channelCatalogId)
 
 Delete the channel catalog
 
@@ -87,8 +87,9 @@ api_key.setApiKey("YOUR API KEY");
 //api_key.setApiKeyPrefix("Token");
 
 ChannelCatalogsGlobalApi apiInstance = new ChannelCatalogsGlobalApi();
+String channelCatalogId = "6d6b04de-406b-4539-8e7e-bf3e8da5dfb0"; // String | The channel catalog identifier
 try {
-    apiInstance.deleteChannelCatalog();
+    apiInstance.deleteChannelCatalog(channelCatalogId);
 } catch (ApiException e) {
     System.err.println("Exception when calling ChannelCatalogsGlobalApi#deleteChannelCatalog");
     e.printStackTrace();
@@ -96,7 +97,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **channelCatalogId** | **String**| The channel catalog identifier |
 
 ### Return type
 

@@ -1,11 +1,11 @@
 # ChannelCatalogsProductsOptimisationApi
 
-All URIs are relative to *https://api.beezup.comv2*
+All URIs are relative to *https://api.beezup.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**disableChannelCatalogProduct**](ChannelCatalogsProductsOptimisationApi.md#disableChannelCatalogProduct) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/disable | Disable channel catalog product
-[**reenableChannelCatalogProduct**](ChannelCatalogsProductsOptimisationApi.md#reenableChannelCatalogProduct) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/reenable | Reenable channel catalog product
+[**disableChannelCatalogProduct**](ChannelCatalogsProductsOptimisationApi.md#disableChannelCatalogProduct) | **POST** /user/channelCatalogs/{channelCatalogId}/products/{productId}/disable | Disable channel catalog product
+[**reenableChannelCatalogProduct**](ChannelCatalogsProductsOptimisationApi.md#reenableChannelCatalogProduct) | **POST** /user/channelCatalogs/{channelCatalogId}/products/{productId}/reenable | Reenable channel catalog product
 
 
 <a name="disableChannelCatalogProduct"></a>

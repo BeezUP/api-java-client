@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **errors** | [**List&lt;BeezUPCommonUserErrorMessage&gt;**](BeezUPCommonUserErrorMessage.md) |  |  [optional]
-**links** | [**List&lt;BeezUPCommonLink2&gt;**](BeezUPCommonLink2.md) | contains the link to the current importation. rel&#x3D;currentImportation |  [optional]
+**links** | [**InlineResponse409Links**](InlineResponse409Links.md) |  |  [optional]
 
 
 

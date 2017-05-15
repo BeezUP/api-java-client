@@ -61,12 +61,12 @@ Please follow the [installation](#installation) instruction and execute the foll
 import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
-import io.swagger.client.api.BeezUPApi;
+import io.swagger.client.api.AnalyticsOptimisationsApi;
 
 import java.io.File;
 import java.util.*;
 
-public class BeezUPApiExample {
+public class AnalyticsOptimisationsApiExample {
 
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
@@ -77,12 +77,14 @@ public class BeezUPApiExample {
         // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
         //api_key.setApiKeyPrefix("Token");
 
-        BeezUPApi apiInstance = new BeezUPApi();
-        String emailActivationId = "emailActivationId_example"; // String | The email activation id received by email.
+        AnalyticsOptimisationsApi apiInstance = new AnalyticsOptimisationsApi();
+        String storeId = "storeId_example"; // String | Your store identifier
+        String actionName = "actionName_example"; // String | 
+        OptimiseRequest request = new OptimiseRequest(); // OptimiseRequest | 
         try {
-            apiInstance.activateUserAccount(emailActivationId);
+            apiInstance.optimise(storeId, actionName, request);
         } catch (ApiException e) {
-            System.err.println("Exception when calling BeezUPApi#activateUserAccount");
+            System.err.println("Exception when calling AnalyticsOptimisationsApi#optimise");
             e.printStackTrace();
         }
     }
@@ -92,179 +94,180 @@ public class BeezUPApiExample {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api.beezup.comv2*
+All URIs are relative to *https://api.beezup.com/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*BeezUPApi* | [**activateUserAccount**](docs/BeezUPApi.md#activateUserAccount) | **POST** /v2/user/customer/account/activate | Activate the user account
-*BeezUPApi* | [**autoConfigureAutoImportInterval**](docs/BeezUPApi.md#autoConfigureAutoImportInterval) | **POST** /v2/user/catalogs/{storeId}/autoImport/scheduling/interval | Configure Auto Import Interval
-*BeezUPApi* | [**autoDeleteAutoImport**](docs/BeezUPApi.md#autoDeleteAutoImport) | **DELETE** /v2/user/catalogs/{storeId}/autoImport | Delete Auto Import
-*BeezUPApi* | [**autoGetAutoImportConfiguration**](docs/BeezUPApi.md#autoGetAutoImportConfiguration) | **GET** /v2/user/catalogs/{storeId}/autoImport | Get the auto import configuration
-*BeezUPApi* | [**autoPauseAutoImport**](docs/BeezUPApi.md#autoPauseAutoImport) | **POST** /v2/user/catalogs/{storeId}/autoImport/pause | Pause Auto Import
-*BeezUPApi* | [**autoResumeAutoImport**](docs/BeezUPApi.md#autoResumeAutoImport) | **POST** /v2/user/catalogs/{storeId}/autoImport/resume | Resume Auto Import
-*BeezUPApi* | [**autoScheduleAutoImport**](docs/BeezUPApi.md#autoScheduleAutoImport) | **POST** /v2/user/catalogs/{storeId}/autoImport/scheduling/schedules | Configure Auto Import Schedules
-*BeezUPApi* | [**autoStartAutoImport**](docs/BeezUPApi.md#autoStartAutoImport) | **POST** /v2/user/catalogs/{storeId}/autoImport/start | Start Auto Import Manually
-*BeezUPApi* | [**catalogChangeCatalogColumnUserName**](docs/BeezUPApi.md#catalogChangeCatalogColumnUserName) | **POST** /v2/user/catalogs/{storeId}/catalogColumns/{columnId}/rename | Change Catalog Column User Name
-*BeezUPApi* | [**catalogChangeCustomColumnExpression**](docs/BeezUPApi.md#catalogChangeCustomColumnExpression) | **PUT** /v2/user/catalogs/{storeId}/customColumns/{columnId}/expression | Change custom column expression
-*BeezUPApi* | [**catalogChangeCustomColumnUserName**](docs/BeezUPApi.md#catalogChangeCustomColumnUserName) | **POST** /v2/user/catalogs/{storeId}/customColumns/{columnId}/rename | Change Custom Column User Name
-*BeezUPApi* | [**catalogComputeExpression**](docs/BeezUPApi.md#catalogComputeExpression) | **POST** /v2/user/catalogs/{storeId}/customColumns/computeExpression | Compute the expression for this catalog.
-*BeezUPApi* | [**catalogDeleteCustomColumn**](docs/BeezUPApi.md#catalogDeleteCustomColumn) | **DELETE** /v2/user/catalogs/{storeId}/customColumns/{columnId} | Delete custom column
-*BeezUPApi* | [**catalogGetBeezUPColumns**](docs/BeezUPApi.md#catalogGetBeezUPColumns) | **GET** /v2/user/catalogs/beezupColumns | Get the BeezUP columns
-*BeezUPApi* | [**catalogGetCatalogColumns**](docs/BeezUPApi.md#catalogGetCatalogColumns) | **GET** /v2/user/catalogs/{storeId}/catalogColumns | Get catalog column list
-*BeezUPApi* | [**catalogGetCategories**](docs/BeezUPApi.md#catalogGetCategories) | **GET** /v2/user/catalogs/{storeId}/categories | Get category list
-*BeezUPApi* | [**catalogGetCustomColumnExpression**](docs/BeezUPApi.md#catalogGetCustomColumnExpression) | **GET** /v2/user/catalogs/{storeId}/customColumns/{columnId}/expression | Get the encrypted custom column expression
-*BeezUPApi* | [**catalogGetCustomColumns**](docs/BeezUPApi.md#catalogGetCustomColumns) | **GET** /v2/user/catalogs/{storeId}/customColumns | Get custom column list
-*BeezUPApi* | [**catalogGetProduct**](docs/BeezUPApi.md#catalogGetProduct) | **GET** /v2/user/catalogs/{storeId}/products/{productId} | Get product
-*BeezUPApi* | [**catalogGetProducts**](docs/BeezUPApi.md#catalogGetProducts) | **POST** /v2/user/catalogs/{storeId}/products | Get product list
-*BeezUPApi* | [**catalogGetRandomProducts**](docs/BeezUPApi.md#catalogGetRandomProducts) | **GET** /v2/user/catalogs/{storeId}/products/random | Get random product list
-*BeezUPApi* | [**catalogSaveCustomColumn**](docs/BeezUPApi.md#catalogSaveCustomColumn) | **PUT** /v2/user/catalogs/{storeId}/customColumns/{columnId} | Create or replace a custom column
-*BeezUPApi* | [**changeOrder**](docs/BeezUPApi.md#changeOrder) | **POST** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/{changeOrderType} | Change your marketplace Order Information (accept, ship, etc.)
-*BeezUPApi* | [**changeOrderList**](docs/BeezUPApi.md#changeOrderList) | **POST** /v2/user/marketplaces/orders/batches/changeOrders/{changeOrderType} | Send a batch of operations to change your marketplace Order information (accept, ship, etc.)
-*BeezUPApi* | [**changePassword**](docs/BeezUPApi.md#changePassword) | **POST** /v2/user/customer/account/changePassword | Change user password
-*BeezUPApi* | [**clearMerchantOrderInfo**](docs/BeezUPApi.md#clearMerchantOrderInfo) | **POST** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/clearMerchantOrderInfo | Clear an Order&#39;s merchant information
-*BeezUPApi* | [**clearMerchantOrderInfoList**](docs/BeezUPApi.md#clearMerchantOrderInfoList) | **POST** /v2/user/marketplaces/orders/batches/clearMerchantOrderInfos | Send a batch of operations to clear an Order&#39;s merchant information
-*BeezUPApi* | [**configureAutomaticTransitions**](docs/BeezUPApi.md#configureAutomaticTransitions) | **POST** /v2/user/marketplaces/orders/automaticTransitions | Configure new or existing automatic Order status transition
-*BeezUPApi* | [**configureChannelCatalogCostSettings**](docs/BeezUPApi.md#configureChannelCatalogCostSettings) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/settings/cost | Disable a channel catalog
-*BeezUPApi* | [**configureChannelCatalogExclusionFilters**](docs/BeezUPApi.md#configureChannelCatalogExclusionFilters) | **PUT** /v2/user/channelCatalogs/{channelCatalogId}/exclusionFilters | Configure channel catalog exclusion filters
-*BeezUPApi* | [**configureChannelCatalogGeneralSettings**](docs/BeezUPApi.md#configureChannelCatalogGeneralSettings) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/settings/general | Disable a channel catalog
-*BeezUPApi* | [**createChannelCatalog**](docs/BeezUPApi.md#createChannelCatalog) | **POST** /v2/user/channelCatalogs/ | Create a new channel catalog
-*BeezUPApi* | [**createContract**](docs/BeezUPApi.md#createContract) | **POST** /v2/user/customer/contracts | Create a new contract
-*BeezUPApi* | [**createRule**](docs/BeezUPApi.md#createRule) | **POST** /v2/user/analytics/{storeId}/rules | Rule creation
-*BeezUPApi* | [**createStore**](docs/BeezUPApi.md#createStore) | **POST** /v2/user/customer/stores | Create a new store
-*BeezUPApi* | [**deleteChannelCatalog**](docs/BeezUPApi.md#deleteChannelCatalog) | **DELETE** /v2/user/channelCatalogs/{channelCatalogId} | Delete the channel catalog
-*BeezUPApi* | [**deleteChannelCatalogProductValueOverride**](docs/BeezUPApi.md#deleteChannelCatalogProductValueOverride) | **DELETE** /v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides/{channelColumnId} | Delete a specific channel catalog product value override
-*BeezUPApi* | [**deleteNextContract**](docs/BeezUPApi.md#deleteNextContract) | **DELETE** /v2/user/customer/contracts/next | Delete your next contract
-*BeezUPApi* | [**deleteReportFilter**](docs/BeezUPApi.md#deleteReportFilter) | **DELETE** /v2/user/analytics/{storeId}/reports/filters/{reportFilterId} | Delete the report filter
-*BeezUPApi* | [**deleteRule**](docs/BeezUPApi.md#deleteRule) | **DELETE** /v2/user/analytics/{storeId}/rules/{ruleId} | Delete Rule
-*BeezUPApi* | [**deleteShare**](docs/BeezUPApi.md#deleteShare) | **DELETE** /v2/user/customer/stores/{storeId}/shares/{userId} | Delete a share to another user
-*BeezUPApi* | [**deleteStore**](docs/BeezUPApi.md#deleteStore) | **DELETE** /v2/user/customer/stores/{storeId} | Delete a store
-*BeezUPApi* | [**disableChannelCatalog**](docs/BeezUPApi.md#disableChannelCatalog) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/disable | Disable a channel catalog
-*BeezUPApi* | [**disableChannelCatalogProduct**](docs/BeezUPApi.md#disableChannelCatalogProduct) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/disable | Disable channel catalog product
-*BeezUPApi* | [**disableRule**](docs/BeezUPApi.md#disableRule) | **POST** /v2/user/analytics/{storeId}/rules/{ruleId}/disable | Disable rule
-*BeezUPApi* | [**enableChannelCatalog**](docs/BeezUPApi.md#enableChannelCatalog) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/enable | Enable a channel catalog
-*BeezUPApi* | [**enableRule**](docs/BeezUPApi.md#enableRule) | **POST** /v2/user/analytics/{storeId}/rules/{ruleId}/enable | Enable rule
-*BeezUPApi* | [**exportOrders**](docs/BeezUPApi.md#exportOrders) | **POST** /v2/user/marketplaces/orders/exportations | Request a new Order report exportation to be generated
-*BeezUPApi* | [**exportStoreReportByCategory**](docs/BeezUPApi.md#exportStoreReportByCategory) | **POST** /v2/user/analytics/{storeId}/reports/bycategory/export | Export the report by category
-*BeezUPApi* | [**exportStoreReportByChannel**](docs/BeezUPApi.md#exportStoreReportByChannel) | **POST** /v2/user/analytics/{storeId}/reports/bychannel/export | Export the report by channel
-*BeezUPApi* | [**exportStoreReportByProduct**](docs/BeezUPApi.md#exportStoreReportByProduct) | **POST** /v2/user/analytics/{storeId}/reports/byproduct/export | Export the report by product
-*BeezUPApi* | [**getAutomaticTransitions**](docs/BeezUPApi.md#getAutomaticTransitions) | **GET** /v2/user/marketplaces/orders/automaticTransitions | Get list of configured automatic Order status transitions
-*BeezUPApi* | [**getAvailableChannels**](docs/BeezUPApi.md#getAvailableChannels) | **GET** /v2/user/channels/ | List all available channel for this store
-*BeezUPApi* | [**getBillingPeriods**](docs/BeezUPApi.md#getBillingPeriods) | **GET** /v2/user/customer/billingPeriods | Get billing periods conditions
-*BeezUPApi* | [**getChannelCatalog**](docs/BeezUPApi.md#getChannelCatalog) | **GET** /v2/user/channelCatalogs/{channelCatalogId} | Get the channel catalog information
-*BeezUPApi* | [**getChannelCatalogCategories**](docs/BeezUPApi.md#getChannelCatalogCategories) | **GET** /v2/user/channelCatalogs/{channelCatalogId}/categoryMappings | Get channel catalog categories
-*BeezUPApi* | [**getChannelCatalogExclusionFilterOperators**](docs/BeezUPApi.md#getChannelCatalogExclusionFilterOperators) | **GET** /v2/user/channelCatalogs/exclusionFilterOperators | Get channel catalog exclusion filter operators
-*BeezUPApi* | [**getChannelCatalogMarketplaceProperties**](docs/BeezUPApi.md#getChannelCatalogMarketplaceProperties) | **GET** /v2/user/marketplaces/channelcatalogs/{channelCatalogId}/properties | Get the marketplace properties for a channel catalog
-*BeezUPApi* | [**getChannelCatalogMarketplaceSettings**](docs/BeezUPApi.md#getChannelCatalogMarketplaceSettings) | **GET** /v2/user/marketplaces/channelcatalogs/{channelCatalogId}/settings | Get the marketplace settings for a channel catalog
-*BeezUPApi* | [**getChannelCatalogProductInfo**](docs/BeezUPApi.md#getChannelCatalogProductInfo) | **GET** /v2/user/channelCatalogs/{channelCatalogId}/products/{productId} | Get channel catalog product information
-*BeezUPApi* | [**getChannelCatalogProductInfoList**](docs/BeezUPApi.md#getChannelCatalogProductInfoList) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/products | Get channel catalog product information list
-*BeezUPApi* | [**getChannelCatalogs**](docs/BeezUPApi.md#getChannelCatalogs) | **GET** /v2/user/channelCatalogs/ | List all your current channel catalogs
-*BeezUPApi* | [**getChannelCategories**](docs/BeezUPApi.md#getChannelCategories) | **GET** /v2/user/channels/{channelId}/categories | Get channel categories
-*BeezUPApi* | [**getChannelColumns**](docs/BeezUPApi.md#getChannelColumns) | **POST** /v2/user/channels/{channelId}/columns | Get channel columns
-*BeezUPApi* | [**getChannelInfo**](docs/BeezUPApi.md#getChannelInfo) | **GET** /v2/user/channels/{channelId} | Get channel information
-*BeezUPApi* | [**getContracts**](docs/BeezUPApi.md#getContracts) | **GET** /v2/user/customer/contracts | Get contract list
-*BeezUPApi* | [**getCreditCardInfo**](docs/BeezUPApi.md#getCreditCardInfo) | **GET** /v2/user/customer/account/creditCardInfo | Get credit card information
-*BeezUPApi* | [**getFriendInfo**](docs/BeezUPApi.md#getFriendInfo) | **GET** /v2/user/customer/friends/{userId} | Get friend information
-*BeezUPApi* | [**getInvoices**](docs/BeezUPApi.md#getInvoices) | **GET** /v2/user/customer/invoices | Get all your invoices
-*BeezUPApi* | [**getMarketplaceAccountStores**](docs/BeezUPApi.md#getMarketplaceAccountStores) | **GET** /v2/user/marketplaces/channelcatalogs/ | Get  you marketplace channel catalog list
-*BeezUPApi* | [**getMarketplaceAccountsSynchronization**](docs/BeezUPApi.md#getMarketplaceAccountsSynchronization) | **GET** /v2/user/marketplaces/orders/status | Get current synchronization status between your marketplaces and BeezUP accounts
-*BeezUPApi* | [**getOffer**](docs/BeezUPApi.md#getOffer) | **POST** /v2/user/customer/offers | Get offer pricing
-*BeezUPApi* | [**getOrder**](docs/BeezUPApi.md#getOrder) | **GET** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId} | Get full Order and Order Item(s) properties
-*BeezUPApi* | [**getOrderExportations**](docs/BeezUPApi.md#getOrderExportations) | **GET** /v2/user/marketplaces/orders/exportations | Get a paginated list of Order report exportations
-*BeezUPApi* | [**getOrderHistory**](docs/BeezUPApi.md#getOrderHistory) | **GET** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/history | Get an Order&#39;s harvest and change history
-*BeezUPApi* | [**getOrderListFull**](docs/BeezUPApi.md#getOrderListFull) | **POST** /v2/user/marketplaces/orders/list/full | Get a paginated list of all Orders with all Order and Order Item(s) properties
-*BeezUPApi* | [**getOrderListLight**](docs/BeezUPApi.md#getOrderListLight) | **POST** /v2/user/marketplaces/orders/list/light | Get a paginated list of all Orders without details
-*BeezUPApi* | [**getProfilePictureInfo**](docs/BeezUPApi.md#getProfilePictureInfo) | **GET** /v2/user/customer/account/profilePictureInfo | Get profile picture information
-*BeezUPApi* | [**getPublications**](docs/BeezUPApi.md#getPublications) | **GET** /v2/user/marketplaces/channelcatalogs/publications/{marketplaceTechnicalCode}/{accountId}/history | Fetch the publication history for an account, sorted by descending start date
-*BeezUPApi* | [**getReportFilter**](docs/BeezUPApi.md#getReportFilter) | **GET** /v2/user/analytics/{storeId}/reports/filters/{reportFilterId} | Get the report filter description
-*BeezUPApi* | [**getReportFilters**](docs/BeezUPApi.md#getReportFilters) | **GET** /v2/user/analytics/{storeId}/reports/filters | Get report filter list for the given store
-*BeezUPApi* | [**getRights**](docs/BeezUPApi.md#getRights) | **POST** /v2/user/customer/stores/{storeId}/rights | Get store&#39;s rights
-*BeezUPApi* | [**getRule**](docs/BeezUPApi.md#getRule) | **GET** /v2/user/analytics/{storeId}/rules/{ruleId} | Gets the rule
-*BeezUPApi* | [**getRules**](docs/BeezUPApi.md#getRules) | **GET** /v2/user/analytics/{storeId}/rules | Gets the list of rules for a given store
-*BeezUPApi* | [**getRulesExecutions**](docs/BeezUPApi.md#getRulesExecutions) | **GET** /v2/user/analytics/{storeId}/rules/executions | Get the rules execution history
-*BeezUPApi* | [**getShares**](docs/BeezUPApi.md#getShares) | **GET** /v2/user/customer/stores/{storeId}/shares | Get shares related to this store
-*BeezUPApi* | [**getStandardOffers**](docs/BeezUPApi.md#getStandardOffers) | **GET** /v2/user/customer/offers | Get all standard offers
-*BeezUPApi* | [**getStore**](docs/BeezUPApi.md#getStore) | **GET** /v2/user/customer/stores/{storeId} | Get store&#39;s information
-*BeezUPApi* | [**getStoreAlerts**](docs/BeezUPApi.md#getStoreAlerts) | **GET** /v2/user/customer/stores/{storeId}/alerts | Get store&#39;s alerts
-*BeezUPApi* | [**getStoreReportByCategory**](docs/BeezUPApi.md#getStoreReportByCategory) | **POST** /v2/user/analytics/{storeId}/reports/bycategory | Get the report by category
-*BeezUPApi* | [**getStoreReportByChannel**](docs/BeezUPApi.md#getStoreReportByChannel) | **POST** /v2/user/analytics/{storeId}/reports/bychannel | Get the report by channel
-*BeezUPApi* | [**getStoreReportByDay**](docs/BeezUPApi.md#getStoreReportByDay) | **POST** /v2/user/analytics/{storeId}/reports/byday | Get the report by day
-*BeezUPApi* | [**getStoreReportByDayExport**](docs/BeezUPApi.md#getStoreReportByDayExport) | **POST** /v2/user/analytics/{storeId}/reports/byday/export | Get the report by day
-*BeezUPApi* | [**getStoreReportByProduct**](docs/BeezUPApi.md#getStoreReportByProduct) | **POST** /v2/user/analytics/{storeId}/reports/byproduct | Get the report by product
-*BeezUPApi* | [**getStoreTrackedClicks**](docs/BeezUPApi.md#getStoreTrackedClicks) | **GET** /v2/user/analytics/{storeId}/tracking/clicks | Get the latest clicks tracked
-*BeezUPApi* | [**getStoreTrackedExternalOrders**](docs/BeezUPApi.md#getStoreTrackedExternalOrders) | **GET** /v2/user/analytics/{storeId}/tracking/externalorders | Get the latest external orders tracked
-*BeezUPApi* | [**getStoreTrackedOrders**](docs/BeezUPApi.md#getStoreTrackedOrders) | **GET** /v2/user/analytics/{storeId}/tracking/orders | Get the latest orders tracked
-*BeezUPApi* | [**getStoreTrackingStatus**](docs/BeezUPApi.md#getStoreTrackingStatus) | **GET** /v2/user/analytics/{storeId}/tracking/status | Get store tracking synchronization status
-*BeezUPApi* | [**getStores**](docs/BeezUPApi.md#getStores) | **GET** /v2/user/customer/stores | Get store list
-*BeezUPApi* | [**getTrackingStatus**](docs/BeezUPApi.md#getTrackingStatus) | **GET** /v2/user/analytics/tracking/status | Display the synchronization status of the clicks and orders
-*BeezUPApi* | [**getUserAccountInfo**](docs/BeezUPApi.md#getUserAccountInfo) | **GET** /v2/user/customer/account | Get user account information
-*BeezUPApi* | [**getUserListGroup**](docs/BeezUPApi.md#getUserListGroup) | **GET** /v2/user/lov/groups/{listGroupName} | Get list of values related to this group name
-*BeezUPApi* | [**getUserListGroupNames**](docs/BeezUPApi.md#getUserListGroupNames) | **GET** /v2/user/lov/groups | Get list of group of list name
-*BeezUPApi* | [**getUserListNames**](docs/BeezUPApi.md#getUserListNames) | **GET** /v2/user/lov/ | Get all list names
-*BeezUPApi* | [**getUserListOfValues**](docs/BeezUPApi.md#getUserListOfValues) | **GET** /v2/user/lov/{listName} | Get the list of values related to this list name
-*BeezUPApi* | [**harvestAll**](docs/BeezUPApi.md#harvestAll) | **POST** /v2/user/marketplaces/orders/harvest | Send harvest request to all your marketplaces
-*BeezUPApi* | [**harvestOrder**](docs/BeezUPApi.md#harvestOrder) | **POST** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/harvest | Send harvest request for a single Order
-*BeezUPApi* | [**importationActivateAutoImport**](docs/BeezUPApi.md#importationActivateAutoImport) | **POST** /v2/user/catalogs/{storeId}/autoImport | Activate the auto importation of the last successful manual catalog importation.
-*BeezUPApi* | [**importationCancel**](docs/BeezUPApi.md#importationCancel) | **DELETE** /v2/user/catalogs/{storeId}/importations/{executionId} | Cancel importation
-*BeezUPApi* | [**importationCommit**](docs/BeezUPApi.md#importationCommit) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/commit | Commit Importation
-*BeezUPApi* | [**importationCommitColumns**](docs/BeezUPApi.md#importationCommitColumns) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/commitColumns | Commit columns
-*BeezUPApi* | [**importationConfigureCatalogColumn**](docs/BeezUPApi.md#importationConfigureCatalogColumn) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId} | Configure catalog column
-*BeezUPApi* | [**importationConfigureRemainingCatalogColumns**](docs/BeezUPApi.md#importationConfigureRemainingCatalogColumns) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/configureRemainingCatalogColumns | Configure remaining catalog columns
-*BeezUPApi* | [**importationDeleteCustomColumn**](docs/BeezUPApi.md#importationDeleteCustomColumn) | **DELETE** /v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId} | Delete Custom Column
-*BeezUPApi* | [**importationGetCustomColumnExpression**](docs/BeezUPApi.md#importationGetCustomColumnExpression) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/expression | Get the encrypted custom column expression in this importation
-*BeezUPApi* | [**importationGetCustomColumns**](docs/BeezUPApi.md#importationGetCustomColumns) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId}/customColumns | Get custom columns currently place in this importation
-*BeezUPApi* | [**importationGetDetectedCatalogColumns**](docs/BeezUPApi.md#importationGetDetectedCatalogColumns) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns | Get detected catalog columns during this importation.
-*BeezUPApi* | [**importationGetImportationMonitoring**](docs/BeezUPApi.md#importationGetImportationMonitoring) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId} | Get the importation status
-*BeezUPApi* | [**importationGetManualUpdateLastInputConfig**](docs/BeezUPApi.md#importationGetManualUpdateLastInputConfig) | **GET** /v2/user/catalogs/{storeId}/inputConfiguration | Get the last input configuration
-*BeezUPApi* | [**importationGetProductSample**](docs/BeezUPApi.md#importationGetProductSample) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex} | Get the product sample related to this importation with all columns (catalog and custom)
-*BeezUPApi* | [**importationGetProductSampleCustomColumnValue**](docs/BeezUPApi.md#importationGetProductSampleCustomColumnValue) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex}/customColumns/{columnId} | Get product sample custom column value related to this importation.
-*BeezUPApi* | [**importationGetReportings**](docs/BeezUPApi.md#importationGetReportings) | **GET** /v2/user/catalogs/{storeId}/importations | Get the latest catalog importation reporting
-*BeezUPApi* | [**importationIgnoreColumn**](docs/BeezUPApi.md#importationIgnoreColumn) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/ignore | Ignore Column
-*BeezUPApi* | [**importationMapCatalogColumn**](docs/BeezUPApi.md#importationMapCatalogColumn) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/map | Map catalog column to a BeezUP column
-*BeezUPApi* | [**importationMapCustomColumn**](docs/BeezUPApi.md#importationMapCustomColumn) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/map | Map custom column to a BeezUP column
-*BeezUPApi* | [**importationReattendColumn**](docs/BeezUPApi.md#importationReattendColumn) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/reattend | Reattend Column
-*BeezUPApi* | [**importationSaveCustomColumn**](docs/BeezUPApi.md#importationSaveCustomColumn) | **PUT** /v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId} | Create or replace a custom column
-*BeezUPApi* | [**importationStartManualUpdate**](docs/BeezUPApi.md#importationStartManualUpdate) | **POST** /v2/user/catalogs/{storeId}/importations | Start Manual Import
-*BeezUPApi* | [**importationTechnicalProgression**](docs/BeezUPApi.md#importationTechnicalProgression) | **GET** /v2/user/catalogs/{storeId}/importations/{executionId}/technicalProgression | Get technical progression
-*BeezUPApi* | [**importationUnmapCatalogColumn**](docs/BeezUPApi.md#importationUnmapCatalogColumn) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/unmap | Unmap catalog column
-*BeezUPApi* | [**importationUnmapCustomColumn**](docs/BeezUPApi.md#importationUnmapCustomColumn) | **POST** /v2/user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/unmap | Unmap custom column
-*BeezUPApi* | [**logout**](docs/BeezUPApi.md#logout) | **POST** /v2/user/customer/security/logout | Log out the current user from go2
-*BeezUPApi* | [**mapChannelCatalogCategory**](docs/BeezUPApi.md#mapChannelCatalogCategory) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/categoryMappings/map | Map channel catalog category
-*BeezUPApi* | [**mapChannelCatalogColumns**](docs/BeezUPApi.md#mapChannelCatalogColumns) | **PUT** /v2/user/channelCatalogs/{channelCatalogId}/columnMappings | Configure channel catalog column mappings
-*BeezUPApi* | [**moveDownRule**](docs/BeezUPApi.md#moveDownRule) | **POST** /v2/user/analytics/{storeId}/rules/{ruleId}/movedown | Move the rule down
-*BeezUPApi* | [**moveUpRule**](docs/BeezUPApi.md#moveUpRule) | **POST** /v2/user/analytics/{storeId}/rules/{ruleId}/moveup | Move the rule up
-*BeezUPApi* | [**optimise**](docs/BeezUPApi.md#optimise) | **POST** /v2/user/analytics/{storeId}/optimisations/{actionName} | Optimise products
-*BeezUPApi* | [**optimiseByCategory**](docs/BeezUPApi.md#optimiseByCategory) | **POST** /v2/user/analytics/{storeId}/optimisations/bycategory/{catalogCategoryId}/{actionName} | Optimise products&#39;s category
-*BeezUPApi* | [**optimiseByChannel**](docs/BeezUPApi.md#optimiseByChannel) | **POST** /v2/user/analytics/{storeId}/optimisations/bychannel/{channelId}/{actionName} | Optimise products&#39;s category
-*BeezUPApi* | [**optimiseByProduct**](docs/BeezUPApi.md#optimiseByProduct) | **POST** /v2/user/analytics/{storeId}/optimisations/byproduct/{productId}/{actionName} | Optimise products
-*BeezUPApi* | [**overrideChannelCatalogProductOverrides**](docs/BeezUPApi.md#overrideChannelCatalogProductOverrides) | **PUT** /v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides | Override channel catalog product values
-*BeezUPApi* | [**reactivateCurrentContract**](docs/BeezUPApi.md#reactivateCurrentContract) | **POST** /v2/user/customer/contracts/current/reenableAutoRenewal | Reactivate your terminated contract.
-*BeezUPApi* | [**reenableChannelCatalogProduct**](docs/BeezUPApi.md#reenableChannelCatalogProduct) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/products/{productId}/reenable | Reenable channel catalog product
-*BeezUPApi* | [**resendEmailActivation**](docs/BeezUPApi.md#resendEmailActivation) | **POST** /v2/user/customer/account/resendEmailActivation | Resend email activation
-*BeezUPApi* | [**runRule**](docs/BeezUPApi.md#runRule) | **POST** /v2/user/analytics/{storeId}/rules/{ruleId}/run | Run rule
-*BeezUPApi* | [**runRules**](docs/BeezUPApi.md#runRules) | **POST** /v2/user/analytics/{storeId}/rules/run | Run all rules for this store
-*BeezUPApi* | [**saveCompanyInfo**](docs/BeezUPApi.md#saveCompanyInfo) | **PUT** /v2/user/customer/account/companyInfo | Change company information
-*BeezUPApi* | [**saveCreditCardInfo**](docs/BeezUPApi.md#saveCreditCardInfo) | **PUT** /v2/user/customer/account/creditCardInfo | Save user credit card info
-*BeezUPApi* | [**savePersonalInfo**](docs/BeezUPApi.md#savePersonalInfo) | **PUT** /v2/user/customer/account/personalInfo | Save user personal information
-*BeezUPApi* | [**saveProfilePictureInfo**](docs/BeezUPApi.md#saveProfilePictureInfo) | **PUT** /v2/user/customer/account/profilePictureInfo | Change user picture information
-*BeezUPApi* | [**saveReportFilter**](docs/BeezUPApi.md#saveReportFilter) | **PUT** /v2/user/analytics/{storeId}/reports/filters/{reportFilterId} | Save the report filter
-*BeezUPApi* | [**saveStoreAlert**](docs/BeezUPApi.md#saveStoreAlert) | **PUT** /v2/user/customer/stores/{storeId}/alerts/{alertId} | Save store alert
-*BeezUPApi* | [**setChannelCatalogMarketplaceSettings**](docs/BeezUPApi.md#setChannelCatalogMarketplaceSettings) | **POST** /v2/user/marketplaces/channelcatalogs/{channelCatalogId}/settings | Save new marketplace settings for a channel catalog
-*BeezUPApi* | [**setMerchantOrderInfo**](docs/BeezUPApi.md#setMerchantOrderInfo) | **POST** /v2/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/setMerchantOrderInfo | Set an Order&#39;s merchant information
-*BeezUPApi* | [**setMerchantOrderInfoList**](docs/BeezUPApi.md#setMerchantOrderInfoList) | **POST** /v2/user/marketplaces/orders/batches/setMerchantOrderInfos | Send a batch of operations to set an Order&#39;s merchant information
-*BeezUPApi* | [**share**](docs/BeezUPApi.md#share) | **POST** /v2/user/customer/stores/{storeId}/shares | Share a store to another user
-*BeezUPApi* | [**terminateCurrentContract**](docs/BeezUPApi.md#terminateCurrentContract) | **POST** /v2/user/customer/contracts/current/disableAutoRenewal | Schedule termination of your current contract at the end of the commitment.
-*BeezUPApi* | [**unmapChannelCatalogCategory**](docs/BeezUPApi.md#unmapChannelCatalogCategory) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/categoryMappings/unmap | Unmap channel catalog category
-*BeezUPApi* | [**updateRule**](docs/BeezUPApi.md#updateRule) | **PATCH** /v2/user/analytics/{storeId}/rules/{ruleId} | Update Rule
-*BeezUPApi* | [**updateStore**](docs/BeezUPApi.md#updateStore) | **PATCH** /v2/user/customer/stores/{storeId} | Update some store&#39;s information.
-*GroupsApi* | [**getPublicListGroup**](docs/GroupsApi.md#getPublicListGroup) | **GET** /v2/public/lov/groups/{listGroupName} | Get list of values related to this group name
-*GroupsApi* | [**getPublicListGroupNames**](docs/GroupsApi.md#getPublicListGroupNames) | **GET** /v2/public/lov/groups | Get list of group of list name
-*LOVApi* | [**getPublicListNames**](docs/LOVApi.md#getPublicListNames) | **GET** /v2/public/lov/ | Get all list names
-*LOVApi* | [**getPublicListOfValues**](docs/LOVApi.md#getPublicListOfValues) | **GET** /v2/public/lov/{listName} | Get the list of values related to this list name
-*PublicChannelsApi* | [**getChannels**](docs/PublicChannelsApi.md#getChannels) | **GET** /BeezUP/public_channels/2.0/{countryIsoCode} | The channel list for one country
-*PublicChannelsApi* | [**getChannelsByCountry**](docs/PublicChannelsApi.md#getChannelsByCountry) | **GET** /BeezUP/public_channels/2.0/ | The channel list regrouped by country
-*SecurityApi* | [**login**](docs/SecurityApi.md#login) | **POST** /v2/public/security/login | Login
-*SecurityApi* | [**lostPassword**](docs/SecurityApi.md#lostPassword) | **POST** /v2/public/security/lostpassword | Lost password
-*SecurityApi* | [**register**](docs/SecurityApi.md#register) | **POST** /v2/public/security/register | User Registration
+*AnalyticsOptimisationsApi* | [**optimise**](docs/AnalyticsOptimisationsApi.md#optimise) | **POST** /user/analytics/{storeId}/optimisations/{actionName} | Optimise products
+*AnalyticsOptimisationsApi* | [**optimiseByCategory**](docs/AnalyticsOptimisationsApi.md#optimiseByCategory) | **POST** /user/analytics/{storeId}/optimisations/bycategory/{catalogCategoryId}/{actionName} | Optimise products&#39;s category
+*AnalyticsOptimisationsApi* | [**optimiseByChannel**](docs/AnalyticsOptimisationsApi.md#optimiseByChannel) | **POST** /user/analytics/{storeId}/optimisations/bychannel/{channelId}/{actionName} | Optimise products&#39;s category
+*AnalyticsOptimisationsApi* | [**optimiseByProduct**](docs/AnalyticsOptimisationsApi.md#optimiseByProduct) | **POST** /user/analytics/{storeId}/optimisations/byproduct/{productId}/{actionName} | Optimise products
+*AnalyticsReportsApi* | [**deleteReportFilter**](docs/AnalyticsReportsApi.md#deleteReportFilter) | **DELETE** /user/analytics/{storeId}/reports/filters/{reportFilterId} | Delete the report filter
+*AnalyticsReportsApi* | [**exportStoreReportByCategory**](docs/AnalyticsReportsApi.md#exportStoreReportByCategory) | **POST** /user/analytics/{storeId}/reports/bycategory/export | Export the report by category
+*AnalyticsReportsApi* | [**exportStoreReportByChannel**](docs/AnalyticsReportsApi.md#exportStoreReportByChannel) | **POST** /user/analytics/{storeId}/reports/bychannel/export | Export the report by channel
+*AnalyticsReportsApi* | [**exportStoreReportByProduct**](docs/AnalyticsReportsApi.md#exportStoreReportByProduct) | **POST** /user/analytics/{storeId}/reports/byproduct/export | Export the report by product
+*AnalyticsReportsApi* | [**getReportFilter**](docs/AnalyticsReportsApi.md#getReportFilter) | **GET** /user/analytics/{storeId}/reports/filters/{reportFilterId} | Get the report filter description
+*AnalyticsReportsApi* | [**getReportFilters**](docs/AnalyticsReportsApi.md#getReportFilters) | **GET** /user/analytics/{storeId}/reports/filters | Get report filter list for the given store
+*AnalyticsReportsApi* | [**getStoreReportByCategory**](docs/AnalyticsReportsApi.md#getStoreReportByCategory) | **POST** /user/analytics/{storeId}/reports/bycategory | Get the report by category
+*AnalyticsReportsApi* | [**getStoreReportByChannel**](docs/AnalyticsReportsApi.md#getStoreReportByChannel) | **POST** /user/analytics/{storeId}/reports/bychannel | Get the report by channel
+*AnalyticsReportsApi* | [**getStoreReportByDay**](docs/AnalyticsReportsApi.md#getStoreReportByDay) | **POST** /user/analytics/{storeId}/reports/byday | Get the report by day
+*AnalyticsReportsApi* | [**getStoreReportByDayExport**](docs/AnalyticsReportsApi.md#getStoreReportByDayExport) | **POST** /user/analytics/{storeId}/reports/byday/export | Get the report by day
+*AnalyticsReportsApi* | [**getStoreReportByProduct**](docs/AnalyticsReportsApi.md#getStoreReportByProduct) | **POST** /user/analytics/{storeId}/reports/byproduct | Get the report by product
+*AnalyticsReportsApi* | [**saveReportFilter**](docs/AnalyticsReportsApi.md#saveReportFilter) | **PUT** /user/analytics/{storeId}/reports/filters/{reportFilterId} | Save the report filter
+*AnalyticsRulesApi* | [**createRule**](docs/AnalyticsRulesApi.md#createRule) | **POST** /user/analytics/{storeId}/rules | Rule creation
+*AnalyticsRulesApi* | [**deleteRule**](docs/AnalyticsRulesApi.md#deleteRule) | **DELETE** /user/analytics/{storeId}/rules/{ruleId} | Delete Rule
+*AnalyticsRulesApi* | [**disableRule**](docs/AnalyticsRulesApi.md#disableRule) | **POST** /user/analytics/{storeId}/rules/{ruleId}/disable | Disable rule
+*AnalyticsRulesApi* | [**enableRule**](docs/AnalyticsRulesApi.md#enableRule) | **POST** /user/analytics/{storeId}/rules/{ruleId}/enable | Enable rule
+*AnalyticsRulesApi* | [**getRule**](docs/AnalyticsRulesApi.md#getRule) | **GET** /user/analytics/{storeId}/rules/{ruleId} | Gets the rule
+*AnalyticsRulesApi* | [**getRules**](docs/AnalyticsRulesApi.md#getRules) | **GET** /user/analytics/{storeId}/rules | Gets the list of rules for a given store
+*AnalyticsRulesApi* | [**getRulesExecutions**](docs/AnalyticsRulesApi.md#getRulesExecutions) | **GET** /user/analytics/{storeId}/rules/executions | Get the rules execution history
+*AnalyticsRulesApi* | [**moveDownRule**](docs/AnalyticsRulesApi.md#moveDownRule) | **POST** /user/analytics/{storeId}/rules/{ruleId}/movedown | Move the rule down
+*AnalyticsRulesApi* | [**moveUpRule**](docs/AnalyticsRulesApi.md#moveUpRule) | **POST** /user/analytics/{storeId}/rules/{ruleId}/moveup | Move the rule up
+*AnalyticsRulesApi* | [**runRule**](docs/AnalyticsRulesApi.md#runRule) | **POST** /user/analytics/{storeId}/rules/{ruleId}/run | Run rule
+*AnalyticsRulesApi* | [**runRules**](docs/AnalyticsRulesApi.md#runRules) | **POST** /user/analytics/{storeId}/rules/run | Run all rules for this store
+*AnalyticsRulesApi* | [**updateRule**](docs/AnalyticsRulesApi.md#updateRule) | **PATCH** /user/analytics/{storeId}/rules/{ruleId} | Update Rule
+*AnalyticsTrackingApi* | [**getStoreTrackedClicks**](docs/AnalyticsTrackingApi.md#getStoreTrackedClicks) | **GET** /user/analytics/{storeId}/tracking/clicks | Get the latest clicks tracked
+*AnalyticsTrackingApi* | [**getStoreTrackedExternalOrders**](docs/AnalyticsTrackingApi.md#getStoreTrackedExternalOrders) | **GET** /user/analytics/{storeId}/tracking/externalorders | Get the latest external orders tracked
+*AnalyticsTrackingApi* | [**getStoreTrackedOrders**](docs/AnalyticsTrackingApi.md#getStoreTrackedOrders) | **GET** /user/analytics/{storeId}/tracking/orders | Get the latest orders tracked
+*AnalyticsTrackingApi* | [**getStoreTrackingStatus**](docs/AnalyticsTrackingApi.md#getStoreTrackingStatus) | **GET** /user/analytics/{storeId}/tracking/status | Get store tracking synchronization status
+*AnalyticsTrackingApi* | [**getTrackingStatus**](docs/AnalyticsTrackingApi.md#getTrackingStatus) | **GET** /user/analytics/tracking/status | Display the synchronization status of the clicks and orders
+*CatalogsAutoApi* | [**autoConfigureAutoImportInterval**](docs/CatalogsAutoApi.md#autoConfigureAutoImportInterval) | **POST** /user/catalogs/{storeId}/autoImport/scheduling/interval | Configure Auto Import Interval
+*CatalogsAutoApi* | [**autoDeleteAutoImport**](docs/CatalogsAutoApi.md#autoDeleteAutoImport) | **DELETE** /user/catalogs/{storeId}/autoImport | Delete Auto Import
+*CatalogsAutoApi* | [**autoGetAutoImportConfiguration**](docs/CatalogsAutoApi.md#autoGetAutoImportConfiguration) | **GET** /user/catalogs/{storeId}/autoImport | Get the auto import configuration
+*CatalogsAutoApi* | [**autoPauseAutoImport**](docs/CatalogsAutoApi.md#autoPauseAutoImport) | **POST** /user/catalogs/{storeId}/autoImport/pause | Pause Auto Import
+*CatalogsAutoApi* | [**autoResumeAutoImport**](docs/CatalogsAutoApi.md#autoResumeAutoImport) | **POST** /user/catalogs/{storeId}/autoImport/resume | Resume Auto Import
+*CatalogsAutoApi* | [**autoScheduleAutoImport**](docs/CatalogsAutoApi.md#autoScheduleAutoImport) | **POST** /user/catalogs/{storeId}/autoImport/scheduling/schedules | Configure Auto Import Schedules
+*CatalogsAutoApi* | [**autoStartAutoImport**](docs/CatalogsAutoApi.md#autoStartAutoImport) | **POST** /user/catalogs/{storeId}/autoImport/start | Start Auto Import Manually
+*CatalogsAutoApi* | [**importationActivateAutoImport**](docs/CatalogsAutoApi.md#importationActivateAutoImport) | **POST** /user/catalogs/{storeId}/autoImport | Activate the auto importation of the last successful manual catalog importation.
+*CatalogsCatalogApi* | [**catalogChangeCatalogColumnUserName**](docs/CatalogsCatalogApi.md#catalogChangeCatalogColumnUserName) | **POST** /user/catalogs/{storeId}/catalogColumns/{columnId}/rename | Change Catalog Column User Name
+*CatalogsCatalogApi* | [**catalogChangeCustomColumnExpression**](docs/CatalogsCatalogApi.md#catalogChangeCustomColumnExpression) | **PUT** /user/catalogs/{storeId}/customColumns/{columnId}/expression | Change custom column expression
+*CatalogsCatalogApi* | [**catalogChangeCustomColumnUserName**](docs/CatalogsCatalogApi.md#catalogChangeCustomColumnUserName) | **POST** /user/catalogs/{storeId}/customColumns/{columnId}/rename | Change Custom Column User Name
+*CatalogsCatalogApi* | [**catalogComputeExpression**](docs/CatalogsCatalogApi.md#catalogComputeExpression) | **POST** /user/catalogs/{storeId}/customColumns/computeExpression | Compute the expression for this catalog.
+*CatalogsCatalogApi* | [**catalogDeleteCustomColumn**](docs/CatalogsCatalogApi.md#catalogDeleteCustomColumn) | **DELETE** /user/catalogs/{storeId}/customColumns/{columnId} | Delete custom column
+*CatalogsCatalogApi* | [**catalogGetCatalogColumns**](docs/CatalogsCatalogApi.md#catalogGetCatalogColumns) | **GET** /user/catalogs/{storeId}/catalogColumns | Get catalog column list
+*CatalogsCatalogApi* | [**catalogGetCategories**](docs/CatalogsCatalogApi.md#catalogGetCategories) | **GET** /user/catalogs/{storeId}/categories | Get category list
+*CatalogsCatalogApi* | [**catalogGetCustomColumnExpression**](docs/CatalogsCatalogApi.md#catalogGetCustomColumnExpression) | **GET** /user/catalogs/{storeId}/customColumns/{columnId}/expression | Get the encrypted custom column expression
+*CatalogsCatalogApi* | [**catalogGetCustomColumns**](docs/CatalogsCatalogApi.md#catalogGetCustomColumns) | **GET** /user/catalogs/{storeId}/customColumns | Get custom column list
+*CatalogsCatalogApi* | [**catalogGetProduct**](docs/CatalogsCatalogApi.md#catalogGetProduct) | **GET** /user/catalogs/{storeId}/products/{productId} | Get product
+*CatalogsCatalogApi* | [**catalogGetProducts**](docs/CatalogsCatalogApi.md#catalogGetProducts) | **POST** /user/catalogs/{storeId}/products | Get product list
+*CatalogsCatalogApi* | [**catalogGetRandomProducts**](docs/CatalogsCatalogApi.md#catalogGetRandomProducts) | **GET** /user/catalogs/{storeId}/products/random | Get random product list
+*CatalogsCatalogApi* | [**catalogSaveCustomColumn**](docs/CatalogsCatalogApi.md#catalogSaveCustomColumn) | **PUT** /user/catalogs/{storeId}/customColumns/{columnId} | Create or replace a custom column
+*CatalogsCatalogApi* | [**importationGetManualUpdateLastInputConfig**](docs/CatalogsCatalogApi.md#importationGetManualUpdateLastInputConfig) | **GET** /user/catalogs/{storeId}/inputConfiguration | Get the last input configuration
+*CatalogsGlobalApi* | [**catalogGetBeezUPColumns**](docs/CatalogsGlobalApi.md#catalogGetBeezUPColumns) | **GET** /user/catalogs/beezupColumns | Get the BeezUP columns
+*CatalogsImportationCatalogInfoApi* | [**importationConfigureCatalogColumn**](docs/CatalogsImportationCatalogInfoApi.md#importationConfigureCatalogColumn) | **POST** /user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId} | Configure catalog column
+*CatalogsImportationCatalogInfoApi* | [**importationDeleteCustomColumn**](docs/CatalogsImportationCatalogInfoApi.md#importationDeleteCustomColumn) | **DELETE** /user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId} | Delete Custom Column
+*CatalogsImportationCatalogInfoApi* | [**importationGetCustomColumnExpression**](docs/CatalogsImportationCatalogInfoApi.md#importationGetCustomColumnExpression) | **GET** /user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/expression | Get the encrypted custom column expression in this importation
+*CatalogsImportationCatalogInfoApi* | [**importationGetCustomColumns**](docs/CatalogsImportationCatalogInfoApi.md#importationGetCustomColumns) | **GET** /user/catalogs/{storeId}/importations/{executionId}/customColumns | Get custom columns currently place in this importation
+*CatalogsImportationCatalogInfoApi* | [**importationGetDetectedCatalogColumns**](docs/CatalogsImportationCatalogInfoApi.md#importationGetDetectedCatalogColumns) | **GET** /user/catalogs/{storeId}/importations/{executionId}/catalogColumns | Get detected catalog columns during this importation.
+*CatalogsImportationCatalogInfoApi* | [**importationGetProductSample**](docs/CatalogsImportationCatalogInfoApi.md#importationGetProductSample) | **GET** /user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex} | Get the product sample related to this importation with all columns (catalog and custom)
+*CatalogsImportationCatalogInfoApi* | [**importationGetProductSampleCustomColumnValue**](docs/CatalogsImportationCatalogInfoApi.md#importationGetProductSampleCustomColumnValue) | **GET** /user/catalogs/{storeId}/importations/{executionId}/productSamples/{productSampleIndex}/customColumns/{columnId} | Get product sample custom column value related to this importation.
+*CatalogsImportationCatalogInfoApi* | [**importationIgnoreColumn**](docs/CatalogsImportationCatalogInfoApi.md#importationIgnoreColumn) | **POST** /user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/ignore | Ignore Column
+*CatalogsImportationCatalogInfoApi* | [**importationMapCatalogColumn**](docs/CatalogsImportationCatalogInfoApi.md#importationMapCatalogColumn) | **POST** /user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/map | Map catalog column to a BeezUP column
+*CatalogsImportationCatalogInfoApi* | [**importationMapCustomColumn**](docs/CatalogsImportationCatalogInfoApi.md#importationMapCustomColumn) | **POST** /user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/map | Map custom column to a BeezUP column
+*CatalogsImportationCatalogInfoApi* | [**importationReattendColumn**](docs/CatalogsImportationCatalogInfoApi.md#importationReattendColumn) | **POST** /user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/reattend | Reattend Column
+*CatalogsImportationCatalogInfoApi* | [**importationSaveCustomColumn**](docs/CatalogsImportationCatalogInfoApi.md#importationSaveCustomColumn) | **PUT** /user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId} | Create or replace a custom column
+*CatalogsImportationCatalogInfoApi* | [**importationUnmapCatalogColumn**](docs/CatalogsImportationCatalogInfoApi.md#importationUnmapCatalogColumn) | **POST** /user/catalogs/{storeId}/importations/{executionId}/catalogColumns/{columnId}/unmap | Unmap catalog column
+*CatalogsImportationCatalogInfoApi* | [**importationUnmapCustomColumn**](docs/CatalogsImportationCatalogInfoApi.md#importationUnmapCustomColumn) | **POST** /user/catalogs/{storeId}/importations/{executionId}/customColumns/{columnId}/unmap | Unmap custom column
+*CatalogsImportationProcessApi* | [**importationCancel**](docs/CatalogsImportationProcessApi.md#importationCancel) | **DELETE** /user/catalogs/{storeId}/importations/{executionId} | Cancel importation
+*CatalogsImportationProcessApi* | [**importationCommit**](docs/CatalogsImportationProcessApi.md#importationCommit) | **POST** /user/catalogs/{storeId}/importations/{executionId}/commit | Commit Importation
+*CatalogsImportationProcessApi* | [**importationCommitColumns**](docs/CatalogsImportationProcessApi.md#importationCommitColumns) | **POST** /user/catalogs/{storeId}/importations/{executionId}/commitColumns | Commit columns
+*CatalogsImportationProcessApi* | [**importationConfigureRemainingCatalogColumns**](docs/CatalogsImportationProcessApi.md#importationConfigureRemainingCatalogColumns) | **POST** /user/catalogs/{storeId}/importations/{executionId}/configureRemainingCatalogColumns | Configure remaining catalog columns
+*CatalogsImportationProcessApi* | [**importationGetImportationMonitoring**](docs/CatalogsImportationProcessApi.md#importationGetImportationMonitoring) | **GET** /user/catalogs/{storeId}/importations/{executionId} | Get the importation status
+*CatalogsImportationProcessApi* | [**importationGetReportings**](docs/CatalogsImportationProcessApi.md#importationGetReportings) | **GET** /user/catalogs/{storeId}/importations | Get the latest catalog importation reporting
+*CatalogsImportationProcessApi* | [**importationStartManualUpdate**](docs/CatalogsImportationProcessApi.md#importationStartManualUpdate) | **POST** /user/catalogs/{storeId}/importations | Start Manual Import
+*CatalogsImportationProcessApi* | [**importationTechnicalProgression**](docs/CatalogsImportationProcessApi.md#importationTechnicalProgression) | **GET** /user/catalogs/{storeId}/importations/{executionId}/technicalProgression | Get technical progression
+*ChannelCatalogsCategoryMappingsApi* | [**getChannelCatalogCategories**](docs/ChannelCatalogsCategoryMappingsApi.md#getChannelCatalogCategories) | **GET** /user/channelCatalogs/{channelCatalogId}/categoryMappings | Get channel catalog categories
+*ChannelCatalogsCategoryMappingsApi* | [**mapChannelCatalogCategory**](docs/ChannelCatalogsCategoryMappingsApi.md#mapChannelCatalogCategory) | **POST** /user/channelCatalogs/{channelCatalogId}/categoryMappings/map | Map channel catalog category
+*ChannelCatalogsCategoryMappingsApi* | [**unmapChannelCatalogCategory**](docs/ChannelCatalogsCategoryMappingsApi.md#unmapChannelCatalogCategory) | **POST** /user/channelCatalogs/{channelCatalogId}/categoryMappings/unmap | Unmap channel catalog category
+*ChannelCatalogsColumnMappingsApi* | [**mapChannelCatalogColumns**](docs/ChannelCatalogsColumnMappingsApi.md#mapChannelCatalogColumns) | **PUT** /user/channelCatalogs/{channelCatalogId}/columnMappings | Configure channel catalog column mappings
+*ChannelCatalogsExclusionFiltersApi* | [**configureChannelCatalogExclusionFilters**](docs/ChannelCatalogsExclusionFiltersApi.md#configureChannelCatalogExclusionFilters) | **PUT** /user/channelCatalogs/{channelCatalogId}/exclusionFilters | Configure channel catalog exclusion filters
+*ChannelCatalogsExclusionFiltersApi* | [**getChannelCatalogExclusionFilterOperators**](docs/ChannelCatalogsExclusionFiltersApi.md#getChannelCatalogExclusionFilterOperators) | **GET** /user/channelCatalogs/exclusionFilterOperators | Get channel catalog exclusion filter operators
+*ChannelCatalogsExportationsApi* | [**deleteChannelCatalogExportationCache**](docs/ChannelCatalogsExportationsApi.md#deleteChannelCatalogExportationCache) | **DELETE** /user/channelCatalogs/{channelCatalogId}/exportations/cache | Delete the exportation cache
+*ChannelCatalogsExportationsApi* | [**getChannelCatalogExportationCacheInfo**](docs/ChannelCatalogsExportationsApi.md#getChannelCatalogExportationCacheInfo) | **GET** /user/channelCatalogs/{channelCatalogId}/exportations/cache | Get the exportation cache information
+*ChannelCatalogsExportationsApi* | [**getChannelCatalogExportationHistory**](docs/ChannelCatalogsExportationsApi.md#getChannelCatalogExportationHistory) | **GET** /user/channelCatalogs/{channelCatalogId}/exportations/history | Get the exportation history
+*ChannelCatalogsGlobalApi* | [**createChannelCatalog**](docs/ChannelCatalogsGlobalApi.md#createChannelCatalog) | **POST** /user/channelCatalogs/ | Create a new channel catalog
+*ChannelCatalogsGlobalApi* | [**deleteChannelCatalog**](docs/ChannelCatalogsGlobalApi.md#deleteChannelCatalog) | **DELETE** /user/channelCatalogs/{channelCatalogId} | Delete the channel catalog
+*ChannelCatalogsGlobalApi* | [**getChannelCatalog**](docs/ChannelCatalogsGlobalApi.md#getChannelCatalog) | **GET** /user/channelCatalogs/{channelCatalogId} | Get the channel catalog information
+*ChannelCatalogsGlobalApi* | [**getChannelCatalogs**](docs/ChannelCatalogsGlobalApi.md#getChannelCatalogs) | **GET** /user/channelCatalogs/ | List all your current channel catalogs
+*ChannelCatalogsProductsApi* | [**getChannelCatalogProductByChannelCatalog**](docs/ChannelCatalogsProductsApi.md#getChannelCatalogProductByChannelCatalog) | **POST** /user/channelCatalogs/products/{productId} | Get channel catalog products related to these channel catalogs
+*ChannelCatalogsProductsApi* | [**getChannelCatalogProductInfo**](docs/ChannelCatalogsProductsApi.md#getChannelCatalogProductInfo) | **GET** /user/channelCatalogs/{channelCatalogId}/products/{productId} | Get channel catalog product information
+*ChannelCatalogsProductsApi* | [**getChannelCatalogProductInfoList**](docs/ChannelCatalogsProductsApi.md#getChannelCatalogProductInfoList) | **POST** /user/channelCatalogs/{channelCatalogId}/products | Get channel catalog product information list
+*ChannelCatalogsProductsOptimisationApi* | [**disableChannelCatalogProduct**](docs/ChannelCatalogsProductsOptimisationApi.md#disableChannelCatalogProduct) | **POST** /user/channelCatalogs/{channelCatalogId}/products/{productId}/disable | Disable channel catalog product
+*ChannelCatalogsProductsOptimisationApi* | [**reenableChannelCatalogProduct**](docs/ChannelCatalogsProductsOptimisationApi.md#reenableChannelCatalogProduct) | **POST** /user/channelCatalogs/{channelCatalogId}/products/{productId}/reenable | Reenable channel catalog product
+*ChannelCatalogsProductsOverridesApi* | [**deleteChannelCatalogProductValueOverride**](docs/ChannelCatalogsProductsOverridesApi.md#deleteChannelCatalogProductValueOverride) | **DELETE** /user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides/{channelColumnId} | Delete a specific channel catalog product value override
+*ChannelCatalogsProductsOverridesApi* | [**overrideChannelCatalogProductOverrides**](docs/ChannelCatalogsProductsOverridesApi.md#overrideChannelCatalogProductOverrides) | **PUT** /user/channelCatalogs/{channelCatalogId}/products/{productId}/overrides | Override channel catalog product values
+*ChannelCatalogsSettingsApi* | [**configureChannelCatalogCostSettings**](docs/ChannelCatalogsSettingsApi.md#configureChannelCatalogCostSettings) | **POST** /user/channelCatalogs/{channelCatalogId}/settings/cost | Disable a channel catalog
+*ChannelCatalogsSettingsApi* | [**configureChannelCatalogGeneralSettings**](docs/ChannelCatalogsSettingsApi.md#configureChannelCatalogGeneralSettings) | **POST** /user/channelCatalogs/{channelCatalogId}/settings/general | Disable a channel catalog
+*ChannelCatalogsSettingsApi* | [**disableChannelCatalog**](docs/ChannelCatalogsSettingsApi.md#disableChannelCatalog) | **POST** /user/channelCatalogs/{channelCatalogId}/disable | Disable a channel catalog
+*ChannelCatalogsSettingsApi* | [**enableChannelCatalog**](docs/ChannelCatalogsSettingsApi.md#enableChannelCatalog) | **POST** /user/channelCatalogs/{channelCatalogId}/enable | Enable a channel catalog
+*ChannelsChannelsGlobalApi* | [**getAvailableChannels**](docs/ChannelsChannelsGlobalApi.md#getAvailableChannels) | **GET** /user/channels/ | List all available channel for this store
+*ChannelsChannelsGlobalApi* | [**getChannelCategories**](docs/ChannelsChannelsGlobalApi.md#getChannelCategories) | **GET** /user/channels/{channelId}/categories | Get channel categories
+*ChannelsChannelsGlobalApi* | [**getChannelColumns**](docs/ChannelsChannelsGlobalApi.md#getChannelColumns) | **POST** /user/channels/{channelId}/columns | Get channel columns
+*ChannelsChannelsGlobalApi* | [**getChannelInfo**](docs/ChannelsChannelsGlobalApi.md#getChannelInfo) | **GET** /user/channels/{channelId} | Get channel information
+*CustomerAccountApi* | [**activateUserAccount**](docs/CustomerAccountApi.md#activateUserAccount) | **POST** /user/customer/account/activate | Activate the user account
+*CustomerAccountApi* | [**changePassword**](docs/CustomerAccountApi.md#changePassword) | **POST** /user/customer/account/changePassword | Change user password
+*CustomerAccountApi* | [**getCreditCardInfo**](docs/CustomerAccountApi.md#getCreditCardInfo) | **GET** /user/customer/account/creditCardInfo | Get credit card information
+*CustomerAccountApi* | [**getProfilePictureInfo**](docs/CustomerAccountApi.md#getProfilePictureInfo) | **GET** /user/customer/account/profilePictureInfo | Get profile picture information
+*CustomerAccountApi* | [**getUserAccountInfo**](docs/CustomerAccountApi.md#getUserAccountInfo) | **GET** /user/customer/account | Get user account information
+*CustomerAccountApi* | [**resendEmailActivation**](docs/CustomerAccountApi.md#resendEmailActivation) | **POST** /user/customer/account/resendEmailActivation | Resend email activation
+*CustomerAccountApi* | [**saveCompanyInfo**](docs/CustomerAccountApi.md#saveCompanyInfo) | **PUT** /user/customer/account/companyInfo | Change company information
+*CustomerAccountApi* | [**saveCreditCardInfo**](docs/CustomerAccountApi.md#saveCreditCardInfo) | **PUT** /user/customer/account/creditCardInfo | Save user credit card info
+*CustomerAccountApi* | [**savePersonalInfo**](docs/CustomerAccountApi.md#savePersonalInfo) | **PUT** /user/customer/account/personalInfo | Save user personal information
+*CustomerAccountApi* | [**saveProfilePictureInfo**](docs/CustomerAccountApi.md#saveProfilePictureInfo) | **PUT** /user/customer/account/profilePictureInfo | Change user picture information
+*CustomerAlertsApi* | [**getStoreAlerts**](docs/CustomerAlertsApi.md#getStoreAlerts) | **GET** /user/customer/stores/{storeId}/alerts | Get store&#39;s alerts
+*CustomerAlertsApi* | [**saveStoreAlert**](docs/CustomerAlertsApi.md#saveStoreAlert) | **PUT** /user/customer/stores/{storeId}/alerts/{alertId} | Save store alert
+*CustomerContractsApi* | [**createContract**](docs/CustomerContractsApi.md#createContract) | **POST** /user/customer/contracts | Create a new contract
+*CustomerContractsApi* | [**deleteNextContract**](docs/CustomerContractsApi.md#deleteNextContract) | **DELETE** /user/customer/contracts/next | Delete your next contract
+*CustomerContractsApi* | [**getBillingPeriods**](docs/CustomerContractsApi.md#getBillingPeriods) | **GET** /user/customer/billingPeriods | Get billing periods conditions
+*CustomerContractsApi* | [**getContracts**](docs/CustomerContractsApi.md#getContracts) | **GET** /user/customer/contracts | Get contract list
+*CustomerContractsApi* | [**getOffer**](docs/CustomerContractsApi.md#getOffer) | **POST** /user/customer/offers | Get offer pricing
+*CustomerContractsApi* | [**getStandardOffers**](docs/CustomerContractsApi.md#getStandardOffers) | **GET** /user/customer/offers | Get all standard offers
+*CustomerContractsApi* | [**reactivateCurrentContract**](docs/CustomerContractsApi.md#reactivateCurrentContract) | **POST** /user/customer/contracts/current/reenableAutoRenewal | Reactivate your terminated contract.
+*CustomerContractsApi* | [**terminateCurrentContract**](docs/CustomerContractsApi.md#terminateCurrentContract) | **POST** /user/customer/contracts/current/disableAutoRenewal | Schedule termination of your current contract at the end of the commitment.
+*CustomerFriendsApi* | [**getFriendInfo**](docs/CustomerFriendsApi.md#getFriendInfo) | **GET** /user/customer/friends/{userId} | Get friend information
+*CustomerInvoicesApi* | [**getInvoices**](docs/CustomerInvoicesApi.md#getInvoices) | **GET** /user/customer/invoices | Get all your invoices
+*CustomerRightsApi* | [**getRights**](docs/CustomerRightsApi.md#getRights) | **POST** /user/customer/stores/{storeId}/rights | Get store&#39;s rights
+*CustomerSecurityApi* | [**logout**](docs/CustomerSecurityApi.md#logout) | **POST** /user/customer/security/logout | Log out the current user from go2
+*CustomerSharesApi* | [**deleteShare**](docs/CustomerSharesApi.md#deleteShare) | **DELETE** /user/customer/stores/{storeId}/shares/{userId} | Delete a share to another user
+*CustomerSharesApi* | [**getShares**](docs/CustomerSharesApi.md#getShares) | **GET** /user/customer/stores/{storeId}/shares | Get shares related to this store
+*CustomerSharesApi* | [**share**](docs/CustomerSharesApi.md#share) | **POST** /user/customer/stores/{storeId}/shares | Share a store to another user
+*CustomerStoresApi* | [**createStore**](docs/CustomerStoresApi.md#createStore) | **POST** /user/customer/stores | Create a new store
+*CustomerStoresApi* | [**deleteStore**](docs/CustomerStoresApi.md#deleteStore) | **DELETE** /user/customer/stores/{storeId} | Delete a store
+*CustomerStoresApi* | [**getStore**](docs/CustomerStoresApi.md#getStore) | **GET** /user/customer/stores/{storeId} | Get store&#39;s information
+*CustomerStoresApi* | [**getStores**](docs/CustomerStoresApi.md#getStores) | **GET** /user/customer/stores | Get store list
+*CustomerStoresApi* | [**updateStore**](docs/CustomerStoresApi.md#updateStore) | **PATCH** /user/customer/stores/{storeId} | Update some store&#39;s information.
+*MarketplacesChannelCatalogsGlobalApi* | [**getMarketplaceAccountStores**](docs/MarketplacesChannelCatalogsGlobalApi.md#getMarketplaceAccountStores) | **GET** /user/marketplaces/channelcatalogs/ | Get  you marketplace channel catalog list
+*MarketplacesChannelCatalogsPublicationsApi* | [**getPublications**](docs/MarketplacesChannelCatalogsPublicationsApi.md#getPublications) | **GET** /user/marketplaces/channelcatalogs/publications/{marketplaceTechnicalCode}/{accountId}/history | Fetch the publication history for an account, sorted by descending start date
+*MarketplacesChannelCatalogsSettingsApi* | [**getChannelCatalogMarketplaceProperties**](docs/MarketplacesChannelCatalogsSettingsApi.md#getChannelCatalogMarketplaceProperties) | **GET** /user/marketplaces/channelcatalogs/{channelCatalogId}/properties | Get the marketplace properties for a channel catalog
+*MarketplacesChannelCatalogsSettingsApi* | [**getChannelCatalogMarketplaceSettings**](docs/MarketplacesChannelCatalogsSettingsApi.md#getChannelCatalogMarketplaceSettings) | **GET** /user/marketplaces/channelcatalogs/{channelCatalogId}/settings | Get the marketplace settings for a channel catalog
+*MarketplacesChannelCatalogsSettingsApi* | [**setChannelCatalogMarketplaceSettings**](docs/MarketplacesChannelCatalogsSettingsApi.md#setChannelCatalogMarketplaceSettings) | **POST** /user/marketplaces/channelcatalogs/{channelCatalogId}/settings | Save new marketplace settings for a channel catalog
+*MarketplacesOrdersAutoTransitionsApi* | [**configureAutomaticTransitions**](docs/MarketplacesOrdersAutoTransitionsApi.md#configureAutomaticTransitions) | **POST** /user/marketplaces/orders/automaticTransitions | Configure new or existing automatic Order status transition
+*MarketplacesOrdersAutoTransitionsApi* | [**getAutomaticTransitions**](docs/MarketplacesOrdersAutoTransitionsApi.md#getAutomaticTransitions) | **GET** /user/marketplaces/orders/automaticTransitions | Get list of configured automatic Order status transitions
+*MarketplacesOrdersBatchesApi* | [**changeOrderList**](docs/MarketplacesOrdersBatchesApi.md#changeOrderList) | **POST** /user/marketplaces/orders/batches/changeOrders/{changeOrderType} | Send a batch of operations to change your marketplace Order information (accept, ship, etc.)
+*MarketplacesOrdersBatchesApi* | [**clearMerchantOrderInfoList**](docs/MarketplacesOrdersBatchesApi.md#clearMerchantOrderInfoList) | **POST** /user/marketplaces/orders/batches/clearMerchantOrderInfos | Send a batch of operations to clear an Order&#39;s merchant information
+*MarketplacesOrdersBatchesApi* | [**setMerchantOrderInfoList**](docs/MarketplacesOrdersBatchesApi.md#setMerchantOrderInfoList) | **POST** /user/marketplaces/orders/batches/setMerchantOrderInfos | Send a batch of operations to set an Order&#39;s merchant information
+*MarketplacesOrdersExportsApi* | [**exportOrders**](docs/MarketplacesOrdersExportsApi.md#exportOrders) | **POST** /user/marketplaces/orders/exportations | Request a new Order report exportation to be generated
+*MarketplacesOrdersExportsApi* | [**getOrderExportations**](docs/MarketplacesOrdersExportsApi.md#getOrderExportations) | **GET** /user/marketplaces/orders/exportations | Get a paginated list of Order report exportations
+*MarketplacesOrdersGlobalApi* | [**getMarketplaceAccountsSynchronization**](docs/MarketplacesOrdersGlobalApi.md#getMarketplaceAccountsSynchronization) | **GET** /user/marketplaces/orders/status | Get current synchronization status between your marketplaces and BeezUP accounts
+*MarketplacesOrdersGlobalApi* | [**getOrderIndex**](docs/MarketplacesOrdersGlobalApi.md#getOrderIndex) | **GET** /user/marketplaces/orders/ | Get all actions you can do on the order API
+*MarketplacesOrdersGlobalApi* | [**harvestAll**](docs/MarketplacesOrdersGlobalApi.md#harvestAll) | **POST** /user/marketplaces/orders/harvest | Send harvest request to all your marketplaces
+*MarketplacesOrdersListApi* | [**getOrderListFull**](docs/MarketplacesOrdersListApi.md#getOrderListFull) | **POST** /user/marketplaces/orders/list/full | Get a paginated list of all Orders with all Order and Order Item(s) properties
+*MarketplacesOrdersListApi* | [**getOrderListLight**](docs/MarketplacesOrdersListApi.md#getOrderListLight) | **POST** /user/marketplaces/orders/list/light | Get a paginated list of all Orders without details
+*MarketplacesOrdersOrderApi* | [**changeOrder**](docs/MarketplacesOrdersOrderApi.md#changeOrder) | **POST** /user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/{changeOrderType} | Change your marketplace Order Information (accept, ship, etc.)
+*MarketplacesOrdersOrderApi* | [**clearMerchantOrderInfo**](docs/MarketplacesOrdersOrderApi.md#clearMerchantOrderInfo) | **POST** /user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/clearMerchantOrderInfo | Clear an Order&#39;s merchant information
+*MarketplacesOrdersOrderApi* | [**getOrder**](docs/MarketplacesOrdersOrderApi.md#getOrder) | **GET** /user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId} | Get full Order and Order Item(s) properties
+*MarketplacesOrdersOrderApi* | [**getOrderHistory**](docs/MarketplacesOrdersOrderApi.md#getOrderHistory) | **GET** /user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/history | Get an Order&#39;s harvest and change history
+*MarketplacesOrdersOrderApi* | [**harvestOrder**](docs/MarketplacesOrdersOrderApi.md#harvestOrder) | **POST** /user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/harvest | Send harvest request for a single Order
+*MarketplacesOrdersOrderApi* | [**setMerchantOrderInfo**](docs/MarketplacesOrdersOrderApi.md#setMerchantOrderInfo) | **POST** /user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/setMerchantOrderInfo | Set an Order&#39;s merchant information
+*PublicChannelsPublicChannelsApi* | [**getChannels**](docs/PublicChannelsPublicChannelsApi.md#getChannels) | **GET** /public/channels/{countryIsoCode} | The channel list for one country
+*PublicChannelsPublicChannelsApi* | [**getChannelsIndex**](docs/PublicChannelsPublicChannelsApi.md#getChannelsIndex) | **GET** /public/channels/ | Get public channel index
+*PublicListOfValuesLOVApi* | [**getPublicListOfValues**](docs/PublicListOfValuesLOVApi.md#getPublicListOfValues) | **GET** /public/lov/{listName} | Get the list of values related to this list name
+*PublicListOfValuesLOVApi* | [**getPublicLovIndex**](docs/PublicListOfValuesLOVApi.md#getPublicLovIndex) | **GET** /public/lov/ | Get all list names
+*PublicSecuritySecurityApi* | [**login**](docs/PublicSecuritySecurityApi.md#login) | **POST** /public/security/login | Login
+*PublicSecuritySecurityApi* | [**lostPassword**](docs/PublicSecuritySecurityApi.md#lostPassword) | **POST** /public/security/lostpassword | Lost password
+*PublicSecuritySecurityApi* | [**register**](docs/PublicSecuritySecurityApi.md#register) | **POST** /public/security/register | User Registration
+*UserListOfValuesLOVApi* | [**getUserListOfValues**](docs/UserListOfValuesLOVApi.md#getUserListOfValues) | **GET** /user/lov/{listName} | Get the list of values related to this list name
+*UserListOfValuesLOVApi* | [**getUserLovIndex**](docs/UserListOfValuesLOVApi.md#getUserLovIndex) | **GET** /user/lov/ | Get all list names
 
 
 ## Documentation for Models
@@ -290,7 +293,9 @@ Class | Method | HTTP request | Description
  - [AutoImportConfiguration](docs/AutoImportConfiguration.md)
  - [AutomaticTransition](docs/AutomaticTransition.md)
  - [AutomaticTransitionInfo](docs/AutomaticTransitionInfo.md)
+ - [AutomaticTransitionInfoLinks](docs/AutomaticTransitionInfoLinks.md)
  - [AutomaticTransitionInfos](docs/AutomaticTransitionInfos.md)
+ - [AutomaticTransitionInfosLinks](docs/AutomaticTransitionInfosLinks.md)
  - [BatchOrderOperationResponse](docs/BatchOrderOperationResponse.md)
  - [BeezUPColumnConfiguration](docs/BeezUPColumnConfiguration.md)
  - [BeezUPCommonBeezUPColumnName](docs/BeezUPCommonBeezUPColumnName.md)
@@ -326,6 +331,7 @@ Class | Method | HTTP request | Description
  - [BeezUPCommonLink3](docs/BeezUPCommonLink3.md)
  - [BeezUPCommonLinkParameter2](docs/BeezUPCommonLinkParameter2.md)
  - [BeezUPCommonLinkParameter3](docs/BeezUPCommonLinkParameter3.md)
+ - [BeezUPCommonLinkParameterProperty3](docs/BeezUPCommonLinkParameterProperty3.md)
  - [BeezUPCommonListOfValueItem](docs/BeezUPCommonListOfValueItem.md)
  - [BeezUPCommonMarketplaceAccountId](docs/BeezUPCommonMarketplaceAccountId.md)
  - [BeezUPCommonMarketplaceBusinessCode](docs/BeezUPCommonMarketplaceBusinessCode.md)
@@ -333,6 +339,8 @@ Class | Method | HTTP request | Description
  - [BeezUPCommonOperationId](docs/BeezUPCommonOperationId.md)
  - [BeezUPCommonPaginationResult](docs/BeezUPCommonPaginationResult.md)
  - [BeezUPCommonPaginationResultLinks](docs/BeezUPCommonPaginationResultLinks.md)
+ - [BeezUPCommonParameterIn](docs/BeezUPCommonParameterIn.md)
+ - [BeezUPCommonParameterType](docs/BeezUPCommonParameterType.md)
  - [BeezUPCommonProductBasicInfo](docs/BeezUPCommonProductBasicInfo.md)
  - [BeezUPCommonProductId](docs/BeezUPCommonProductId.md)
  - [BeezUPCommonStoreId](docs/BeezUPCommonStoreId.md)
@@ -372,6 +380,12 @@ Class | Method | HTTP request | Description
  - [ChannelCatalogCategoryMapping](docs/ChannelCatalogCategoryMapping.md)
  - [ChannelCatalogCategoryMappingInfo](docs/ChannelCatalogCategoryMappingInfo.md)
  - [ChannelCatalogCategoryMappings](docs/ChannelCatalogCategoryMappings.md)
+ - [ChannelCatalogExportCacheInfo](docs/ChannelCatalogExportCacheInfo.md)
+ - [ChannelCatalogExportCacheInfoResponse](docs/ChannelCatalogExportCacheInfoResponse.md)
+ - [ChannelCatalogExportCacheInfoResponseLinks](docs/ChannelCatalogExportCacheInfoResponseLinks.md)
+ - [ChannelCatalogExportationHistory](docs/ChannelCatalogExportationHistory.md)
+ - [ChannelCatalogExportationHistoryLinks](docs/ChannelCatalogExportationHistoryLinks.md)
+ - [ChannelCatalogExportationReporting](docs/ChannelCatalogExportationReporting.md)
  - [ChannelCatalogList](docs/ChannelCatalogList.md)
  - [ChannelCatalogMarketplaceProperties](docs/ChannelCatalogMarketplaceProperties.md)
  - [ChannelCatalogMarketplacePropertiesLinks](docs/ChannelCatalogMarketplacePropertiesLinks.md)
@@ -381,6 +395,8 @@ Class | Method | HTTP request | Description
  - [ChannelCatalogMarketplaceSettingArray](docs/ChannelCatalogMarketplaceSettingArray.md)
  - [ChannelCatalogMarketplaceSettings](docs/ChannelCatalogMarketplaceSettings.md)
  - [ChannelCatalogMarketplaceSettingsLinks](docs/ChannelCatalogMarketplaceSettingsLinks.md)
+ - [ChannelCatalogProductByChannelCatalogRequest](docs/ChannelCatalogProductByChannelCatalogRequest.md)
+ - [ChannelCatalogProductByChannelCatalogResponse](docs/ChannelCatalogProductByChannelCatalogResponse.md)
  - [ChannelCatalogProductInfo](docs/ChannelCatalogProductInfo.md)
  - [ChannelCatalogProductInfoLinks](docs/ChannelCatalogProductInfoLinks.md)
  - [ChannelCatalogProductInfoList](docs/ChannelCatalogProductInfoList.md)
@@ -401,11 +417,8 @@ Class | Method | HTTP request | Description
  - [ChannelHeader](docs/ChannelHeader.md)
  - [ChannelHeaderLinks](docs/ChannelHeaderLinks.md)
  - [ChannelInfo](docs/ChannelInfo.md)
- - [ChannelInfoDetails](docs/ChannelInfoDetails.md)
- - [ChannelInfoKeyNumbers](docs/ChannelInfoKeyNumbers.md)
  - [ChannelInfoList](docs/ChannelInfoList.md)
- - [ChannelInfoSalesContact](docs/ChannelInfoSalesContact.md)
- - [ChannelInfoTechnicalContact](docs/ChannelInfoTechnicalContact.md)
+ - [ChannelInfoListLinks](docs/ChannelInfoListLinks.md)
  - [ChannelRootCategory](docs/ChannelRootCategory.md)
  - [City](docs/City.md)
  - [ClearMerchantOrderInfoListRequest](docs/ClearMerchantOrderInfoListRequest.md)
@@ -426,6 +439,7 @@ Class | Method | HTTP request | Description
  - [CompressionFormatStrategy](docs/CompressionFormatStrategy.md)
  - [ComputeExpressionRequest](docs/ComputeExpressionRequest.md)
  - [ConfigureAutoImportIntervalRequest](docs/ConfigureAutoImportIntervalRequest.md)
+ - [ConfigureAutomaticTransitionRequest](docs/ConfigureAutomaticTransitionRequest.md)
  - [ConfigureCatalogColumnCatalogRequest](docs/ConfigureCatalogColumnCatalogRequest.md)
  - [ContractBillingPeriodInfo](docs/ContractBillingPeriodInfo.md)
  - [ContractBonusInfo](docs/ContractBonusInfo.md)
@@ -479,6 +493,7 @@ Class | Method | HTTP request | Description
  - [ExistingCatalogColumnConfiguration](docs/ExistingCatalogColumnConfiguration.md)
  - [ExpirationMonth](docs/ExpirationMonth.md)
  - [ExpirationYear](docs/ExpirationYear.md)
+ - [ExportOrderListFormat](docs/ExportOrderListFormat.md)
  - [ExportOrderListRequest](docs/ExportOrderListRequest.md)
  - [FeedType](docs/FeedType.md)
  - [FileFormatStrategy](docs/FileFormatStrategy.md)
@@ -500,6 +515,7 @@ Class | Method | HTTP request | Description
  - [ImportationTechnicalProgression](docs/ImportationTechnicalProgression.md)
  - [InitialsProfilePictureUrl](docs/InitialsProfilePictureUrl.md)
  - [InlineResponse409](docs/InlineResponse409.md)
+ - [InlineResponse409Links](docs/InlineResponse409Links.md)
  - [InputConfiguration](docs/InputConfiguration.md)
  - [InputFileConfiguration](docs/InputFileConfiguration.md)
  - [InputFileFetchConfiguration](docs/InputFileFetchConfiguration.md)
@@ -515,9 +531,13 @@ Class | Method | HTTP request | Description
  - [LinkClickToOrderType](docs/LinkClickToOrderType.md)
  - [LinksChangeOrderLink](docs/LinksChangeOrderLink.md)
  - [LinksChangePasswordLink](docs/LinksChangePasswordLink.md)
+ - [LinksClearMerchantOrderInfoLink](docs/LinksClearMerchantOrderInfoLink.md)
+ - [LinksClearMerchantOrderInfoListLink](docs/LinksClearMerchantOrderInfoListLink.md)
+ - [LinksConfigureAutomaticTransitionsLink](docs/LinksConfigureAutomaticTransitionsLink.md)
  - [LinksCreateContractLink](docs/LinksCreateContractLink.md)
  - [LinksCreateRuleLink](docs/LinksCreateRuleLink.md)
  - [LinksCreateStoreLink](docs/LinksCreateStoreLink.md)
+ - [LinksDeleteChannelCatalogExportationCacheLink](docs/LinksDeleteChannelCatalogExportationCacheLink.md)
  - [LinksDeleteNextContractLink](docs/LinksDeleteNextContractLink.md)
  - [LinksDeleteReportFilterLink](docs/LinksDeleteReportFilterLink.md)
  - [LinksDeleteRuleLink](docs/LinksDeleteRuleLink.md)
@@ -525,16 +545,28 @@ Class | Method | HTTP request | Description
  - [LinksDeleteStoreLink](docs/LinksDeleteStoreLink.md)
  - [LinksDisableRuleLink](docs/LinksDisableRuleLink.md)
  - [LinksEnableRuleLink](docs/LinksEnableRuleLink.md)
+ - [LinksExportOrdersLink](docs/LinksExportOrdersLink.md)
+ - [LinksGetAutomaticTransitionsLink](docs/LinksGetAutomaticTransitionsLink.md)
+ - [LinksGetChannelCatalogExportationCacheInfoLink](docs/LinksGetChannelCatalogExportationCacheInfoLink.md)
+ - [LinksGetChannelCatalogExportationHistoryLink](docs/LinksGetChannelCatalogExportationHistoryLink.md)
  - [LinksGetChannelCatalogMarketplacePropertiesLink](docs/LinksGetChannelCatalogMarketplacePropertiesLink.md)
  - [LinksGetChannelCatalogMarketplaceSettingsLink](docs/LinksGetChannelCatalogMarketplaceSettingsLink.md)
- - [LinksGetChannelCatalogProductInfo](docs/LinksGetChannelCatalogProductInfo.md)
  - [LinksGetChannelCatalogProductInfoLink](docs/LinksGetChannelCatalogProductInfoLink.md)
+ - [LinksGetChannelsIndexLink](docs/LinksGetChannelsIndexLink.md)
+ - [LinksGetChannelsLink](docs/LinksGetChannelsLink.md)
  - [LinksGetContractsLink](docs/LinksGetContractsLink.md)
  - [LinksGetCreditCardInfoLink](docs/LinksGetCreditCardInfoLink.md)
  - [LinksGetMarketplaceAccountStoresLink](docs/LinksGetMarketplaceAccountStoresLink.md)
+ - [LinksGetMarketplaceAccountsSynchronizationLink](docs/LinksGetMarketplaceAccountsSynchronizationLink.md)
+ - [LinksGetOrderExportationsLink](docs/LinksGetOrderExportationsLink.md)
  - [LinksGetOrderHistoryLink](docs/LinksGetOrderHistoryLink.md)
+ - [LinksGetOrderIndexLink](docs/LinksGetOrderIndexLink.md)
  - [LinksGetOrderLink](docs/LinksGetOrderLink.md)
+ - [LinksGetOrderListFullLink](docs/LinksGetOrderListFullLink.md)
+ - [LinksGetOrderListLightLink](docs/LinksGetOrderListLightLink.md)
  - [LinksGetProfilePictureInfoLink](docs/LinksGetProfilePictureInfoLink.md)
+ - [LinksGetPublicListOfValuesLink](docs/LinksGetPublicListOfValuesLink.md)
+ - [LinksGetPublicLovIndexLink](docs/LinksGetPublicLovIndexLink.md)
  - [LinksGetPublicationsLink](docs/LinksGetPublicationsLink.md)
  - [LinksGetReportFilterLink](docs/LinksGetReportFilterLink.md)
  - [LinksGetReportFiltersLink](docs/LinksGetReportFiltersLink.md)
@@ -544,6 +576,11 @@ Class | Method | HTTP request | Description
  - [LinksGetSharesLink](docs/LinksGetSharesLink.md)
  - [LinksGetStoreLink](docs/LinksGetStoreLink.md)
  - [LinksGetStoresLink](docs/LinksGetStoresLink.md)
+ - [LinksGetUserListOfValuesLink](docs/LinksGetUserListOfValuesLink.md)
+ - [LinksGetUserLovIndexLink](docs/LinksGetUserLovIndexLink.md)
+ - [LinksHarvestAllLink](docs/LinksHarvestAllLink.md)
+ - [LinksHarvestOrderLink](docs/LinksHarvestOrderLink.md)
+ - [LinksImportationGetImportationMonitoringLink](docs/LinksImportationGetImportationMonitoringLink.md)
  - [LinksMoveDownRuleLink](docs/LinksMoveDownRuleLink.md)
  - [LinksMoveUpRuleLink](docs/LinksMoveUpRuleLink.md)
  - [LinksOptimiseByCategoryLink](docs/LinksOptimiseByCategoryLink.md)
@@ -561,6 +598,7 @@ Class | Method | HTTP request | Description
  - [LinksSaveStoreAlertLink](docs/LinksSaveStoreAlertLink.md)
  - [LinksSetChannelCatalogMarketplaceSettingsLink](docs/LinksSetChannelCatalogMarketplaceSettingsLink.md)
  - [LinksSetMerchantOrderInfoLink](docs/LinksSetMerchantOrderInfoLink.md)
+ - [LinksSetMerchantOrderInfoListLink](docs/LinksSetMerchantOrderInfoListLink.md)
  - [LinksShareLink](docs/LinksShareLink.md)
  - [LinksTerminateCurrentContractLink](docs/LinksTerminateCurrentContractLink.md)
  - [LinksUpdateRuleLink](docs/LinksUpdateRuleLink.md)
@@ -569,7 +607,6 @@ Class | Method | HTTP request | Description
  - [MapBeezUPColumnRequest](docs/MapBeezUPColumnRequest.md)
  - [MapCategoryRequest](docs/MapCategoryRequest.md)
  - [MargingType](docs/MargingType.md)
- - [MarketplaceBusinessCode](docs/MarketplaceBusinessCode.md)
  - [MarketplaceChannelCatalog](docs/MarketplaceChannelCatalog.md)
  - [MarketplaceChannelCatalogLinks](docs/MarketplaceChannelCatalogLinks.md)
  - [MarketplaceChannelCatalogList](docs/MarketplaceChannelCatalogList.md)
@@ -577,7 +614,6 @@ Class | Method | HTTP request | Description
  - [MarketplaceChannelCatalogLovLinks](docs/MarketplaceChannelCatalogLovLinks.md)
  - [MarketplaceOrderId](docs/MarketplaceOrderId.md)
  - [MarketplaceOrderStatus](docs/MarketplaceOrderStatus.md)
- - [MarketplaceTechnicalCode](docs/MarketplaceTechnicalCode.md)
  - [NextContractInfo](docs/NextContractInfo.md)
  - [NextContractInfoLinks](docs/NextContractInfoLinks.md)
  - [Offer](docs/Offer.md)
@@ -593,15 +629,22 @@ Class | Method | HTTP request | Description
  - [OrderExportationReporting](docs/OrderExportationReporting.md)
  - [OrderExportationReportingProcessingStatus](docs/OrderExportationReportingProcessingStatus.md)
  - [OrderExportations](docs/OrderExportations.md)
+ - [OrderExportationsLinks](docs/OrderExportationsLinks.md)
  - [OrderHeader](docs/OrderHeader.md)
  - [OrderHeaderLinks](docs/OrderHeaderLinks.md)
  - [OrderHistory](docs/OrderHistory.md)
  - [OrderIdentifier](docs/OrderIdentifier.md)
  - [OrderIdentifierWithETag](docs/OrderIdentifierWithETag.md)
+ - [OrderIndex](docs/OrderIndex.md)
+ - [OrderIndexLinks](docs/OrderIndexLinks.md)
+ - [OrderIndexLovLinks](docs/OrderIndexLovLinks.md)
  - [OrderItem](docs/OrderItem.md)
  - [OrderLinks](docs/OrderLinks.md)
  - [OrderListFull](docs/OrderListFull.md)
+ - [OrderListFullLinks](docs/OrderListFullLinks.md)
  - [OrderListLight](docs/OrderListLight.md)
+ - [OrderListLightLinks](docs/OrderListLightLinks.md)
+ - [OrderListLinks](docs/OrderListLinks.md)
  - [OrderListRequest](docs/OrderListRequest.md)
  - [OrderMerchantECommerceSoftwareName](docs/OrderMerchantECommerceSoftwareName.md)
  - [OrderMerchantECommerceSoftwareVersion](docs/OrderMerchantECommerceSoftwareVersion.md)
@@ -637,6 +680,13 @@ Class | Method | HTTP request | Description
  - [ProfilePictureSelected](docs/ProfilePictureSelected.md)
  - [ProfilePictureUrl](docs/ProfilePictureUrl.md)
  - [PromotionalCodeValidity](docs/PromotionalCodeValidity.md)
+ - [PublicChannelIndex](docs/PublicChannelIndex.md)
+ - [PublicChannelIndexLinks](docs/PublicChannelIndexLinks.md)
+ - [PublicListOfValuesResponse](docs/PublicListOfValuesResponse.md)
+ - [PublicListOfValuesResponseLinks](docs/PublicListOfValuesResponseLinks.md)
+ - [PublicLovIndex](docs/PublicLovIndex.md)
+ - [PublicLovIndexLinks](docs/PublicLovIndexLinks.md)
+ - [PublicLovLinks](docs/PublicLovLinks.md)
  - [PublicationFeedReporting](docs/PublicationFeedReporting.md)
  - [PublicationReporting](docs/PublicationReporting.md)
  - [PublicationType](docs/PublicationType.md)
@@ -688,7 +738,6 @@ Class | Method | HTTP request | Description
  - [RuleLinks](docs/RuleLinks.md)
  - [RuleList](docs/RuleList.md)
  - [RuleListLinks](docs/RuleListLinks.md)
- - [SaveAutomaticTransitionRequest](docs/SaveAutomaticTransitionRequest.md)
  - [SaveReportFilterRequest](docs/SaveReportFilterRequest.md)
  - [SaveStoreAlertRequest](docs/SaveStoreAlertRequest.md)
  - [ScheduleAutoImportRequest](docs/ScheduleAutoImportRequest.md)
@@ -741,6 +790,11 @@ Class | Method | HTTP request | Description
  - [UpgradeOfferRequired](docs/UpgradeOfferRequired.md)
  - [UserColumName](docs/UserColumName.md)
  - [UserFriendInfo](docs/UserFriendInfo.md)
+ - [UserListOfValuesResponse](docs/UserListOfValuesResponse.md)
+ - [UserListOfValuesResponseLinks](docs/UserListOfValuesResponseLinks.md)
+ - [UserLovIndex](docs/UserLovIndex.md)
+ - [UserLovIndexLinks](docs/UserLovIndexLinks.md)
+ - [UserLovLinks](docs/UserLovLinks.md)
  - [VariableModelInfo](docs/VariableModelInfo.md)
  - [VatNumber](docs/VatNumber.md)
  - [WhatIDo](docs/WhatIDo.md)

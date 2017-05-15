@@ -1,12 +1,68 @@
 # ChannelCatalogsProductsApi
 
-All URIs are relative to *https://api.beezup.comv2*
+All URIs are relative to *https://api.beezup.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getChannelCatalogProductInfo**](ChannelCatalogsProductsApi.md#getChannelCatalogProductInfo) | **GET** /v2/user/channelCatalogs/{channelCatalogId}/products/{productId} | Get channel catalog product information
-[**getChannelCatalogProductInfoList**](ChannelCatalogsProductsApi.md#getChannelCatalogProductInfoList) | **POST** /v2/user/channelCatalogs/{channelCatalogId}/products | Get channel catalog product information list
+[**getChannelCatalogProductByChannelCatalog**](ChannelCatalogsProductsApi.md#getChannelCatalogProductByChannelCatalog) | **POST** /user/channelCatalogs/products/{productId} | Get channel catalog products related to these channel catalogs
+[**getChannelCatalogProductInfo**](ChannelCatalogsProductsApi.md#getChannelCatalogProductInfo) | **GET** /user/channelCatalogs/{channelCatalogId}/products/{productId} | Get channel catalog product information
+[**getChannelCatalogProductInfoList**](ChannelCatalogsProductsApi.md#getChannelCatalogProductInfoList) | **POST** /user/channelCatalogs/{channelCatalogId}/products | Get channel catalog product information list
 
+
+<a name="getChannelCatalogProductByChannelCatalog"></a>
+# **getChannelCatalogProductByChannelCatalog**
+> ChannelCatalogProductByChannelCatalogResponse getChannelCatalogProductByChannelCatalog(productId, request)
+
+Get channel catalog products related to these channel catalogs
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.ApiClient;
+//import io.swagger.client.ApiException;
+//import io.swagger.client.Configuration;
+//import io.swagger.client.auth.*;
+//import io.swagger.client.api.ChannelCatalogsProductsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+ChannelCatalogsProductsApi apiInstance = new ChannelCatalogsProductsApi();
+String productId = "578419df-1bbf-41a6-96fa-862e42182b67"; // String | The product identifier
+ChannelCatalogProductByChannelCatalogRequest request = new ChannelCatalogProductByChannelCatalogRequest(); // ChannelCatalogProductByChannelCatalogRequest | 
+try {
+    ChannelCatalogProductByChannelCatalogResponse result = apiInstance.getChannelCatalogProductByChannelCatalog(productId, request);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ChannelCatalogsProductsApi#getChannelCatalogProductByChannelCatalog");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **String**| The product identifier |
+ **request** | [**ChannelCatalogProductByChannelCatalogRequest**](ChannelCatalogProductByChannelCatalogRequest.md)|  | [optional]
+
+### Return type
+
+[**ChannelCatalogProductByChannelCatalogResponse**](ChannelCatalogProductByChannelCatalogResponse.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="getChannelCatalogProductInfo"></a>
 # **getChannelCatalogProductInfo**

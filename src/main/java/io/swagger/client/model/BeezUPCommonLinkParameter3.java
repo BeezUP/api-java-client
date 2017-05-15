@@ -1,6 +1,6 @@
 /*
  * BeezUP API
- * This is the RESTful API of BeezUP which allows you to manage everything related to BeezUP
+ * # The REST API of BeezUP system ## Overview The REST APIs provide programmatic access to read and write BeezUP data.  Basically, with this API you will be able to do everything like you were with your browser on https://go.beezup.com !  The main features are: - Register and manage your account - Create and manage and share your stores with your friends/co-workers. - Import your product catalog and schedule the auto importation - Search the channels your want to use - Configure your channels for your catalogs to export your product information:     - cost and general settings     - category and columns mappings     - your will be able to create and manage your custom column     - put in place exlusion filters based on simple conditions on your product data     - override product values     - get product vision for a channel catalog scope - Analyze and optimize your performance of your catalogs on all yours channels with different type of reportings by day, channel, category and by product. - Automatize your optimisation by using rules! - And of course... Manage your orders harvested from all your marketplaces:     - Synchronize your orders in an uniformized way     - Get the available actions and update the order status - ...and more!  ## Authentication credentials The public API with the base path **_/v2/public** have been put in place to give you an entry point to our system for the user registration, login and lost password. The public API does not require any credentials. We give you the some public list of values and public channels for our public commercial web site [www.beezup.com](http://www.beezup.com).  The user API with the base path **_/v2/user** requires a token which is available on this page: https://go.beezup.com/Account/MyAccount  ## Things to keep in mind ### API Rate Limits - The BeezUP REST API is limited to 100 calls/minute.  ### Media type The default media type for requests and responses is application/json. Where noted, some operations support other content types. If no additional content type is mentioned for a specific operation, then the media type is application/json.  ### Required content type The required and default encoding for the request and responses is UTF8.  ### Required date time format All our date time are formatted in ISO 8601 format: 2014-06-24T16:25:00Z.  ### Base URL The Base URL of the BeezUP API Order Management REST API conforms to the following template.  https://api.beezup.com  All URLs returned by the BeezUP API are relative to this base URL, and all requests to the REST API must use this base URL template.  You can test our API on https://api-docs.beezup.com/swagger-ui\\ You can contact us on [gitter, #BeezUP/API](https://gitter.im/beezUP/API) 
  *
  * OpenAPI spec version: 2.0
  * Contact: support@beezup.com
@@ -17,95 +17,33 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.BeezUPCommonLOVLink2;
+import io.swagger.client.model.BeezUPCommonLOVLink3;
+import io.swagger.client.model.BeezUPCommonLinkParameterProperty3;
+import io.swagger.client.model.BeezUPCommonParameterIn;
+import io.swagger.client.model.BeezUPCommonParameterType;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * BeezUPCommonLinkParameter3
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T14:10:34.021Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T11:46:19.000Z")
 public class BeezUPCommonLinkParameter3 {
   @SerializedName("value")
   private Object value = null;
 
   @SerializedName("required")
-  private Boolean required = null;
-
-  /**
-   * * path: if the parameter must be pass in the path uri * header: if the parameter must be passed in http header * query: if the parameter must be passed in querystring * body: if the paramter must be passed in the body 
-   */
-  public enum InEnum {
-    @SerializedName("path")
-    PATH("path"),
-    
-    @SerializedName("header")
-    HEADER("header"),
-    
-    @SerializedName("query")
-    QUERY("query"),
-    
-    @SerializedName("body")
-    BODY("body");
-
-    private String value;
-
-    InEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-  }
+  private Boolean required = false;
 
   @SerializedName("in")
-  private InEnum in = null;
-
-  /**
-   * The value type of the parameter
-   */
-  public enum TypeEnum {
-    @SerializedName("string")
-    STRING("string"),
-    
-    @SerializedName("integer")
-    INTEGER("integer"),
-    
-    @SerializedName("number")
-    NUMBER("number"),
-    
-    @SerializedName("boolean")
-    BOOLEAN("boolean"),
-    
-    @SerializedName("object")
-    OBJECT("object"),
-    
-    @SerializedName("array")
-    ARRAY("array"),
-    
-    @SerializedName("date")
-    DATE("date"),
-    
-    @SerializedName("date-time")
-    DATE_TIME("date-time");
-
-    private String value;
-
-    TypeEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-  }
+  private BeezUPCommonParameterIn in = null;
 
   @SerializedName("type")
-  private TypeEnum type = null;
+  private BeezUPCommonParameterType type = null;
 
   @SerializedName("lovLink")
-  private BeezUPCommonLOVLink2 lovLink = null;
+  private BeezUPCommonLOVLink3 lovLink = null;
 
   @SerializedName("lovRequired")
   private Boolean lovRequired = null;
@@ -115,6 +53,9 @@ public class BeezUPCommonLinkParameter3 {
 
   @SerializedName("schema")
   private String schema = null;
+
+  @SerializedName("properties")
+  private Map<String, BeezUPCommonLinkParameterProperty3> properties = new HashMap<String, BeezUPCommonLinkParameterProperty3>();
 
   public BeezUPCommonLinkParameter3 value(Object value) {
     this.value = value;
@@ -152,57 +93,57 @@ public class BeezUPCommonLinkParameter3 {
     this.required = required;
   }
 
-  public BeezUPCommonLinkParameter3 in(InEnum in) {
+  public BeezUPCommonLinkParameter3 in(BeezUPCommonParameterIn in) {
     this.in = in;
     return this;
   }
 
    /**
-   * * path: if the parameter must be pass in the path uri * header: if the parameter must be passed in http header * query: if the parameter must be passed in querystring * body: if the paramter must be passed in the body 
+   * Get in
    * @return in
   **/
-  @ApiModelProperty(example = "path", value = "* path: if the parameter must be pass in the path uri * header: if the parameter must be passed in http header * query: if the parameter must be passed in querystring * body: if the paramter must be passed in the body ")
-  public InEnum getIn() {
+  @ApiModelProperty(example = "null", required = true, value = "")
+  public BeezUPCommonParameterIn getIn() {
     return in;
   }
 
-  public void setIn(InEnum in) {
+  public void setIn(BeezUPCommonParameterIn in) {
     this.in = in;
   }
 
-  public BeezUPCommonLinkParameter3 type(TypeEnum type) {
+  public BeezUPCommonLinkParameter3 type(BeezUPCommonParameterType type) {
     this.type = type;
     return this;
   }
 
    /**
-   * The value type of the parameter
+   * Get type
    * @return type
   **/
-  @ApiModelProperty(example = "string", value = "The value type of the parameter")
-  public TypeEnum getType() {
+  @ApiModelProperty(example = "null", value = "")
+  public BeezUPCommonParameterType getType() {
     return type;
   }
 
-  public void setType(TypeEnum type) {
+  public void setType(BeezUPCommonParameterType type) {
     this.type = type;
   }
 
-  public BeezUPCommonLinkParameter3 lovLink(BeezUPCommonLOVLink2 lovLink) {
+  public BeezUPCommonLinkParameter3 lovLink(BeezUPCommonLOVLink3 lovLink) {
     this.lovLink = lovLink;
     return this;
   }
 
    /**
-   * This parameter expect the values indicated in this list of values.
+   * Get lovLink
    * @return lovLink
   **/
-  @ApiModelProperty(example = "null", value = "This parameter expect the values indicated in this list of values.")
-  public BeezUPCommonLOVLink2 getLovLink() {
+  @ApiModelProperty(example = "null", value = "")
+  public BeezUPCommonLOVLink3 getLovLink() {
     return lovLink;
   }
 
-  public void setLovLink(BeezUPCommonLOVLink2 lovLink) {
+  public void setLovLink(BeezUPCommonLOVLink3 lovLink) {
     this.lovLink = lovLink;
   }
 
@@ -212,10 +153,10 @@ public class BeezUPCommonLinkParameter3 {
   }
 
    /**
-   * If true, you MUST use indicate a value from the list of values otherwise it's a freetext
+   * If true, you MUST indicate a value from the list of values otherwise it's a freetext
    * @return lovRequired
   **/
-  @ApiModelProperty(example = "true", value = "If true, you MUST use indicate a value from the list of values otherwise it's a freetext")
+  @ApiModelProperty(example = "true", value = "If true, you MUST indicate a value from the list of values otherwise it's a freetext")
   public Boolean getLovRequired() {
     return lovRequired;
   }
@@ -260,6 +201,29 @@ public class BeezUPCommonLinkParameter3 {
     this.schema = schema;
   }
 
+  public BeezUPCommonLinkParameter3 properties(Map<String, BeezUPCommonLinkParameterProperty3> properties) {
+    this.properties = properties;
+    return this;
+  }
+
+  public BeezUPCommonLinkParameter3 putPropertiesItem(String key, BeezUPCommonLinkParameterProperty3 propertiesItem) {
+    this.properties.put(key, propertiesItem);
+    return this;
+  }
+
+   /**
+   * If the parameter is an object with flexible properties (additionProperties/dictionary), we will describe the properties of the object.
+   * @return properties
+  **/
+  @ApiModelProperty(example = "{&quot;shipOrder&quot;:{&quot;type&quot;:&quot;string&quot;}}", value = "If the parameter is an object with flexible properties (additionProperties/dictionary), we will describe the properties of the object.")
+  public Map<String, BeezUPCommonLinkParameterProperty3> getProperties() {
+    return properties;
+  }
+
+  public void setProperties(Map<String, BeezUPCommonLinkParameterProperty3> properties) {
+    this.properties = properties;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -277,12 +241,13 @@ public class BeezUPCommonLinkParameter3 {
         Objects.equals(this.lovLink, beezUPCommonLinkParameter3.lovLink) &&
         Objects.equals(this.lovRequired, beezUPCommonLinkParameter3.lovRequired) &&
         Objects.equals(this.description, beezUPCommonLinkParameter3.description) &&
-        Objects.equals(this.schema, beezUPCommonLinkParameter3.schema);
+        Objects.equals(this.schema, beezUPCommonLinkParameter3.schema) &&
+        Objects.equals(this.properties, beezUPCommonLinkParameter3.properties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(value, required, in, type, lovLink, lovRequired, description, schema);
+    return Objects.hash(value, required, in, type, lovLink, lovRequired, description, schema, properties);
   }
 
 
@@ -299,6 +264,7 @@ public class BeezUPCommonLinkParameter3 {
     sb.append("    lovRequired: ").append(toIndentedString(lovRequired)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
+    sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

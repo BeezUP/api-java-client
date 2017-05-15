@@ -4,7 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **String** | Indicate the uri to the list of value |  [optional]
+**href** | **String** | Indicate the uri to the list of value | 
+**method** | [**BeezUPCommonHttpMethod**](BeezUPCommonHttpMethod.md) |  |  [optional]
 
 
 

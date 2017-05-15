@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **productSku** | **String** | The product SKU | 
 **productTitle** | **String** | The product tile | 
 **productImageUrl** | **String** | The product image Url | 
-**productActive** | **Boolean** | Indicates if the product still exists in your catalog |  [optional]
+**productActive** | **Boolean** | Indicates if the product still exists in your catalog | 
 
 
 

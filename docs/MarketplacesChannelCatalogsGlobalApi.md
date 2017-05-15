@@ -1,10 +1,10 @@
 # MarketplacesChannelCatalogsGlobalApi
 
-All URIs are relative to *https://api.beezup.comv2*
+All URIs are relative to *https://api.beezup.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getMarketplaceAccountStores**](MarketplacesChannelCatalogsGlobalApi.md#getMarketplaceAccountStores) | **GET** /v2/user/marketplaces/channelcatalogs/ | Get  you marketplace channel catalog list
+[**getMarketplaceAccountStores**](MarketplacesChannelCatalogsGlobalApi.md#getMarketplaceAccountStores) | **GET** /user/marketplaces/channelcatalogs/ | Get  you marketplace channel catalog list
 
 
 <a name="getMarketplaceAccountStores"></a>

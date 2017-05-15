@@ -4,7 +4,7 @@
 ## Enum
 
 
-* `ONPURCHARSEDATE` (value: `"OnPurcharseDate"`)
+* `ONPURCHASEDATE` (value: `"OnPurchaseDate"`)
 
 * `ONCLICKDATE` (value: `"OnClickDate"`)
 

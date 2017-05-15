@@ -1,6 +1,6 @@
 /*
  * BeezUP API
- * This is the RESTful API of BeezUP which allows you to manage everything related to BeezUP
+ * # The REST API of BeezUP system ## Overview The REST APIs provide programmatic access to read and write BeezUP data.  Basically, with this API you will be able to do everything like you were with your browser on https://go.beezup.com !  The main features are: - Register and manage your account - Create and manage and share your stores with your friends/co-workers. - Import your product catalog and schedule the auto importation - Search the channels your want to use - Configure your channels for your catalogs to export your product information:     - cost and general settings     - category and columns mappings     - your will be able to create and manage your custom column     - put in place exlusion filters based on simple conditions on your product data     - override product values     - get product vision for a channel catalog scope - Analyze and optimize your performance of your catalogs on all yours channels with different type of reportings by day, channel, category and by product. - Automatize your optimisation by using rules! - And of course... Manage your orders harvested from all your marketplaces:     - Synchronize your orders in an uniformized way     - Get the available actions and update the order status - ...and more!  ## Authentication credentials The public API with the base path **_/v2/public** have been put in place to give you an entry point to our system for the user registration, login and lost password. The public API does not require any credentials. We give you the some public list of values and public channels for our public commercial web site [www.beezup.com](http://www.beezup.com).  The user API with the base path **_/v2/user** requires a token which is available on this page: https://go.beezup.com/Account/MyAccount  ## Things to keep in mind ### API Rate Limits - The BeezUP REST API is limited to 100 calls/minute.  ### Media type The default media type for requests and responses is application/json. Where noted, some operations support other content types. If no additional content type is mentioned for a specific operation, then the media type is application/json.  ### Required content type The required and default encoding for the request and responses is UTF8.  ### Required date time format All our date time are formatted in ISO 8601 format: 2014-06-24T16:25:00Z.  ### Base URL The Base URL of the BeezUP API Order Management REST API conforms to the following template.  https://api.beezup.com  All URLs returned by the BeezUP API are relative to this base URL, and all requests to the REST API must use this base URL template.  You can test our API on https://api-docs.beezup.com/swagger-ui\\ You can contact us on [gitter, #BeezUP/API](https://gitter.im/beezUP/API) 
  *
  * OpenAPI spec version: 2.0
  * Contact: support@beezup.com
@@ -17,206 +17,101 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.BeezUPCommonChannelId;
-import io.swagger.client.model.BeezUPCommonChannelName;
-import io.swagger.client.model.BeezUPCommonHttpUrl;
-import io.swagger.client.model.ChannelInfoDetails;
-import io.swagger.client.model.ChannelInfoKeyNumbers;
-import io.swagger.client.model.ChannelInfoSalesContact;
-import io.swagger.client.model.ChannelInfoTechnicalContact;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * ChannelInfo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-05T14:10:34.021Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T11:46:19.000Z")
 public class ChannelInfo {
-  @SerializedName("channelId")
-  private BeezUPCommonChannelId channelId = null;
+  @SerializedName("name")
+  private String name = null;
 
-  @SerializedName("channelName")
-  private BeezUPCommonChannelName channelName = null;
+  @SerializedName("homeUrl")
+  private String homeUrl = null;
 
-  @SerializedName("channelLogoUrl")
-  private BeezUPCommonHttpUrl channelLogoUrl = null;
+  @SerializedName("logoUrl")
+  private String logoUrl = null;
 
-  @SerializedName("channelDescription")
-  private String channelDescription = null;
+  @SerializedName("types")
+  private List<String> types = new ArrayList<String>();
 
-  @SerializedName("beezUPOffer")
-  private String beezUPOffer = null;
-
-  @SerializedName("salesContact")
-  private ChannelInfoSalesContact salesContact = null;
-
-  @SerializedName("details")
-  private ChannelInfoDetails details = null;
-
-  @SerializedName("keyNumbers")
-  private ChannelInfoKeyNumbers keyNumbers = null;
-
-  @SerializedName("technicalContact")
-  private ChannelInfoTechnicalContact technicalContact = null;
-
-  public ChannelInfo channelId(BeezUPCommonChannelId channelId) {
-    this.channelId = channelId;
+  public ChannelInfo name(String name) {
+    this.name = name;
     return this;
   }
 
    /**
-   * Get channelId
-   * @return channelId
+   * The channel name
+   * @return name
   **/
-  @ApiModelProperty(example = "null", required = true, value = "")
-  public BeezUPCommonChannelId getChannelId() {
-    return channelId;
+  @ApiModelProperty(example = "Amazon Direct FRA", required = true, value = "The channel name")
+  public String getName() {
+    return name;
   }
 
-  public void setChannelId(BeezUPCommonChannelId channelId) {
-    this.channelId = channelId;
+  public void setName(String name) {
+    this.name = name;
   }
 
-  public ChannelInfo channelName(BeezUPCommonChannelName channelName) {
-    this.channelName = channelName;
+  public ChannelInfo homeUrl(String homeUrl) {
+    this.homeUrl = homeUrl;
     return this;
   }
 
    /**
-   * Get channelName
-   * @return channelName
+   * The channel home url
+   * @return homeUrl
   **/
-  @ApiModelProperty(example = "null", required = true, value = "")
-  public BeezUPCommonChannelName getChannelName() {
-    return channelName;
+  @ApiModelProperty(example = "http://www.amazon.fr", required = true, value = "The channel home url")
+  public String getHomeUrl() {
+    return homeUrl;
   }
 
-  public void setChannelName(BeezUPCommonChannelName channelName) {
-    this.channelName = channelName;
+  public void setHomeUrl(String homeUrl) {
+    this.homeUrl = homeUrl;
   }
 
-  public ChannelInfo channelLogoUrl(BeezUPCommonHttpUrl channelLogoUrl) {
-    this.channelLogoUrl = channelLogoUrl;
+  public ChannelInfo logoUrl(String logoUrl) {
+    this.logoUrl = logoUrl;
     return this;
   }
 
    /**
-   * Get channelLogoUrl
-   * @return channelLogoUrl
+   * The channel logo url
+   * @return logoUrl
   **/
-  @ApiModelProperty(example = "null", value = "")
-  public BeezUPCommonHttpUrl getChannelLogoUrl() {
-    return channelLogoUrl;
+  @ApiModelProperty(example = "http://beezupcdn.blob.core.windows.net/comparators/Amazon%2520Direct%2520FRA.png", required = true, value = "The channel logo url")
+  public String getLogoUrl() {
+    return logoUrl;
   }
 
-  public void setChannelLogoUrl(BeezUPCommonHttpUrl channelLogoUrl) {
-    this.channelLogoUrl = channelLogoUrl;
+  public void setLogoUrl(String logoUrl) {
+    this.logoUrl = logoUrl;
   }
 
-  public ChannelInfo channelDescription(String channelDescription) {
-    this.channelDescription = channelDescription;
+  public ChannelInfo types(List<String> types) {
+    this.types = types;
+    return this;
+  }
+
+  public ChannelInfo addTypesItem(String typesItem) {
+    this.types.add(typesItem);
     return this;
   }
 
    /**
-   * Indicae a description to the channel
-   * @return channelDescription
+   * The type list related to a channel
+   * @return types
   **/
-  @ApiModelProperty(example = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia dolorum, animi voluptatibus maiores, assumenda maxime illum, labore quae quas ducimus laudantium provident veritatis doloremque dignissimos eum. Error magni illum autem.", value = "Indicae a description to the channel")
-  public String getChannelDescription() {
-    return channelDescription;
+  @ApiModelProperty(example = "[&quot;Marketplace&quot;]", required = true, value = "The type list related to a channel")
+  public List<String> getTypes() {
+    return types;
   }
 
-  public void setChannelDescription(String channelDescription) {
-    this.channelDescription = channelDescription;
-  }
-
-  public ChannelInfo beezUPOffer(String beezUPOffer) {
-    this.beezUPOffer = beezUPOffer;
-    return this;
-  }
-
-   /**
-   * Indicate the BeezUP offer
-   * @return beezUPOffer
-  **/
-  @ApiModelProperty(example = "First month free", value = "Indicate the BeezUP offer")
-  public String getBeezUPOffer() {
-    return beezUPOffer;
-  }
-
-  public void setBeezUPOffer(String beezUPOffer) {
-    this.beezUPOffer = beezUPOffer;
-  }
-
-  public ChannelInfo salesContact(ChannelInfoSalesContact salesContact) {
-    this.salesContact = salesContact;
-    return this;
-  }
-
-   /**
-   * Get salesContact
-   * @return salesContact
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public ChannelInfoSalesContact getSalesContact() {
-    return salesContact;
-  }
-
-  public void setSalesContact(ChannelInfoSalesContact salesContact) {
-    this.salesContact = salesContact;
-  }
-
-  public ChannelInfo details(ChannelInfoDetails details) {
-    this.details = details;
-    return this;
-  }
-
-   /**
-   * Get details
-   * @return details
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public ChannelInfoDetails getDetails() {
-    return details;
-  }
-
-  public void setDetails(ChannelInfoDetails details) {
-    this.details = details;
-  }
-
-  public ChannelInfo keyNumbers(ChannelInfoKeyNumbers keyNumbers) {
-    this.keyNumbers = keyNumbers;
-    return this;
-  }
-
-   /**
-   * Get keyNumbers
-   * @return keyNumbers
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public ChannelInfoKeyNumbers getKeyNumbers() {
-    return keyNumbers;
-  }
-
-  public void setKeyNumbers(ChannelInfoKeyNumbers keyNumbers) {
-    this.keyNumbers = keyNumbers;
-  }
-
-  public ChannelInfo technicalContact(ChannelInfoTechnicalContact technicalContact) {
-    this.technicalContact = technicalContact;
-    return this;
-  }
-
-   /**
-   * Get technicalContact
-   * @return technicalContact
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public ChannelInfoTechnicalContact getTechnicalContact() {
-    return technicalContact;
-  }
-
-  public void setTechnicalContact(ChannelInfoTechnicalContact technicalContact) {
-    this.technicalContact = technicalContact;
+  public void setTypes(List<String> types) {
+    this.types = types;
   }
 
 
@@ -229,20 +124,15 @@ public class ChannelInfo {
       return false;
     }
     ChannelInfo channelInfo = (ChannelInfo) o;
-    return Objects.equals(this.channelId, channelInfo.channelId) &&
-        Objects.equals(this.channelName, channelInfo.channelName) &&
-        Objects.equals(this.channelLogoUrl, channelInfo.channelLogoUrl) &&
-        Objects.equals(this.channelDescription, channelInfo.channelDescription) &&
-        Objects.equals(this.beezUPOffer, channelInfo.beezUPOffer) &&
-        Objects.equals(this.salesContact, channelInfo.salesContact) &&
-        Objects.equals(this.details, channelInfo.details) &&
-        Objects.equals(this.keyNumbers, channelInfo.keyNumbers) &&
-        Objects.equals(this.technicalContact, channelInfo.technicalContact);
+    return Objects.equals(this.name, channelInfo.name) &&
+        Objects.equals(this.homeUrl, channelInfo.homeUrl) &&
+        Objects.equals(this.logoUrl, channelInfo.logoUrl) &&
+        Objects.equals(this.types, channelInfo.types);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(channelId, channelName, channelLogoUrl, channelDescription, beezUPOffer, salesContact, details, keyNumbers, technicalContact);
+    return Objects.hash(name, homeUrl, logoUrl, types);
   }
 
 
@@ -251,15 +141,10 @@ public class ChannelInfo {
     StringBuilder sb = new StringBuilder();
     sb.append("class ChannelInfo {\n");
     
-    sb.append("    channelId: ").append(toIndentedString(channelId)).append("\n");
-    sb.append("    channelName: ").append(toIndentedString(channelName)).append("\n");
-    sb.append("    channelLogoUrl: ").append(toIndentedString(channelLogoUrl)).append("\n");
-    sb.append("    channelDescription: ").append(toIndentedString(channelDescription)).append("\n");
-    sb.append("    beezUPOffer: ").append(toIndentedString(beezUPOffer)).append("\n");
-    sb.append("    salesContact: ").append(toIndentedString(salesContact)).append("\n");
-    sb.append("    details: ").append(toIndentedString(details)).append("\n");
-    sb.append("    keyNumbers: ").append(toIndentedString(keyNumbers)).append("\n");
-    sb.append("    technicalContact: ").append(toIndentedString(technicalContact)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    homeUrl: ").append(toIndentedString(homeUrl)).append("\n");
+    sb.append("    logoUrl: ").append(toIndentedString(logoUrl)).append("\n");
+    sb.append("    types: ").append(toIndentedString(types)).append("\n");
     sb.append("}");
     return sb.toString();
   }
