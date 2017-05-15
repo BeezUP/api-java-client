@@ -27,7 +27,7 @@ import java.util.List;
  * The list of Order report exportations.\\ The paginationResult properties can be null if the list is empty. 
  */
 @ApiModel(description = "The list of Order report exportations.\\ The paginationResult properties can be null if the list is empty. ")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T14:30:06.948Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:14:52.070Z")
 public class OrderExportations {
   @SerializedName("paginationResult")
   private BeezUPCommonPaginationResult paginationResult = null;

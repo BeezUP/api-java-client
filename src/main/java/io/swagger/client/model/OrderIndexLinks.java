@@ -32,7 +32,7 @@ import io.swagger.client.model.LinksSetMerchantOrderInfoListLink;
  * Gives you all entry point operations you can do on this API
  */
 @ApiModel(description = "Gives you all entry point operations you can do on this API")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T14:30:06.948Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:14:52.070Z")
 public class OrderIndexLinks {
   @SerializedName("self")
   private LinksGetOrderIndexLink self = null;

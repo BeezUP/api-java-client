@@ -29,7 +29,7 @@ import io.swagger.client.model.LinksSaveProfilePictureInfoLink;
  * The different actions you can make on this account
  */
 @ApiModel(description = "The different actions you can make on this account")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T14:30:06.948Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:14:52.070Z")
 public class AccountInfoLinks {
   @SerializedName("savePersonalInfo")
   private LinksSavePersonalInfoLink savePersonalInfo = null;
@@ -49,8 +49,8 @@ public class AccountInfoLinks {
   @SerializedName("getCreditCardInfo")
   private LinksGetCreditCardInfoLink getCreditCardInfo = null;
 
-  @SerializedName("saveUserCreditCardLink")
-  private LinksSaveCreditCardInfoLink saveUserCreditCardLink = null;
+  @SerializedName("saveCreditCardInfo")
+  private LinksSaveCreditCardInfoLink saveCreditCardInfo = null;
 
   public AccountInfoLinks savePersonalInfo(LinksSavePersonalInfoLink savePersonalInfo) {
     this.savePersonalInfo = savePersonalInfo;
@@ -160,22 +160,22 @@ public class AccountInfoLinks {
     this.getCreditCardInfo = getCreditCardInfo;
   }
 
-  public AccountInfoLinks saveUserCreditCardLink(LinksSaveCreditCardInfoLink saveUserCreditCardLink) {
-    this.saveUserCreditCardLink = saveUserCreditCardLink;
+  public AccountInfoLinks saveCreditCardInfo(LinksSaveCreditCardInfoLink saveCreditCardInfo) {
+    this.saveCreditCardInfo = saveCreditCardInfo;
     return this;
   }
 
    /**
-   * Get saveUserCreditCardLink
-   * @return saveUserCreditCardLink
+   * Get saveCreditCardInfo
+   * @return saveCreditCardInfo
   **/
   @ApiModelProperty(example = "null", required = true, value = "")
-  public LinksSaveCreditCardInfoLink getSaveUserCreditCardLink() {
-    return saveUserCreditCardLink;
+  public LinksSaveCreditCardInfoLink getSaveCreditCardInfo() {
+    return saveCreditCardInfo;
   }
 
-  public void setSaveUserCreditCardLink(LinksSaveCreditCardInfoLink saveUserCreditCardLink) {
-    this.saveUserCreditCardLink = saveUserCreditCardLink;
+  public void setSaveCreditCardInfo(LinksSaveCreditCardInfoLink saveCreditCardInfo) {
+    this.saveCreditCardInfo = saveCreditCardInfo;
   }
 
 
@@ -194,12 +194,12 @@ public class AccountInfoLinks {
         Objects.equals(this.getProfilePictureInfo, accountInfoLinks.getProfilePictureInfo) &&
         Objects.equals(this.saveProfilePictureInfo, accountInfoLinks.saveProfilePictureInfo) &&
         Objects.equals(this.getCreditCardInfo, accountInfoLinks.getCreditCardInfo) &&
-        Objects.equals(this.saveUserCreditCardLink, accountInfoLinks.saveUserCreditCardLink);
+        Objects.equals(this.saveCreditCardInfo, accountInfoLinks.saveCreditCardInfo);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(savePersonalInfo, changePassword, saveCompanyInfo, getProfilePictureInfo, saveProfilePictureInfo, getCreditCardInfo, saveUserCreditCardLink);
+    return Objects.hash(savePersonalInfo, changePassword, saveCompanyInfo, getProfilePictureInfo, saveProfilePictureInfo, getCreditCardInfo, saveCreditCardInfo);
   }
 
 
@@ -214,7 +214,7 @@ public class AccountInfoLinks {
     sb.append("    getProfilePictureInfo: ").append(toIndentedString(getProfilePictureInfo)).append("\n");
     sb.append("    saveProfilePictureInfo: ").append(toIndentedString(saveProfilePictureInfo)).append("\n");
     sb.append("    getCreditCardInfo: ").append(toIndentedString(getCreditCardInfo)).append("\n");
-    sb.append("    saveUserCreditCardLink: ").append(toIndentedString(saveUserCreditCardLink)).append("\n");
+    sb.append("    saveCreditCardInfo: ").append(toIndentedString(saveCreditCardInfo)).append("\n");
     sb.append("}");
     return sb.toString();
   }

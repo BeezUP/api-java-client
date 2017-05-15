@@ -28,7 +28,7 @@ import org.joda.time.DateTime;
 /**
  * ReportByDayRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T14:30:06.948Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:14:52.070Z")
 public class ReportByDayRequest {
   @SerializedName("channelIds")
   private List<BeezUPCommonChannelId> channelIds = new ArrayList<BeezUPCommonChannelId>();

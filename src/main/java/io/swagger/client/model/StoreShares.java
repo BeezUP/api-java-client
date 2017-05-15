@@ -25,7 +25,7 @@ import java.util.List;
 /**
  * StoreShares
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T14:30:06.948Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:14:52.070Z")
 public class StoreShares {
   @SerializedName("links")
   private StoreSharesLinks links = null;

@@ -28,7 +28,7 @@ import io.swagger.client.model.ChannelCategoryLevel;
  * The channel category
  */
 @ApiModel(description = "The channel category")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T14:30:06.948Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:14:52.070Z")
 public class ChannelCategory {
   @SerializedName("channelCategoryId")
   private BeezUPCommonChannelCategoryId channelCategoryId = null;

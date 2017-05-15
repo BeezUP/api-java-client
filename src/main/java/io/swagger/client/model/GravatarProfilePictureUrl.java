@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * Indicate the url of your picture profil based on gravatar
  */
 @ApiModel(description = "Indicate the url of your picture profil based on gravatar")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T14:30:06.948Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:14:52.070Z")
 public class GravatarProfilePictureUrl {
 
   @Override

@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * The currency code &lt;a href&#x3D;\&quot;https://en.wikipedia.org/wiki/ISO_4217\&quot;&gt;(ISO 4217)&lt;/a&gt; 
  */
 @ApiModel(description = "The currency code <a href=\"https://en.wikipedia.org/wiki/ISO_4217\">(ISO 4217)</a> ")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T14:30:06.948Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:14:52.070Z")
 public class BeezUPCommonCurrencyCode {
 
   @Override

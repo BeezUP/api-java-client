@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **getProfilePictureInfo** | [**LinksGetProfilePictureInfoLink**](LinksGetProfilePictureInfoLink.md) |  | 
 **saveProfilePictureInfo** | [**LinksSaveProfilePictureInfoLink**](LinksSaveProfilePictureInfoLink.md) |  | 
 **getCreditCardInfo** | [**LinksGetCreditCardInfoLink**](LinksGetCreditCardInfoLink.md) |  | 
-**saveUserCreditCardLink** | [**LinksSaveCreditCardInfoLink**](LinksSaveCreditCardInfoLink.md) |  | 
+**saveCreditCardInfo** | [**LinksSaveCreditCardInfoLink**](LinksSaveCreditCardInfoLink.md) |  | 
 
 
 

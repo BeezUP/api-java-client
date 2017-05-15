@@ -31,7 +31,7 @@ import java.util.Map;
 /**
  * LinksGetPublicListOfValuesLink
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T14:30:06.948Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:14:52.070Z")
 public class LinksGetPublicListOfValuesLink {
   @SerializedName("docUrl")
   private BeezUPCommonDocUrl docUrl = null;
