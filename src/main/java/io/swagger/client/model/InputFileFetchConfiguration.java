@@ -25,7 +25,7 @@ import io.swagger.client.model.DownloadCatalogStrategy;
  * Describe the way to download the file
  */
 @ApiModel(description = "Describe the way to download the file")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T09:23:29.795Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T09:37:28.005Z")
 public class InputFileFetchConfiguration {
   @SerializedName("uri")
   private String uri = null;

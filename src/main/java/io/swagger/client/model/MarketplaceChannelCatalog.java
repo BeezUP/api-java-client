@@ -33,7 +33,7 @@ import java.util.Map;
  * This object indicates you the association between a channel catalog and a marketplace. The account identifier will be automatically defined based on your marketplace merchant identfier.
  */
 @ApiModel(description = "This object indicates you the association between a channel catalog and a marketplace. The account identifier will be automatically defined based on your marketplace merchant identfier.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T09:23:29.795Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T09:37:28.005Z")
 public class MarketplaceChannelCatalog {
   @SerializedName("marketplaceTechnicalCode")
   private BeezUPCommonMarketplaceTechnicalCode marketplaceTechnicalCode = null;

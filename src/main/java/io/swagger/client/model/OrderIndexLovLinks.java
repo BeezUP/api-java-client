@@ -23,7 +23,7 @@ import io.swagger.client.model.BeezUPCommonLOVLink3;
  * Gives you all the LOV to get the translations realated to operation name, codes, property names and statuses.
  */
 @ApiModel(description = "Gives you all the LOV to get the translations realated to operation name, codes, property names and statuses.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T09:23:29.795Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T09:37:28.005Z")
 public class OrderIndexLovLinks {
   @SerializedName("orderChangeBusinessOperationType")
   private BeezUPCommonLOVLink3 orderChangeBusinessOperationType = null;

@@ -22,7 +22,7 @@ import java.util.UUID;
 /**
  * RegisterRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T09:23:29.795Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T09:37:28.005Z")
 public class RegisterRequest {
   @SerializedName("email")
   private String email = null;

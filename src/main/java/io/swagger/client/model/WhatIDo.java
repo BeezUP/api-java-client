@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * Your role in your company
  */
 @ApiModel(description = "Your role in your company")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T09:23:29.795Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T09:37:28.005Z")
 public class WhatIDo {
 
   @Override
