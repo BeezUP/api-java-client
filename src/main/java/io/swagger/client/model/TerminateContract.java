@@ -24,7 +24,7 @@ import io.swagger.client.model.ContractTerminationReasonType;
  * The contract termination info
  */
 @ApiModel(description = "The contract termination info")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T08:52:56.733Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T09:23:29.795Z")
 public class TerminateContract {
   @SerializedName("contractTerminationReasonType")
   private ContractTerminationReasonType contractTerminationReasonType = null;

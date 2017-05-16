@@ -23,7 +23,7 @@ import java.util.List;
  * The store&#39;s sectors based on the list of values /user/lov/ParamSector
  */
 @ApiModel(description = "The store's sectors based on the list of values /user/lov/ParamSector")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T08:52:56.733Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T09:23:29.795Z")
 public class StoreSectors extends ArrayList<StoreSector> {
 
   @Override

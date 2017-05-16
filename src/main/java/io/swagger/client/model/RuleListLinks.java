@@ -26,7 +26,7 @@ import io.swagger.client.model.LinksRunRulesLink;
  * Links to know if the user can create a rule or run all rules
  */
 @ApiModel(description = "Links to know if the user can create a rule or run all rules")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T08:52:56.733Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T09:23:29.795Z")
 public class RuleListLinks {
   @SerializedName("self")
   private LinksGetRulesLink self = null;

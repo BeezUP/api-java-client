@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * The e-commerce software name of the merchant
  */
 @ApiModel(description = "The e-commerce software name of the merchant")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T08:52:56.733Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T09:23:29.795Z")
 public class OrderMerchantECommerceSoftwareName {
 
   @Override

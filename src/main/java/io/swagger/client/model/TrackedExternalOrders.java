@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * TrackedExternalOrders
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T08:52:56.733Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T09:23:29.795Z")
 public class TrackedExternalOrders {
   @SerializedName("externalOrders")
   private List<TrackedExternalOrder> externalOrders = new ArrayList<TrackedExternalOrder>();

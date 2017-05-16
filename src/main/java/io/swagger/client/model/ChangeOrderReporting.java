@@ -30,7 +30,7 @@ import org.joda.time.DateTime;
  * The reporting related to a change order operation
  */
 @ApiModel(description = "The reporting related to a change order operation")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T08:52:56.733Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T09:23:29.795Z")
 public class ChangeOrderReporting {
   @SerializedName("executionUUID")
   private ExecutionUUID executionUUID = null;

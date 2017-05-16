@@ -27,7 +27,7 @@ import java.util.List;
  * The order list with minimum information we have from the orders.\\ The paginationResult properties can be null if the list is empty.  
  */
 @ApiModel(description = "The order list with minimum information we have from the orders.\\ The paginationResult properties can be null if the list is empty.  ")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T08:52:56.733Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T09:23:29.795Z")
 public class OrderListLight {
   @SerializedName("paginationResult")
   private BeezUPCommonPaginationResult paginationResult = null;

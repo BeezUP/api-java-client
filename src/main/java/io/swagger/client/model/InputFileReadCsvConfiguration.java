@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiModelProperty;
  * The CSV file description
  */
 @ApiModel(description = "The CSV file description")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T08:52:56.733Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T09:23:29.795Z")
 public class InputFileReadCsvConfiguration {
   @SerializedName("hasHeaderRecord")
   private Boolean hasHeaderRecord = true;
