@@ -25,7 +25,7 @@ import java.math.BigDecimal;
  * Represent a mapping between a catalog category path and a channel category path.  The cost on this mapping can be applied. 
  */
 @ApiModel(description = "Represent a mapping between a catalog category path and a channel category path.  The cost on this mapping can be applied. ")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:58:06.674Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T08:52:56.733Z")
 public class ChannelCatalogCategoryMapping {
   @SerializedName("catalogCategoryPath")
   private BeezUPCommonCatalogCategoryPath catalogCategoryPath = null;

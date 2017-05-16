@@ -23,7 +23,7 @@ import io.swagger.client.model.BeezUPCommonLink2;
  * Indicates the differents actions you can do on a channel product
  */
 @ApiModel(description = "Indicates the differents actions you can do on a channel product")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:58:06.674Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T08:52:56.733Z")
 public class ChannelCatalogProductInfoLinks {
   @SerializedName("override")
   private BeezUPCommonLink2 override = null;

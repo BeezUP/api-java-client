@@ -23,7 +23,7 @@ import io.swagger.client.model.CatalogColumn;
  * The request to configure a catalog column
  */
 @ApiModel(description = "The request to configure a catalog column")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:58:06.674Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T08:52:56.733Z")
 public class ConfigureCatalogColumnCatalogRequest {
   @SerializedName("catalogColumn")
   private CatalogColumn catalogColumn = null;

@@ -23,7 +23,7 @@ import io.swagger.client.model.BeezUPCommonCatalogCategoryPath;
  * The request message to unmap a catalog category path to a channel category path
  */
 @ApiModel(description = "The request message to unmap a catalog category path to a channel category path")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:58:06.674Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T08:52:56.733Z")
 public class UnmapCategoryRequest {
   @SerializedName("catalogCategoryPath")
   private BeezUPCommonCatalogCategoryPath catalogCategoryPath = null;

@@ -25,7 +25,7 @@ import java.util.Map;
 /**
  * ChannelCatalogProductByChannelCatalogResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:58:06.674Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T08:52:56.733Z")
 public class ChannelCatalogProductByChannelCatalogResponse {
   @SerializedName("channelCatalogs")
   private Map<String, ChannelCatalogProductInfo> channelCatalogs = new HashMap<String, ChannelCatalogProductInfo>();

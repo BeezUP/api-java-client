@@ -24,7 +24,7 @@ import io.swagger.client.model.UserColumName;
  * In case your catalog column already exists we indicate you the existing configuration.
  */
 @ApiModel(description = "In case your catalog column already exists we indicate you the existing configuration.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:58:06.674Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T08:52:56.733Z")
 public class ExistingCatalogColumnConfiguration {
   @SerializedName("userColumName")
   private UserColumName userColumName = null;

@@ -24,7 +24,7 @@ import io.swagger.client.model.DuplicateProductValueStrategy;
  * Describe how you
  */
 @ApiModel(description = "Describe how you")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-15T15:58:06.674Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T08:52:56.733Z")
 public class DuplicateProductValueConfiguration {
   @SerializedName("strategy")
   private DuplicateProductValueStrategy strategy = null;
