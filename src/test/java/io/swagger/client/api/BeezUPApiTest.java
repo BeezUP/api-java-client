@@ -70,6 +70,7 @@ import io.swagger.client.model.CreateStoreRequest;
 import io.swagger.client.model.CreditCardInfo;
 import io.swagger.client.model.CreditCardInfoResponse;
 import io.swagger.client.model.CustomColumns;
+import io.swagger.client.model.CustomerIndex;
 import io.swagger.client.model.DetectedCatalogColumns;
 import io.swagger.client.model.ExclusionFilterOperator;
 import io.swagger.client.model.ExclusionFilters;
@@ -1055,7 +1056,8 @@ public class BeezUPApiTest {
      */
     @Test
     public void getAutomaticTransitionsTest() throws ApiException {
-        AutomaticTransitionInfos response = api.getAutomaticTransitions();
+        String ifNoneMatch = null;
+        AutomaticTransitionInfos response = api.getAutomaticTransitions(ifNoneMatch);
 
         // TODO: test validations
     }
@@ -1440,7 +1442,8 @@ public class BeezUPApiTest {
      */
     @Test
     public void getMarketplaceAccountsSynchronizationTest() throws ApiException {
-        AccountSynchronizations response = api.getMarketplaceAccountsSynchronization();
+        String ifNoneMatch = null;
+        AccountSynchronizations response = api.getMarketplaceAccountsSynchronization(ifNoneMatch);
 
         // TODO: test validations
     }
@@ -1493,7 +1496,8 @@ public class BeezUPApiTest {
         Integer pageNumber = null;
         Integer pageSize = null;
         String storeId = null;
-        OrderExportations response = api.getOrderExportations(pageNumber, pageSize, storeId);
+        String ifNoneMatch = null;
+        OrderExportations response = api.getOrderExportations(pageNumber, pageSize, storeId, ifNoneMatch);
 
         // TODO: test validations
     }
@@ -1511,7 +1515,8 @@ public class BeezUPApiTest {
         String marketplaceTechnicalCode = null;
         Integer accountId = null;
         UUID beezUPOrderId = null;
-        OrderHistory response = api.getOrderHistory(marketplaceTechnicalCode, accountId, beezUPOrderId);
+        String ifNoneMatch = null;
+        OrderHistory response = api.getOrderHistory(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch);
 
         // TODO: test validations
     }
@@ -1526,7 +1531,8 @@ public class BeezUPApiTest {
      */
     @Test
     public void getOrderIndexTest() throws ApiException {
-        OrderIndex response = api.getOrderIndex();
+        String ifNoneMatch = null;
+        OrderIndex response = api.getOrderIndex(ifNoneMatch);
 
         // TODO: test validations
     }
@@ -2057,6 +2063,25 @@ public class BeezUPApiTest {
         Integer accountId = null;
         UUID beezUPOrderId = null;
         api.harvestOrder(marketplaceTechnicalCode, accountId, beezUPOrderId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get the meta information about the order (ETag, Last-Modified)
+     *
+     * The purpose of this operation is to reduce the bandwith usage by getting just the meta information about the order (ETag, Last-Modified) with the body. This could be useful  
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void headOrderTest() throws ApiException {
+        String marketplaceTechnicalCode = null;
+        Integer accountId = null;
+        UUID beezUPOrderId = null;
+        String ifNoneMatch = null;
+        api.headOrder(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch);
 
         // TODO: test validations
     }
@@ -3019,6 +3044,21 @@ public class BeezUPApiTest {
         String storeId = null;
         UpdateStoreRequest request = null;
         api.updateStore(storeId, request);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * The index of all operations and LOV
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void userCustomerGetTest() throws ApiException {
+        CustomerIndex response = api.userCustomerGet();
 
         // TODO: test validations
     }

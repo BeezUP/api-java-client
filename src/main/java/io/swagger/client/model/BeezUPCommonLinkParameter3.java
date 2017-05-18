@@ -28,8 +28,11 @@ import java.util.Map;
 /**
  * BeezUPCommonLinkParameter3
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T09:37:28.005Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-18T15:50:05.056Z")
 public class BeezUPCommonLinkParameter3 {
+  @SerializedName("label")
+  private String label = null;
+
   @SerializedName("value")
   private Object value = null;
 
@@ -56,6 +59,24 @@ public class BeezUPCommonLinkParameter3 {
 
   @SerializedName("properties")
   private Map<String, BeezUPCommonLinkParameterProperty3> properties = new HashMap<String, BeezUPCommonLinkParameterProperty3>();
+
+  public BeezUPCommonLinkParameter3 label(String label) {
+    this.label = label;
+    return this;
+  }
+
+   /**
+   * The label corresponding to the link parameter. This label is automatically translated based on the Accept-Language http header.
+   * @return label
+  **/
+  @ApiModelProperty(example = "The translated label", value = "The label corresponding to the link parameter. This label is automatically translated based on the Accept-Language http header.")
+  public String getLabel() {
+    return label;
+  }
+
+  public void setLabel(String label) {
+    this.label = label;
+  }
 
   public BeezUPCommonLinkParameter3 value(Object value) {
     this.value = value;
@@ -234,7 +255,8 @@ public class BeezUPCommonLinkParameter3 {
       return false;
     }
     BeezUPCommonLinkParameter3 beezUPCommonLinkParameter3 = (BeezUPCommonLinkParameter3) o;
-    return Objects.equals(this.value, beezUPCommonLinkParameter3.value) &&
+    return Objects.equals(this.label, beezUPCommonLinkParameter3.label) &&
+        Objects.equals(this.value, beezUPCommonLinkParameter3.value) &&
         Objects.equals(this.required, beezUPCommonLinkParameter3.required) &&
         Objects.equals(this.in, beezUPCommonLinkParameter3.in) &&
         Objects.equals(this.type, beezUPCommonLinkParameter3.type) &&
@@ -247,7 +269,7 @@ public class BeezUPCommonLinkParameter3 {
 
   @Override
   public int hashCode() {
-    return Objects.hash(value, required, in, type, lovLink, lovRequired, description, schema, properties);
+    return Objects.hash(label, value, required, in, type, lovLink, lovRequired, description, schema, properties);
   }
 
 
@@ -256,6 +278,7 @@ public class BeezUPCommonLinkParameter3 {
     StringBuilder sb = new StringBuilder();
     sb.append("class BeezUPCommonLinkParameter3 {\n");
     
+    sb.append("    label: ").append(toIndentedString(label)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    required: ").append(toIndentedString(required)).append("\n");
     sb.append("    in: ").append(toIndentedString(in)).append("\n");

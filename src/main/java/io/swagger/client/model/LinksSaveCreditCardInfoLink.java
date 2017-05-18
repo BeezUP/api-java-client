@@ -31,8 +31,11 @@ import java.util.Map;
 /**
  * LinksSaveCreditCardInfoLink
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T09:37:28.005Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-18T15:50:05.056Z")
 public class LinksSaveCreditCardInfoLink {
+  @SerializedName("label")
+  private String label = null;
+
   @SerializedName("docUrl")
   private BeezUPCommonDocUrl docUrl = null;
 
@@ -51,11 +54,35 @@ public class LinksSaveCreditCardInfoLink {
   @SerializedName("parameters")
   private Map<String, BeezUPCommonLinkParameter3> parameters = new HashMap<String, BeezUPCommonLinkParameter3>();
 
-  @SerializedName("templated")
-  private Boolean templated = null;
+  @SerializedName("urlTemplated")
+  private Boolean urlTemplated = null;
+
+  @SerializedName("allRequiredParamsProvided")
+  private Boolean allRequiredParamsProvided = null;
+
+  @SerializedName("allOptionalParamsProvided")
+  private Boolean allOptionalParamsProvided = null;
 
   @SerializedName("info")
   private BeezUPCommonInfoSummaries info = null;
+
+  public LinksSaveCreditCardInfoLink label(String label) {
+    this.label = label;
+    return this;
+  }
+
+   /**
+   * The label corresponding to the link. This label is automatically translated based on the Accept-Language http header.
+   * @return label
+  **/
+  @ApiModelProperty(example = "The translated label", value = "The label corresponding to the link. This label is automatically translated based on the Accept-Language http header.")
+  public String getLabel() {
+    return label;
+  }
+
+  public void setLabel(String label) {
+    this.label = label;
+  }
 
   public LinksSaveCreditCardInfoLink docUrl(BeezUPCommonDocUrl docUrl) {
     this.docUrl = docUrl;
@@ -170,22 +197,58 @@ public class LinksSaveCreditCardInfoLink {
     this.parameters = parameters;
   }
 
-  public LinksSaveCreditCardInfoLink templated(Boolean templated) {
-    this.templated = templated;
+  public LinksSaveCreditCardInfoLink urlTemplated(Boolean urlTemplated) {
+    this.urlTemplated = urlTemplated;
     return this;
   }
 
    /**
    * indicates whether the href is templated or not
-   * @return templated
+   * @return urlTemplated
   **/
   @ApiModelProperty(example = "null", value = "indicates whether the href is templated or not")
-  public Boolean getTemplated() {
-    return templated;
+  public Boolean getUrlTemplated() {
+    return urlTemplated;
   }
 
-  public void setTemplated(Boolean templated) {
-    this.templated = templated;
+  public void setUrlTemplated(Boolean urlTemplated) {
+    this.urlTemplated = urlTemplated;
+  }
+
+  public LinksSaveCreditCardInfoLink allRequiredParamsProvided(Boolean allRequiredParamsProvided) {
+    this.allRequiredParamsProvided = allRequiredParamsProvided;
+    return this;
+  }
+
+   /**
+   * indicates whether all required params have been provided
+   * @return allRequiredParamsProvided
+  **/
+  @ApiModelProperty(example = "null", value = "indicates whether all required params have been provided")
+  public Boolean getAllRequiredParamsProvided() {
+    return allRequiredParamsProvided;
+  }
+
+  public void setAllRequiredParamsProvided(Boolean allRequiredParamsProvided) {
+    this.allRequiredParamsProvided = allRequiredParamsProvided;
+  }
+
+  public LinksSaveCreditCardInfoLink allOptionalParamsProvided(Boolean allOptionalParamsProvided) {
+    this.allOptionalParamsProvided = allOptionalParamsProvided;
+    return this;
+  }
+
+   /**
+   * indicates whether all optionals params have been provided
+   * @return allOptionalParamsProvided
+  **/
+  @ApiModelProperty(example = "null", value = "indicates whether all optionals params have been provided")
+  public Boolean getAllOptionalParamsProvided() {
+    return allOptionalParamsProvided;
+  }
+
+  public void setAllOptionalParamsProvided(Boolean allOptionalParamsProvided) {
+    this.allOptionalParamsProvided = allOptionalParamsProvided;
   }
 
   public LinksSaveCreditCardInfoLink info(BeezUPCommonInfoSummaries info) {
@@ -216,19 +279,22 @@ public class LinksSaveCreditCardInfoLink {
       return false;
     }
     LinksSaveCreditCardInfoLink linksSaveCreditCardInfoLink = (LinksSaveCreditCardInfoLink) o;
-    return Objects.equals(this.docUrl, linksSaveCreditCardInfoLink.docUrl) &&
+    return Objects.equals(this.label, linksSaveCreditCardInfoLink.label) &&
+        Objects.equals(this.docUrl, linksSaveCreditCardInfoLink.docUrl) &&
         Objects.equals(this.description, linksSaveCreditCardInfoLink.description) &&
         Objects.equals(this.href, linksSaveCreditCardInfoLink.href) &&
         Objects.equals(this.operationId, linksSaveCreditCardInfoLink.operationId) &&
         Objects.equals(this.method, linksSaveCreditCardInfoLink.method) &&
         Objects.equals(this.parameters, linksSaveCreditCardInfoLink.parameters) &&
-        Objects.equals(this.templated, linksSaveCreditCardInfoLink.templated) &&
+        Objects.equals(this.urlTemplated, linksSaveCreditCardInfoLink.urlTemplated) &&
+        Objects.equals(this.allRequiredParamsProvided, linksSaveCreditCardInfoLink.allRequiredParamsProvided) &&
+        Objects.equals(this.allOptionalParamsProvided, linksSaveCreditCardInfoLink.allOptionalParamsProvided) &&
         Objects.equals(this.info, linksSaveCreditCardInfoLink.info);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(docUrl, description, href, operationId, method, parameters, templated, info);
+    return Objects.hash(label, docUrl, description, href, operationId, method, parameters, urlTemplated, allRequiredParamsProvided, allOptionalParamsProvided, info);
   }
 
 
@@ -237,13 +303,16 @@ public class LinksSaveCreditCardInfoLink {
     StringBuilder sb = new StringBuilder();
     sb.append("class LinksSaveCreditCardInfoLink {\n");
     
+    sb.append("    label: ").append(toIndentedString(label)).append("\n");
     sb.append("    docUrl: ").append(toIndentedString(docUrl)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    href: ").append(toIndentedString(href)).append("\n");
     sb.append("    operationId: ").append(toIndentedString(operationId)).append("\n");
     sb.append("    method: ").append(toIndentedString(method)).append("\n");
     sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
-    sb.append("    templated: ").append(toIndentedString(templated)).append("\n");
+    sb.append("    urlTemplated: ").append(toIndentedString(urlTemplated)).append("\n");
+    sb.append("    allRequiredParamsProvided: ").append(toIndentedString(allRequiredParamsProvided)).append("\n");
+    sb.append("    allOptionalParamsProvided: ").append(toIndentedString(allOptionalParamsProvided)).append("\n");
     sb.append("    info: ").append(toIndentedString(info)).append("\n");
     sb.append("}");
     return sb.toString();

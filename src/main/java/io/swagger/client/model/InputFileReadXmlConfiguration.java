@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiModelProperty;
  * The XML file description
  */
 @ApiModel(description = "The XML file description")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T09:37:28.005Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-18T15:50:05.056Z")
 public class InputFileReadXmlConfiguration {
   @SerializedName("useXmlAttributes")
   private Boolean useXmlAttributes = null;

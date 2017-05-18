@@ -17,7 +17,6 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.BeezUPCommonInfoSummaries;
 import io.swagger.client.model.ChangeOrderReporting;
 import io.swagger.client.model.HarvestOrderReporting;
 import java.util.ArrayList;
@@ -28,7 +27,7 @@ import org.joda.time.DateTime;
  * Describe the history related to an order
  */
 @ApiModel(description = "Describe the history related to an order")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T09:37:28.005Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-18T15:50:05.056Z")
 public class OrderHistory {
   @SerializedName("changeOrderReportings")
   private List<ChangeOrderReporting> changeOrderReportings = new ArrayList<ChangeOrderReporting>();
@@ -38,9 +37,6 @@ public class OrderHistory {
 
   @SerializedName("lastModificationUtcDate")
   private DateTime lastModificationUtcDate = null;
-
-  @SerializedName("info")
-  private BeezUPCommonInfoSummaries info = null;
 
   public OrderHistory changeOrderReportings(List<ChangeOrderReporting> changeOrderReportings) {
     this.changeOrderReportings = changeOrderReportings;
@@ -106,24 +102,6 @@ public class OrderHistory {
     this.lastModificationUtcDate = lastModificationUtcDate;
   }
 
-  public OrderHistory info(BeezUPCommonInfoSummaries info) {
-    this.info = info;
-    return this;
-  }
-
-   /**
-   * Get info
-   * @return info
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public BeezUPCommonInfoSummaries getInfo() {
-    return info;
-  }
-
-  public void setInfo(BeezUPCommonInfoSummaries info) {
-    this.info = info;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -136,13 +114,12 @@ public class OrderHistory {
     OrderHistory orderHistory = (OrderHistory) o;
     return Objects.equals(this.changeOrderReportings, orderHistory.changeOrderReportings) &&
         Objects.equals(this.harvestOrderReportings, orderHistory.harvestOrderReportings) &&
-        Objects.equals(this.lastModificationUtcDate, orderHistory.lastModificationUtcDate) &&
-        Objects.equals(this.info, orderHistory.info);
+        Objects.equals(this.lastModificationUtcDate, orderHistory.lastModificationUtcDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(changeOrderReportings, harvestOrderReportings, lastModificationUtcDate, info);
+    return Objects.hash(changeOrderReportings, harvestOrderReportings, lastModificationUtcDate);
   }
 
 
@@ -154,7 +131,6 @@ public class OrderHistory {
     sb.append("    changeOrderReportings: ").append(toIndentedString(changeOrderReportings)).append("\n");
     sb.append("    harvestOrderReportings: ").append(toIndentedString(harvestOrderReportings)).append("\n");
     sb.append("    lastModificationUtcDate: ").append(toIndentedString(lastModificationUtcDate)).append("\n");
-    sb.append("    info: ").append(toIndentedString(info)).append("\n");
     sb.append("}");
     return sb.toString();
   }

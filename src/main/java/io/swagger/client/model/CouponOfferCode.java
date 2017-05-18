@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModel;
  * Your special coupon offer identifier
  */
 @ApiModel(description = "Your special coupon offer identifier")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T09:37:28.005Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-18T15:50:05.056Z")
 public class CouponOfferCode {
 
   @Override

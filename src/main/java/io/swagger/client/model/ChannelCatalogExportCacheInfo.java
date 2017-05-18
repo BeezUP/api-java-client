@@ -22,7 +22,7 @@ import org.joda.time.DateTime;
 /**
  * ChannelCatalogExportCacheInfo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T09:37:28.005Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-18T15:50:05.056Z")
 public class ChannelCatalogExportCacheInfo {
   @SerializedName("cacheStatus")
   private String cacheStatus = null;
@@ -35,6 +35,9 @@ public class ChannelCatalogExportCacheInfo {
 
   @SerializedName("expirationUtcDate")
   private DateTime expirationUtcDate = null;
+
+  @SerializedName("feedUrl")
+  private String feedUrl = null;
 
   public ChannelCatalogExportCacheInfo cacheStatus(String cacheStatus) {
     this.cacheStatus = cacheStatus;
@@ -108,6 +111,24 @@ public class ChannelCatalogExportCacheInfo {
     this.expirationUtcDate = expirationUtcDate;
   }
 
+  public ChannelCatalogExportCacheInfo feedUrl(String feedUrl) {
+    this.feedUrl = feedUrl;
+    return this;
+  }
+
+   /**
+   * The feed url
+   * @return feedUrl
+  **/
+  @ApiModelProperty(example = "https://www.scootmotoshop.com/feed.xml", value = "The feed url")
+  public String getFeedUrl() {
+    return feedUrl;
+  }
+
+  public void setFeedUrl(String feedUrl) {
+    this.feedUrl = feedUrl;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -121,12 +142,13 @@ public class ChannelCatalogExportCacheInfo {
     return Objects.equals(this.cacheStatus, channelCatalogExportCacheInfo.cacheStatus) &&
         Objects.equals(this.lastUpdateUtcDate, channelCatalogExportCacheInfo.lastUpdateUtcDate) &&
         Objects.equals(this.lastContentChangeUtcDate, channelCatalogExportCacheInfo.lastContentChangeUtcDate) &&
-        Objects.equals(this.expirationUtcDate, channelCatalogExportCacheInfo.expirationUtcDate);
+        Objects.equals(this.expirationUtcDate, channelCatalogExportCacheInfo.expirationUtcDate) &&
+        Objects.equals(this.feedUrl, channelCatalogExportCacheInfo.feedUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cacheStatus, lastUpdateUtcDate, lastContentChangeUtcDate, expirationUtcDate);
+    return Objects.hash(cacheStatus, lastUpdateUtcDate, lastContentChangeUtcDate, expirationUtcDate, feedUrl);
   }
 
 
@@ -139,6 +161,7 @@ public class ChannelCatalogExportCacheInfo {
     sb.append("    lastUpdateUtcDate: ").append(toIndentedString(lastUpdateUtcDate)).append("\n");
     sb.append("    lastContentChangeUtcDate: ").append(toIndentedString(lastContentChangeUtcDate)).append("\n");
     sb.append("    expirationUtcDate: ").append(toIndentedString(expirationUtcDate)).append("\n");
+    sb.append("    feedUrl: ").append(toIndentedString(feedUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }

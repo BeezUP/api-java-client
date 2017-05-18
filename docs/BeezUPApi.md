@@ -118,6 +118,7 @@ Method | HTTP request | Description
 [**getUserLovIndex**](BeezUPApi.md#getUserLovIndex) | **GET** /user/lov/ | Get all list names
 [**harvestAll**](BeezUPApi.md#harvestAll) | **POST** /user/marketplaces/orders/harvest | Send harvest request to all your marketplaces
 [**harvestOrder**](BeezUPApi.md#harvestOrder) | **POST** /user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/harvest | Send harvest request for a single Order
+[**headOrder**](BeezUPApi.md#headOrder) | **HEAD** /user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId} | Get the meta information about the order (ETag, Last-Modified)
 [**importationActivateAutoImport**](BeezUPApi.md#importationActivateAutoImport) | **POST** /user/catalogs/{storeId}/autoImport | Activate the auto importation of the last successful manual catalog importation.
 [**importationCancel**](BeezUPApi.md#importationCancel) | **DELETE** /user/catalogs/{storeId}/importations/{executionId} | Cancel importation
 [**importationCommit**](BeezUPApi.md#importationCommit) | **POST** /user/catalogs/{storeId}/importations/{executionId}/commit | Commit Importation
@@ -174,6 +175,7 @@ Method | HTTP request | Description
 [**unmapChannelCatalogCategory**](BeezUPApi.md#unmapChannelCatalogCategory) | **POST** /user/channelCatalogs/{channelCatalogId}/categoryMappings/unmap | Unmap channel catalog category
 [**updateRule**](BeezUPApi.md#updateRule) | **PATCH** /user/analytics/{storeId}/rules/{ruleId} | Update Rule
 [**updateStore**](BeezUPApi.md#updateStore) | **PATCH** /user/customer/stores/{storeId} | Update some store&#39;s information.
+[**userCustomerGet**](BeezUPApi.md#userCustomerGet) | **GET** /user/customer/ | The index of all operations and LOV
 
 
 <a name="activateUserAccount"></a>
@@ -3005,7 +3007,7 @@ Name | Type | Description  | Notes
 
 <a name="getAutomaticTransitions"></a>
 # **getAutomaticTransitions**
-> AutomaticTransitionInfos getAutomaticTransitions()
+> AutomaticTransitionInfos getAutomaticTransitions(ifNoneMatch)
 
 Get list of configured automatic Order status transitions
 
@@ -3027,8 +3029,9 @@ api_key.setApiKey("YOUR API KEY");
 //api_key.setApiKeyPrefix("Token");
 
 BeezUPApi apiInstance = new BeezUPApi();
+String ifNoneMatch = "ifNoneMatch_example"; // String | ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
 try {
-    AutomaticTransitionInfos result = apiInstance.getAutomaticTransitions();
+    AutomaticTransitionInfos result = apiInstance.getAutomaticTransitions(ifNoneMatch);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BeezUPApi#getAutomaticTransitions");
@@ -3037,7 +3040,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ifNoneMatch** | **String**| ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | [optional]
 
 ### Return type
 
@@ -4245,7 +4251,7 @@ This endpoint does not need any parameter.
 
 <a name="getMarketplaceAccountsSynchronization"></a>
 # **getMarketplaceAccountsSynchronization**
-> AccountSynchronizations getMarketplaceAccountsSynchronization()
+> AccountSynchronizations getMarketplaceAccountsSynchronization(ifNoneMatch)
 
 Get current synchronization status between your marketplaces and BeezUP accounts
 
@@ -4267,8 +4273,9 @@ api_key.setApiKey("YOUR API KEY");
 //api_key.setApiKeyPrefix("Token");
 
 BeezUPApi apiInstance = new BeezUPApi();
+String ifNoneMatch = "ifNoneMatch_example"; // String | ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
 try {
-    AccountSynchronizations result = apiInstance.getMarketplaceAccountsSynchronization();
+    AccountSynchronizations result = apiInstance.getMarketplaceAccountsSynchronization(ifNoneMatch);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BeezUPApi#getMarketplaceAccountsSynchronization");
@@ -4277,7 +4284,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ifNoneMatch** | **String**| ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | [optional]
 
 ### Return type
 
@@ -4408,7 +4418,7 @@ Name | Type | Description  | Notes
 
 <a name="getOrderExportations"></a>
 # **getOrderExportations**
-> OrderExportations getOrderExportations(pageNumber, pageSize, storeId)
+> OrderExportations getOrderExportations(pageNumber, pageSize, storeId, ifNoneMatch)
 
 Get a paginated list of Order report exportations
 
@@ -4433,8 +4443,9 @@ BeezUPApi apiInstance = new BeezUPApi();
 Integer pageNumber = 1; // Integer | The page number you want to get
 Integer pageSize = 25; // Integer | The entry count you want to get
 String storeId = "storeId_example"; // String | The store identifier to regroup the order exportations
+String ifNoneMatch = "ifNoneMatch_example"; // String | ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
 try {
-    OrderExportations result = apiInstance.getOrderExportations(pageNumber, pageSize, storeId);
+    OrderExportations result = apiInstance.getOrderExportations(pageNumber, pageSize, storeId, ifNoneMatch);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BeezUPApi#getOrderExportations");
@@ -4449,6 +4460,7 @@ Name | Type | Description  | Notes
  **pageNumber** | **Integer**| The page number you want to get |
  **pageSize** | **Integer**| The entry count you want to get |
  **storeId** | **String**| The store identifier to regroup the order exportations |
+ **ifNoneMatch** | **String**| ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | [optional]
 
 ### Return type
 
@@ -4465,7 +4477,7 @@ Name | Type | Description  | Notes
 
 <a name="getOrderHistory"></a>
 # **getOrderHistory**
-> OrderHistory getOrderHistory(marketplaceTechnicalCode, accountId, beezUPOrderId)
+> OrderHistory getOrderHistory(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch)
 
 Get an Order&#39;s harvest and change history
 
@@ -4490,8 +4502,9 @@ BeezUPApi apiInstance = new BeezUPApi();
 String marketplaceTechnicalCode = "Amazon"; // String | The marketplace technical code
 Integer accountId = 1001; // Integer | The account identifier
 UUID beezUPOrderId = new UUID(); // UUID | The BeezUP Order identifier
+String ifNoneMatch = "ifNoneMatch_example"; // String | ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
 try {
-    OrderHistory result = apiInstance.getOrderHistory(marketplaceTechnicalCode, accountId, beezUPOrderId);
+    OrderHistory result = apiInstance.getOrderHistory(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BeezUPApi#getOrderHistory");
@@ -4506,6 +4519,7 @@ Name | Type | Description  | Notes
  **marketplaceTechnicalCode** | **String**| The marketplace technical code |
  **accountId** | **Integer**| The account identifier |
  **beezUPOrderId** | **UUID**| The BeezUP Order identifier |
+ **ifNoneMatch** | **String**| ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | [optional]
 
 ### Return type
 
@@ -4522,7 +4536,7 @@ Name | Type | Description  | Notes
 
 <a name="getOrderIndex"></a>
 # **getOrderIndex**
-> OrderIndex getOrderIndex()
+> OrderIndex getOrderIndex(ifNoneMatch)
 
 Get all actions you can do on the order API
 
@@ -4544,8 +4558,9 @@ api_key.setApiKey("YOUR API KEY");
 //api_key.setApiKeyPrefix("Token");
 
 BeezUPApi apiInstance = new BeezUPApi();
+String ifNoneMatch = "ifNoneMatch_example"; // String | ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
 try {
-    OrderIndex result = apiInstance.getOrderIndex();
+    OrderIndex result = apiInstance.getOrderIndex(ifNoneMatch);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BeezUPApi#getOrderIndex");
@@ -4554,7 +4569,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ifNoneMatch** | **String**| ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | [optional]
 
 ### Return type
 
@@ -6267,6 +6285,66 @@ Name | Type | Description  | Notes
  **marketplaceTechnicalCode** | **String**| The marketplace technical code |
  **accountId** | **Integer**| The account identifier |
  **beezUPOrderId** | **UUID**| The BeezUP Order identifier |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="headOrder"></a>
+# **headOrder**
+> headOrder(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch)
+
+Get the meta information about the order (ETag, Last-Modified)
+
+The purpose of this operation is to reduce the bandwith usage by getting just the meta information about the order (ETag, Last-Modified) with the body. This could be useful  
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.ApiClient;
+//import io.swagger.client.ApiException;
+//import io.swagger.client.Configuration;
+//import io.swagger.client.auth.*;
+//import io.swagger.client.api.BeezUPApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+BeezUPApi apiInstance = new BeezUPApi();
+String marketplaceTechnicalCode = "Amazon"; // String | The marketplace technical code
+Integer accountId = 1001; // Integer | The account identifier
+UUID beezUPOrderId = new UUID(); // UUID | The BeezUP Order identifier
+String ifNoneMatch = "ifNoneMatch_example"; // String | ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3 
+try {
+    apiInstance.headOrder(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BeezUPApi#headOrder");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **marketplaceTechnicalCode** | **String**| The marketplace technical code |
+ **accountId** | **Integer**| The account identifier |
+ **beezUPOrderId** | **UUID**| The BeezUP Order identifier |
+ **ifNoneMatch** | **String**| ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  | [optional]
 
 ### Return type
 
@@ -9325,6 +9403,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="userCustomerGet"></a>
+# **userCustomerGet**
+> CustomerIndex userCustomerGet()
+
+The index of all operations and LOV
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.ApiClient;
+//import io.swagger.client.ApiException;
+//import io.swagger.client.Configuration;
+//import io.swagger.client.auth.*;
+//import io.swagger.client.api.BeezUPApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+BeezUPApi apiInstance = new BeezUPApi();
+try {
+    CustomerIndex result = apiInstance.userCustomerGet();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BeezUPApi#userCustomerGet");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**CustomerIndex**](CustomerIndex.md)
 
 ### Authorization
 

@@ -31,8 +31,11 @@ import java.util.Map;
 /**
  * LinksGetReportFilterLink
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-16T09:37:28.005Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-18T15:50:05.056Z")
 public class LinksGetReportFilterLink {
+  @SerializedName("label")
+  private String label = null;
+
   @SerializedName("docUrl")
   private BeezUPCommonDocUrl docUrl = null;
 
@@ -51,11 +54,35 @@ public class LinksGetReportFilterLink {
   @SerializedName("parameters")
   private Map<String, BeezUPCommonLinkParameter3> parameters = new HashMap<String, BeezUPCommonLinkParameter3>();
 
-  @SerializedName("templated")
-  private Boolean templated = null;
+  @SerializedName("urlTemplated")
+  private Boolean urlTemplated = null;
+
+  @SerializedName("allRequiredParamsProvided")
+  private Boolean allRequiredParamsProvided = null;
+
+  @SerializedName("allOptionalParamsProvided")
+  private Boolean allOptionalParamsProvided = null;
 
   @SerializedName("info")
   private BeezUPCommonInfoSummaries info = null;
+
+  public LinksGetReportFilterLink label(String label) {
+    this.label = label;
+    return this;
+  }
+
+   /**
+   * The label corresponding to the link. This label is automatically translated based on the Accept-Language http header.
+   * @return label
+  **/
+  @ApiModelProperty(example = "The translated label", value = "The label corresponding to the link. This label is automatically translated based on the Accept-Language http header.")
+  public String getLabel() {
+    return label;
+  }
+
+  public void setLabel(String label) {
+    this.label = label;
+  }
 
   public LinksGetReportFilterLink docUrl(BeezUPCommonDocUrl docUrl) {
     this.docUrl = docUrl;
@@ -170,22 +197,58 @@ public class LinksGetReportFilterLink {
     this.parameters = parameters;
   }
 
-  public LinksGetReportFilterLink templated(Boolean templated) {
-    this.templated = templated;
+  public LinksGetReportFilterLink urlTemplated(Boolean urlTemplated) {
+    this.urlTemplated = urlTemplated;
     return this;
   }
 
    /**
    * indicates whether the href is templated or not
-   * @return templated
+   * @return urlTemplated
   **/
   @ApiModelProperty(example = "null", value = "indicates whether the href is templated or not")
-  public Boolean getTemplated() {
-    return templated;
+  public Boolean getUrlTemplated() {
+    return urlTemplated;
   }
 
-  public void setTemplated(Boolean templated) {
-    this.templated = templated;
+  public void setUrlTemplated(Boolean urlTemplated) {
+    this.urlTemplated = urlTemplated;
+  }
+
+  public LinksGetReportFilterLink allRequiredParamsProvided(Boolean allRequiredParamsProvided) {
+    this.allRequiredParamsProvided = allRequiredParamsProvided;
+    return this;
+  }
+
+   /**
+   * indicates whether all required params have been provided
+   * @return allRequiredParamsProvided
+  **/
+  @ApiModelProperty(example = "null", value = "indicates whether all required params have been provided")
+  public Boolean getAllRequiredParamsProvided() {
+    return allRequiredParamsProvided;
+  }
+
+  public void setAllRequiredParamsProvided(Boolean allRequiredParamsProvided) {
+    this.allRequiredParamsProvided = allRequiredParamsProvided;
+  }
+
+  public LinksGetReportFilterLink allOptionalParamsProvided(Boolean allOptionalParamsProvided) {
+    this.allOptionalParamsProvided = allOptionalParamsProvided;
+    return this;
+  }
+
+   /**
+   * indicates whether all optionals params have been provided
+   * @return allOptionalParamsProvided
+  **/
+  @ApiModelProperty(example = "null", value = "indicates whether all optionals params have been provided")
+  public Boolean getAllOptionalParamsProvided() {
+    return allOptionalParamsProvided;
+  }
+
+  public void setAllOptionalParamsProvided(Boolean allOptionalParamsProvided) {
+    this.allOptionalParamsProvided = allOptionalParamsProvided;
   }
 
   public LinksGetReportFilterLink info(BeezUPCommonInfoSummaries info) {
@@ -216,19 +279,22 @@ public class LinksGetReportFilterLink {
       return false;
     }
     LinksGetReportFilterLink linksGetReportFilterLink = (LinksGetReportFilterLink) o;
-    return Objects.equals(this.docUrl, linksGetReportFilterLink.docUrl) &&
+    return Objects.equals(this.label, linksGetReportFilterLink.label) &&
+        Objects.equals(this.docUrl, linksGetReportFilterLink.docUrl) &&
         Objects.equals(this.description, linksGetReportFilterLink.description) &&
         Objects.equals(this.href, linksGetReportFilterLink.href) &&
         Objects.equals(this.operationId, linksGetReportFilterLink.operationId) &&
         Objects.equals(this.method, linksGetReportFilterLink.method) &&
         Objects.equals(this.parameters, linksGetReportFilterLink.parameters) &&
-        Objects.equals(this.templated, linksGetReportFilterLink.templated) &&
+        Objects.equals(this.urlTemplated, linksGetReportFilterLink.urlTemplated) &&
+        Objects.equals(this.allRequiredParamsProvided, linksGetReportFilterLink.allRequiredParamsProvided) &&
+        Objects.equals(this.allOptionalParamsProvided, linksGetReportFilterLink.allOptionalParamsProvided) &&
         Objects.equals(this.info, linksGetReportFilterLink.info);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(docUrl, description, href, operationId, method, parameters, templated, info);
+    return Objects.hash(label, docUrl, description, href, operationId, method, parameters, urlTemplated, allRequiredParamsProvided, allOptionalParamsProvided, info);
   }
 
 
@@ -237,13 +303,16 @@ public class LinksGetReportFilterLink {
     StringBuilder sb = new StringBuilder();
     sb.append("class LinksGetReportFilterLink {\n");
     
+    sb.append("    label: ").append(toIndentedString(label)).append("\n");
     sb.append("    docUrl: ").append(toIndentedString(docUrl)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    href: ").append(toIndentedString(href)).append("\n");
     sb.append("    operationId: ").append(toIndentedString(operationId)).append("\n");
     sb.append("    method: ").append(toIndentedString(method)).append("\n");
     sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
-    sb.append("    templated: ").append(toIndentedString(templated)).append("\n");
+    sb.append("    urlTemplated: ").append(toIndentedString(urlTemplated)).append("\n");
+    sb.append("    allRequiredParamsProvided: ").append(toIndentedString(allRequiredParamsProvided)).append("\n");
+    sb.append("    allOptionalParamsProvided: ").append(toIndentedString(allOptionalParamsProvided)).append("\n");
     sb.append("    info: ").append(toIndentedString(info)).append("\n");
     sb.append("}");
     return sb.toString();

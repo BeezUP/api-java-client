@@ -210,6 +210,7 @@ Class | Method | HTTP request | Description
 *BeezUPApi* | [**getUserLovIndex**](docs/BeezUPApi.md#getUserLovIndex) | **GET** /user/lov/ | Get all list names
 *BeezUPApi* | [**harvestAll**](docs/BeezUPApi.md#harvestAll) | **POST** /user/marketplaces/orders/harvest | Send harvest request to all your marketplaces
 *BeezUPApi* | [**harvestOrder**](docs/BeezUPApi.md#harvestOrder) | **POST** /user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}/harvest | Send harvest request for a single Order
+*BeezUPApi* | [**headOrder**](docs/BeezUPApi.md#headOrder) | **HEAD** /user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId} | Get the meta information about the order (ETag, Last-Modified)
 *BeezUPApi* | [**importationActivateAutoImport**](docs/BeezUPApi.md#importationActivateAutoImport) | **POST** /user/catalogs/{storeId}/autoImport | Activate the auto importation of the last successful manual catalog importation.
 *BeezUPApi* | [**importationCancel**](docs/BeezUPApi.md#importationCancel) | **DELETE** /user/catalogs/{storeId}/importations/{executionId} | Cancel importation
 *BeezUPApi* | [**importationCommit**](docs/BeezUPApi.md#importationCommit) | **POST** /user/catalogs/{storeId}/importations/{executionId}/commit | Commit Importation
@@ -266,6 +267,7 @@ Class | Method | HTTP request | Description
 *BeezUPApi* | [**unmapChannelCatalogCategory**](docs/BeezUPApi.md#unmapChannelCatalogCategory) | **POST** /user/channelCatalogs/{channelCatalogId}/categoryMappings/unmap | Unmap channel catalog category
 *BeezUPApi* | [**updateRule**](docs/BeezUPApi.md#updateRule) | **PATCH** /user/analytics/{storeId}/rules/{ruleId} | Update Rule
 *BeezUPApi* | [**updateStore**](docs/BeezUPApi.md#updateStore) | **PATCH** /user/customer/stores/{storeId} | Update some store&#39;s information.
+*BeezUPApi* | [**userCustomerGet**](docs/BeezUPApi.md#userCustomerGet) | **GET** /user/customer/ | The index of all operations and LOV
 
 
 ## Documentation for Models
@@ -470,6 +472,9 @@ Class | Method | HTTP request | Description
  - [CurrentContractInfoLinks](docs/CurrentContractInfoLinks.md)
  - [CustomColumn](docs/CustomColumn.md)
  - [CustomColumns](docs/CustomColumns.md)
+ - [CustomerIndex](docs/CustomerIndex.md)
+ - [CustomerIndexLinks](docs/CustomerIndexLinks.md)
+ - [CustomerIndexLovLinks](docs/CustomerIndexLovLinks.md)
  - [DateSearchType](docs/DateSearchType.md)
  - [DetectedCatalogColumn](docs/DetectedCatalogColumn.md)
  - [DetectedCatalogColumns](docs/DetectedCatalogColumns.md)

@@ -83,6 +83,7 @@ import io.swagger.client.model.CreateStoreRequest;
 import io.swagger.client.model.CreditCardInfo;
 import io.swagger.client.model.CreditCardInfoResponse;
 import io.swagger.client.model.CustomColumns;
+import io.swagger.client.model.CustomerIndex;
 import io.swagger.client.model.DetectedCatalogColumns;
 import io.swagger.client.model.ExclusionFilterOperator;
 import io.swagger.client.model.ExclusionFilters;
@@ -6617,7 +6618,7 @@ public class BeezUPApi {
         return call;
     }
     /* Build call for getAutomaticTransitions */
-    private com.squareup.okhttp.Call getAutomaticTransitionsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getAutomaticTransitionsCall(String ifNoneMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -6626,6 +6627,8 @@ public class BeezUPApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (ifNoneMatch != null)
+        localVarHeaderParams.put("If-None-Match", apiClient.parameterToString(ifNoneMatch));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -6658,10 +6661,10 @@ public class BeezUPApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getAutomaticTransitionsValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getAutomaticTransitionsValidateBeforeCall(String ifNoneMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         
-        com.squareup.okhttp.Call call = getAutomaticTransitionsCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAutomaticTransitionsCall(ifNoneMatch, progressListener, progressRequestListener);
         return call;
 
         
@@ -6673,22 +6676,24 @@ public class BeezUPApi {
     /**
      * Get list of configured automatic Order status transitions
      * 
+     * @param ifNoneMatch ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
      * @return AutomaticTransitionInfos
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public AutomaticTransitionInfos getAutomaticTransitions() throws ApiException {
-        ApiResponse<AutomaticTransitionInfos> resp = getAutomaticTransitionsWithHttpInfo();
+    public AutomaticTransitionInfos getAutomaticTransitions(String ifNoneMatch) throws ApiException {
+        ApiResponse<AutomaticTransitionInfos> resp = getAutomaticTransitionsWithHttpInfo(ifNoneMatch);
         return resp.getData();
     }
 
     /**
      * Get list of configured automatic Order status transitions
      * 
+     * @param ifNoneMatch ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
      * @return ApiResponse&lt;AutomaticTransitionInfos&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<AutomaticTransitionInfos> getAutomaticTransitionsWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = getAutomaticTransitionsValidateBeforeCall(null, null);
+    public ApiResponse<AutomaticTransitionInfos> getAutomaticTransitionsWithHttpInfo(String ifNoneMatch) throws ApiException {
+        com.squareup.okhttp.Call call = getAutomaticTransitionsValidateBeforeCall(ifNoneMatch, null, null);
         Type localVarReturnType = new TypeToken<AutomaticTransitionInfos>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -6696,11 +6701,12 @@ public class BeezUPApi {
     /**
      * Get list of configured automatic Order status transitions (asynchronously)
      * 
+     * @param ifNoneMatch ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAutomaticTransitionsAsync(final ApiCallback<AutomaticTransitionInfos> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAutomaticTransitionsAsync(String ifNoneMatch, final ApiCallback<AutomaticTransitionInfos> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -6721,7 +6727,7 @@ public class BeezUPApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getAutomaticTransitionsValidateBeforeCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAutomaticTransitionsValidateBeforeCall(ifNoneMatch, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<AutomaticTransitionInfos>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -9466,7 +9472,7 @@ public class BeezUPApi {
         return call;
     }
     /* Build call for getMarketplaceAccountsSynchronization */
-    private com.squareup.okhttp.Call getMarketplaceAccountsSynchronizationCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getMarketplaceAccountsSynchronizationCall(String ifNoneMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -9475,6 +9481,8 @@ public class BeezUPApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (ifNoneMatch != null)
+        localVarHeaderParams.put("If-None-Match", apiClient.parameterToString(ifNoneMatch));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -9507,10 +9515,10 @@ public class BeezUPApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getMarketplaceAccountsSynchronizationValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getMarketplaceAccountsSynchronizationValidateBeforeCall(String ifNoneMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         
-        com.squareup.okhttp.Call call = getMarketplaceAccountsSynchronizationCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getMarketplaceAccountsSynchronizationCall(ifNoneMatch, progressListener, progressRequestListener);
         return call;
 
         
@@ -9522,22 +9530,24 @@ public class BeezUPApi {
     /**
      * Get current synchronization status between your marketplaces and BeezUP accounts
      * 
+     * @param ifNoneMatch ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
      * @return AccountSynchronizations
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public AccountSynchronizations getMarketplaceAccountsSynchronization() throws ApiException {
-        ApiResponse<AccountSynchronizations> resp = getMarketplaceAccountsSynchronizationWithHttpInfo();
+    public AccountSynchronizations getMarketplaceAccountsSynchronization(String ifNoneMatch) throws ApiException {
+        ApiResponse<AccountSynchronizations> resp = getMarketplaceAccountsSynchronizationWithHttpInfo(ifNoneMatch);
         return resp.getData();
     }
 
     /**
      * Get current synchronization status between your marketplaces and BeezUP accounts
      * 
+     * @param ifNoneMatch ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
      * @return ApiResponse&lt;AccountSynchronizations&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<AccountSynchronizations> getMarketplaceAccountsSynchronizationWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = getMarketplaceAccountsSynchronizationValidateBeforeCall(null, null);
+    public ApiResponse<AccountSynchronizations> getMarketplaceAccountsSynchronizationWithHttpInfo(String ifNoneMatch) throws ApiException {
+        com.squareup.okhttp.Call call = getMarketplaceAccountsSynchronizationValidateBeforeCall(ifNoneMatch, null, null);
         Type localVarReturnType = new TypeToken<AccountSynchronizations>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -9545,11 +9555,12 @@ public class BeezUPApi {
     /**
      * Get current synchronization status between your marketplaces and BeezUP accounts (asynchronously)
      * 
+     * @param ifNoneMatch ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getMarketplaceAccountsSynchronizationAsync(final ApiCallback<AccountSynchronizations> callback) throws ApiException {
+    public com.squareup.okhttp.Call getMarketplaceAccountsSynchronizationAsync(String ifNoneMatch, final ApiCallback<AccountSynchronizations> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -9570,7 +9581,7 @@ public class BeezUPApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getMarketplaceAccountsSynchronizationValidateBeforeCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getMarketplaceAccountsSynchronizationValidateBeforeCall(ifNoneMatch, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<AccountSynchronizations>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -9836,7 +9847,7 @@ public class BeezUPApi {
         return call;
     }
     /* Build call for getOrderExportations */
-    private com.squareup.okhttp.Call getOrderExportationsCall(Integer pageNumber, Integer pageSize, String storeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getOrderExportationsCall(Integer pageNumber, Integer pageSize, String storeId, String ifNoneMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -9851,6 +9862,8 @@ public class BeezUPApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "storeId", storeId));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (ifNoneMatch != null)
+        localVarHeaderParams.put("If-None-Match", apiClient.parameterToString(ifNoneMatch));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -9883,7 +9896,7 @@ public class BeezUPApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getOrderExportationsValidateBeforeCall(Integer pageNumber, Integer pageSize, String storeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getOrderExportationsValidateBeforeCall(Integer pageNumber, Integer pageSize, String storeId, String ifNoneMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'pageNumber' is set
         if (pageNumber == null) {
@@ -9901,7 +9914,7 @@ public class BeezUPApi {
         }
         
         
-        com.squareup.okhttp.Call call = getOrderExportationsCall(pageNumber, pageSize, storeId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getOrderExportationsCall(pageNumber, pageSize, storeId, ifNoneMatch, progressListener, progressRequestListener);
         return call;
 
         
@@ -9916,11 +9929,12 @@ public class BeezUPApi {
      * @param pageNumber The page number you want to get (required)
      * @param pageSize The entry count you want to get (required)
      * @param storeId The store identifier to regroup the order exportations (required)
+     * @param ifNoneMatch ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
      * @return OrderExportations
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public OrderExportations getOrderExportations(Integer pageNumber, Integer pageSize, String storeId) throws ApiException {
-        ApiResponse<OrderExportations> resp = getOrderExportationsWithHttpInfo(pageNumber, pageSize, storeId);
+    public OrderExportations getOrderExportations(Integer pageNumber, Integer pageSize, String storeId, String ifNoneMatch) throws ApiException {
+        ApiResponse<OrderExportations> resp = getOrderExportationsWithHttpInfo(pageNumber, pageSize, storeId, ifNoneMatch);
         return resp.getData();
     }
 
@@ -9930,11 +9944,12 @@ public class BeezUPApi {
      * @param pageNumber The page number you want to get (required)
      * @param pageSize The entry count you want to get (required)
      * @param storeId The store identifier to regroup the order exportations (required)
+     * @param ifNoneMatch ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
      * @return ApiResponse&lt;OrderExportations&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<OrderExportations> getOrderExportationsWithHttpInfo(Integer pageNumber, Integer pageSize, String storeId) throws ApiException {
-        com.squareup.okhttp.Call call = getOrderExportationsValidateBeforeCall(pageNumber, pageSize, storeId, null, null);
+    public ApiResponse<OrderExportations> getOrderExportationsWithHttpInfo(Integer pageNumber, Integer pageSize, String storeId, String ifNoneMatch) throws ApiException {
+        com.squareup.okhttp.Call call = getOrderExportationsValidateBeforeCall(pageNumber, pageSize, storeId, ifNoneMatch, null, null);
         Type localVarReturnType = new TypeToken<OrderExportations>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -9945,11 +9960,12 @@ public class BeezUPApi {
      * @param pageNumber The page number you want to get (required)
      * @param pageSize The entry count you want to get (required)
      * @param storeId The store identifier to regroup the order exportations (required)
+     * @param ifNoneMatch ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getOrderExportationsAsync(Integer pageNumber, Integer pageSize, String storeId, final ApiCallback<OrderExportations> callback) throws ApiException {
+    public com.squareup.okhttp.Call getOrderExportationsAsync(Integer pageNumber, Integer pageSize, String storeId, String ifNoneMatch, final ApiCallback<OrderExportations> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -9970,13 +9986,13 @@ public class BeezUPApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getOrderExportationsValidateBeforeCall(pageNumber, pageSize, storeId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getOrderExportationsValidateBeforeCall(pageNumber, pageSize, storeId, ifNoneMatch, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<OrderExportations>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /* Build call for getOrderHistory */
-    private com.squareup.okhttp.Call getOrderHistoryCall(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getOrderHistoryCall(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, String ifNoneMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -9988,6 +10004,8 @@ public class BeezUPApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (ifNoneMatch != null)
+        localVarHeaderParams.put("If-None-Match", apiClient.parameterToString(ifNoneMatch));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -10020,7 +10038,7 @@ public class BeezUPApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getOrderHistoryValidateBeforeCall(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getOrderHistoryValidateBeforeCall(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, String ifNoneMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'marketplaceTechnicalCode' is set
         if (marketplaceTechnicalCode == null) {
@@ -10038,7 +10056,7 @@ public class BeezUPApi {
         }
         
         
-        com.squareup.okhttp.Call call = getOrderHistoryCall(marketplaceTechnicalCode, accountId, beezUPOrderId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getOrderHistoryCall(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch, progressListener, progressRequestListener);
         return call;
 
         
@@ -10053,11 +10071,12 @@ public class BeezUPApi {
      * @param marketplaceTechnicalCode The marketplace technical code (required)
      * @param accountId The account identifier (required)
      * @param beezUPOrderId The BeezUP Order identifier (required)
+     * @param ifNoneMatch ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
      * @return OrderHistory
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public OrderHistory getOrderHistory(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId) throws ApiException {
-        ApiResponse<OrderHistory> resp = getOrderHistoryWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId);
+    public OrderHistory getOrderHistory(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, String ifNoneMatch) throws ApiException {
+        ApiResponse<OrderHistory> resp = getOrderHistoryWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch);
         return resp.getData();
     }
 
@@ -10067,11 +10086,12 @@ public class BeezUPApi {
      * @param marketplaceTechnicalCode The marketplace technical code (required)
      * @param accountId The account identifier (required)
      * @param beezUPOrderId The BeezUP Order identifier (required)
+     * @param ifNoneMatch ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
      * @return ApiResponse&lt;OrderHistory&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<OrderHistory> getOrderHistoryWithHttpInfo(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId) throws ApiException {
-        com.squareup.okhttp.Call call = getOrderHistoryValidateBeforeCall(marketplaceTechnicalCode, accountId, beezUPOrderId, null, null);
+    public ApiResponse<OrderHistory> getOrderHistoryWithHttpInfo(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, String ifNoneMatch) throws ApiException {
+        com.squareup.okhttp.Call call = getOrderHistoryValidateBeforeCall(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch, null, null);
         Type localVarReturnType = new TypeToken<OrderHistory>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -10082,11 +10102,12 @@ public class BeezUPApi {
      * @param marketplaceTechnicalCode The marketplace technical code (required)
      * @param accountId The account identifier (required)
      * @param beezUPOrderId The BeezUP Order identifier (required)
+     * @param ifNoneMatch ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getOrderHistoryAsync(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, final ApiCallback<OrderHistory> callback) throws ApiException {
+    public com.squareup.okhttp.Call getOrderHistoryAsync(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, String ifNoneMatch, final ApiCallback<OrderHistory> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -10107,13 +10128,13 @@ public class BeezUPApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getOrderHistoryValidateBeforeCall(marketplaceTechnicalCode, accountId, beezUPOrderId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getOrderHistoryValidateBeforeCall(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<OrderHistory>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /* Build call for getOrderIndex */
-    private com.squareup.okhttp.Call getOrderIndexCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getOrderIndexCall(String ifNoneMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -10122,6 +10143,8 @@ public class BeezUPApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (ifNoneMatch != null)
+        localVarHeaderParams.put("If-None-Match", apiClient.parameterToString(ifNoneMatch));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -10154,10 +10177,10 @@ public class BeezUPApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getOrderIndexValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getOrderIndexValidateBeforeCall(String ifNoneMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         
-        com.squareup.okhttp.Call call = getOrderIndexCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getOrderIndexCall(ifNoneMatch, progressListener, progressRequestListener);
         return call;
 
         
@@ -10169,22 +10192,24 @@ public class BeezUPApi {
     /**
      * Get all actions you can do on the order API
      * 
+     * @param ifNoneMatch ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
      * @return OrderIndex
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public OrderIndex getOrderIndex() throws ApiException {
-        ApiResponse<OrderIndex> resp = getOrderIndexWithHttpInfo();
+    public OrderIndex getOrderIndex(String ifNoneMatch) throws ApiException {
+        ApiResponse<OrderIndex> resp = getOrderIndexWithHttpInfo(ifNoneMatch);
         return resp.getData();
     }
 
     /**
      * Get all actions you can do on the order API
      * 
+     * @param ifNoneMatch ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
      * @return ApiResponse&lt;OrderIndex&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<OrderIndex> getOrderIndexWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = getOrderIndexValidateBeforeCall(null, null);
+    public ApiResponse<OrderIndex> getOrderIndexWithHttpInfo(String ifNoneMatch) throws ApiException {
+        com.squareup.okhttp.Call call = getOrderIndexValidateBeforeCall(ifNoneMatch, null, null);
         Type localVarReturnType = new TypeToken<OrderIndex>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -10192,11 +10217,12 @@ public class BeezUPApi {
     /**
      * Get all actions you can do on the order API (asynchronously)
      * 
+     * @param ifNoneMatch ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getOrderIndexAsync(final ApiCallback<OrderIndex> callback) throws ApiException {
+    public com.squareup.okhttp.Call getOrderIndexAsync(String ifNoneMatch, final ApiCallback<OrderIndex> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -10217,7 +10243,7 @@ public class BeezUPApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getOrderIndexValidateBeforeCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getOrderIndexValidateBeforeCall(ifNoneMatch, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<OrderIndex>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -14133,6 +14159,144 @@ public class BeezUPApi {
         }
 
         com.squareup.okhttp.Call call = harvestOrderValidateBeforeCall(marketplaceTechnicalCode, accountId, beezUPOrderId, progressListener, progressRequestListener);
+        apiClient.executeAsync(call, callback);
+        return call;
+    }
+    /* Build call for headOrder */
+    private com.squareup.okhttp.Call headOrderCall(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, String ifNoneMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/user/marketplaces/orders/{marketplaceTechnicalCode}/{accountId}/{beezUPOrderId}".replaceAll("\\{format\\}","json")
+        .replaceAll("\\{" + "marketplaceTechnicalCode" + "\\}", apiClient.escapeString(marketplaceTechnicalCode.toString()))
+        .replaceAll("\\{" + "accountId" + "\\}", apiClient.escapeString(accountId.toString()))
+        .replaceAll("\\{" + "beezUPOrderId" + "\\}", apiClient.escapeString(beezUPOrderId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (ifNoneMatch != null)
+        localVarHeaderParams.put("If-None-Match", apiClient.parameterToString(ifNoneMatch));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "api_key" };
+        return apiClient.buildCall(localVarPath, "HEAD", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call headOrderValidateBeforeCall(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, String ifNoneMatch, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'marketplaceTechnicalCode' is set
+        if (marketplaceTechnicalCode == null) {
+            throw new ApiException("Missing the required parameter 'marketplaceTechnicalCode' when calling headOrder(Async)");
+        }
+        
+        // verify the required parameter 'accountId' is set
+        if (accountId == null) {
+            throw new ApiException("Missing the required parameter 'accountId' when calling headOrder(Async)");
+        }
+        
+        // verify the required parameter 'beezUPOrderId' is set
+        if (beezUPOrderId == null) {
+            throw new ApiException("Missing the required parameter 'beezUPOrderId' when calling headOrder(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = headOrderCall(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Get the meta information about the order (ETag, Last-Modified)
+     * The purpose of this operation is to reduce the bandwith usage by getting just the meta information about the order (ETag, Last-Modified) with the body. This could be useful  
+     * @param marketplaceTechnicalCode The marketplace technical code (required)
+     * @param accountId The account identifier (required)
+     * @param beezUPOrderId The BeezUP Order identifier (required)
+     * @param ifNoneMatch ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public void headOrder(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, String ifNoneMatch) throws ApiException {
+        headOrderWithHttpInfo(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch);
+    }
+
+    /**
+     * Get the meta information about the order (ETag, Last-Modified)
+     * The purpose of this operation is to reduce the bandwith usage by getting just the meta information about the order (ETag, Last-Modified) with the body. This could be useful  
+     * @param marketplaceTechnicalCode The marketplace technical code (required)
+     * @param accountId The account identifier (required)
+     * @param beezUPOrderId The BeezUP Order identifier (required)
+     * @param ifNoneMatch ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Void> headOrderWithHttpInfo(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, String ifNoneMatch) throws ApiException {
+        com.squareup.okhttp.Call call = headOrderValidateBeforeCall(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch, null, null);
+        return apiClient.execute(call);
+    }
+
+    /**
+     * Get the meta information about the order (ETag, Last-Modified) (asynchronously)
+     * The purpose of this operation is to reduce the bandwith usage by getting just the meta information about the order (ETag, Last-Modified) with the body. This could be useful  
+     * @param marketplaceTechnicalCode The marketplace technical code (required)
+     * @param accountId The account identifier (required)
+     * @param beezUPOrderId The BeezUP Order identifier (required)
+     * @param ifNoneMatch ETag value to identify the last known version of requested resource.\\ To avoid useless exchange, we recommend you to indicate the ETag you previously got from this operation.\\ If the ETag value does not match the response will be 200 to give you a new content, otherwise the response will be: 304 Not Modified, without any content.\\ For more details go to this link: http://tools.ietf.org/html/rfc7232#section-2.3  (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call headOrderAsync(String marketplaceTechnicalCode, Integer accountId, UUID beezUPOrderId, String ifNoneMatch, final ApiCallback<Void> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = headOrderValidateBeforeCall(marketplaceTechnicalCode, accountId, beezUPOrderId, ifNoneMatch, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -21178,6 +21342,116 @@ public class BeezUPApi {
 
         com.squareup.okhttp.Call call = updateStoreValidateBeforeCall(storeId, request, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
+        return call;
+    }
+    /* Build call for userCustomerGet */
+    private com.squareup.okhttp.Call userCustomerGetCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/user/customer/".replaceAll("\\{format\\}","json");
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "api_key" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call userCustomerGetValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        
+        com.squareup.okhttp.Call call = userCustomerGetCall(progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * The index of all operations and LOV
+     * 
+     * @return CustomerIndex
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public CustomerIndex userCustomerGet() throws ApiException {
+        ApiResponse<CustomerIndex> resp = userCustomerGetWithHttpInfo();
+        return resp.getData();
+    }
+
+    /**
+     * The index of all operations and LOV
+     * 
+     * @return ApiResponse&lt;CustomerIndex&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<CustomerIndex> userCustomerGetWithHttpInfo() throws ApiException {
+        com.squareup.okhttp.Call call = userCustomerGetValidateBeforeCall(null, null);
+        Type localVarReturnType = new TypeToken<CustomerIndex>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * The index of all operations and LOV (asynchronously)
+     * 
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call userCustomerGetAsync(final ApiCallback<CustomerIndex> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = userCustomerGetValidateBeforeCall(progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CustomerIndex>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
 }
